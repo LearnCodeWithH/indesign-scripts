@@ -28,29 +28,10 @@ function sizePageToFirstGraphicInLayer(page, layer) {
         upper_left_corner = first_graphic.resolve(AnchorPoint.TOP_LEFT_ANCHOR, CoordinateSpaces.PAGE_COORDINATES)[0];
 
         if (null !== width_height) {
-            resizeItem(page, width_height);
+            resizeItemByReplace(page, width_height);
             reframeToPageCoordPositionByULCorner(page, upper_left_corner, width_height);
+            resizeItemByFrameDimensions(first_graphic, width_height);
         }
     });
-}
-
-function findPixelDimensionsOfItem(item) {
-    return usingViewPreferences(
-        {horizontalMeasurementUnits:MeasurementUnits.INCHES, verticalMeasurementUnits:MeasurementUnits.INCHES},
-        function() {
-            if ("Photoshop" === item.imageTypeName || 
-            "JPEG" === item.imageTypeName ||
-            "PNG" === item.imageTypeName) { // TODO: Can this be a check on the needed effectivePpi and geometricBounds?
-                return getPixels(item)
-            }
-            else if (undefined !== item.imageTypeName) {
-                alert("Unsupported graphic type '" + item.imageTypeName + "' was the first graphic in layer.");
-            }
-            else {
-                alert("Unsupported graphic type was the first graphic in layer.");
-            }
-            return null;
-        });
-
 }
 
