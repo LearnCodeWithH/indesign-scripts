@@ -12,6 +12,15 @@ function ensureFirstGraphicInLayer(graphics, layer, func) {
 	}
 }
 
+function ensureFirstGraphicInLayerSilent(graphics, layer, func) {
+    first_graphic = first(graphics, function(graphic) {
+        return graphic.itemLayer === layer;
+    })
+    if (first_graphic !== null){
+		return func(first_graphic);
+	}
+}
+
 function ensureDocument(func) {
     if (app.documents.length != 0){
 		return func();

@@ -13,15 +13,16 @@ function main(){
     ensureDocument(function() { 
         ensurePage(function() {
             active_layer = app.activeDocument.activeLayer;
-            active_page = app.activeWindow.activePage;
-            sizePageToFirstGraphicInLayer(active_page, active_layer);
-            alert("All good");
+            pages = app.activeDocument.pages;
+            each(pages, function(page) {
+                sizePageToFirstGraphicInLayer(page, active_layer);
+            });
         });
     });
 }
 
 function sizePageToFirstGraphicInLayer(page, layer) {
-    return ensureFirstGraphicInLayer(page.allGraphics, layer, 
+    return ensureFirstGraphicInLayerSilent(page.allGraphics, layer, 
     function(first_graphic) {
         width_height = findPixelDimensionsOfItem(first_graphic);
         // Returns Array[Array{x,y}[Real]], needs to be unwrapped
