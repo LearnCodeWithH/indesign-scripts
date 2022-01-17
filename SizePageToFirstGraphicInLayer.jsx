@@ -15,7 +15,6 @@ function main(){
             active_layer = app.activeDocument.activeLayer;
             active_page = app.activeWindow.activePage;
             sizePageToFirstGraphicInLayer(active_page, active_layer);
-            alert("All good");
         });
     });
 }
