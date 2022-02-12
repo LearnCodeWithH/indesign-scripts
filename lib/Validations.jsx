@@ -1,4 +1,5 @@
 #include './Messages.jsx';
+#include './Functional.jsx';
 
 function ensureFirstGraphicInLayer(graphics, layer, func) {
     first_graphic = first(graphics, function(graphic) {
@@ -19,6 +20,14 @@ function ensureFirstGraphicInLayerSilent(graphics, layer, func) {
     if (first_graphic !== null){
 		return func(first_graphic);
 	}
+}
+
+function ensureFirstSelectedItem(items, func) {
+    if (items !== null && items.length > 0) {
+        return func(items[0]);
+    } else {
+        alert(MSG_NO_ITEM_SELECTED);
+    }
 }
 
 function ensureDocument(func) {

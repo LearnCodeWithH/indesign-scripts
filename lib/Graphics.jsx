@@ -65,3 +65,9 @@ function findPixelDimensionsOfItem(item) {
             return null;
         });
 }
+
+function getAllGraphicsInLayer(graphics, layer) {
+    return filter(graphics, function(graphic) {
+        return graphic.itemLayer === layer;
+    })
+}
