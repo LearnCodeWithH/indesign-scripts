@@ -15,14 +15,12 @@ function main(){
         ensurePage(function() {
             active_layer = app.activeDocument.activeLayer;
             pages = app.activeDocument.pages;
-            selected_items = app.activeDocuments.selectedPageItems
+            selected_items = app.activeDocument.selectedPageItems
             ensureFirstSelectedItem(selected_items, function(selected_item) {
-                // appliedObjectStyle
                 each(pages, function(page) {
                     cloneObjectStyleToAllGraphicsInLayer(selected_item.appliedObjectStyle, page, active_layer);
                 });
-            })
-            
+            });
         });
     });
 }
@@ -30,7 +28,8 @@ function main(){
 function cloneObjectStyleToAllGraphicsInLayer(clone_style, page, layer) {
     graphics_in_layer = getAllGraphicsInLayer(page.allGraphics, layer)
     each(graphics_in_layer, function(graphic) {
-        graphic.appliedObjectStyle = clone_style;
+        parent_frame = graphic.parent
+        parent_frame.applyObjectStyle(clone_style);
     });
 }
 
