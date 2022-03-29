@@ -1,5 +1,6 @@
 //ExportFileToPdfInteractiveAndConvertPagesToPsd.jsx
 //An InDesign JavaScript
+//Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
 #include './lib/Functional.jsx';
 #include './lib/Validations.jsx';
@@ -21,7 +22,10 @@ function main(){
                     // /c/Program%20Files/Adobe/Adobe%20InDesign%20CC%202018/Resources/Adobe%20PDF/settings/mul/High%20Quality%20Print.joboptions
                     // TODO: Does this actually impact interactive?
                     export_preset = app.pdfExportPresets[0];
-                    exported_file = active_doc.exportFile(ExportFormat.INTERACTIVE_PDF, save_file, true, export_preset);
+                    active_doc.exportFile(ExportFormat.INTERACTIVE_PDF, save_file, true, export_preset);
+
+                    // TODO: Will assuming RGB 8bit color impact negatively?
+                    // TODO: Read dpi settings from a config file in same dir assume 72 dpi?
                     alert("Wait.");
                 });
             alert("All done.");

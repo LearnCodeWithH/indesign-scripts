@@ -1,5 +1,6 @@
 //SizePageToFirstGraphicInLayer.jsx
 //An InDesign JavaScript
+//Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
 #include './lib/Functional.jsx';
 #include './lib/Validations.jsx';
