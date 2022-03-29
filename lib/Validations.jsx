@@ -47,3 +47,28 @@ function ensurePage(func) {
         alert(MSG_NO_DOCUMENT_OPEN);
     }
 }
+
+function ensureSaveFileViaDialogue(file_prompt, file_filter, default_file_location, func) {
+    save_file = null;
+    if (default_file_location !== null) {
+        default_file_location = resolveFileThroughAliases(default_file_location);        
+        save_file = default_file_location.saveDlg(file_prompt, file_filter);
+    }
+    else {
+        save_file = File.saveDialogue(file_prompt, file_filter);
+    }
+    
+    if (save_file !== null){
+        return func(save_file);
+    }
+    else {
+        alert(MSG_FILE_CANCELLED);
+    }
+}
+
+function resolveFileThroughAliases(file) {
+    while (file.alias) {
+        file = file.resolve();
+    }
+    return file;
+}
