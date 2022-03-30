@@ -5,6 +5,7 @@
 #include './lib/Functional.jsx';
 #include './lib/Validations.jsx';
 #include './lib/Graphics.jsx';
+#include './lib/bridgetalk/BridgeTalk.jsx';
 
 //This script exports the currently open file to Pdf Interactive 
 //then converts the pages of the saved Pdf into Psds.
@@ -26,18 +27,43 @@ function main(){
 
                     // TODO: Will assuming RGB 8bit color impact negatively?
                     // TODO: Read dpi settings from a config file in same dir assume 72 dpi?
-                    alert("Wait.");
+
+                    // TODO: Take hint from Edit => Transparency Blend Space for colorspace open?
+                    convertPdfToPsdViaPhotoshop(save_file, active_doc);
+                    
                 });
             alert("All done.");
         });
     });
 }
 
-function cloneObjectStyleToAllGraphicsInLayer(clone_style, page, layer) {
-    graphics_in_layer = getAllGraphicsInLayer(page.allGraphics, layer)
-    each(graphics_in_layer, function(graphic) {
-        parent_frame = graphic.parent
-        parent_frame.applyObjectStyle(clone_style);
-    });
+function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
+     //the doc profiles sent to PS
+    var rgbProf = active_doc.rgbProfile;
+    var cmykProf = active_doc.cmykProfile;
+    
+    var bridgetalk = new BridgeTalk();  
+    bridgetalk.target = "photoshop";
+    
+    // Read Photoshop.jsx to string
+    var script_path = (new File($.fileName)).parent; // Doesnt have trailing backslash.
+    var photoshop_lib_script_path = script_path + "/lib/bridgetalk/Photoshop.jsx"
+    var photoshop_script_utf8 = new File(photoshop_lib_script_path).read;
+    var photoshop_script_decoded = File.decode(photoshop_script_utf8);
+    var ps_script_call = buildFunctionCall("importPdfAsPsd", [pdf_file_path, config_file_path, color_profile]);
+
+    // Fully stitched script into one string.
+    bridgetalk.body = photoshop_script_decoded + "\r" + ps_script_call;
+    
+    bridgetalk.onResult = function(resObj) { 
+        //$.writeln("Returned from Photoshop: " + resObj.body)
+        bridgetalk = null;
+    }  
+
+    bridgetalk.onError = function( from_bridgetalk ) { 
+        alert(from_bridgetalk.body); 
+    };  
+    
+    bridgetalk.send(8); 
 }
 

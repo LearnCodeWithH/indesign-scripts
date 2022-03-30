@@ -1,3 +1,12 @@
+function foldLeft(initial, obj, func) {
+  var index;
+  var result = initial;
+  for (index = 0, length = obj.length; index < length; index++) {
+    result = func(result, obj[index]);
+  }
+  return result;
+}
+
 function map(obj, func) {
   var result = [], index;
   for (index = 0, length = obj.length; index < length; index++) {
