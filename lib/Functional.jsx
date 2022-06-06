@@ -15,10 +15,25 @@ function map(obj, func) {
   return result;
 }
 
+function map_with_index(obj, func) {
+  var result = [], index;
+  for (index = 0, length = obj.length; index < length; index++) {
+    result.push(func(obj[index], index));
+  }
+  return result;
+}
+
 function each(obj, func) {
   var index;
   for (index = 0; index < obj.length; index++) {
     func.call(obj, obj[index]);
+  }
+}
+
+function each_with_index(obj, func) {
+  var index;
+  for (index = 0; index < obj.length; index++) {
+    func.call(obj, obj[index], index);
   }
 }
 

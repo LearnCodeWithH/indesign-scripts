@@ -1,5 +1,6 @@
 #include './Messages.jsx';
 #include './Functional.jsx';
+#include './File.jsx';
 
 function ensureFirstGraphicInLayer(graphics, layer, func) {
     first_graphic = first(graphics, function(graphic) {
@@ -64,11 +65,4 @@ function ensureSaveFileViaDialogue(file_prompt, file_filter, default_file_locati
     else {
         alert(MSG_FILE_CANCELLED);
     }
-}
-
-function resolveFileThroughAliases(file) {
-    while (file.alias) {
-        file = file.resolve();
-    }
-    return file;
 }
