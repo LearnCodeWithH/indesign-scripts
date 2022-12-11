@@ -5,7 +5,9 @@ Collection of ID scripts for scanlations
 
 * Open InDesign.
 * Open the scripts panel window.
+
 ![InDesign Scripts Panel](./resources/InDesignUserScriptLocation.jpg)
+
 * Right click on the User folder item.
 * Select Reveal in Explorer.
 * Copy scripts you wish to run into the folder. 

@@ -21,7 +21,6 @@ function main(){
     });
 }
 
-// NOTE: For dpi may need to move/resize the parent rectangle instead of the graphic
 function sizePageToFirstGraphicInLayer(page, layer) {
     return ensureFirstGraphicInLayer(page.allGraphics, layer, 
     function(first_graphic) {
