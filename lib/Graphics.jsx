@@ -40,24 +40,6 @@ function getPixelsAtPpi(image, atPpi) {
     return [hpd, vpd];
 }
 
-function normalizePixels(width_height, fromPpi) {
-    return normalizePixelsToPpi(width_height, fromPpi, [72.0, 72.0]);
-}
-
-function normalizePixelsToPpi(width_height, fromPpi, toPpi) {
-    // 72 desired effective ppi
-    // 102 current effective ppi
-    // 300 actual ppi
-    // 182 dimension - width
-    // 128 pixels
-    // ppi * pixels = dimen
-    // ppi * 128 = 182
-    return [
-        width_height[0] * (toPpi[0]/fromPpi[0]),
-        width_height[1] * (toPpi[1]/fromPpi[1])
-    ];
-}
-
 function getPageDimensions(page) {
     var w = page.bounds[3] - page.bounds[1]; // x2-x1
     var h = page.bounds[2] - page.bounds[0]; // y2-y1
