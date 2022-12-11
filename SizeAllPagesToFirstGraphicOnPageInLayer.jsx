@@ -23,20 +23,20 @@ function main(){
 
 // NOTE: For dpi may need to move/resize the parent rectangle instead of the graphic
 function sizePageToFirstGraphicInLayer(page, layer) {
-    return ensureFirstGraphicInLayerSilent(page.allGraphics, layer, 
+    return ensureFirstGraphicInLayer(page.allGraphics, layer, 
     function(first_graphic) {
-        inner_graphic_orig_px_width_height = findPixelDimensionsOfItem(first_graphic);
-
-        if (null !== inner_graphic_orig_px_width_height) {
-            usingViewPreferences(
-                {horizontalMeasurementUnits:MeasurementUnits.PIXELS, verticalMeasurementUnits:MeasurementUnits.PIXELS},
-                function() {        
+        return usingViewPreferences(
+            {horizontalMeasurementUnits:MeasurementUnits.PIXELS, verticalMeasurementUnits:MeasurementUnits.PIXELS},
+            function() {        
+                inner_graphic_orig_px_width_height = findPixelDimensionsOfItem(first_graphic);
+                if (null !== inner_graphic_orig_px_width_height) {
                     rect_frame = first_graphic.parent;
-                    first_graphic.move([0,0]);
-                    reframeAndFitInPageCoords(first_graphic, [0,0], inner_graphic_orig_px_width_height);
+                    rect_frame.move([0,0]);
+                    setItemBounds(rect_frame, [0,0], inner_graphic_orig_px_width_height);
+                    rect_frame.fit(FitOptions.CONTENT_TO_FRAME);
                     resizeToAbsoluteInPageCoords(page, inner_graphic_orig_px_width_height);
-                })
-        }
+                }
+            });
     });
 }
 

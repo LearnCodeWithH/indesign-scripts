@@ -1,3 +1,7 @@
+
+/**
+* Resizes item to absolute width and height specified in page coordinates. Units are determined by View Preferences. Use 'usingViewPreferences' to change.
+*/
 function resizeToAbsoluteInPageCoords(item, width_height) {
     item.resize(
         CoordinateSpaces.PAGE_COORDINATES,
@@ -7,11 +11,15 @@ function resizeToAbsoluteInPageCoords(item, width_height) {
     );
 }
 
-function reframeAndFitInPageCoords(item, ul_corner_pos, width_height) {
-     item.reframe(CoordinateSpaces.PAGE_COORDINATES,
-            [ul_corner_pos, 
-            [ul_corner_pos[0]+width_height[0], ul_corner_pos[1]+width_height[1]]])
-     item.fit(FitOptions.FRAME_TO_CONTENT);
+/**
+* Sets geometric bounds. Units are determined by View Preferences. Use 'usingViewPreferences' to change.
+*/
+function setItemBounds(item, ul_corner_pos, width_height) {
+    // [y1, x1, y2, x2] UL and BR corners of box.
+    item.geometricBounds = [ul_corner_pos[1], 
+        ul_corner_pos[0], 
+        ul_corner_pos[1]+width_height[1], 
+        ul_corner_pos[0]+width_height[0]];
 }
 
 // Sourced from https://community.adobe.com/t5/indesign-discussions/having-trouble-extracting-the-pixel-dimensions-of-an-image-link-in-indesign/m-p/10952544#M177184
