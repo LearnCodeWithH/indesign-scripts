@@ -1,25 +1,17 @@
-
-function resizeItemByReplace(item, width_height) {
-    item.resize(CoordinateSpaces.INNER_COORDINATES,
-        [0,0], 
-        ResizeMethods.REPLACING_CURRENT_DIMENSIONS_WITH,
-        width_height);
-}
-
-function resizeItemByFrameDimensions(item, width_height) {
-    // Reframe will scale opposing corners by ppi
-    item.reframe(
-        // CoordinateSpaces.INNER_COORDINATES,
+function resizeToAbsoluteInPageCoords(item, width_height) {
+    item.resize(
         CoordinateSpaces.PAGE_COORDINATES,
-        [[0,0],width_height]
+        AnchorPoint.TOP_LEFT_ANCHOR,
+        ResizeMethods.REPLACING_CURRENT_DIMENSIONS_WITH,
+        width_height
     );
-    item.fit(FitOptions.FRAME_TO_CONTENT);
 }
 
-function reframeToPageCoordPositionByULCorner(item, ul_corner_pos, width_height) {
+function reframeAndFitInPageCoords(item, ul_corner_pos, width_height) {
      item.reframe(CoordinateSpaces.PAGE_COORDINATES,
             [ul_corner_pos, 
             [ul_corner_pos[0]+width_height[0], ul_corner_pos[1]+width_height[1]]])
+     item.fit(FitOptions.FRAME_TO_CONTENT);
 }
 
 // Sourced from https://community.adobe.com/t5/indesign-discussions/having-trouble-extracting-the-pixel-dimensions-of-an-image-link-in-indesign/m-p/10952544#M177184
@@ -93,7 +85,7 @@ function findPixelDimensionsOfItemAtPpi(item, atPpi) {
         function() {
             if ("Photoshop" === item.imageTypeName || 
             "JPEG" === item.imageTypeName ||
-            "PNG" === item.imageTypeName) { // TODO: Can this be a check on the needed effectivePpi and geometricBounds?
+            "PNG" === item.imageTypeName) {
                 return getPixelsAtPpi(item, atPpi)
             }
             else if (undefined !== item.imageTypeName) {

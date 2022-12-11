@@ -5,7 +5,7 @@
 #include './lib/Validations.jsx';
 #include './lib/Graphics.jsx';
 
-//This script fits the page to the first object found on the currently selected layer.
+//This script fits every page to the original size of the first graphic on the page in the currently selected layer.
 main();
 function main(){
 	//Make certain that user interaction (display of dialogs, etc.) is turned on.
@@ -25,14 +25,17 @@ function main(){
 function sizePageToFirstGraphicInLayer(page, layer) {
     return ensureFirstGraphicInLayerSilent(page.allGraphics, layer, 
     function(first_graphic) {
-        width_height = findPixelDimensionsOfItem(first_graphic);
-        // Returns Array[Array{x,y}[Real]], needs to be unwrapped
-        upper_left_corner = first_graphic.resolve(AnchorPoint.TOP_LEFT_ANCHOR, CoordinateSpaces.PAGE_COORDINATES)[0];
+        inner_graphic_orig_px_width_height = findPixelDimensionsOfItem(first_graphic);
 
-        if (null !== width_height) {
-            resizeItemByReplace(page, width_height);
-            reframeToPageCoordPositionByULCorner(page, upper_left_corner, width_height);
-            resizeItemByFrameDimensions(first_graphic, width_height);
+        if (null !== inner_graphic_orig_px_width_height) {
+            usingViewPreferences(
+                {horizontalMeasurementUnits:MeasurementUnits.PIXELS, verticalMeasurementUnits:MeasurementUnits.PIXELS},
+                function() {        
+                    rect_frame = first_graphic.parent;
+                    first_graphic.move([0,0]);
+                    reframeAndFitInPageCoords(first_graphic, [0,0], inner_graphic_orig_px_width_height);
+                    resizeToAbsoluteInPageCoords(page, inner_graphic_orig_px_width_height);
+                })
         }
     });
 }
