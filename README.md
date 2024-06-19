@@ -28,3 +28,7 @@ Sizes the current page to the first graphic on the current page in the currently
 
 Sizes all pages in the project to the first graphic on their respective pages in the currently selected layer.
 
+### [PlaceBackgroundOnEachPage](./PlaceBackgroundOnEachPage.jsx)
+
+Prompts for a selection of multiple files and places all those files in the currently selected layer one per page creating additional pages if needed along the way.
+
