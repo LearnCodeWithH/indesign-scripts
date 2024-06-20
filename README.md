@@ -16,17 +16,23 @@ Collection of ID scripts for scanlations
 
 ## Scripts
 
-### [CloneStyleFromSelectedItemForAllGraphicsInLayer](./CloneStyleFromSelectedItemForAllGraphicsInLayer.jsx)
+### Style Scripts
+
+#### [CloneStyleFromSelectedItemForAllGraphicsInLayer.jsx](./CloneStyleFromSelectedItemForAllGraphicsInLayer.jsx)
 
 Clones the style from the currently selected item to all graphic items in the currently selected layer.
 
-### [SizePageToFirstGraphicOnPageInLayer](./SizePageToFirstGraphicOnPageInLayer.jsx)
+### Sizing Scripts
+
+#### [SizePageToFirstGraphicOnPageInLayer](./SizePageToFirstGraphicOnPageInLayer.jsx)
 
 Sizes the current page to the first graphic on the current page in the currently selected layer.
 
-### [SizeAllPagesToFirstGraphicOnPageInLayer](./SizeAllPagesToFirstGraphicOnPageInLayer.jsx)
+#### [SizeAllPagesToFirstGraphicOnPageInLayer](./SizeAllPagesToFirstGraphicOnPageInLayer.jsx)
 
 Sizes all pages in the project to the first graphic on their respective pages in the currently selected layer.
+
+### Importing Scripts
 
 ### [PlaceBackgroundOnEachPage](./PlaceBackgroundOnEachPage.jsx)
 

@@ -1,3 +1,7 @@
+//PlaceBackgroundOnEachPage.jsx
+//An InDesign JavaScript
+//Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
+
 // Function to open a file selection dialog and return selected files
 function selectFiles() {
     var fileTypes = "*.jpg;*.jpeg;*.png;*.gif;*.eps;*.psd;*.ai"; // File types to filter (image, PSD, AI)
