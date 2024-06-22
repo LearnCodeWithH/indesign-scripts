@@ -9,8 +9,8 @@
 //This script fits the page to the original size of the first graphic on the page in the currently selected layer.
 main();
 function main(){
-	//Make certain that user interaction (display of dialogs, etc.) is turned on.
-	app.scriptPreferences.userInteractionLevel = UserInteractionLevels.interactWithAll;
+    //Make certain that user interaction (display of dialogs, etc.) is turned on.
+    app.scriptPreferences.userInteractionLevel = UserInteractionLevels.interactWithAll;
     ensureDocument(function() { 
         ensurePage(function() {
             active_layer = app.activeDocument.activeLayer;
@@ -32,7 +32,7 @@ function sizePageToFirstGraphicInLayer(page, layer) {
                     rect_frame.move([0,0]);
                     setItemBounds(rect_frame, [0,0], inner_graphic_orig_px_width_height);
                     rect_frame.fit(FitOptions.CONTENT_TO_FRAME);
-                    resizeToAbsoluteInPageCoords(page, inner_graphic_orig_px_width_height);
+                    resizeToAbsoluteInInnerCoords(page, inner_graphic_orig_px_width_height);
                 }
             });
     });

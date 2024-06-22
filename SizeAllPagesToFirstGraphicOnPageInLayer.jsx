@@ -23,7 +23,7 @@ function main(){
 }
 
 function sizePageToFirstGraphicInLayer(page, layer) {
-    return ensureFirstGraphicInLayer(page.allGraphics, layer, 
+    return ensureFirstGraphicInLayerSilent(page.allGraphics, layer, 
     function(first_graphic) {
         return usingViewPreferences(
             {horizontalMeasurementUnits:MeasurementUnits.PIXELS, verticalMeasurementUnits:MeasurementUnits.PIXELS},
@@ -34,7 +34,7 @@ function sizePageToFirstGraphicInLayer(page, layer) {
                     rect_frame.move([0,0]);
                     setItemBounds(rect_frame, [0,0], inner_graphic_orig_px_width_height);
                     rect_frame.fit(FitOptions.CONTENT_TO_FRAME);
-                    resizeToAbsoluteInPageCoords(page, inner_graphic_orig_px_width_height);
+                    resizeToAbsoluteInInnerCoords(page, inner_graphic_orig_px_width_height);
                 }
             });
     });

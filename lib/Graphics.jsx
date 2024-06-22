@@ -2,9 +2,9 @@
 /**
 * Resizes item to absolute width and height specified in page coordinates. Units are determined by View Preferences. Use 'usingViewPreferences' to change.
 */
-function resizeToAbsoluteInPageCoords(item, width_height) {
+function resizeToAbsoluteInInnerCoords(item, width_height) {
     item.resize(
-        CoordinateSpaces.PAGE_COORDINATES,
+        CoordinateSpaces.INNER_COORDINATES,
         AnchorPoint.TOP_LEFT_ANCHOR,
         ResizeMethods.REPLACING_CURRENT_DIMENSIONS_WITH,
         width_height
