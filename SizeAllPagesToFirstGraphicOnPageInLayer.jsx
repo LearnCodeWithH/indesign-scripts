@@ -23,7 +23,7 @@ function main(){
 }
 
 function sizePageToFirstGraphicInLayer(page, layer) {
-    return ensureFirstGraphicInLayer(page.allGraphics, layer, 
+    return ensureFirstGraphicInLayerSilent(page.allGraphics, layer, 
     function(first_graphic) {
         return usingViewPreferences(
             {horizontalMeasurementUnits:MeasurementUnits.PIXELS, verticalMeasurementUnits:MeasurementUnits.PIXELS},
