@@ -1,3 +1,4 @@
+//Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
 /**
 * Resizes item to absolute width and height specified in page coordinates. Units are determined by View Preferences. Use 'usingViewPreferences' to change.

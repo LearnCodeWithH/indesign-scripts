@@ -26,15 +26,20 @@ Clones the style from the currently selected item to all graphic items in the cu
 
 #### [SizePageToFirstGraphicOnPageInLayer](./SizePageToFirstGraphicOnPageInLayer.jsx)
 
-Sizes the current page to the first graphic on the current page in the currently selected layer.
+Sizes the current page to the first graphic on the current page normalized to 72 dpi in the currently selected layer.
 
 #### [SizeAllPagesToFirstGraphicOnPageInLayer](./SizeAllPagesToFirstGraphicOnPageInLayer.jsx)
 
-Sizes all pages in the project to the first graphic on their respective pages in the currently selected layer.
+Sizes all pages in the project to the first graphic on their respective pages normalized to 72 dpi in the currently selected layer.
 
 ### Importing Scripts
 
-### [PlaceBackgroundOnEachPage](./PlaceBackgroundOnEachPage.jsx)
+#### [PlaceBackgroundOnEachPage](./PlaceBackgroundOnEachPage.jsx)
 
-Prompts for a selection of multiple files and places all those files in the currently selected layer one per page creating additional pages if needed along the way.
+Prompts for a selection of multiple files and places all those files in name order in the currently selected layer one per page creating additional pages if needed along the way.
 
+# Export Scripts
+
+#### [ExportFileToPdfInteractiveAndConvertPagesToPsd.jsx](ExportFileToPdfInteractiveAndConvertPagesToPsd.jsx)
+
+(Not working) Export project to an Interactive Pdf then invoke Photoshop to convert the Psd to one Psd per page.
