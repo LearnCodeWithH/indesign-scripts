@@ -10,7 +10,8 @@ Collection of ID scripts for scanlations
 
 * Right click on the User folder item.
 * Select Reveal in Explorer.
-* Copy scripts you wish to run into the folder. 
+* Copy the lib folder into as a subfolder under the folder opened in Explorer.
+* Copy scripts you wish to run directly into the folder opened in Explorer. 
   * For example, you can copy all files from this repository into there.
 * Scripts in that folder will appear in the scripts panel window.
 
