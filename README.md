@@ -33,6 +33,10 @@ Sizes the current page to the first graphic on the current page normalized to 72
 
 Sizes all pages in the project to the first graphic on their respective pages normalized to 72 dpi in the currently selected layer.
 
+#### [ScaleAllCharacterStyles](./ScaleAllCharacterStyles.jsx)
+
+Scales all paragraph styles by a specified 0-500%. (100% is no change.) Point size, leading, indent, space before and after are scaled.
+
 ### Importing Scripts
 
 #### [PlaceBackgroundOnEachPage](./PlaceBackgroundOnEachPage.jsx)
