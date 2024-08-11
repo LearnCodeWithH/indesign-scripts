@@ -14,6 +14,13 @@
         {
             "type": "extendscript-debug",
             "request": "launch",
+            "name": "Bridgetalk Debug",
+            "program": "${workspaceFolder}/lib/Photoshop.jsx",
+            "stopOnEntry": false
+        },
+        {
+            "type": "extendscript-debug",
+            "request": "launch",
             "name": "Ask for script name",
             "program": "${workspaceFolder}/${command:AskForScriptName}",
             "stopOnEntry": false

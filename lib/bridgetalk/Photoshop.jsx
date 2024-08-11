@@ -27,6 +27,7 @@ function configurePdfOpenOptions(color_mode, dpi_res, anti_alias) {
 function importPdf(open_pdf_file, pdf_open_options, color_profile, psds_folder) {
     // Open the PDF. Note the 3rd parameter is for smart objects. Needs to be false here or the TRIMBOX won’t work
     app.open(open_pdf_file, pdf_open_options, false);
+    alert("Imported");
     // for(var i = 1; i < app.documents.length; i++) {
     //         // save under folder, filename.pdf psds
     //         // For each page
