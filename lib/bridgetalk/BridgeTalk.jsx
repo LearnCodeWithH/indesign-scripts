@@ -105,19 +105,21 @@ function sendScriptToPhotoshop(script_text) {
     // Fully stitched script into one string.
     bridgetalk.body = script_text;
     
-    bridgetalk.onResult = function(resObj) { 
-        //$.writeln("Returned from Photoshop: " + resObj.body)
+    bridgetalk.onResult = function(bridgetalk_result) { 
+        alert("Returned from Photoshop: " + bridgetalk_result.body);
         bridgetalk = null;
     }  
 
-    bridgetalk.onError = function( from_bridgetalk ) { 
-        alert(from_bridgetalk.body); 
+    bridgetalk.onError = function( bridgetalk_result ) { 
+        alert("Error from Photoshop: " + bridgetalk_result.body); 
     };  
 
-    bridgetalk.onTimeout = function( from_bridgetalk ) { 
-        alert(from_bridgetalk.body); 
+    bridgetalk.onTimeout = function( bridgetalk_result ) { 
+        alert("Timeout from Photoshop: " + bridgetalk_result.body); 
     };  
     
     // Async message handoff to Photoshop, ID script will end.
-    bridgetalk.send(8); 
+    // bridgetalk.send(8); 
+    // TODO: Do we want to send this synchronously?
+    bridgetalk.send(); 
 } 

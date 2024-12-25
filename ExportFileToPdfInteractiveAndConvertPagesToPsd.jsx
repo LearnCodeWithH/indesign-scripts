@@ -41,14 +41,15 @@ function main(){
 function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
     var full_script_text = createScriptText(pdf_file, active_doc);
 
-    outputStitchedScript(full_script_text);
+    // TODO: Remove debug output
+    outputStitchedScript(full_script_text, active_doc.filePath);
 
     sendScriptToPhotoshop(full_script_text);
 }
 
-function outputStitchedScript(full_script_text) {
-    usingFile(new File("stitchedScript.jsx"), "w", function(file) {
-        return myFile.write(full_script_text);
+function outputStitchedScript(full_script_text, default_file_location) {
+    usingFile(new File(default_file_location + "/stitchedScript.jsx"), "w", function(file) {
+        return writeString(file, full_script_text);
     });
 }
 
