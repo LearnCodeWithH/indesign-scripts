@@ -11,6 +11,7 @@ Collection of ID scripts for scanlations
 * Right click on the User folder item.
 * Select Reveal in Explorer.
 * Copy the lib folder into as a subfolder under the folder opened in Explorer.
+* Copy the config folder into as a subfolder under the folder opened in Explorer.
 * Copy scripts you wish to run directly into the folder opened in Explorer. 
   * For example, you can copy all files from this repository into there.
 * Scripts in that folder will appear in the scripts panel window.
@@ -45,6 +46,6 @@ Prompts for a selection of multiple files and places all those files in name ord
 
 # Export Scripts
 
-#### [ExportFileToPdfInteractiveAndConvertPagesToPsd.jsx](ExportFileToPdfInteractiveAndConvertPagesToPsd.jsx)
+#### [ExportFileToPdfInteractiveAndConvertPages.jsx](ExportFileToPdfInteractiveAndConvertPages.jsx)
 
-(Not working) Export project to an Interactive Pdf then invoke Photoshop to convert the Psd to one Psd per page.
+Export project to an Interactive Pdf then invoke Photoshop to convert the Pdf pages to any of the configured: Psd, Png, Jpeg. Config values can be managed in the [ImportPdfAndExportPages.config.js](config/ImportPdfAndExportPages.config.js)

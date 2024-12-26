@@ -1,4 +1,4 @@
-//ExportFileToPdfInteractiveAndConvertPagesToPsd.jsx
+//ExportFileToPdfInteractiveAndConvertPages.jsx
 //An InDesign JavaScript
 //Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
@@ -8,7 +8,7 @@
 #include './lib/bridgetalk/BridgeTalk.jsx';
 
 // Config must be fed from ID side script as PS does not have access to read files ID has access to.
-#include './config/ImportPdfAsPsd.config.js';
+#include './config/ImportPdfAndExportPages.config.js';
 
 //This script exports the currently open file to Pdf Interactive 
 //then converts the pages of the saved Pdf into Psds.
@@ -33,7 +33,6 @@ function main(){
 
                     convertPdfToPsdViaPhotoshop(save_file, active_doc);
                 });
-            alert("All done.");
         });
     });
 }
@@ -42,12 +41,17 @@ function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
     var full_script_text = createScriptText(pdf_file, active_doc);
 
     
-    var included_config = import_pdf_as_psd_config; // From 'ImportPdfAsPsd.config.js'
+    var included_config = import_pdf_as_psd_config; // From 'ImportPdfAndExportPages.config.js'
     if (included_config["write_debug_bridgetalk_script"] === true) {
         outputStitchedScript(full_script_text, active_doc.filePath);
     }
 
-    sendScriptToPhotoshop(full_script_text);
+    // Ensure at least one export type is enabled.
+    if (included_config["export_psd"] === true || included_config["export_png"] === true || included_config["export_jpeg"] === true) {
+        sendScriptToPhotoshop(full_script_text);
+    } else {
+        alert("No export types enabled. Please enable at least one export type in 'ImportPdfAndExportPages.config.js'");
+    }
 }
 
 function outputStitchedScript(full_script_text, default_file_location) {
@@ -85,21 +89,26 @@ function createScriptText(pdf_file, active_doc) {
     var psaction_lib_script_path = script_path + "/lib/bridgetalk/PSActions.jsx"
     var psaction_file_script = readFileForScript(psaction_lib_script_path);
 
-    // NOTE: If we wanted to bring back the config part. Uncomment
-    // var included_config = import_pdf_as_psd_config; // From 'ImportPdfAsPsd.config.js'
-    // var pdf_as_psd_config_hash_symbol = anonymousHashSymbol(
+    var included_config = import_pdf_as_psd_config; // From 'ImportPdfAndExportPages.config.js'
+    // NOTE: If we wanted to bring back the pdf import config part. Uncomment
+    // var import_pdf_options_symbol = anonymousHashSymbol(
     //         hashEntriesArrayByField(included_config, ["color_mode", "dpi_res", "anti_alias"])
     //     );
 
-    var pdf_as_psd_config_hash_symbol = anonymousHashSymbol([]);
+    var import_pdf_options_symbol = anonymousHashSymbol([]);
+
+    var export_types_options_symbol = anonymousHashSymbol(
+            hashEntriesArrayByField(included_config, ["export_psd", "export_png", "export_jpeg"])
+        );
 
     var pdf_file_path = pdf_file.toString();
     var args_symbol_array = [
         stringSymbol(pdf_file_path), 
-        pdf_as_psd_config_hash_symbol, 
-        stringSymbol(color_profile)
+        import_pdf_options_symbol, 
+        stringSymbol(color_profile),
+        export_types_options_symbol
     ];
-    var ps_script_call = buildFunctionCallForScript("importPdfAsPsd", args_symbol_array);
+    var ps_script_call = buildFunctionCallForScript("importPdfAndExportPages", args_symbol_array);
 
     // Fully stitched script into one string.
     return stitchScripts([

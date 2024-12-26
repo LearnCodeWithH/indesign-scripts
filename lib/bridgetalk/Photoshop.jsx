@@ -20,7 +20,7 @@ function configurePdfOpenOptions(color_mode, dpi_res, anti_alias) {
 }
 
 
-function importPdf(open_pdf_file, pdf_open_options, color_profile, save_file_folder) {
+function exportPdfPages(open_pdf_file, pdf_open_options, color_profile, save_file_folder, export_types_options) {
     var pdfRegex = RegExp("[.]pdf$", "i");
     var pageCount = getPdfPageCount(new File(open_pdf_file.fullName));
     var pageStart = 1;
@@ -33,8 +33,12 @@ function importPdf(open_pdf_file, pdf_open_options, color_profile, save_file_fol
             working_doc.colorProfileName = color_profile;
 
             var save_file_path_no_extension = save_file_folder + "/" + open_pdf_file.name.replace(pdfRegex,'') + "_" + zeroPad(i, 4);
-            savePSD(working_doc, new File(save_file_path_no_extension + ".psd"));
-            savePng24(working_doc, new File(save_file_path_no_extension + ".png"), 100);
+            if (export_types_options.export_psd)
+                savePSD(working_doc, new File(save_file_path_no_extension + ".psd"));
+            if (export_types_options.export_png)
+                savePng24(working_doc, new File(save_file_path_no_extension + ".png"), 100);
+            if (export_types_options.export_jpeg)
+                saveJpeg(working_doc, new File(save_file_path_no_extension + ".jpg"), 12);
 
         } finally {
             working_doc.close(SaveOptions.DONOTSAVECHANGES);
@@ -44,40 +48,8 @@ function importPdf(open_pdf_file, pdf_open_options, color_profile, save_file_fol
     
 };
 
-function getPdfPageCount(the_pdf_file) {
-    // Avoid infinite loop, once past 9999 lines, we're probably not in a pdf file.
-    var overflow = 0;
-    var count = usingFile(the_pdf_file, "r", function(pdf_file) {
-        next_line = pdf_file.readln();
-        while(overflow < 9999 && next_line.indexOf('/N ') < 0) {
-            next_line = pdf_file.readln();
-            overflow++;
-        }
-        
-        // First object in a pdf file has the number of pages and is in this format:
-        // <</Linearized 1/L 1422340/O 45/E 1371244/N 5/T 1421380/H [ 496 273]>>
-        // We are interested in the /N 5/T part
-
-        // Direct /regex/ definitions don't seem to work with bridgetalk in photoshop
-        // So define directly in RegExp constructor
-        var reg = RegExp("[/]N ([0-9]+)[/]T");
-        var matches = next_line.match(reg);
-        if (matches === null || matches.length < 2) {
-            alert("Could not find page count defined in pdf file.");
-            return 0;
-        }
-        var page_count = matches[1];
-        return Number(page_count);
-    });
-
-    return count;
-};
-
-
 // Based on script from https://github.com/antipalindrome/Photoshop-Export-Layers-to-Files-Fast
-function importPdfAsPsd(pdf_file_path, import_pdf_options, color_profile) {
-    // Extract pdf open options from the import config
-
+function importPdfAndExportPages(pdf_file_path, import_pdf_options, color_profile, export_types_options) {
     var open_document_mode = colorModeToOpenDocumentMode(import_pdf_options.color_mode);
     var pdf_open_options = configurePdfOpenOptions(open_document_mode, import_pdf_options.dpi_res, import_pdf_options.anti_alias);
 
@@ -89,7 +61,7 @@ function importPdfAsPsd(pdf_file_path, import_pdf_options, color_profile) {
             alert("Could not create folder: " + save_file_folder);
             return;
         } else {
-            importPdf(pdf_file, pdf_open_options, color_profile, save_file_folder);
+            exportPdfPages(pdf_file, pdf_open_options, color_profile, save_file_folder, export_types_options);
             return;
         }
     });
