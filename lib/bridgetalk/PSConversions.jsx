@@ -11,7 +11,7 @@ function colorModeToOpenDocumentMode(color_mode) {
         case "GRAYSCALE":
             return OpenDocumentMode.GRAYSCALE;
         default:
-            return OpenDocumentMode.RGB;
+            return undefined;
     }
 }
 

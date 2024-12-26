@@ -66,11 +66,7 @@ function outputStitchedScript(full_script_text, default_file_location) {
 function createScriptText(pdf_file, active_doc) {
      //the doc profiles sent to PS
     var rgbProf = active_doc.rgbProfile;
-    var cmykProf = active_doc.cmykProfile;
-    // TODO: (Start)Take hint from Edit => Transparency Blend Space for colorspace open?
-    // TODO: Will assuming RGB 8bit color impact negatively?
-    var color_profile = rgbProf; // TODO: Send both? Or heuristic?
-    // TODO: Also want bit depth info out of ID project so we know to send 8 or 16
+    var color_profile = rgbProf;
     
     // Read Photoshop.jsx to string
     var script_path = (new File($.fileName)).parent; // Doesnt have trailing backslash.
@@ -89,10 +85,13 @@ function createScriptText(pdf_file, active_doc) {
     var psaction_lib_script_path = script_path + "/lib/bridgetalk/PSActions.jsx"
     var psaction_file_script = readFileForScript(psaction_lib_script_path);
 
-    var included_config = import_pdf_as_psd_config; // From 'ImportPdfAsPsd.config.js'
-    var pdf_as_psd_config_hash_symbol = anonymousHashSymbol(
-            hashEntriesArrayByField(included_config, ["color_mode", "dpi_res", "anti_alias"])
-        );
+    // NOTE: If we wanted to bring back the config part. Uncomment
+    // var included_config = import_pdf_as_psd_config; // From 'ImportPdfAsPsd.config.js'
+    // var pdf_as_psd_config_hash_symbol = anonymousHashSymbol(
+    //         hashEntriesArrayByField(included_config, ["color_mode", "dpi_res", "anti_alias"])
+    //     );
+
+    var pdf_as_psd_config_hash_symbol = anonymousHashSymbol([]);
 
     var pdf_file_path = pdf_file.toString();
     var args_symbol_array = [

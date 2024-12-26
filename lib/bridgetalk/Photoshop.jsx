@@ -10,13 +10,12 @@
 
 function configurePdfOpenOptions(color_mode, dpi_res, anti_alias) {
     // https://www.indesignjs.de/extendscriptAPI/photoshop-latest/index.html#GenericPDFOpenOptions.html
-    // TODO: How many of these are automatic? bit channel depth seems to default to something?
     var openPDFoptions = new PDFOpenOptions;
     openPDFoptions.cropPage = CropToType.TRIMBOX;
-    openPDFoptions.resolution = dpi_res;
-    openPDFoptions.mode = color_mode;
-    openPDFoptions.constrainProportions = true;
-    openPDFoptions.antiAlias = anti_alias;
+    // NOTE: PS seems to autodetect these on pdf open. So we probably don't need to set these.
+    if (dpi_res != undefined) openPDFoptions.resolution = dpi_res;
+    if (color_mode != undefined) openPDFoptions.mode = color_mode;
+    if (anti_alias != undefined) openPDFoptions.antiAlias = anti_alias;
     return openPDFoptions;
 }
 
@@ -33,7 +32,6 @@ function importPdf(open_pdf_file, pdf_open_options, color_profile, save_file_fol
         try {
             working_doc.colorProfileName = color_profile;
 
-            alert("Bit depth: " + working_doc.bitsPerChannel);
             var save_file_path_no_extension = save_file_folder + "/" + open_pdf_file.name.replace(pdfRegex,'') + "_" + zeroPad(i, 4);
             // TODO: Remove extra functions if we use the built in ones
             // var bit_depth = bitPerChannelToInt(open_pdf_file.bitsPerChannel);
