@@ -8,7 +8,7 @@ import_pdf_as_psd_config = {
     // Use anti-alias when converting PDF to PSD
     anti_alias: true,
     // Outputs the stitched script sent to Photoshop via Bridgetalk
-    write_debug_bridgetalk_script: true,
+    write_debug_bridgetalk_script: false,
 
     // Export pdf pages in the supported formats
     export_psd: true,
