@@ -33,12 +33,6 @@ function importPdf(open_pdf_file, pdf_open_options, color_profile, save_file_fol
             working_doc.colorProfileName = color_profile;
 
             var save_file_path_no_extension = save_file_folder + "/" + open_pdf_file.name.replace(pdfRegex,'') + "_" + zeroPad(i, 4);
-            // TODO: Remove extra functions if we use the built in ones
-            // var bit_depth = bitPerChannelToInt(open_pdf_file.bitsPerChannel);
-            // var color_mode = openDocumentModeToPdfOpenActionColorMode(pdf_open_options.mode);
-            // var crop_to = cropToTypeToPdfOpenActionCropTo(pdf_open_options.cropPage);
-            // TODO: I dont think we need this with the app.open call. Check other PSActions too.
-            // rasterizePDF(i, pdf_open_options.resolution, color_mode, bit_depth, crop_to, open_pdf_file.fullName, null, null);
             savePSD(working_doc, new File(save_file_path_no_extension + ".psd"));
             savePng24(working_doc, new File(save_file_path_no_extension + ".png"), 100);
 
