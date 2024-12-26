@@ -63,7 +63,7 @@ function ensureSaveFileViaDialogue(file_prompt, file_filter, default_file_locati
         save_file = default_file_location.saveDlg(file_prompt, file_filter);
     }
     else {
-        save_file = File.saveDialogue(file_prompt, file_filter);
+        save_file = File.saveDialog(file_prompt, file_filter);
     }
 
     if (save_file !== null){

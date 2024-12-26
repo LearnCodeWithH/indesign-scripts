@@ -41,15 +41,25 @@ function main(){
 function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
     var full_script_text = createScriptText(pdf_file, active_doc);
 
-    // TODO: Remove debug output
-    outputStitchedScript(full_script_text, active_doc.filePath);
+    
+    var included_config = import_pdf_as_psd_config; // From 'ImportPdfAsPsd.config.js'
+    if (included_config["write_debug_bridgetalk_script"] === true) {
+        outputStitchedScript(full_script_text, active_doc.filePath);
+    }
 
     sendScriptToPhotoshop(full_script_text);
 }
 
 function outputStitchedScript(full_script_text, default_file_location) {
-    usingFile(new File(default_file_location + "/stitchedScript.jsx"), "w", function(file) {
-        return writeString(file, full_script_text);
+    var stitched_script_file = new File(default_file_location + "/stitched_script.jsx");
+    if (stitched_script_file.exists) {
+        stitched_script_file.remove();
+    }
+
+    // Need to specify encoding in case of unicode in script
+    stitched_script_file.encoding = "UTF-8";
+    usingFile(stitched_script_file, "w", function(file) {
+        return file.write(full_script_text);
     });
 }
 
@@ -57,9 +67,10 @@ function createScriptText(pdf_file, active_doc) {
      //the doc profiles sent to PS
     var rgbProf = active_doc.rgbProfile;
     var cmykProf = active_doc.cmykProfile;
-    // TODO: Take hint from Edit => Transparency Blend Space for colorspace open?
+    // TODO: (Start)Take hint from Edit => Transparency Blend Space for colorspace open?
     // TODO: Will assuming RGB 8bit color impact negatively?
     var color_profile = rgbProf; // TODO: Send both? Or heuristic?
+    // TODO: Also want bit depth info out of ID project so we know to send 8 or 16
     
     // Read Photoshop.jsx to string
     var script_path = (new File($.fileName)).parent; // Doesnt have trailing backslash.
@@ -72,6 +83,11 @@ function createScriptText(pdf_file, active_doc) {
     var datetime_lib_script_path = script_path + "/lib/Datetime.jsx"
     var datetime_file_script = readFileForScript(datetime_lib_script_path);
     
+    var psconversion_lib_script_path = script_path + "/lib/bridgetalk/PSConversions.jsx"
+    var psconversion_file_script = readFileForScript(psconversion_lib_script_path);
+    
+    var psaction_lib_script_path = script_path + "/lib/bridgetalk/PSActions.jsx"
+    var psaction_file_script = readFileForScript(psaction_lib_script_path);
 
     var included_config = import_pdf_as_psd_config; // From 'ImportPdfAsPsd.config.js'
     var pdf_as_psd_config_hash_symbol = anonymousHashSymbol(
@@ -90,6 +106,8 @@ function createScriptText(pdf_file, active_doc) {
     return stitchScripts([
         datetime_file_script, 
         file_file_script, 
+        psconversion_file_script, 
+        psaction_file_script, 
         photoshop_file_script, 
         ps_script_call
         ]);

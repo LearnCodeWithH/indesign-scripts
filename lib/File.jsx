@@ -21,11 +21,3 @@ function resolveFileThroughAliases(file) {
     }
     return file;
 }
-
-// Larger strings need to be written in chunks or file.write will fail to write.
-// There did not appear to be any limit noted in documentation, so 500 it is.
-function writeString(file, text) {
-    for (var i = 0; i < text.length; i += 500) {
-        file.write(text.substring(i, i + 500));
-    }
-}

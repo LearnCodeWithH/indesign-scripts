@@ -7,8 +7,6 @@ function readFileForScript(full_file_path) {
     var script_utf8 = usingFile(new File(full_file_path), "r", function(script_file) {
         return script_file.read();
     });
-    // TODO: I don't think this is needed.
-    // var script_decoded = File.decode(script_utf8);
     return script_utf8;
 }
 
@@ -106,7 +104,6 @@ function sendScriptToPhotoshop(script_text) {
     bridgetalk.body = script_text;
     
     bridgetalk.onResult = function(bridgetalk_result) { 
-        alert("Returned from Photoshop: " + bridgetalk_result.body);
         bridgetalk = null;
     }  
 
@@ -118,8 +115,6 @@ function sendScriptToPhotoshop(script_text) {
         alert("Timeout from Photoshop: " + bridgetalk_result.body); 
     };  
     
-    // Async message handoff to Photoshop, ID script will end.
-    // bridgetalk.send(8); 
-    // TODO: Do we want to send this synchronously?
-    bridgetalk.send(); 
+    // Synchroneous send, timeout in seconds.
+    bridgetalk.send(60); 
 } 
