@@ -48,4 +48,4 @@ Prompts for a selection of multiple files and places all those files in name ord
 
 #### [ExportFileToPdfInteractiveAndConvertPages.jsx](ExportFileToPdfInteractiveAndConvertPages.jsx)
 
-Export project to an Interactive Pdf then invoke Photoshop to convert the Pdf pages to any of the configured: Psd, Png, Jpeg. Config values can be managed in the [ImportPdfAndExportPages.config.js](config/ImportPdfAndExportPages.config.js)
+Export project to an Interactive Pdf then invoke Photoshop to convert the Pdf pages to any of the configured formats: Psd, Png8, Png24, Jpeg. Config values can be managed in the [ImportPdfAndExportPages.config.js](config/ImportPdfAndExportPages.config.js)
