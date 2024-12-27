@@ -47,7 +47,8 @@ function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
     }
 
     // Ensure at least one export type is enabled.
-    if (included_config["export_psd"] === true || included_config["export_png"] === true || included_config["export_jpeg"] === true) {
+    if (included_config["export_psd"] === true || included_config["export_png24"] === true || 
+        included_config["export_png8"] === true || included_config["export_jpeg"] === true) {
         sendScriptToPhotoshop(full_script_text);
     } else {
         alert("No export types enabled. Please enable at least one export type in 'ImportPdfAndExportPages.config.js'");
@@ -98,7 +99,9 @@ function createScriptText(pdf_file, active_doc) {
     var import_pdf_options_symbol = anonymousHashSymbol([]);
 
     var export_types_options_symbol = anonymousHashSymbol(
-            hashEntriesArrayByField(included_config, ["export_psd", "export_png", "export_jpeg"])
+            hashEntriesArrayByField(included_config, 
+                ["export_psd", "export_png24", "export_png8", 
+                "export_jpeg", "png8_color_palette_size"])
         );
 
     var pdf_file_path = pdf_file.toString();

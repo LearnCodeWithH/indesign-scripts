@@ -6,6 +6,10 @@ import_pdf_as_psd_config = {
 
     // Export pdf pages in the supported formats
     export_psd: true,
-    export_png: true,
-    export_jpeg: true
+    export_png24: true,
+    export_png8: true,
+    export_jpeg: true,
+
+    // Provides the color palette size for png8 export or an "auto" value will calculate an optimal palette size
+    png8_color_palette_size: "auto" // "auto" or provide integer value like 256
 }

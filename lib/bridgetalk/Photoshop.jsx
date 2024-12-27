@@ -35,10 +35,19 @@ function exportPdfPages(open_pdf_file, pdf_open_options, color_profile, save_fil
             var save_file_path_no_extension = save_file_folder + "/" + open_pdf_file.name.replace(pdfRegex,'') + "_" + zeroPad(i, 4);
             if (export_types_options.export_psd)
                 savePSD(working_doc, new File(save_file_path_no_extension + ".psd"));
-            if (export_types_options.export_png)
-                savePng24(working_doc, new File(save_file_path_no_extension + ".png"), 100);
             if (export_types_options.export_jpeg)
                 saveJpeg(working_doc, new File(save_file_path_no_extension + ".jpg"), 12);
+            if (export_types_options.export_png24)
+                savePng24(working_doc, new File(save_file_path_no_extension + ".24.png"), 100);
+            if (export_types_options.export_png8) {
+                var color_palette_size = "auto";
+                
+                if (export_types_options.png8_color_palette_size != undefined && 
+                    export_types_options.png8_color_palette_size !== "auto") {
+                    color_palette_size = export_types_options.png8_color_palette_size;
+                }
+                savePng8(working_doc, new File(save_file_path_no_extension + ".8.png"), 100, color_palette_size);
+            }
 
         } finally {
             working_doc.close(SaveOptions.DONOTSAVECHANGES);
