@@ -25,6 +25,7 @@ function savePng24(doc, saveFile, Quality) {
     pngOpts.transparency = true; 
     pngOpts.interlaced = false; 
     pngOpts.quality = Quality;
+    pngOpts.includeProfile = true;
     doc.exportDocument(new File(saveFile),ExportType.SAVEFORWEB,pngOpts); 
 };
 
@@ -37,5 +38,6 @@ function savePng8(doc, saveFile, Quality, colorPaletteSize) {
     pngOpts.transparency = true; 
     pngOpts.interlaced = false; 
     pngOpts.quality = Quality;
+    pngOpts.includeProfile = true;
     doc.exportDocument(new File(saveFile),ExportType.SAVEFORWEB,pngOpts); 
 };

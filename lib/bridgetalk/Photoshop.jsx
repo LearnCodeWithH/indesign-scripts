@@ -16,6 +16,7 @@ function configurePdfOpenOptions(color_mode, dpi_res, anti_alias) {
     if (dpi_res != undefined) openPDFoptions.resolution = dpi_res;
     if (color_mode != undefined) openPDFoptions.mode = color_mode;
     if (anti_alias != undefined) openPDFoptions.antiAlias = anti_alias;
+    else openPDFoptions.antiAlias = true;
     return openPDFoptions;
 }
 
