@@ -28,17 +28,45 @@ function buildVariableHashForScript(var_name, hash_entries_array) {
 
 // Outputs a symbol containing type information.
 function anonymousHashSymbol(hash_entries_array) {
-    var hash_left = "{"
-    var hash_right = "}"
-
+    var hash_left = "{";
+    var hash_right = "}";
+    try {
     var hash_entries_block = map(hash_entries_array, function(entry) {
         var key = entry[0];
         var value = entry[1];
         return hashKeyValue(key, value);
     }).join(',');
+    
     return {
         type_name: "hashmap",
         value: hash_left + hash_entries_block + hash_right
+    };
+    }
+    catch (e) {
+        alert(e);
+        alert("Error for " + hash_entries_array);
+    }
+}
+
+// Outputs a symbol containing type information for an array of hash maps
+function anonymousHashArraySymbol(array_of_objects) {
+    var array_left = "[";
+    var array_right = "]";
+    
+    var hash_array_block = map(array_of_objects, function(obj) {
+        // For each object in the array, convert it to a hash representation
+        var entries = [];
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                entries.push([key, obj[key]]);
+            }
+        }
+        return anonymousHashSymbol(entries).value;
+    }).join(',');
+    
+    return {
+        type_name: "array",
+        value: array_left + hash_array_block + array_right
     };
 }
 
@@ -58,15 +86,54 @@ function hashEntriesArrayByField(hashmap, field_array) {
 
 // Encoding pure values
 function hashKeyValue(key, value) {
-    return quoteString(key) + ": " + quoteValueByType(value);
+    return quoteString(key) + ": " + encodeValueRecursively(value);
+}
+
+function encodeValueRecursively(value) {
+    if (value === null || value === undefined) {
+        return "null";
+    }
+    
+    if (typeof value === "string") {
+        return quoteString(value);
+    }
+    
+    if (typeof value === "number" || typeof value === "boolean") {
+        return value.toString();
+    }
+    
+    if (value.constructor && value.constructor === Array) {
+        return encodeArray(value);
+    }
+    
+    if (typeof value === "object") {
+        // Handle objects that are already symbols
+        if (value.type_name && value.value) {
+            return encodeValueSymbolByType(value);
+        }
+        
+        // Convert regular objects to hash entries
+        var entries = [];
+        for (var key in value) {
+            if (value.hasOwnProperty(key)) {
+                entries.push([key, value[key]]);
+            }
+        }
+        return anonymousHashSymbol(entries).value;
+    }
+    
+    return value;
+}
+
+function encodeArray(arr) {
+    var array_items = map(arr, function(item) {
+        return encodeValueRecursively(item);
+    });
+    return "[" + array_items.join(",") + "]";
 }
 
 function quoteValueByType(value) {
-    if (typeof(value) == "string") {
-        return quoteString(value);
-    } else {
-        return value;
-    }
+    return encodeValueRecursively(value);
 }
 
 function quoteString(str) {
@@ -117,4 +184,4 @@ function sendScriptToPhotoshop(script_text) {
     
     // Synchroneous send, timeout in seconds.
     bridgetalk.send(60); 
-} 
+}
