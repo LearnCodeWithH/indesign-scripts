@@ -6,9 +6,10 @@
  */
 
 #target indesign
-#include './framework/TestFramework.jsx'
-#include '../lib/bridgetalk/BridgeTalk.jsx'
-#include '../lib/Functional.jsx'
+#include './framework/TestFramework.jsx';
+#include '../lib/File.jsx';
+#include '../lib/bridgetalk/BridgeTalk.jsx';
+#include '../lib/Functional.jsx';
 
 // Create a test runner with file logging
 var runner = createTestRunner({
@@ -294,4 +295,3 @@ runner.addTest("Test readFileForScript function", function(test) {
 
 // Run all tests
 runner.runTests();
-

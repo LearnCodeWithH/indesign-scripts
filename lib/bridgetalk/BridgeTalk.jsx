@@ -137,7 +137,9 @@ function quoteValueByType(value) {
 }
 
 function quoteString(str) {
-    return "\"" + str + "\""
+    // Replace any quotes in the string with escaped quotes
+    var escapedStr = str.toString().replace(/\"/g, "\\\"");
+    return "\"" + escapedStr + "\"";
 }
 
 // Encoding Symbols
