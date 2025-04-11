@@ -139,7 +139,7 @@ function main() {
         outputStitchedScript(full_script_text, doc.filePath);
     }
 
-    sendScriptToPhotoshop(full_script_text);
+    // sendScriptToPhotoshop(full_script_text);
 
 }
 

@@ -2,6 +2,7 @@
 // Bridgetalk requires building the script sent for execution as a string.
 
 #include '../Functional.jsx';
+#include '../DebugFileLogger.jsx';
 
 function readFileForScript(full_file_path) {
     var script_utf8 = usingFile(new File(full_file_path), "r", function(script_file) {
@@ -58,6 +59,7 @@ function anonymousHashArraySymbol(array_of_objects) {
         var entries = [];
         for (var key in obj) {
             if (obj.hasOwnProperty(key)) {
+                DebugLogger.write("anonymousHashArraySymbol => " + key + ": " + obj[key]);
                 entries.push([key, obj[key]]);
             }
         }
@@ -91,22 +93,27 @@ function hashKeyValue(key, value) {
 
 function encodeValueRecursively(value) {
     if (value === null || value === undefined) {
+        DebugLogger.write("encodeValueRecursively => null or undefined value");
         return "null";
     }
     
     if (typeof value === "string") {
+        DebugLogger.write("encodeValueRecursively => string value: " + value);
         return quoteString(value);
     }
     
     if (typeof value === "number" || typeof value === "boolean") {
+        DebugLogger.write("encodeValueRecursively => number or boolean value: " + value);
         return value.toString();
     }
     
     if (value.constructor && value.constructor === Array) {
+        DebugLogger.write("encodeValueRecursively => array value: " + value);
         return encodeArray(value);
     }
     
     if (typeof value === "object") {
+        DebugLogger.write("encodeValueRecursively => object value: " + value);
         // Handle objects that are already symbols
         if (value.type_name && value.value) {
             return encodeValueSymbolByType(value);
@@ -116,6 +123,7 @@ function encodeValueRecursively(value) {
         var entries = [];
         for (var key in value) {
             if (value.hasOwnProperty(key)) {
+                DebugLogger.write("encodeValueRecursively => object key: " + key + ", value: " + value[key]);
                 entries.push([key, value[key]]);
             }
         }

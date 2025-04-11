@@ -3,6 +3,14 @@ Collection of ID scripts for scanlations
 
 ## Installation
 
+### Automatic Installation
+
+Run the [CopyScriptsToIndesign.bat](./CopyScriptsToIndesign.bat) script. Only works for InDesign 2018-2024 versions.
+
+The scripts will be available under `indesign-scripts` folder in the InDesign scripts panel window.
+
+### Manual Installation
+
 * Open InDesign.
 * Open the scripts panel window.
 
