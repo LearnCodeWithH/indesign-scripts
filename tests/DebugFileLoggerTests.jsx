@@ -159,26 +159,56 @@ runner.addTest("Test write function", function(test) {
     test.assertTrue(timestampPattern.test(content), "Log should include properly formatted timestamp");
 });
 
-// Test writing messages with special characters
+// Test writing messages with special characters - write function should NOT escape whitespace
 runner.addTest("Test write function with special characters", function(test) {
     // Write a message with newlines and tabs
     var specialMessage = "Line 1\nLine 2\tTabbed";
     testLogger.write(specialMessage);
     
-    // Verify the message was escaped properly
+    // Verify the message was NOT escaped in the log file
     var content = readFileContents(testLogFile);
-    alert(content);
-    test.assertTrue(content.indexOf("Line 1\\nLine 2\\tTabbed") !== -1, 
-        "Log file should contain the message with escaped whitespace characters");
+    
+    // The content should contain the raw message with actual newlines and tabs
+    // We expect the message to appear as-is, not escaped
+    test.assertTrue(content.indexOf("Line 1\nLine 2\tTabbed") !== -1, 
+        "Log file should contain the message with actual whitespace characters, not escaped");
     
     // Test with other special characters
     var moreSpecial = "Quote \"test\" and \\ backslash";
     testLogger.write(moreSpecial);
     
     content = readFileContents(testLogFile);
-    alert(content);
-    test.assertTrue(content.indexOf("Quote \"test\" and \\ backslash") !== -1, 
-        "Log file should not escape quotes and backslashes");
+    test.assertTrue(content.indexOf(moreSpecial) !== -1, 
+        "Log file should contain special characters as-is");
+});
+
+// Test writeObject function with special characters - should escape properly
+runner.addTest("Test writeObject with whitespace characters", function(test) {
+    // Test that whitespace characters are properly escaped in object values
+    var objWithWhitespace = {
+        withNewline: "text\nwith newline",
+        withTab: "text\twith tab",
+        withReturn: "text\rwith return"
+    };
+    
+    // The prefix should not be escaped
+    var unescapedPrefix = "Prefix with\nnewline";
+    testLogger.writeObject(unescapedPrefix, objWithWhitespace);
+    
+    // Verify the output
+    var content = readFileContents(testLogFile);
+    
+    // The prefix should not be escaped in the log
+    test.assertTrue(content.indexOf(unescapedPrefix + ":") !== -1, 
+        "Log should contain unescaped prefix string");
+    
+    // But object values should be escaped
+    test.assertTrue(content.indexOf("text\\nwith newline") !== -1, 
+        "Newlines in object values should be escaped");
+    test.assertTrue(content.indexOf("text\\twith tab") !== -1, 
+        "Tabs in object values should be escaped");
+    test.assertTrue(content.indexOf("text\\rwith return") !== -1, 
+        "Carriage returns in object values should be escaped");
 });
 
 // Test writeObject function with primitive types

@@ -32,18 +32,18 @@ function anonymousHashSymbol(hash_entries_array) {
     var hash_left = "{";
     var hash_right = "}";
     try {
-    var hash_entries_block = map(hash_entries_array, function(entry) {
-        var key = entry[0];
-        var value = entry[1];
-        return hashKeyValue(key, value);
-    }).join(',');
-    
-    return {
-        type_name: "hashmap",
-        value: hash_left + hash_entries_block + hash_right
-    };
-    }
-    catch (e) {
+        
+        var hash_entries_block = map(hash_entries_array, function(entry) {
+            var key = entry[0];
+            var value = entry[1];
+            return hashKeyValue(key, value);
+        }).join(',');
+
+        return {
+            type_name: "hashmap",
+            value: hash_left + hash_entries_block + hash_right
+        };
+    } catch (e) {
         alert(e);
         alert("Error for " + hash_entries_array);
     }
@@ -53,19 +53,19 @@ function anonymousHashSymbol(hash_entries_array) {
 function anonymousHashArraySymbol(array_of_objects) {
     var array_left = "[";
     var array_right = "]";
-    
-    var hash_array_block = map(array_of_objects, function(obj) {
-        // For each object in the array, convert it to a hash representation
+
+    var hash_array_block = map(array_of_objects, function(obj) {        
         var entries = [];
         for (var key in obj) {
             if (obj.hasOwnProperty(key)) {
-                DebugLogger.write("anonymousHashArraySymbol => " + key + ": " + obj[key]);
+                
                 entries.push([key, obj[key]]);
             }
         }
-        return anonymousHashSymbol(entries).value;
+        var test = anonymousHashSymbol(entries);
+        return test.value;
     }).join(',');
-    
+
     return {
         type_name: "array",
         value: array_left + hash_array_block + array_right
@@ -93,27 +93,27 @@ function hashKeyValue(key, value) {
 
 function encodeValueRecursively(value) {
     if (value === null || value === undefined) {
-        DebugLogger.write("encodeValueRecursively => null or undefined value");
+        
         return "null";
     }
     
     if (typeof value === "string") {
-        DebugLogger.write("encodeValueRecursively => string value: " + value);
+        
         return quoteString(value);
     }
     
     if (typeof value === "number" || typeof value === "boolean") {
-        DebugLogger.write("encodeValueRecursively => number or boolean value: " + value);
+        
         return value.toString();
     }
     
     if (value.constructor && value.constructor === Array) {
-        DebugLogger.write("encodeValueRecursively => array value: " + value);
+        
         return encodeArray(value);
     }
     
     if (typeof value === "object") {
-        DebugLogger.write("encodeValueRecursively => object value: " + value);
+        
         // Handle objects that are already symbols
         if (value.type_name && value.value) {
             return encodeValueSymbolByType(value);
@@ -123,12 +123,13 @@ function encodeValueRecursively(value) {
         var entries = [];
         for (var key in value) {
             if (value.hasOwnProperty(key)) {
-                DebugLogger.write("encodeValueRecursively => object key: " + key + ", value: " + value[key]);
+                
                 entries.push([key, value[key]]);
             }
         }
         return anonymousHashSymbol(entries).value;
     }
+    
     
     return value;
 }

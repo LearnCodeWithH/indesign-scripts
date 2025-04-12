@@ -10,16 +10,20 @@ function foldLeft(initial, obj, func) {
 }
 
 function map(obj, func) {
-  var result = [], index;
-  for (index = 0, length = obj.length; index < length; index++) {
+  var result = [];
+  var length = obj.length;
+  var index;
+  for (index = 0; index < length; index++) {
     result.push(func(obj[index]));
   }
   return result;
 }
 
 function map_with_index(obj, func) {
-  var result = [], index;
-  for (index = 0, length = obj.length; index < length; index++) {
+  var result = [];
+  var length = obj.length;
+  var index;
+  for (index = 0; index < length; index++) {
     result.push(func(obj[index], index));
   }
   return result;
@@ -40,8 +44,10 @@ function each_with_index(obj, func) {
 }
 
 function filter(obj, func) {
-  var result = [], index;
-  for (index = 0, length = obj.length; index < length; index++) {
+  var result = [];
+  var length = obj.length;
+  var index;
+  for (index = 0; index < length; index++) {
     if (func(obj[index])) {
       result.push(obj[index]);
     }
@@ -50,8 +56,10 @@ function filter(obj, func) {
 }
 
 function first(obj, func) {
-  var result = null, index;
-  for (index = 0, length = obj.length; index < length; index++) {
+  var result = null;
+  var length = obj.length;
+  var index;
+  for (index = 0; index < length; index++) {
     if (func(obj[index])) {
       result = obj[index], index;
       break;

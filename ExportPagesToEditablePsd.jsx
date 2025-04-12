@@ -48,16 +48,20 @@ function main() {
 
             var fontInfo = "";
             if (range.appliedFont) {
-                fontInfo = (typeof range.appliedFont === "string") ? 
-                    range.appliedFont : 
-                    range.appliedFont.fontFamily;
+                if (typeof range.appliedFont === "string") {
+                    fontInfo = range.appliedFont;
+                } else {
+                    fontInfo = range.appliedFont.fontFamily;
+                }
             }
 
             var fillColorInfo = "";
             if (range.fillColor) {
-                fillColorInfo = (typeof range.fillColor === "string") ? 
-                    range.fillColor : 
-                    range.fillColor.name;
+                if (typeof range.fillColor === "string") {
+                    fillColorInfo = range.fillColor;
+                } else {
+                    fillColorInfo = range.fillColor.name;
+                }
             }
 
             var kerningValue = "";
@@ -85,12 +89,13 @@ function main() {
 
         var frameFillColor = "None";
         if (frame.fillColor) {
-            frameFillColor = (typeof frame.fillColor === "string") ? 
-                frame.fillColor : 
-                frame.fillColor.name;
+            if (typeof frame.fillColor === "string") {
+                frameFillColor = frame.fillColor;
+            } else {
+                frameFillColor = frame.fillColor.name;
+            }
         }
 
-        // TODO: Check what is populated in here, then ensure encoding works.
         textData.push({
             bounds: {
                 x: bounds[1],
@@ -107,6 +112,8 @@ function main() {
         });
     }
 
+    DebugLogger.write("textData => " + textData.length + " items");
+
     var script_path = (new File($.fileName)).parent; // Doesnt have trailing backslash.
     var photoshop_lib_script_path = script_path + "/lib/bridgetalk/PhotoshopText.jsx"
     var photoshop_file_script = readFileForScript(photoshop_lib_script_path);
@@ -119,12 +126,14 @@ function main() {
     
     // Add function call with data
     var text_data_hash = anonymousHashArraySymbol(textData);
+    DebugLogger.writeObject("text_data_hash => ", text_data_hash);
     var args_symbol_array = [
         text_data_hash,
         stringSymbol(currentPage.bounds[3] - currentPage.bounds[1]),
         stringSymbol(currentPage.bounds[2] - currentPage.bounds[0]),
         stringSymbol(72)
     ];
+    DebugLogger.writeObject("args_symbol_array => ", args_symbol_array);
     var ps_script_call = buildFunctionCallForScript("createTextLayersFromData", args_symbol_array);
 
     // Send to Photoshop
@@ -135,6 +144,7 @@ function main() {
         ps_script_call
         ]);
 
+    DebugLogger.write("full_script_text => \n" + full_script_text);
     if (true) {
         outputStitchedScript(full_script_text, doc.filePath);
     }

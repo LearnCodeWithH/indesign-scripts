@@ -72,11 +72,7 @@ function createDebugLogger(filename, baseFolderPath) {
             var timestamp = "[" + timeString(now) + "] ";
             
             // Escape any newlines or special characters in the message
-            var escapedMessage = message;
-            if (typeof message === "string") {
-                escapedMessage = escapeString(message);
-            }
-            var logMessage = timestamp + escapedMessage;
+            var logMessage = timestamp + message;
             
             logFile.writeln(logMessage);
             // Flush immediately for debugging
