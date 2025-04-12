@@ -53,9 +53,7 @@ function exportPdfPages(open_pdf_file, pdf_open_options, color_profile, save_fil
         } finally {
             working_doc.close(SaveOptions.DONOTSAVECHANGES);
         }
-    }
-
-    
+    }    
 };
 
 // Based on script from https://github.com/antipalindrome/Photoshop-Export-Layers-to-Files-Fast

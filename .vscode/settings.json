@@ -1,9 +1,0 @@
-{
-    "extendscript.targetEngine": "indesign-17.0",
-    "extendscript.hostAppSpecifier": "indesign",
-    "extendscript.debugLevel": 1,
-    "extendscript.defaultEvalEngine": "indesign",
-    "extendscript.jsxbin.enabled": false,
-    "javascript.validate.enable": false,
-    "typescript.validate.enable": false
-}

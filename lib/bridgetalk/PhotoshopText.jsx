@@ -1,6 +1,7 @@
 // Functions in this file are meant to be used in Photoshop usually via Bridgetalk.
 // Any external functions will need to be stitched together with this into one large script file.
 
+// Requires stitching "lib/File.jsx" when running through Bridgetalk
 // Requires stitching "lib/Datetime.jsx" when running through Bridgetalk
 
 // Utf-8 test: 漢字
@@ -81,6 +82,7 @@ function createTextLayersFromData(textData, docWidth, docHeight, docDpi) {
             }
         } catch(e) {
             // Handle any errors in text styling
+            alert("Error applying text styles: " + e.message);
         }
     }
 }
