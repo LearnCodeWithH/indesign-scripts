@@ -3,3 +3,4 @@ tests/**/logs
 tests/**/temp_test
 node_modules
 *.log
+.vscode/settings.json
