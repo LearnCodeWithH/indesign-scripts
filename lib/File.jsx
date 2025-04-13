@@ -22,6 +22,35 @@ function resolveFileThroughAliases(file) {
     return file;
 }
 
+
+// Performs operations on a document and restores it to its original state afterwards
+function transientDocumentScope(doc, func) {
+    // Ensure the document is active
+    if (!doc.isValid) {
+        throw new Error("Document is not valid");
+    }
+    
+    // Store document path for reopening
+    var docPath = doc.fullName;
+    
+    try {
+        // Save document before operations
+        doc.save();
+        // Execute the provided function with document
+        return func(doc);
+    } catch (error) {
+        // Log error but continue with document handling
+        alert("Error in document operation: " + error);
+        throw error;
+    } finally {
+        // Close without saving any changes made during operations
+        doc.close(SaveOptions.NO);
+        
+        // Reopen the document to return to original state
+        app.open(docPath);
+    }
+}
+
 function getPdfPageCount(the_pdf_file) {
     // Avoid infinite loop, once past 9999 lines, we're probably not in a pdf file.
     var overflow = 0;

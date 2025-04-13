@@ -7,112 +7,60 @@
 #include './lib/Datetime.jsx'
 #include './lib/Functional.jsx';
 #include './lib/File.jsx'
+#include './lib/Text.jsx'
 
 main();
 function main() {
-    if (!app.documents.length) {
-        alert("No documents open.");
-        return;
-    }
+    scriptRunScope(function() {
+        requireDocument();
+        requirePage(app.activeDocument);
 
-    var doc = app.activeDocument;
-    var currentPage = doc.layoutWindows[0].activePage;
-    var currentLayer = doc.activeLayer;
+        var doc = app.activeDocument;
 
-    // Get all text frames on current page and layer
-    var textFrames = [];
-    for (var i = 0; i < currentPage.textFrames.length; i++) {
-        var frame = currentPage.textFrames[i];
-        if (frame.itemLayer === currentLayer) {
-            textFrames.push(frame);
-        }
-    }
+        transientDocumentScope(doc, function(doc) {
 
-    if (!textFrames.length) {
-        alert("No text frames found on current page and layer.");
-        return;
-    }
+            // Go through each layer and move all text frames to their own layer.
+            // Disable all text frame layers
+            // Export each individual non text frame layer to a separate pdf file
 
-    // Collect text frame data with detailed formatting
-    var textData = [];
-    for (var i = 0; i < textFrames.length; i++) {
-        var frame = textFrames[i];
-        var bounds = frame.geometricBounds; // [y1, x1, y2, x2]
-        
-        // Collect style runs for each text frame
-        var styleRuns = [];
-        var story = frame.parentStory;
-        
-        for (var j = 0; j < story.textStyleRanges.length; j++) {
-            var range = story.textStyleRanges[j];
+            var default_file_location = doc.filePath;
 
-            var fontInfo = "";
-            if (range.appliedFont) {
-                if (typeof range.appliedFont === "string") {
-                    fontInfo = range.appliedFont;
-                } else {
-                    fontInfo = range.appliedFont.fontFamily;
+            var pdf_save_file = requireSaveFileViaDialogue("Choose a location to save to Pdf.", "Pdf files:*.pdf", default_file_location);
+
+            // pdf_save_file has the file path
+            // /c/Program%20Files/Adobe/Adobe%20InDesign%20CC%202018/Resources/Adobe%20PDF/settings/mul/High%20Quality%20Print.joboptions
+            // Sets dialog to first preset.
+            export_preset = app.pdfExportPresets[0];
+            active_doc.exportFile(ExportFormat.INTERACTIVE_PDF, pdf_save_file, true, export_preset);
+
+
+            var currentPage = doc.layoutWindows[0].activePage;
+            var currentLayer = doc.activeLayer;
+
+            // Get all text frames on current page and layer
+            var textFrames = [];
+            for (var i = 0; i < currentPage.textFrames.length; i++) {
+                var frame = currentPage.textFrames[i];
+                if (frame.itemLayer === currentLayer) {
+                    textFrames.push(frame);
                 }
             }
 
-            var fillColorInfo = "";
-            if (range.fillColor) {
-                if (typeof range.fillColor === "string") {
-                    fillColorInfo = range.fillColor;
-                } else {
-                    fillColorInfo = range.fillColor.name;
-                }
-            }
+            var textData = parseTextDataFromTextFrames(textFrames);
 
-            var kerningValue = "";
-            if (range.kerningMethod === "None") {
-                // KerningValue can't be accessed for Optical or Metrics
-                kerningValue = range.kerningValue;
-            }
-            
-            styleRuns.push({
-                text: range.contents,
-                fontFamily: fontInfo,
-                fontStyle: range.fontStyle,
-                pointSize: range.pointSize,
-                leading: range.leading,
-                tracking: range.tracking,
-                fillColor: fillColorInfo,
-                horizontalScale: range.horizontalScale,
-                verticalScale: range.verticalScale,
-                baselineShift: range.baselineShift,
-                kerningMethod: range.kerningMethod,
-                kerning: kerningValue,
-                justification: range.justification.toString()
-            });
+            DebugLogger.write("textData => " + textData.length + " items");
+
+            processPhotoshopScript(doc, textData, currentPage);
         }
 
-        var frameFillColor = "None";
-        if (frame.fillColor) {
-            if (typeof frame.fillColor === "string") {
-                frameFillColor = frame.fillColor;
-            } else {
-                frameFillColor = frame.fillColor.name;
-            }
-        }
+    });
+}
 
-        textData.push({
-            bounds: {
-                x: bounds[1],
-                y: bounds[0],
-                width: bounds[3] - bounds[1],
-                height: bounds[2] - bounds[0]
-            },
-            styleRuns: styleRuns,
-            frameRotation: frame.rotationAngle,
-            skew: frame.shearAngle,
-            strokeWeight: frame.strokeWeight,
-            strokeColor: frame.strokeColor.name,
-            fillColor: frameFillColor
-        });
-    }
-
-    DebugLogger.write("textData => " + textData.length + " items");
+function processPhotoshopScript(doc, textData, currentPage) {
+    // Import the pdf files into Photoshop
+    // Make a photoshop layer for each pdf and order the layers
+    // Make a layer group representing the text frame layer
+    // Import the text frame data from the layer and put the text layer in the appropriate text layer group.
 
     var script_path = (new File($.fileName)).parent; // Doesnt have trailing backslash.
     var photoshop_lib_script_path = script_path + "/lib/bridgetalk/PhotoshopText.jsx"
@@ -150,7 +98,6 @@ function main() {
     }
 
     // sendScriptToPhotoshop(full_script_text);
-
 }
 
 function outputStitchedScript(full_script_text, default_file_location) {

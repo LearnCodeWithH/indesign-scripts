@@ -5,6 +5,7 @@
 
 const MSG_ACTIVE_SPREAD_NO_ITEMS = "The active spread does not contain any page items.";
 const MSG_NO_DOCUMENT_OPEN = "No documents are open. Please open a document and try again.";
+const MSG_NO_PAGES_IN_DOCUMENT = "No pages exist in current document. Please add a page and try again.";
 const MSG_NO_GRAPHIC_IN_SELECTED = "No graphics found on selected page and layer. Please select a page and layer with a graphic in it and try again.";
 const MSG_NO_ITEM_SELECTED = "No item selected. Please select an item and try again.";
 const MSG_FILE_CANCELLED = "File cancelled. Please specify a file and try again.";
@@ -71,5 +72,43 @@ function ensureSaveFileViaDialogue(file_prompt, file_filter, default_file_locati
     }
     else {
         alert(MSG_FILE_CANCELLED);
+    }
+}
+
+function scriptRunScope(func) {
+    try {
+        return func();
+    } catch (error) {
+        alert(error.message);
+    }
+}
+
+function requireDocument() {
+    if (app.documents.length <= 0){
+		throw new Error(MSG_NO_DOCUMENT_OPEN);
+	}
+}
+
+function requirePage(doc) {
+    if (doc.pages.length <= 0){
+        throw new Error(MSG_NO_PAGES_IN_DOCUMENT);
+    }
+}
+
+function requireSaveFileViaDialogue(file_prompt, file_filter, default_file_location, func) {
+    save_file = null;
+    if (default_file_location !== null) {
+        default_file_location = resolveFileThroughAliases(default_file_location);        
+        save_file = default_file_location.saveDlg(file_prompt, file_filter);
+    }
+    else {
+        save_file = File.saveDialog(file_prompt, file_filter);
+    }
+
+    if (save_file !== null){
+        return save_file;
+    }
+    else {
+        throw new Error(MSG_FILE_CANCELLED);
     }
 }

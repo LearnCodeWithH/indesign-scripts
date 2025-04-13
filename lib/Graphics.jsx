@@ -94,3 +94,32 @@ function getAllGraphicsInLayer(graphics, layer) {
         return graphic.itemLayer === layer;
     })
 }
+
+/**
+ * Makes only the specified layer visible in the document
+ * @param {Document} doc - The InDesign document
+ * @param {Layer} targetLayer - The layer to keep visible
+ */
+function disableAllOtherLayers(doc, targetLayer) {
+    if (!doc || !doc.isValid) {
+        throw new Error("Invalid document provided");
+    }
+    
+    if (!targetLayer || !targetLayer.isValid) {
+        throw new Error("Invalid layer provided");
+    }
+    
+    // Go through all layers in the document
+    for (var i = 0; i < doc.layers.length; i++) {
+        var layer = doc.layers[i];
+        
+        // Skip the target layer
+        if (layer === targetLayer) {
+            layer.visible = true;
+            continue;
+        }
+        
+        // Hide all other layers
+        layer.visible = false;
+    }
+}
