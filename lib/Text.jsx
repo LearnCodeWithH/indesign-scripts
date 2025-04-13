@@ -82,6 +82,22 @@ function parseTextDataFromTextFrames(textFrames) {
     return textData;
 }
 
+function getTextFramesFromLayer(layer, pages) {
+    var textFrames = [];
+    for (var i = 0; i < pages.length; i++) {
+        var page = pages[i];
+        
+        // Collect all text frames on this page from the layer
+        for (var j = 0; j < page.textFrames.length; j++) {
+            var frame = page.textFrames[j];
+            if (frame.itemLayer === layer) {
+                textFrames.push(frame);
+            }
+        }
+    }
+    return textFrames;
+}
+
 /**
  * Moves all text frames from the specified layer to a new layer on the given pages
  * @param {Layer} sourceLayer - The layer containing text frames to move

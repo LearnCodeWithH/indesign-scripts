@@ -40,7 +40,6 @@ function main(){
 function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
     var full_script_text = createScriptText(pdf_file, active_doc);
 
-    
     var included_config = import_pdf_as_psd_config; // From 'ImportPdfAndExportPages.config.js'
     if (included_config["write_debug_bridgetalk_script"] === true) {
         outputStitchedScript(full_script_text, active_doc.filePath);
