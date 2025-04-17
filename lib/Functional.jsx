@@ -67,3 +67,16 @@ function first(obj, func) {
   }
   return result;
 }
+
+function any(obj, func) {
+  var result = false;
+  var length = obj.length;
+  var index;
+  for (index = 0; index < length; index++) {
+    if (func(obj[index])) {
+      result = true;
+      break;
+    }
+  }
+  return result;
+}

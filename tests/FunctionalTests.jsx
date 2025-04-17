@@ -117,4 +117,37 @@ runner.addTest("each_with_index should iterate with indices", function(runner) {
     runner.assertEquals(["x0", "y1", "z2"].toString(), result.toString(), "each_with_index did not iterate with indices correctly");
 });
 
+runner.addTest("any should return true if any element satisfies the condition", function(runner) {
+    var result = any([1, 2, 3, 4], function(value) {
+        return value > 3;
+    });
+    runner.assertTrue(result, "any did not return true when one element satisfied the condition");
+});
+
+runner.addTest("any should return false if no element satisfies the condition", function(runner) {
+    var result = any([1, 2, 3, 4], function(value) {
+        return value > 10;
+    });
+    runner.assertFalse(result, "any did not return false when no element satisfied the condition");
+});
+
+runner.addTest("any should handle an empty array", function(runner) {
+    var result = any([], function(value) {
+        return value > 0;
+    });
+    runner.assertFalse(result, "any did not handle empty array correctly");
+});
+
+runner.addTest("any should handle an array with one item", function(runner) {
+    var result = any([5], function(value) {
+        return value > 0;
+    });
+    runner.assertTrue(result, "any did not handle single-item array correctly when condition is true");
+    
+    result = any([5], function(value) {
+        return value > 10;
+    });
+    runner.assertFalse(result, "any did not handle single-item array correctly when condition is false");
+});
+
 runner.runTests();

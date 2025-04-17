@@ -123,3 +123,12 @@ function disableAllOtherLayers(doc, targetLayer) {
         layer.visible = false;
     }
 }
+
+function setLosslessPdfPreset(preset) {
+    preset.colorBitmapCompression = BitmapCompression.NONE;
+    preset.colorBitmapSampling = Sampling.NONE;
+    preset.grayscaleBitmapCompression = BitmapCompression.NONE;
+    preset.grayscaleBitmapSampling = Sampling.NONE;
+    preset.monochromeBitmapCompression = BitmapCompression.NONE;
+    preset.monochromeBitmapSampling = Sampling.NONE;   
+}

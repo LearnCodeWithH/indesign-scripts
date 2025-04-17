@@ -4,9 +4,9 @@
 
 #target indesign
 #include './lib/bridgetalk/BridgeTalk.jsx'
+#include './lib/Validations.jsx'
+#include './lib/Graphics.jsx'
 #include './lib/Datetime.jsx'
-#include './lib/Functional.jsx';
-#include './lib/File.jsx'
 #include './lib/Text.jsx'
 
 // Config must be fed from ID side script as PS does not have access to read files ID has access to.
@@ -22,9 +22,11 @@ function main() {
 
         transientDocumentScope(doc, function(doc) {
             var currentPage = doc.layoutWindows[0].activePage;
-            var pages = [currentPage];
-            // var pages = doc.pages;
-            var [textLayers, contentLayers] = splitTextAndContentLayers(doc.layers, pages);
+            // var pages = [currentPage];
+            var pages = doc.pages;
+            var result = splitTextAndContentLayers(doc.layers, pages);
+            var textLayers = result[0];
+            var contentLayers = result[1];
             
             var layerInfo = [];
             for (var i = 0; i < doc.layers.length; i++) {
@@ -37,9 +39,31 @@ function main() {
             // user_save_file has the file path
             // /c/Program%20Files/Adobe/Adobe%20InDesign%20CC%202018/Resources/Adobe%20PDF/settings/mul/High%20Quality%20Print.joboptions
             var pdf_export_folder = new Folder(user_save_file.path);
+            
+            // Create Pages directory and subdirectories for each page
+            var pages_folder = new Folder(pdf_export_folder + "/Pages");
+            if (!pages_folder.exists) {
+                pages_folder.create();
+            }
+            
+            // Create numbered page subdirectories
+            for (var p = 0; p < pages.length; p++) {
+                var page_num = pages[p].name;
+                var page_folder = new Folder(pages_folder + "/" + page_num);
+                if (!page_folder.exists) {
+                    page_folder.create();
+                }
+            }
 
             // Sets dialog to first preset.
             var export_preset = app.pdfExportPresets[0];
+            // Duplicate the preset and modify it for single page export
+            var modified_preset = export_preset.duplicate();
+            modified_preset.exportAsSinglePages = true;
+            modified_preset.singlePagesPDFSuffix = "_^P"; // _^P is the default suffix for single page exports in InDesign. This is used to identify the pages in the PDF file names.
+            setLosslessPdfPreset(modified_preset);
+            DebugLogger.writeObject("modified_preset => ", modified_preset, 2);
+            DebugLogger.writeObject("modified_preset file => ", modified_preset.fullName, 2);
 
             // Get InDesign file name without extension for PDF naming
             var docName = doc.name;
@@ -47,13 +71,14 @@ function main() {
                 docName = docName.substring(0, docName.lastIndexOf("."));
             }
 
+            DebugLogger.writeObject("Doc layers => ", doc.layers, 2);
             var initial_pdf_file = null;
             for (var i = 0; i < doc.layers.length; i++) {
                 var layer = doc.layers[i];
-                if (contentLayers.indexOf(layer) === -1) {
+                if (!any(contentLayers, function(l) { return l === layer; })) {
                     continue; // Skip if not a content layer
                 }
-                var layerOrderNumber = (i + 1).toString().padStart(4, "0"); // Format as 0001, 0002, etc.
+                var layerOrderNumber = zeroPadNumber((i + 1).toString(), 4);
                 var pdfFileName = docName + "_layer-" + layerOrderNumber;
 
                 // Make only this layer visible
@@ -61,7 +86,9 @@ function main() {
                 
                 // Export the PDF
                 var pdf_save_file = new File(pdf_export_folder + "/" + pdfFileName + ".pdf");
-                doc.exportFile(ExportFormat.INTERACTIVE_PDF, pdf_save_file, true, export_preset);
+                // TODO: Save as pages gives the filename without .pdf as a folder and saves the pages in that folder.
+                // Format is "Flow_01.pdf" for "_^P" suffix.
+                doc.exportFile(ExportFormat.INTERACTIVE_PDF, pdf_save_file, false, modified_preset);
                 
                 if (initial_pdf_file == null) {
                     initial_pdf_file = pdf_save_file.fullName; // Store the first PDF file
@@ -72,14 +99,39 @@ function main() {
                     name: layer.name,
                     layerType: "content",
                     orderIndex: i,
-                    pdfFileName: pdfFileName + ".pdf"
+                    pdfFileName: pdfFileName + ".pdf",
                     pdfFileFullPath: pdf_save_file.fullName
                 };
+                
+                // Move single page PDFs to their respective page folders
+                // Check if there are multiple pages in the PDF
+                // TODO: Single pages are already under the folders, rework this
+                var pageCount = getPdfPageCount(pdf_save_file);
+                if (pageCount > 0) {
+                    // Move PDF files to appropriate page folders
+                    for (var j = 0; j < pageCount; j++) {
+                        // The page number in the file name (1-based)
+                        var pageIndex = j + 1;
+                        // Find the corresponding page to get the correct folder name
+                        var pageNumber = (j < pages.length) ? pages[j].name : pageIndex.toString();
+                        var pageFolderPath = pages_folder + "/" + pageNumber;
+                        
+                        // Original single page PDF file (created by exportAsSinglePages = true)
+                        var singlePageFile = new File(pdf_export_folder + "/" + pdfFileName + "_" + pageIndex + ".pdf");
+                        
+                        // Move to the appropriate page folder if it exists
+                        if (singlePageFile.exists) {
+                            var destinationFile = new File(pageFolderPath + "/" + pdfFileName + "_" + pageIndex + ".pdf");
+                            singlePageFile.copy(destinationFile);
+                            singlePageFile.remove();
+                        }
+                    }
+                }
             }
 
             for (var i = 0; i < doc.layers.length; i++) {
                 var layer = doc.layers[i];
-                if (textLayers.indexOf(layer) === -1) {
+                if (!any(textLayers, function(l) { return l === layer; })) {
                     continue; // Skip if not a text layer
                 }
 
@@ -96,24 +148,32 @@ function main() {
 
             DebugLogger.write("textData => " + textData.length + " items");
 
-            processPhotoshopScript(doc, layerInfo, pages, initial_pdf_file);
-        }
-
+            // Clean up the duplicate preset
+            modified_preset.remove();
+            
+            // processPhotoshopScript(doc, layerInfo, pages, initial_pdf_file);
+        });
     });
 }
 
 function splitTextAndContentLayers(layers, pages) {
     var textLayers = [];
     var contentLayers = [];
-    
-    // Process each layer
+
+    // Hold layers to be processed since document layers will be added to.
+    var processLayers = [];
     for (var i = 0; i < layers.length; i++) {
         var layer = layers[i];
-        
         // Skip hidden or locked layers
         if (!layer.visible || layer.locked) {
             continue;
         }
+        processLayers.push(layer);
+    }
+    
+    // Process each layer
+    for (var i = 0; i < processLayers.length; i++) {
+        var layer = processLayers[i];
         
         // Add current layer to content layers
         contentLayers.push(layer);
@@ -174,17 +234,4 @@ function processPhotoshopScript(doc, layerInfo, pages, initialPdfFile) {
     }
 
     // sendScriptToPhotoshop(full_script_text);
-}
-
-function outputStitchedScript(full_script_text, default_file_location) {
-    var stitched_script_file = new File(default_file_location + "/stitched_script.jsx");
-    if (stitched_script_file.exists) {
-        stitched_script_file.remove();
-    }
-
-    // Need to specify encoding in case of unicode in script
-    stitched_script_file.encoding = "UTF-8";
-    usingFile(stitched_script_file, "w", function(file) {
-        return file.write(full_script_text);
-    });
 }

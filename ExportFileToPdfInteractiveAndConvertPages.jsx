@@ -54,19 +54,6 @@ function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
     }
 }
 
-function outputStitchedScript(full_script_text, default_file_location) {
-    var stitched_script_file = new File(default_file_location + "/stitched_script.jsx");
-    if (stitched_script_file.exists) {
-        stitched_script_file.remove();
-    }
-
-    // Need to specify encoding in case of unicode in script
-    stitched_script_file.encoding = "UTF-8";
-    usingFile(stitched_script_file, "w", function(file) {
-        return file.write(full_script_text);
-    });
-}
-
 function createScriptText(pdf_file, active_doc) {
      //the doc profiles sent to PS
     var rgbProf = active_doc.rgbProfile;

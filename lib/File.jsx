@@ -43,11 +43,11 @@ function transientDocumentScope(doc, func) {
         alert("Error in document operation: " + error);
         throw error;
     } finally {
-        // Close without saving any changes made during operations
-        doc.close(SaveOptions.NO);
+        // // Close without saving any changes made during operations
+        // doc.close(SaveOptions.NO);
         
-        // Reopen the document to return to original state
-        app.open(docPath);
+        // // Reopen the document to return to original state
+        // app.open(docPath);
     }
 }
 
@@ -79,3 +79,11 @@ function getPdfPageCount(the_pdf_file) {
 
     return count;
 };
+
+function zeroPadNumber(num, size) {
+    if (size > 20) {
+        throw new Error("Size too large, maximum padding is 20 digits.");
+    }
+    var s = "00000000000000000000" + num;
+    return s.substr(s.length-size);
+}

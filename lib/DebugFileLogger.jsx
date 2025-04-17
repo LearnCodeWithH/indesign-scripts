@@ -158,6 +158,18 @@ function createDebugLogger(filename, baseFolderPath) {
             return;
         }
         
+        // Handle Enumerator values (InDesign/ExtendScript enum values)
+        if (value.constructor && value.constructor.name === "Enumerator") {
+            try {
+                // Simply print the enum value using toString()
+                var enumStr = value.toString();
+                logFile.writeln(indent + "Enum: " + enumStr);
+            } catch (enumError) {
+                logFile.writeln(indent + "Enum: [Error getting enum value: " + enumError.message + "]");
+            }
+            return;
+        }
+        
         // Handle arrays
         if (value instanceof Array) {
             logFile.writeln(indent + "Array[" + value.length + "]:");
