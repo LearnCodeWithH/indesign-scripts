@@ -121,7 +121,7 @@ function moveTextToOwnLayer(sourceLayer, pages) {
     });
     
     // Position the new layer directly above the source layer
-    textLayer.move(LocationOptions.AFTER, sourceLayer);
+    // textLayer.move(LocationOptions.AFTER, sourceLayer);
     
     // Process each page
     for (var i = 0; i < pages.length; i++) {

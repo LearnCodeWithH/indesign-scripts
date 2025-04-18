@@ -2,7 +2,7 @@ import_pdf_as_psd_config = {
     // Modify config options here.
 
     // Outputs the stitched script sent to Photoshop via Bridgetalk
-    write_debug_bridgetalk_script: false,
+    write_debug_bridgetalk_script: true,
 
     // Export pdf pages in the supported formats
     export_psd: true,
