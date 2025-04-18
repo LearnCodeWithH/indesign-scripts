@@ -104,7 +104,7 @@ function getTextFramesFromLayer(layer, pages) {
  * @param {Array} pages - Array of pages to process
  * @return {Layer} The newly created text layer
  */
-function moveTextToOwnLayer(sourceLayer, pages) {
+function moveTextToOwnLayer(doc, sourceLayer, pages) {
     if (!sourceLayer || !sourceLayer.isValid) {
         throw new Error("Invalid source layer provided");
     }
@@ -113,15 +113,12 @@ function moveTextToOwnLayer(sourceLayer, pages) {
         throw new Error("No pages provided for processing");
     }
     
-    var doc = sourceLayer.parent;
-    
     // Create a new layer above the source layer
-    var textLayer = doc.layers.add({
-        name: sourceLayer.name + " (TextFrames)"
-    });
+    var textLayer = doc.layers.add();
+    textLayer.name = sourceLayer.name + " (TextFrames)";
     
     // Position the new layer directly above the source layer
-    // textLayer.move(LocationOptions.AFTER, sourceLayer);
+    textLayer.move(LocationOptions.BEFORE, sourceLayer);
     
     // Process each page
     for (var i = 0; i < pages.length; i++) {

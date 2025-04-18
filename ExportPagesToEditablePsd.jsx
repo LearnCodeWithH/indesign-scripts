@@ -24,7 +24,7 @@ function main() {
             var currentPage = doc.layoutWindows[0].activePage;
             var pages = [currentPage];
             // var pages = doc.pages;
-            var result = splitTextAndContentLayers(doc.layers, pages);
+            var result = splitTextAndContentLayers(doc, doc.layers, pages);
             var textLayers = result[0];
             var contentLayers = result[1];
             
@@ -139,54 +139,61 @@ function main() {
     });
 }
 
-function splitTextAndContentLayers(layers, pages) {
-    var textLayers = [];
-    var contentLayers = [];
-    var splitLayerIndex = 0;
-
+function splitTextAndContentLayers(doc, layers, pages) {
     // Hold layers to be processed since document layers will be added to.
-    var processLayers = [];
-    var processIndex = 0;
-    for (var i = 0; i < layers.length; i++) {
-        var layer = layers[i];
-        // Skip hidden or locked layers
-        if (!layer.visible || layer.locked) {
-            continue;
-        }
-        
-        alert("ProcessLayer 1 " + layer.name);
-        processLayers[processIndex] = layer;
-        processIndex = processIndex + 1;
-    }
-    
-    // Process each layer
-    for (var i = 0; i < processLayers.length; i++) {
-        var layer = processLayers[i];
-        alert("ProcessLayer 2 " + layer.name);
-        
-        // Add current layer to content layers
-        contentLayers[splitLayerIndex] = layer;
-        
+    var processLayers = filter(layers, function(layer) {
+        return layer.visible && !layer.locked;
+    });
+
+    var contentLayerNames = map(processLayers, function(layer) {
+        return layer.name;
+    });
+
+    var textLayerNames = map(contentLayerNames, function(name) {
+        var layer = layers.itemByName(name);
         // Move text frames to their own layer
-        var newTextLayer = moveTextToOwnLayer(layer, pages);
-        textLayers[splitLayerIndex] = newTextLayer;
-        splitLayerIndex = splitLayerIndex + 1;
-    }
+        var newTextLayer = moveTextToOwnLayer(doc, layer, pages);
+        return newTextLayer.name;
+    });
+
+    // The layers seem to be replace inline as doing this by index ends up with duplicate layer names.
+    // Save yourself headache and use layer names to get the layers if you're adding additional layers.
+    var contentLayers = map(contentLayerNames, function(name) {
+        var layer = layers.itemByName(name);
+        return layer;
+    });
+    
+    var textLayers = map(textLayerNames, function(name) {
+        var layer = layers.itemByName(name);
+        return layer;
+    });
     
     return [textLayers, contentLayers];
 }
 
-// TODO: Removed debug log and we're back to Layer 3 only text frames?
 // TODO: Much faster with pageRange, might not need filters anymore.
 // but do them anyway for efficiency?
 // TODO: Do first content layer, then check layers for items and skip
 // Save per page and use folder for layer differentiation
 function hasTextFramesForPage(layer, page) {
-
+    if (!layer.visible || layer.locked) {
+        return false;
+    }
+    
+    return any(page.textFrames, function(frame) {
+        return frame.itemLayer === layer;
+    });
 }
 
 function hasContentForPage(layer, page) {
-
+    if (!layer.visible || layer.locked) {
+        return false;
+    }
+    
+    // Check for any page items on this page from this layer that are not text frames
+    return any(page.pageItems, function(item) {
+        return item.itemLayer === layer && !(item instanceof TextFrame);
+    });
 }
 
 function processPhotoshopScript(doc, layerInfo, pages, initialPdfFile) {
