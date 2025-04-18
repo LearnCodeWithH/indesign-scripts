@@ -43,11 +43,11 @@ function transientDocumentScope(doc, func) {
         alert("Error in document operation: " + error);
         throw error;
     } finally {
-        // // Close without saving any changes made during operations
-        // doc.close(SaveOptions.NO);
+        // Close without saving any changes made during operations
+        doc.close(SaveOptions.NO);
         
-        // // Reopen the document to return to original state
-        // app.open(docPath);
+        // Reopen the document to return to original state
+        app.open(docPath);
     }
 }
 

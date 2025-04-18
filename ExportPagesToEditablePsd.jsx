@@ -22,8 +22,8 @@ function main() {
 
         transientDocumentScope(active_doc, function(doc) {
             var currentPage = doc.layoutWindows[0].activePage;
-            var pages = [currentPage];
-            // var pages = doc.pages;
+            // var pages = [currentPage];
+            var pages = doc.pages;
             var result = splitTextAndContentLayers(doc, doc.layers, pages);
             var textLayers = result[0];
             var contentLayers = result[1];
@@ -33,18 +33,17 @@ function main() {
                 layerInfo.push({});
             }
 
-            var default_file_location = doc.filePath;
-            var user_save_file = requireSaveFileViaDialogue("Choose a folder location to save output Psd files.", "Psd files:*.psd", default_file_location);
-
-            // user_save_file has the file path
-            // /c/Program%20Files/Adobe/Adobe%20InDesign%20CC%202018/Resources/Adobe%20PDF/settings/mul/High%20Quality%20Print.joboptions
-            var pdf_export_folder = new Folder(user_save_file.path);
+            var default_folder_location = doc.filePath.parent;
+            var pdf_export_folder = requireSelectFolderViaDialogue("Choose a folder location to save output Psd files.", default_folder_location);
             
             // Create Pages directory and subdirectories for each page
             var pages_folder = new Folder(pdf_export_folder + "/Pages");
             if (!pages_folder.exists) {
                 pages_folder.create();
             }
+            var page_numbers = map(pages, function(page) {
+                return page.name;
+            });
             
             var page_folders = map(pages, function(page) {
                 var page_num = page.name;
@@ -59,8 +58,8 @@ function main() {
             var export_preset = app.pdfExportPresets[0];
             // Duplicate the preset and modify it for single page export
             var modified_preset = export_preset.duplicate();
-            // modified_preset.exportAsSinglePages = true;
-            // modified_preset.singlePagesPDFSuffix= "_^P";
+            modified_preset.exportAsSinglePages = false;
+            modified_preset.singlePagesPDFSuffix = "";
             setLosslessPdfPreset(modified_preset);
 
             // Get InDesign file name without extension for PDF naming
@@ -70,8 +69,10 @@ function main() {
             }
 
             var globalPdfExport = app.interactivePDFExportPreferences;
+            globalPdfExport.exportAsSinglePages = false;
+            globalPdfExport.singlePagesPDFSuffix = "";
 
-            var initial_pdf_file = null;
+            var doSkipFilterChecks = false;
             for (var i = 0; i < doc.layers.length; i++) {
                 var layer = doc.layers[i];
                 if (!any(contentLayers, function(l) { return l === layer; })) {
@@ -84,20 +85,33 @@ function main() {
 
                 var page_save_files = [];
                 for (var j = 0; j < page_folders.length; j++) {
+                    // Need to include at least one content layer for pixel dimensions.
+                    // Past that, we can check if there are any items that would be exported to the Pdf and skip accordingly.
+                    if (doSkipFilterChecks && !hasContentForPage(layer, pages[j])) {
+                        continue; // Skip if no content on this page
+                    }
+
                     var page_folder = page_folders[j];
-                    var pageOrderNumber = zeroPadNumber((j + 1).toString(), 4);
                     
-                    var pdfFileName = docName + "_layer-" + layerOrderNumber + "_page-" + pageOrderNumber;
+                    var pdfFileName = docName + "_layer-" + layerOrderNumber;
                     
                     var pdf_save_file = new File(page_folder + "/" + pdfFileName + ".pdf");
                     page_save_files[j] = pdf_save_file;
 
                     globalPdfExport.pageRange = (j + 1).toString(); // Set the page range for export
                     doc.exportFile(ExportFormat.INTERACTIVE_PDF, pdf_save_file, false, modified_preset);
-                
-                    if (initial_pdf_file == null) {
-                        initial_pdf_file = pdf_save_file.fullName; // Store the first PDF file
-                    }
+                }
+
+                doSkipFilterChecks = true;
+
+                var pageInfo = [];
+                for (var j = 0; j < page_save_files.length && j < page_numbers.length; j++) {
+                    var pdfPageFile = page_save_files[j];
+                    pageInfo.push({
+                        pageNumber: page_numbers[j],
+                        pdfFileName: pdfPageFile.name,
+                        pdfFullFilePath: pdfPageFile.fullName,
+                    });
                 }
             
                 // Store content layer info for Photoshop processing
@@ -105,8 +119,7 @@ function main() {
                     name: layer.name,
                     layerType: "content",
                     orderIndex: i,
-                    pdfPageFileNames: map(page_save_files, function(file) { return file.name; }),
-                    pdfPageFileFullPaths: map(page_save_files, function(file) { return file.fullName; }),
+                    pageInfo: pageInfo
                 };
             }
 
@@ -116,25 +129,32 @@ function main() {
                     continue; // Skip if not a text layer
                 }
 
-                var textFrames = getTextFramesFromLayer(layer, pages);
-                var textData = parseTextDataFromTextFrames(textFrames);
+                var textFramesByPage = getTextFramesFromLayerByPages(layer, pages);
+
+                var pageTextInfo = map(page_numbers, function(pageNumber) {
+                    var textFrames = textFramesByPage[pageNumber];
+                    var textData = parseTextDataFromTextFrames(textFrames);
+                    return {
+                        pageNumber: pageNumber,
+                        textData: textData
+                    };
+                });
 
                 // Store text layer info for Photoshop processing
                 layerInfo[i] = {
                     name: layer.name,
                     layerType: "text",
                     orderIndex: i,
-                    textData: textData
+                    pageTextInfo: pageTextInfo
                 };
             }
 
-            DebugLogger.writeObject("textData => ", textData);
             DebugLogger.writeObject("layerInfo => ", layerInfo);
 
             // Clean up the duplicate preset
             modified_preset.remove();
             
-            processPhotoshopScript(doc, layerInfo, pages, initial_pdf_file);
+            processPhotoshopScript(doc, layerInfo, pages);
         });
     });
 }
@@ -171,10 +191,6 @@ function splitTextAndContentLayers(doc, layers, pages) {
     return [textLayers, contentLayers];
 }
 
-// TODO: Much faster with pageRange, might not need filters anymore.
-// but do them anyway for efficiency?
-// TODO: Do first content layer, then check layers for items and skip
-// Save per page and use folder for layer differentiation
 function hasTextFramesForPage(layer, page) {
     if (!layer.visible || layer.locked) {
         return false;
@@ -196,7 +212,7 @@ function hasContentForPage(layer, page) {
     });
 }
 
-function processPhotoshopScript(doc, layerInfo, pages, initialPdfFile) {
+function processPhotoshopScript(doc, layerInfo, pages) {
     var script_path = (new File($.fileName)).parent; // Doesnt have trailing backslash.
     var photoshop_lib_script_path = script_path + "/lib/bridgetalk/PhotoshopText.jsx"
     var photoshop_file_script = readFileForScript(photoshop_lib_script_path);
@@ -216,7 +232,6 @@ function processPhotoshopScript(doc, layerInfo, pages, initialPdfFile) {
     var layer_info_hash = anonymousHashArraySymbol(layerInfo);
     DebugLogger.writeObject("layer_info_hash => ", layer_info_hash);
     var args_symbol_array = [
-        stringSymbol(initialPdfFile),
         import_pdf_options_symbol, 
         stringSymbol(color_profile),
         layer_info_hash

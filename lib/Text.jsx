@@ -1,6 +1,10 @@
 //Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
 function parseTextDataFromTextFrames(textFrames) {
+    if (!textFrames || textFrames.length === 0) {
+        return []; // No text frames to process
+    }
+    
     // Collect text frame data with detailed formatting
     var textData = [];
     for (var i = 0; i < textFrames.length; i++) {
@@ -82,10 +86,11 @@ function parseTextDataFromTextFrames(textFrames) {
     return textData;
 }
 
-function getTextFramesFromLayer(layer, pages) {
-    var textFrames = [];
+function getTextFramesFromLayerByPages(layer, pages) {
+    var textFramesByPage = {};
     for (var i = 0; i < pages.length; i++) {
         var page = pages[i];
+        var textFrames = [];
         
         // Collect all text frames on this page from the layer
         for (var j = 0; j < page.textFrames.length; j++) {
@@ -94,8 +99,10 @@ function getTextFramesFromLayer(layer, pages) {
                 textFrames.push(frame);
             }
         }
+
+        textFramesByPage[page.name] = textFrames;
     }
-    return textFrames;
+    return textFramesByPage;
 }
 
 /**

@@ -95,7 +95,7 @@ function requirePage(doc) {
     }
 }
 
-function requireSaveFileViaDialogue(file_prompt, file_filter, default_file_location, func) {
+function requireSaveFileViaDialogue(file_prompt, file_filter, default_file_location) {
     save_file = null;
     if (default_file_location !== null) {
         default_file_location = resolveFileThroughAliases(default_file_location);        
@@ -107,6 +107,24 @@ function requireSaveFileViaDialogue(file_prompt, file_filter, default_file_locat
 
     if (save_file !== null){
         return save_file;
+    }
+    else {
+        throw new Error(MSG_FILE_CANCELLED);
+    }
+}
+
+function requireSelectFolderViaDialogue(file_prompt, default_folder_location) {
+    save_folder = null;
+    if (default_folder_location !== null) {
+        default_folder_location = resolveFileThroughAliases(default_folder_location);        
+        save_folder = default_folder_location.selectDlg(file_prompt);
+    }
+    else {
+        save_folder = Folder.selectDialog(file_prompt);
+    }
+
+    if (save_folder !== null){
+        return save_folder;
     }
     else {
         throw new Error(MSG_FILE_CANCELLED);
