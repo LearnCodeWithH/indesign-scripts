@@ -86,10 +86,10 @@ function createScript(pdf_file, active_doc) {
                 "export_jpeg", "png8_color_palette_size"]);
 
             return [
-                pdf_file_path,
-                import_pdf_options_symbol,
-                color_profile,
-                export_types_options_symbol
+                symbolBuilder.buildValue(pdf_file_path),
+                symbolBuilder.buildValue(import_pdf_options_symbol),
+                symbolBuilder.buildValue(color_profile),
+                symbolBuilder.buildValue(export_types_options_symbol)
             ];
         });
 }

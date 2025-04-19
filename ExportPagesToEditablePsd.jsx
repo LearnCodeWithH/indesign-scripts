@@ -234,9 +234,9 @@ function processPhotoshopScript(doc, layerInfo, pages) {
             //     ["color_mode", "dpi_res", "anti_alias"]);
 
             return [
-                import_pdf_options_symbol,
-                color_profile,
-                layerInfo
+                symbolBuilder.buildValue(import_pdf_options_symbol),
+                symbolBuilder.buildValue(color_profile),
+                symbolBuilder.buildValue(layerInfo)
             ];
         });
 

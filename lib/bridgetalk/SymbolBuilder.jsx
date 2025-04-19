@@ -22,15 +22,16 @@ function createSymbolBuilder() {
         sb.projectObjectByKeys = function(obj, keys, strictObjectKeys) {
             var strictness = strictObjectKeys || false;
             var hash = {};
-            for (var key in keys) {
-                if (value.hasOwnProperty(key)) {
-                    hash[key] = value[key];
+            for (var i = 0; i < keys.length; i++) {
+                var key = keys[i];
+                if (obj.hasOwnProperty(key)) {
+                    hash[key] = obj[key];
                 } else if (!strictness) {
                     hash[key] = null; // Assign null if key not found in object
                 }
             }
             return hash;
-        }
+        };
 
         /**
          * Creates a symbol representing a hash
@@ -111,23 +112,25 @@ function createSymbolBuilder() {
 
         /**
          * Builds a function call as script text
+         * argsSymbolBuilder: A function that should return an array of fully encoded arguments to the function
          */
         sb.buildFunctionCall = function(funcName, argsSymbolBuilder) {
             var functionLeft = funcName + "(";
             var functionRight = ");";
-            var argsSymbol = argsSymbolBuilder(sb);
+            var argsSymbol = argsSymbolBuilder(sb).join(",");
             var callScript = functionLeft + argsSymbol + functionRight;
             return callScript; 
         };
 
         /**
          * Creates a variable assignment for a hash
+         * valueSymbolBuilder: A function that should return the fully encoded value for the variable assignment
          */
         sb.buildVariableAssign = function(varName, valueSymbolBuilder) {
             var varAssign = "var " + varName + " = ";
             var valueSymbol = valueSymbolBuilder(sb);
             var varScript = varAssign + valueSymbol + ";";
-            return bt; 
+            return varScript;
         };
     }
     

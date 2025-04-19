@@ -55,6 +55,7 @@ function createBridgeTalkScript() {
         
         /**
          * Builds a function call as script text
+         * argsSymbolBuilder: A function that should return an array of fully encoded arguments to the function
          */
         bt.addFunctionCall = function(funcName, argsSymbolBuilder) {
             bt.scriptParts.push(bt.symbolBuilder.buildFunctionCall(funcName, argsSymbolBuilder));
@@ -63,6 +64,7 @@ function createBridgeTalkScript() {
         
         /**
          * Creates a variable assignment for a hash
+         * valueSymbolBuilder: A function that should return the fully encoded value for the variable assignment
          */
         bt.addVariableAssign = function(varName, valueSymbolBuilder) {
             bt.scriptParts.push(bt.symbolBuilder.buildVariableAssign(varName, valueSymbolBuilder));
