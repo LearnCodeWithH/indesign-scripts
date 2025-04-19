@@ -7,7 +7,7 @@
  */
 
 #include '../File.jsx';
-#include '../Functional.jsx';
+#include './SymbolBuilder.jsx';
 
 // Main module function using the ExtendScript-compatible pattern
 function createBridgeTalkScript() {
@@ -19,6 +19,9 @@ function createBridgeTalkScript() {
         // Framework version
         bt.version = VERSION;
         bt.description = "A utility class for building BridgeTalk scripts";
+        
+        // Create symbol builder instance
+        bt.symbolBuilder = createSymbolBuilder();
         
         // Script fragments
         bt.scriptParts = [];
@@ -53,191 +56,23 @@ function createBridgeTalkScript() {
         /**
          * Builds a function call as script text
          */
-        bt.buildFunctionCall = function(funcName, argsArray) {
-            var functionLeft = funcName + "(";
-            var functionRight = ");";
-            var argsBlock = map(argsArray, function(argSymbol) {
-                return bt.encodeValueSymbolByType(argSymbol);
-            }).join(',');
-            var callScript = functionLeft + argsBlock + functionRight;
-            bt.scriptParts.push(callScript);
+        bt.addFunctionCall = function(funcName, argsSymbolBuilder) {
+            bt.scriptParts.push(bt.symbolBuilder.buildFunctionCall(funcName, argsSymbolBuilder));
             return bt; // Enable chaining
         };
         
         /**
          * Creates a variable assignment for a hash
          */
-        bt.buildVariableHash = function(varName, hashEntriesArray) {
-            var varAssign = "var " + varName + " = ";
-            var hashValue = bt.encodeValueSymbolByType(bt.anonymousHashSymbol(hashEntriesArray));
-            var varScript = varAssign + hashValue + ";";
-            bt.scriptParts.push(varScript);
+        bt.addVariableAssign = function(varName, valueSymbolBuilder) {
+            bt.scriptParts.push(bt.symbolBuilder.buildVariableAssign(varName, valueSymbolBuilder));
             return bt; // Enable chaining
-        };
-        
-        /**
-         * Creates a symbol representing a hash
-         */
-        bt.anonymousHashSymbol = function(hashEntriesArray) {
-            var hashLeft = "{";
-            var hashRight = "}";
-            
-            try {
-                var hashEntriesBlock = map(hashEntriesArray, function(entry) {
-                    var key = entry[0];
-                    var value = entry[1];
-                    return bt.hashKeyValue(key, value);
-                }).join(',');
-                
-                return {
-                    type_name: "hashmap",
-                    value: hashLeft + hashEntriesBlock + hashRight
-                };
-            } catch (e) {
-                throw new Error("Error creating hash symbol: " + e.message + " for " + hashEntriesArray);
-            }
-        };
-        
-        /**
-         * Creates a symbol representing an array of hashes
-         */
-        bt.anonymousHashArraySymbol = function(arrayOfObjects) {
-            var arrayLeft = "[";
-            var arrayRight = "]";
-            
-            var hashArrayBlock = map(arrayOfObjects, function(obj) {
-                var entries = [];
-                for (var key in obj) {
-                    if (obj.hasOwnProperty(key)) {
-                        entries.push([key, obj[key]]);
-                    }
-                }
-                var hashSymbol = bt.anonymousHashSymbol(entries);
-                return hashSymbol.value;
-            }).join(',');
-            
-            return {
-                type_name: "array",
-                value: arrayLeft + hashArrayBlock + arrayRight
-            };
-        };
-        
-        /**
-         * Creates a symbol representing a string
-         */
-        bt.stringSymbol = function(str) {
-            return {
-                type_name: "string",
-                value: str
-            };
-        };
-        
-        /**
-         * Encodes a key-value pair for a hash
-         */
-        bt.hashKeyValue = function(key, value) {
-            return bt.quoteString(key) + ": " + bt.encodeValueRecursively(value);
-        };
-        
-        /**
-         * Creates hash entries from an object's fields
-         */
-        bt.hashEntriesArrayByField = function(hashmap, fieldArray) {
-            return map(fieldArray, function(field) {
-                return [field, hashmap[field]];
-            });
-        };
-        
-        /**
-         * Recursively encodes a value for script representation
-         */
-        bt.encodeValueRecursively = function(value) {
-            if (value === null || value === undefined) {
-                return "null";
-            }
-            
-            if (typeof value === "string") {
-                return bt.quoteString(value);
-            }
-            
-            if (typeof value === "number" || typeof value === "boolean") {
-                return value.toString();
-            }
-            
-            if (value.constructor && value.constructor === Array) {
-                return bt.encodeArray(value);
-            }
-            
-            if (typeof value === "object") {
-                // Handle objects that are already symbols
-                if (value.type_name && value.value) {
-                    return bt.encodeValueSymbolByType(value);
-                }
-                
-                // Convert regular objects to hash entries
-                var entries = [];
-                for (var key in value) {
-                    if (value.hasOwnProperty(key)) {
-                        entries.push([key, value[key]]);
-                    }
-                }
-                return bt.anonymousHashSymbol(entries).value;
-            }
-            
-            return value;
-        };
-        
-        /**
-         * Encodes an array for script representation
-         */
-        bt.encodeArray = function(arr) {
-            var arrayItems = map(arr, function(item) {
-                return bt.encodeValueRecursively(item);
-            });
-            return "[" + arrayItems.join(",") + "]";
-        };
-        
-        /**
-         * Quotes a string for script representation
-         */
-        bt.quoteString = function(str) {
-            var escapedStr = str.toString()
-                .replace(/\"/g, "\\\"")
-                .replace(/\n/g, "\\n")      // Line feed
-                .replace(/\r/g, "\\r")      // Carriage return
-                .replace(/\t/g, "\\t");     // Tab
-            return "\"" + escapedStr + "\"";
-        };
-        
-        /**
-         * Encodes a value symbol by its type
-         */
-        bt.encodeValueSymbolByType = function(valueSymbol) {
-            if (valueSymbol.type_name == "string") {
-                return bt.encodeValueAsString(valueSymbol.value);
-            } else {
-                return bt.encodeValueAsObject(valueSymbol.value);
-            }
-        };
-        
-        /**
-         * Encodes a value as a string
-         */
-        bt.encodeValueAsString = function(symbol) {
-            return "\"" + symbol + "\"";
-        };
-        
-        /**
-         * Encodes a value as an object
-         */
-        bt.encodeValueAsObject = function(value) {
-            return value;
         };
         
         /**
          * Gets the complete script
          */
-        bt.getScript = function() {
+        bt.buildScript = function() {
             return bt.scriptParts.join('\r');
         };
         
@@ -247,7 +82,7 @@ function createBridgeTalkScript() {
         bt.sendToPhotoshop = function(onResult, onError, timeout) {
             var bridgetalk = new BridgeTalk();
             bridgetalk.target = "photoshop";
-            bridgetalk.body = bt.getScript();
+            bridgetalk.body = bt.buildScript();
             
             bridgetalk.onResult = function(result) {
                 bridgetalk = null; // Clear reference to avoid memory leaks
@@ -282,7 +117,7 @@ function createBridgeTalkScript() {
             
             scriptFile.encoding = "UTF-8";
             usingFile(scriptFile, "w", function(file) {
-                return file.write(bt.getScript());
+                return file.write(bt.buildScript());
             });
         };
     }

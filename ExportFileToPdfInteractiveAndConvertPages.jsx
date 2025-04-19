@@ -65,32 +65,31 @@ function createScript(pdf_file, active_doc) {
     var bt_script = createBridgeTalkScript();
 
     var included_config = import_pdf_as_psd_config; // From 'ImportPdfAndExportPages.config.js'
-    // NOTE: If we wanted to bring back the pdf import config part. Uncomment
-    // var import_pdf_options_symbol = anonymousHashSymbol(
-    //         bt_script.hashEntriesArrayByField(included_config, ["color_mode", "dpi_res", "anti_alias"])
-    //     );
-
-    var import_pdf_options_symbol = bt_script.anonymousHashSymbol([]);
-
-    var export_types_options_symbol = bt_script.anonymousHashSymbol(
-            bt_script.hashEntriesArrayByField(included_config, 
-                ["export_psd", "export_png24", "export_png8", 
-                "export_jpeg", "png8_color_palette_size"])
-        );
-
     var pdf_file_path = pdf_file.toString();
-    var args_symbol_array = [
-        bt_script.stringSymbol(pdf_file_path), 
-        import_pdf_options_symbol, 
-        bt_script.stringSymbol(color_profile),
-        export_types_options_symbol
-    ];
-
+    
     return bt_script
         .addFile(script_path + "/lib/Datetime.jsx")
         .addFile(script_path + "/lib/File.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSConversions.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSActions.jsx")
         .addFile(script_path + "/lib/bridgetalk/Photoshop.jsx")
-        .buildFunctionCall("importPdfAndExportPages", args_symbol_array);
+        .addFunctionCall("importPdfAndExportPages", function(symbolBuilder) {
+            var import_pdf_options_symbol = {};
+            // NOTE: If we wanted to bring back the pdf import config part. Uncomment
+            // var import_pdf_options_symbol = symbolBuilder.encodeAnonymousHash(
+            //     included_config, 
+            //     ["color_mode", "dpi_res", "anti_alias"]);
+
+            var export_types_options_symbol = symbolBuilder.projectObjectByKeys(
+                included_config, 
+                ["export_psd", "export_png24", "export_png8", 
+                "export_jpeg", "png8_color_palette_size"]);
+
+            return [
+                pdf_file_path,
+                import_pdf_options_symbol,
+                color_profile,
+                export_types_options_symbol
+            ];
+        });
 }

@@ -66,58 +66,58 @@ runner.addTest("Test stringSymbol function", function(test) {
 });
 
 // Test quoting a string
-runner.addTest("Test quoteString function", function(test) {
-    test.assertEquals("\"test\"", btScript.quoteString("test"), "quoteString should add double quotes around a string");
-    test.assertEquals("\"\"", btScript.quoteString(""), "quoteString should handle empty string");
+runner.addTest("Test encodeString function", function(test) {
+    test.assertEquals("\"test\"", btScript.encodeString("test"), "encodeString should add double quotes around a string");
+    test.assertEquals("\"\"", btScript.encodeString(""), "encodeString should handle empty string");
     
     // Test with strings already containing quotes (should still add quotes)
-    test.assertEquals("\"\\\"quoted\\\"\"", btScript.quoteString("\"quoted\""), "quoteString should handle strings with quotes");
+    test.assertEquals("\"\\\"quoted\\\"\"", btScript.encodeString("\"quoted\""), "encodeString should handle strings with quotes");
 });
 
-// Test encodeValueRecursively with different types
-runner.addTest("Test encodeValueRecursively with primitive types", function(test) {
+// Test buildValue with different types
+runner.addTest("Test buildValue with primitive types", function(test) {
     // Test null and undefined
-    test.assertEquals("null", btScript.encodeValueRecursively(null), "null should encode to 'null'");
-    test.assertEquals("null", btScript.encodeValueRecursively(undefined), "undefined should encode to 'null'");
+    test.assertEquals("null", btScript.buildValue(null), "null should encode to 'null'");
+    test.assertEquals("null", btScript.buildValue(undefined), "undefined should encode to 'null'");
     
     // Test strings
-    test.assertEquals("\"hello\"", btScript.encodeValueRecursively("hello"), "strings should be quoted");
-    test.assertEquals("\"\"", btScript.encodeValueRecursively(""), "empty string should be quoted");
+    test.assertEquals("\"hello\"", btScript.buildValue("hello"), "strings should be quoted");
+    test.assertEquals("\"\"", btScript.buildValue(""), "empty string should be quoted");
     
     // Test numbers
-    test.assertEquals("42", btScript.encodeValueRecursively(42), "integers should convert to string");
-    test.assertEquals("3.14", btScript.encodeValueRecursively(3.14), "floats should convert to string");
-    test.assertEquals("0", btScript.encodeValueRecursively(0), "zero should convert to '0'");
+    test.assertEquals("42", btScript.buildValue(42), "integers should convert to string");
+    test.assertEquals("3.14", btScript.buildValue(3.14), "floats should convert to string");
+    test.assertEquals("0", btScript.buildValue(0), "zero should convert to '0'");
     
     // Test booleans
-    test.assertEquals("true", btScript.encodeValueRecursively(true), "true should convert to 'true'");
-    test.assertEquals("false", btScript.encodeValueRecursively(false), "false should convert to 'false'");
+    test.assertEquals("true", btScript.buildValue(true), "true should convert to 'true'");
+    test.assertEquals("false", btScript.buildValue(false), "false should convert to 'false'");
 });
 
-// Test encodeValueRecursively with arrays
-runner.addTest("Test encodeValueRecursively with arrays", function(test) {
+// Test buildValue with arrays
+runner.addTest("Test buildValue with arrays", function(test) {
     // Test empty array
-    test.assertEquals("[]", btScript.encodeValueRecursively([]), "empty array should encode to '[]'");
+    test.assertEquals("[]", btScript.buildValue([]), "empty array should encode to '[]'");
     
     // Test array with primitive values
-    test.assertEquals("[1,2,3]", btScript.encodeValueRecursively([1, 2, 3]), "array of numbers should encode correctly");
-    test.assertEquals("[\"a\",\"b\",\"c\"]", btScript.encodeValueRecursively(["a", "b", "c"]), "array of strings should encode correctly");
+    test.assertEquals("[1,2,3]", btScript.buildValue([1, 2, 3]), "array of numbers should encode correctly");
+    test.assertEquals("[\"a\",\"b\",\"c\"]", btScript.buildValue(["a", "b", "c"]), "array of strings should encode correctly");
     
     // Test array with mixed values
-    test.assertEquals("[1,\"string\",true]", btScript.encodeValueRecursively([1, "string", true]), "array of mixed values should encode correctly");
+    test.assertEquals("[1,\"string\",true]", btScript.buildValue([1, "string", true]), "array of mixed values should encode correctly");
     
     // Test nested arrays
-    test.assertEquals("[[1,2],[3,4]]", btScript.encodeValueRecursively([[1, 2], [3, 4]]), "nested arrays should encode correctly");
+    test.assertEquals("[[1,2],[3,4]]", btScript.buildValue([[1, 2], [3, 4]]), "nested arrays should encode correctly");
 });
 
-// Test encodeValueRecursively with objects
-runner.addTest("Test encodeValueRecursively with objects", function(test) {
+// Test buildValue with objects
+runner.addTest("Test buildValue with objects", function(test) {
     // Test empty object
-    test.assertEquals("{}", btScript.encodeValueRecursively({}), "empty object should encode to '{}'");
+    test.assertEquals("{}", btScript.buildValue({}), "empty object should encode to '{}'");
     
     // Test simple object
     var simpleObj = { name: "John", age: 30 };
-    var resultSimple = btScript.encodeValueRecursively(simpleObj);
+    var resultSimple = btScript.buildValue(simpleObj);
     
     test.assertTrue(resultSimple.indexOf("\"name\": \"John\"") > -1, "Object should encode property name correctly");
     test.assertTrue(resultSimple.indexOf("\"age\": 30") > -1, "Object should encode property age correctly");
@@ -131,41 +131,41 @@ runner.addTest("Test encodeValueRecursively with objects", function(test) {
         active: true 
     };
     
-    var resultNested = btScript.encodeValueRecursively(nestedObj);
+    var resultNested = btScript.buildValue(nestedObj);
     test.assertTrue(resultNested.indexOf("\"person\":") > -1, "Nested object should encode property name");
     test.assertTrue(resultNested.indexOf("\"name\": \"Jane\"") > -1, "Nested object should encode nested property name");
     test.assertTrue(resultNested.indexOf("\"active\": true") > -1, "Nested object should encode boolean property");
 });
 
-// Test anonymousHashSymbol
-runner.addTest("Test anonymousHashSymbol function", function(test) {
+// Test encodeAnonymousHash
+runner.addTest("Test encodeAnonymousHash function", function(test) {
     // Test with empty array
-    var emptyResult = btScript.anonymousHashSymbol([]);
-    test.assertEquals("hashmap", emptyResult.type_name, "anonymousHashSymbol should set type_name to 'hashmap'");
-    test.assertEquals("{}", emptyResult.value, "anonymousHashSymbol should produce empty hash for empty array");
+    var emptyResult = btScript.encodeAnonymousHash([]);
+    test.assertEquals("hashmap", emptyResult.type_name, "encodeAnonymousHash should set type_name to 'hashmap'");
+    test.assertEquals("{}", emptyResult.value, "encodeAnonymousHash should produce empty hash for empty array");
     
     // Test with simple entries
     var entries = [
         ["name", "John"],
         ["age", 30]
     ];
-    var result = btScript.anonymousHashSymbol(entries);
-    test.assertEquals("hashmap", result.type_name, "anonymousHashSymbol should set correct type_name");
+    var result = btScript.encodeAnonymousHash(entries);
+    test.assertEquals("hashmap", result.type_name, "encodeAnonymousHash should set correct type_name");
     
     // Check that the object value contains our key-value pairs
-    test.assertTrue(result.value.indexOf("\"name\":") > -1, "anonymousHashSymbol should include key 'name'");
-    test.assertTrue(result.value.indexOf("\"John\"") > -1, "anonymousHashSymbol should include value 'John'");
-    test.assertTrue(result.value.indexOf("\"age\":") > -1, "anonymousHashSymbol should include key 'age'");
-    test.assertTrue(result.value.indexOf("30") > -1, "anonymousHashSymbol should include value 30");
+    test.assertTrue(result.value.indexOf("\"name\":") > -1, "encodeAnonymousHash should include key 'name'");
+    test.assertTrue(result.value.indexOf("\"John\"") > -1, "encodeAnonymousHash should include value 'John'");
+    test.assertTrue(result.value.indexOf("\"age\":") > -1, "encodeAnonymousHash should include key 'age'");
+    test.assertTrue(result.value.indexOf("30") > -1, "encodeAnonymousHash should include value 30");
     
     // Test with nested structures
     var nestedEntries = [
         ["person", {name: "Jane", age: 25}],
         ["active", true]
     ];
-    var nestedResult = btScript.anonymousHashSymbol(nestedEntries);
-    test.assertEquals("hashmap", nestedResult.type_name, "anonymousHashSymbol should set correct type_name for nested entries");
-    test.assertTrue(nestedResult.value.indexOf("\"person\":") > -1, "anonymousHashSymbol should handle nested objects properly");
+    var nestedResult = btScript.encodeAnonymousHash(nestedEntries);
+    test.assertEquals("hashmap", nestedResult.type_name, "encodeAnonymousHash should set correct type_name for nested entries");
+    test.assertTrue(nestedResult.value.indexOf("\"person\":") > -1, "encodeAnonymousHash should handle nested objects properly");
 });
 
 // Test anonymousHashArraySymbol
@@ -191,13 +191,13 @@ runner.addTest("Test anonymousHashArraySymbol function", function(test) {
     test.assertTrue(result.value.indexOf("\"Jane\"") > -1, "Result should contain 'Jane' value");
 });
 
-// Test buildFunctionCall
-runner.addTest("Test buildFunctionCall method", function(test) {
+// Test addFunctionCall
+runner.addTest("Test addFunctionCall method", function(test) {
     // Clear previous script parts
     btScript.scriptParts = [];
     
     // Test with no arguments
-    btScript.buildFunctionCall("testFunc", []);
+    btScript.addFunctionCall("testFunc", []);
     test.assertEquals("testFunc();", btScript.scriptParts[0], "Function call with no args should be formatted correctly");
     
     // Reset script parts
@@ -208,28 +208,28 @@ runner.addTest("Test buildFunctionCall method", function(test) {
         btScript.stringSymbol("hello"),
         {type_name: "number", value: 42}
     ];
-    btScript.buildFunctionCall("testFunc", simpleArgs);
+    btScript.addFunctionCall("testFunc", simpleArgs);
     test.assertEquals("testFunc(\"hello\",42);", btScript.scriptParts[0], "Function call with args should be formatted correctly");
     
     // Reset script parts
     btScript.scriptParts = [];
     
     // Test with complex arguments
-    var hashArg = btScript.anonymousHashSymbol([["name", "John"], ["age", 30]]);
+    var hashArg = btScript.encodeAnonymousHash([["name", "John"], ["age", 30]]);
     var complexArgs = [btScript.stringSymbol("hello"), hashArg];
-    btScript.buildFunctionCall("complexFunc", complexArgs);
+    btScript.addFunctionCall("complexFunc", complexArgs);
     var complexResult = btScript.scriptParts[0];
     test.assertTrue(complexResult.indexOf("complexFunc(\"hello\",{") === 0, "Complex function call should start correctly");
     test.assertTrue(complexResult.indexOf("\"name\"") > -1, "Complex function call should encode hash properties");
 });
 
-// Test buildVariableHash
-runner.addTest("Test buildVariableHash method", function(test) {
+// Test addVariableAssign
+runner.addTest("Test addVariableAssign method", function(test) {
     // Clear previous script parts
     btScript.scriptParts = [];
     
     // Test with empty hash
-    btScript.buildVariableHash("emptyVar", []);
+    btScript.addVariableAssign("emptyVar", []);
     test.assertEquals("var emptyVar = {};", btScript.scriptParts[0], "Variable with empty hash should be formatted correctly");
     
     // Reset script parts
@@ -240,7 +240,7 @@ runner.addTest("Test buildVariableHash method", function(test) {
         ["name", "John"],
         ["age", 30]
     ];
-    btScript.buildVariableHash("testVar", entries);
+    btScript.addVariableAssign("testVar", entries);
     var result = btScript.scriptParts[0];
     test.assertTrue(result.indexOf("var testVar = {") === 0, "Variable hash should start with correct declaration");
     test.assertTrue(result.indexOf("\"name\"") > -1, "Variable hash should contain key 'name'");
@@ -275,7 +275,7 @@ runner.addTest("Test hashEntriesArrayByField function", function(test) {
 });
 
 // Test script generation
-runner.addTest("Test getScript method", function(test) {
+runner.addTest("Test buildScript method", function(test) {
     // Clear previous script parts
     btScript.scriptParts = [];
     
@@ -286,7 +286,7 @@ runner.addTest("Test getScript method", function(test) {
     
     // Test the combined script
     var expected = "var x = 1;\rvar y = 2;\ralert(x + y);";
-    test.assertEquals(expected, btScript.getScript(), "getScript should join script parts with CR separator");
+    test.assertEquals(expected, btScript.buildScript(), "buildScript should join script parts with CR separator");
 });
 
 // Test readFileForScript

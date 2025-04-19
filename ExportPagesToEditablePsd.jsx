@@ -220,26 +220,26 @@ function processPhotoshopScript(doc, layerInfo, pages) {
 
     var bt_script = createBridgeTalkScript();
 
-    var import_pdf_options_symbol = bt_script.anonymousHashSymbol([]);
-    
-    // Add function call with data
-    var layer_info_hash = bt_script.anonymousHashArraySymbol(layerInfo);
-    DebugLogger.writeObject("layer_info_hash => ", layer_info_hash);
-    var args_symbol_array = [
-        import_pdf_options_symbol, 
-        bt_script.stringSymbol(color_profile),
-        layer_info_hash
-    ];
-    DebugLogger.writeObject("args_symbol_array => ", args_symbol_array);
+    var included_config = import_pdf_as_psd_config; // From 'ImportPdfAndExportPages.config.js'
     
     bt_script
         .addFile(script_path + "/lib/Datetime.jsx")
         .addFile(script_path + "/lib/File.jsx")
         .addFile(script_path + "/lib/bridgetalk/PhotoshopText.jsx")
-        .buildFunctionCall("createTextLayersFromData", args_symbol_array);
+        .addFunctionCall("createTextLayersFromData", function(symbolBuilder) {
+            var import_pdf_options_symbol = {};
+            // NOTE: If we wanted to bring back the pdf import config part. Uncomment
+            // var import_pdf_options_symbol = symbolBuilder.encodeAnonymousHash(
+            //     included_config, 
+            //     ["color_mode", "dpi_res", "anti_alias"]);
 
-    DebugLogger.write("full_script_text => \n" + full_script_text);
-    var included_config = import_pdf_as_psd_config; // From 'ImportPdfAndExportPages.config.js'
+            return [
+                import_pdf_options_symbol,
+                color_profile,
+                layerInfo
+            ];
+        });
+
     if (included_config["write_debug_bridgetalk_script"] === true) {
         bt_script.outputToFile(doc.filePath + "/stitched_script.jsx");
     }

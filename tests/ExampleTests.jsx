@@ -32,10 +32,10 @@ runner.addTest("Test stringSymbol", function(test) {
     test.assertEquals("test", result.value, "stringSymbol should set correct value");
 });
 
-runner.addTest("Test encodeValueRecursively with different types", function(test) {
-    test.assertEquals("null", encodeValueRecursively(null), "null should encode to 'null'");
-    test.assertEquals("\"test\"", encodeValueRecursively("test"), "string should be quoted");
-    test.assertEquals("42", encodeValueRecursively(42), "number should be converted to string");
+runner.addTest("Test buildValue with different types", function(test) {
+    test.assertEquals("null", buildValue(null), "null should encode to 'null'");
+    test.assertEquals("\"test\"", buildValue("test"), "string should be quoted");
+    test.assertEquals("42", buildValue(42), "number should be converted to string");
     test.assertTrue(true === true, "Basic assertion example");
 });
 
