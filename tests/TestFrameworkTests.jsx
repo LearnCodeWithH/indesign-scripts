@@ -37,7 +37,7 @@ runner.setAfterAll(function() {
         }
         tempFolder.remove();
     } catch (e) {
-        $.writeln("WARNING: Could not remove temp folder: " + e.message);
+        runner.output("WARNING: Could not remove temp folder: " + e.message);
     }
 });
 

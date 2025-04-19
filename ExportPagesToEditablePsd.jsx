@@ -3,7 +3,7 @@
 //Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
 #target indesign
-#include './lib/bridgetalk/BridgeTalk.jsx'
+#include './lib/bridgetalk/BridgeTalkScript.jsx'
 #include './lib/Validations.jsx'
 #include './lib/Graphics.jsx'
 #include './lib/Datetime.jsx'
@@ -214,44 +214,35 @@ function hasContentForPage(layer, page) {
 
 function processPhotoshopScript(doc, layerInfo, pages) {
     var script_path = (new File($.fileName)).parent; // Doesnt have trailing backslash.
-    var photoshop_lib_script_path = script_path + "/lib/bridgetalk/PhotoshopText.jsx"
-    var photoshop_file_script = readFileForScript(photoshop_lib_script_path);
-
-    var file_lib_script_path = script_path + "/lib/File.jsx"
-    var file_file_script = readFileForScript(file_lib_script_path);
-
-    var datetime_lib_script_path = script_path + "/lib/Datetime.jsx"
-    var datetime_file_script = readFileForScript(datetime_lib_script_path);
 
     var rgbProf = doc.rgbProfile;
     var color_profile = rgbProf;
 
-    var import_pdf_options_symbol = anonymousHashSymbol([]);
+    var bt_script = createBridgeTalkScript();
+
+    var import_pdf_options_symbol = bt_script.anonymousHashSymbol([]);
     
     // Add function call with data
-    var layer_info_hash = anonymousHashArraySymbol(layerInfo);
+    var layer_info_hash = bt_script.anonymousHashArraySymbol(layerInfo);
     DebugLogger.writeObject("layer_info_hash => ", layer_info_hash);
     var args_symbol_array = [
         import_pdf_options_symbol, 
-        stringSymbol(color_profile),
+        bt_script.stringSymbol(color_profile),
         layer_info_hash
     ];
     DebugLogger.writeObject("args_symbol_array => ", args_symbol_array);
-    var ps_script_call = buildFunctionCallForScript("createTextLayersFromData", args_symbol_array);
-
-    // Send to Photoshop
-    var full_script_text = stitchScripts([
-        datetime_file_script, 
-        file_file_script, 
-        photoshop_file_script, 
-        ps_script_call
-        ]);
+    
+    bt_script
+        .addFile(script_path + "/lib/Datetime.jsx")
+        .addFile(script_path + "/lib/File.jsx")
+        .addFile(script_path + "/lib/bridgetalk/PhotoshopText.jsx")
+        .buildFunctionCall("createTextLayersFromData", args_symbol_array);
 
     DebugLogger.write("full_script_text => \n" + full_script_text);
     var included_config = import_pdf_as_psd_config; // From 'ImportPdfAndExportPages.config.js'
     if (included_config["write_debug_bridgetalk_script"] === true) {
-        outputStitchedScript(full_script_text, doc.filePath);
+        bt_script.outputToFile(doc.filePath + "/stitched_script.jsx");
     }
 
-    // sendScriptToPhotoshop(full_script_text);
+    // bt_script.sendToPhotoshop();
 }

@@ -55,7 +55,7 @@ runner.setAfterAll(function() {
             tempFolder.remove();
         }
     } catch (e) {
-        $.writeln("WARNING: Could not clean up after tests: " + e.message);
+        runner.output("WARNING: Could not clean up after tests: " + e.message);
     }
 });
 

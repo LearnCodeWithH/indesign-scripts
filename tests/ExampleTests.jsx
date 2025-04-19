@@ -1,6 +1,5 @@
 #target indesign
 #include './framework/TestFramework.jsx'
-#include '../lib/bridgetalk/BridgeTalk.jsx'
 
 // This test shows example functionality using TestFramework.jsx
 
@@ -57,6 +56,6 @@ try {
         $.error = true;
     }
 } catch (e) {
-    $.writeln("ERROR: Test execution failed: " + e.message);
+    runner.output("ERROR: Test execution failed: " + e.message);
     $.error = true;
 }
