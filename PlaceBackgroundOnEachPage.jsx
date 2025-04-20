@@ -4,6 +4,7 @@
 
 #include './lib/Functional.jsx';
 
+scriptRunScope(main);
 // Function to open a file selection dialog and return selected files
 function selectFiles() {
     var fileTypes = "*.jpg;*.jpeg;*.png;*.gif;*.eps;*.psd;*.ai"; // File types to filter (image, PSD, AI)
@@ -21,7 +22,7 @@ function ensurePageCount(doc, page_count_needed) {
 }
 
 // Main script
-try {
+function main() {
     var files = selectFiles(); // Open file selection dialog
     if (files.length === 0) {
         alert("No files selected. Exiting script.");
@@ -51,7 +52,4 @@ try {
     } else {
         alert("Placed " + files.length + " total file(s)");
     }
-    
-} catch (e) {
-    alert("Error: " + e.message);
 }

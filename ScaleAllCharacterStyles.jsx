@@ -4,6 +4,7 @@
 
 #include './lib/Functional.jsx';
 
+scriptRunScope(main);
 function scaleStyle(style, scale_factor) {
     with (style) {
         if (leading !== undefined && leading !== Leading.AUTO) {
@@ -46,20 +47,22 @@ function promptScalePercentFromUser() {
     return NaN;
 }
 
-var scale_pct = promptScalePercentFromUser();
+function main() {
+    var scale_pct = promptScalePercentFromUser();
 
-if (!isNaN(scale_pct)) {
-    var doc = app.activeDocument;
-    var paragraphStyles = doc.allParagraphStyles;
+    if (!isNaN(scale_pct)) {
+        var doc = app.activeDocument;
+        var paragraphStyles = doc.allParagraphStyles;
 
-    var scale_factor = scale_pct / 100.0;
+        var scale_factor = scale_pct / 100.0;
 
-    each(paragraphStyles, function(style) {
-        // Skip Root Style
-        if (style.name !== "[No Paragraph Style]") {
-            scaleStyle(style, scale_factor);
-        }
-    });
+        each(paragraphStyles, function(style) {
+            // Skip Root Style
+            if (style.name !== "[No Paragraph Style]") {
+                scaleStyle(style, scale_factor);
+            }
+        });
 
+    }
 }
 

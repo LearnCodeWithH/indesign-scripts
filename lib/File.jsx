@@ -1,16 +1,14 @@
 //Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
-const MSG_FILE_NOT_OPENED = "File could not be opened.";
-
 function usingFile(file, mode, func) {
-    if (file.open(mode)) {
-        try {
-            return func(file);
-        } finally {
-            file.close();
-        }
-    } else {
-        alert(MSG_FILE_NOT_OPENED + " " + file.fsName);
+    if (!file.open(mode)) {
+        throw new Error("File could not be opened: " + file.fsName);
+    }
+
+    try {
+        return func(file);
+    } finally {
+        file.close();
     }
 }
 

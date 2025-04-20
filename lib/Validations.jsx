@@ -3,60 +3,6 @@
 #include './Functional.jsx';
 #include './File.jsx';
 
-const MSG_ACTIVE_SPREAD_NO_ITEMS = "The active spread does not contain any page items.";
-const MSG_NO_DOCUMENT_OPEN = "No documents are open. Please open a document and try again.";
-const MSG_NO_PAGES_IN_DOCUMENT = "No pages exist in current document. Please add a page and try again.";
-const MSG_NO_GRAPHIC_IN_SELECTED = "No graphics found on selected page and layer. Please select a page and layer with a graphic in it and try again.";
-const MSG_NO_ITEM_SELECTED = "No item selected. Please select an item and try again.";
-const MSG_FILE_CANCELLED = "File cancelled. Please specify a file and try again.";
-
-function ensureFirstGraphicInLayer(graphics, layer, func) {
-    first_graphic = first(graphics, function(graphic) {
-        return graphic.itemLayer === layer;
-    })
-    if (first_graphic !== null){
-		return func(first_graphic);
-	}
-	else{
-		alert(MSG_NO_GRAPHIC_IN_SELECTED);
-	}
-}
-
-function ensureFirstGraphicInLayerSilent(graphics, layer, func) {
-    first_graphic = first(graphics, function(graphic) {
-        return graphic.itemLayer === layer;
-    })
-    if (first_graphic !== null){
-		return func(first_graphic);
-	}
-}
-
-function ensureFirstSelectedItem(items, func) {
-    if (items !== null && items.length > 0) {
-        return func(items[0]);
-    } else {
-        alert(MSG_NO_ITEM_SELECTED);
-    }
-}
-
-function ensureDocument(func) {
-    if (app.documents.length != 0){
-		return func();
-	}
-	else{
-		alert(MSG_ACTIVE_SPREAD_NO_ITEMS);
-	}
-}
-
-function ensurePage(func) {
-    if (app.activeWindow.activeSpread.pageItems.length != 0){
-        return func();
-    }
-    else {
-        alert(MSG_NO_DOCUMENT_OPEN);
-    }
-}
-
 function ensureSaveFileViaDialogue(file_prompt, file_filter, default_file_location, func) {
     save_file = null;
     if (default_file_location !== null) {
@@ -84,14 +30,26 @@ function scriptRunScope(func) {
 }
 
 function requireDocument() {
-    if (app.documents.length <= 0){
-		throw new Error(MSG_NO_DOCUMENT_OPEN);
+    if (!app.documents || app.documents.length <= 0){
+		throw new Error("No documents are open. Please open a document and try again.");
 	}
 }
 
 function requirePage(doc) {
-    if (doc.pages.length <= 0){
-        throw new Error(MSG_NO_PAGES_IN_DOCUMENT);
+    if (!doc.pages || doc.pages.length <= 0){
+        throw new Error("No pages exist in current document. Please add a page and try again.");
+    }
+}
+
+function requirePageItem(pageOrDoc) {
+    if (!pageOrDoc.pageItems || pageOrDoc.pageItems.length <= 0){
+        throw new Error("No page items exist in current document. Please add a page item and try again.");
+    }
+}
+
+function requireSelectedPageItem(doc) {
+    if (!doc.selectedPageItems || doc.selectedPageItems.length <= 0) {
+        throw new Error("No item selected. Please select an item and try again.");
     }
 }
 
@@ -109,7 +67,7 @@ function requireSaveFileViaDialogue(file_prompt, file_filter, default_file_locat
         return save_file;
     }
     else {
-        throw new Error(MSG_FILE_CANCELLED);
+        throw new Error("File save cancelled. Please specify a file and try again.");
     }
 }
 
@@ -127,6 +85,6 @@ function requireSelectFolderViaDialogue(file_prompt, default_folder_location) {
         return save_folder;
     }
     else {
-        throw new Error(MSG_FILE_CANCELLED);
+        throw new Error("Folder selection cancelled. Please specify a folder and try again.");
     }
 }
