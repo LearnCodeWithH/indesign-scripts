@@ -22,8 +22,8 @@ function main() {
 
     transientDocumentScope(active_doc, function(doc) {
         var currentPage = doc.layoutWindows[0].activePage;
-        // var pages = [currentPage];
-        var pages = doc.pages;
+        var pages = [currentPage];
+        // var pages = doc.pages;
         var result = splitTextAndContentLayers(doc, doc.layers, pages);
         var textLayers = result[0];
         var contentLayers = result[1];
@@ -140,6 +140,7 @@ function main() {
                 };
             });
 
+            // TODO: Order layerInfo by page at top level, page => layers instead for ease of processing.
             // Store text layer info for Photoshop processing
             layerInfo[i] = {
                 name: layer.name,
