@@ -8,6 +8,7 @@
 #include './lib/Graphics.jsx'
 #include './lib/Datetime.jsx'
 #include './lib/Text.jsx'
+#include './lib/DebugFileLogger.jsx'
 
 // Config must be fed from ID side script as PS does not have access to read files ID has access to.
 #include './config/ImportPdfAndExportPages.config.js';

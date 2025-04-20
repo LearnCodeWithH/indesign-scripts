@@ -68,7 +68,7 @@ function createScript(pdf_file, active_doc) {
         .addFile(script_path + "/lib/Datetime.jsx")
         .addFile(script_path + "/lib/File.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSConversions.jsx")
-        .addFile(script_path + "/lib/bridgetalk/PSActions.jsx")
+        .addFile(script_path + "/lib/bridgetalk/PSFileExports.jsx")
         .addFile(script_path + "/lib/bridgetalk/Photoshop.jsx")
         .addFunctionCall("importPdfAndExportPages", function(symbolBuilder) {
             var import_pdf_options_symbol = {};

@@ -3,7 +3,7 @@
 
 // Requires stitching "lib/File.jsx" when running through Bridgetalk
 // Requires stitching "lib/Datetime.jsx" when running through Bridgetalk
-// Requires stitching "lib/bridgetalk/PSActions.jsx" when running through Bridgetalk
+// Requires stitching "lib/bridgetalk/PSFileExports.jsx" when running through Bridgetalk
 // Requires stitching "lib/bridgetalk/PSConversions.jsx" when running through Bridgetalk
 
 // Utf-8 test: 漢字
