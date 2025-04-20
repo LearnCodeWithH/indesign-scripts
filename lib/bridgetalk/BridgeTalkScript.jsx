@@ -72,6 +72,17 @@ function createBridgeTalkScript() {
         };
         
         /**
+         * Adds a function definition to the script
+         * funcName: The name of the function
+         * argNames: An array of argument names
+         * linesSymbolBuilder: A function that should return an array of fully encoded lines for the function body
+         */
+        bt.addFunction = function(funcName, argNames, linesSymbolBuilder) {
+            bt.scriptParts.push(bt.symbolBuilder.buildFunction(funcName, argNames, linesSymbolBuilder));
+            return bt; // Enable chaining
+        };
+        
+        /**
          * Gets the complete script
          */
         bt.buildScript = function() {

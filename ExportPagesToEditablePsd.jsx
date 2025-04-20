@@ -224,7 +224,7 @@ function processPhotoshopScript(doc, layerInfo, pages) {
     bt_script
         .addFile(script_path + "/lib/Datetime.jsx")
         .addFile(script_path + "/lib/File.jsx")
-        .addFile(script_path + "/lib/bridgetalk/PhotoshopText.jsx")
+        .addFile(script_path + "/lib/bridgetalk/BuildPsdFromPdfPSEntrypoint.jsx")
         .addFunctionCall("createTextLayersFromData", function(symbolBuilder) {
             var import_pdf_options_symbol = {};
             // NOTE: If we wanted to bring back the pdf import config part. Uncomment

@@ -15,7 +15,7 @@
             "type": "extendscript-debug",
             "request": "launch",
             "name": "Bridgetalk Debug",
-            "program": "${workspaceFolder}/lib/Photoshop.jsx",
+            "program": "${workspaceFolder}/lib/PdfExportPSScript.jsx",
             "stopOnEntry": false
         },
         {

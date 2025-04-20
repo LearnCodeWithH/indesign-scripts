@@ -5,21 +5,9 @@
 // Requires stitching "lib/Datetime.jsx" when running through Bridgetalk
 // Requires stitching "lib/bridgetalk/PSFileExports.jsx" when running through Bridgetalk
 // Requires stitching "lib/bridgetalk/PSConversions.jsx" when running through Bridgetalk
+// Requires stitching "lib/bridgetalk/PSPdfImport.jsx" when running through Bridgetalk
 
 // Utf-8 test: 漢字
-
-function configurePdfOpenOptions(color_mode, dpi_res, anti_alias) {
-    // https://www.indesignjs.de/extendscriptAPI/photoshop-latest/index.html#GenericPDFOpenOptions.html
-    var openPDFoptions = new PDFOpenOptions;
-    openPDFoptions.cropPage = CropToType.TRIMBOX;
-    // NOTE: PS seems to autodetect these on pdf open. So we probably don't need to set these.
-    if (dpi_res != undefined) openPDFoptions.resolution = dpi_res;
-    if (color_mode != undefined) openPDFoptions.mode = color_mode;
-    if (anti_alias != undefined) openPDFoptions.antiAlias = anti_alias;
-    else openPDFoptions.antiAlias = true;
-    return openPDFoptions;
-}
-
 
 function exportPdfPages(open_pdf_file, pdf_open_options, color_profile, save_file_folder, export_types_options) {
     var pdfRegex = RegExp("[.]pdf$", "i");

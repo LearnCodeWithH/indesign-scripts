@@ -132,6 +132,25 @@ function createSymbolBuilder() {
             var varScript = varAssign + valueSymbol + ";";
             return varScript;
         };
+
+        /**
+         * Builds a function definition as script text
+         * funcName: The name of the function
+         * argNames: An array of argument names
+         * linesSymbolBuilder: A function that should return an array of fully encoded lines for the function body
+         */
+        sb.buildFunction = function(funcName, argNames, linesSymbolBuilder) {
+            var functionLeft = "function " + funcName + "(" + argNames.join(", ") + ") {\n";
+            var functionRight = "\n}";
+            
+            var bodyLines = linesSymbolBuilder(sb);
+            var indentedLines = map(bodyLines, function(line) {
+                return "    " + line;
+            });
+            
+            var bodyScript = indentedLines.join("\n");
+            return functionLeft + bodyScript + functionRight;
+        };
     }
     
     // Return a new instance of the symbol builder

@@ -56,7 +56,6 @@ function createScript(pdf_file, active_doc) {
     var rgbProf = active_doc.rgbProfile;
     var color_profile = rgbProf;
     
-    // Read Photoshop.jsx to string
     var script_path = (new File($.fileName)).parent; // Doesnt have trailing backslash.
 
     var bt_script = createBridgeTalkScript();
@@ -69,7 +68,8 @@ function createScript(pdf_file, active_doc) {
         .addFile(script_path + "/lib/File.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSConversions.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSFileExports.jsx")
-        .addFile(script_path + "/lib/bridgetalk/Photoshop.jsx")
+        .addFile(script_path + "/lib/bridgetalk/PSPdfImport.jsx")
+        .addFile(script_path + "/lib/bridgetalk/PdfExportPSEntrypoint.jsx")
         .addFunctionCall("importPdfAndExportPages", function(symbolBuilder) {
             var import_pdf_options_symbol = {};
             // NOTE: If we wanted to bring back the pdf import config part. Uncomment

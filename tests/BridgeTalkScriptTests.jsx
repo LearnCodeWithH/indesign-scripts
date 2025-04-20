@@ -228,5 +228,52 @@ runner.addTest("Test symbolBuilder initialization", function(test) {
         "symbolBuilder should have encodeString method");
 });
 
+// Test addFunction method
+runner.addTest("Test addFunction method", function(test) {
+    // Clear previous script parts
+    btScript.scriptParts = [];
+    
+    // Test adding a simple function
+    btScript.addFunction("testFunc", ["msg"], function(sb) {
+        return [
+            sb.buildVariableAssign("outputMsg", function(sb2) { return "msg"; }),
+            sb.buildFunctionCall("alert", function(sb2) { return ["\"TestMsg: \" + outputMsg"]; })
+        ];
+    });
+    
+    var functionResult = btScript.scriptParts[0];
+    test.assertTrue(functionResult.indexOf("function testFunc(msg) {") === 0, "Function should begin with correct signature");
+    test.assertTrue(functionResult.indexOf("var outputMsg = msg;") > 0, "Function should include variable assignment");
+    test.assertTrue(functionResult.indexOf("alert(\"TestMsg: \" + outputMsg);") > 0, "Function should include function call");
+    test.assertTrue(functionResult.indexOf("}") > 0, "Function should end with closing brace");
+    
+    // Test with multiple arguments and complex body
+    btScript.scriptParts = [];
+    btScript.addFunction("processData", ["data", "options"], function(sb) {
+        return [
+            sb.buildVariableAssign("result", function(sb2) { return "{}"; }),
+            "if (options.verbose) {",
+            "    alert(\"Processing data...\");",
+            "}",
+            "return result;"
+        ];
+    });
+    
+    var complexResult = btScript.scriptParts[0];
+    test.assertTrue(complexResult.indexOf("function processData(data, options) {") === 0, 
+        "Complex function should have correct signature");
+    test.assertTrue(complexResult.indexOf("var result = {};") > 0, 
+        "Complex function should include variable assignment");
+    test.assertTrue(complexResult.indexOf("if (options.verbose) {") > 0, 
+        "Complex function should include conditional statement");
+    test.assertTrue(complexResult.indexOf("return result;") > 0, 
+        "Complex function should include return statement");
+    
+    // Test method chaining
+    btScript.scriptParts = [];
+    var chainResult = btScript.addFunction("emptyFunc", [], function(sb) { return []; });
+    test.assertTrue(chainResult === btScript, "Method should return the instance for chaining");
+});
+
 // Run all tests
 runner.runTests();

@@ -195,6 +195,43 @@ runner.addTest("Test buildVariableAssign method", function(test) {
     test.assertTrue(objResult.indexOf("\"age\": 30") > -1, "Variable hash should contain numeric value");
 });
 
+// Test buildFunction
+runner.addTest("Test buildFunction method", function(test) {
+    // Test with simple function
+    var simpleResult = symbolBuilder.buildFunction("testFunc", ["msg"], function(sb) {
+        return [
+            sb.buildVariableAssign("outputMsg", function(sb2) { return sb2.buildValue("msg"); }),
+            sb.buildFunctionCall("alert", function(sb2) { return [sb2.buildValue("TestMsg: " + "outputMsg")]; })
+        ];
+    });
+    
+    // Check various parts of the function
+    test.assertTrue(simpleResult.indexOf("function testFunc(msg) {") === 0, "Function should begin with correct signature");
+    test.assertTrue(simpleResult.indexOf("var outputMsg = \"msg\";") > 0, "Function should include variable assignment");
+    test.assertTrue(simpleResult.indexOf("alert(\"TestMsg: outputMsg\");") > 0, "Function should include function call");
+    test.assertTrue(simpleResult.indexOf("}") > 0, "Function should end with closing brace");
+    
+    // Test function with multiple parameters
+    var multiParamResult = symbolBuilder.buildFunction("calculate", ["a", "b", "c"], function(sb) {
+        return [
+            "return a + b + c;"
+        ];
+    });
+    
+    test.assertTrue(multiParamResult.indexOf("function calculate(a, b, c) {") === 0, 
+        "Function with multiple parameters should have correct signature");
+    test.assertTrue(multiParamResult.indexOf("    return a + b + c;") > 0, 
+        "Function body should be indented and contain the return statement");
+    
+    // Test empty function
+    var emptyResult = symbolBuilder.buildFunction("emptyFunc", [], function(sb) {
+        return [];
+    });
+    
+    test.assertEquals("function emptyFunc() {\n\n}", emptyResult, 
+        "Empty function should have correct format");
+});
+
 // Test projectObjectByKeys
 runner.addTest("Test projectObjectByKeys function", function(test) {
     // Create a test object
