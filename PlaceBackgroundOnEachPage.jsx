@@ -3,6 +3,7 @@
 //Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
 #include './lib/Functional.jsx';
+#include './lib/Validations.jsx';
 
 scriptRunScope(main);
 // Function to open a file selection dialog and return selected files
@@ -25,8 +26,7 @@ function ensurePageCount(doc, page_count_needed) {
 function main() {
     var files = selectFiles(); // Open file selection dialog
     if (files.length === 0) {
-        alert("No files selected. Exiting script.");
-        exit();
+        throw new Error("No files selected. Please select files to place and try again.");
     }
 
     var doc = app.activeDocument;

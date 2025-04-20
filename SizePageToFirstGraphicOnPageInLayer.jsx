@@ -18,8 +18,6 @@ function main(){
     sizePageToFirstGraphicInLayer(active_page, active_layer);
 }
 
-
-
 function sizePageToFirstGraphicInLayer(page, layer) {
     var first_graphic = first(page.allGraphics, function(graphic) {
         return graphic.itemLayer === layer;

@@ -3,6 +3,7 @@
 //Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
 #include './lib/Functional.jsx';
+#include './lib/Validations.jsx';
 
 scriptRunScope(main);
 function scaleStyle(style, scale_factor) {
@@ -43,7 +44,7 @@ function promptScalePercentFromUser() {
         return scale_pct
     }
     
-    alert("Invalid input. Enter a number between 0-500.");
+    throw new Error("Invalid input. Enter a number between 0-500.");
     return NaN;
 }
 

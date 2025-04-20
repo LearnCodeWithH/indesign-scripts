@@ -3,24 +3,6 @@
 #include './Functional.jsx';
 #include './File.jsx';
 
-function ensureSaveFileViaDialogue(file_prompt, file_filter, default_file_location, func) {
-    save_file = null;
-    if (default_file_location !== null) {
-        default_file_location = resolveFileThroughAliases(default_file_location);        
-        save_file = default_file_location.saveDlg(file_prompt, file_filter);
-    }
-    else {
-        save_file = File.saveDialog(file_prompt, file_filter);
-    }
-
-    if (save_file !== null){
-        return func(save_file);
-    }
-    else {
-        alert(MSG_FILE_CANCELLED);
-    }
-}
-
 function scriptRunScope(func) {
     try {
         return func();

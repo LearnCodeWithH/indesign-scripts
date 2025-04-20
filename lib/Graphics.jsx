@@ -80,10 +80,10 @@ function findPixelDimensionsOfItemAtPpi(item, atPpi) {
                 return getPixelsAtPpi(item, atPpi)
             }
             else if (undefined !== item.imageTypeName) {
-                alert("Unsupported graphic type '" + item.imageTypeName + "' was the first graphic in layer.");
+                throw new Error("Unsupported graphic type '" + item.imageTypeName + "' was the first graphic in layer.");
             }
             else {
-                alert("Unsupported graphic type was the first graphic in layer.");
+                throw new Error("Unsupported graphic type was the first graphic in layer.");
             }
             return null;
         });

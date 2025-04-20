@@ -36,10 +36,6 @@ function transientDocumentScope(doc, func) {
         doc.save();
         // Execute the provided function with document
         return func(doc);
-    } catch (error) {
-        // Log error but continue with document handling
-        alert("Error in document operation: " + error);
-        throw error;
     } finally {
         // Close without saving any changes made during operations
         doc.close(SaveOptions.NO);
@@ -68,7 +64,7 @@ function getPdfPageCount(the_pdf_file) {
         var reg = RegExp("[/]N ([0-9]+)[/]T");
         var matches = next_line.match(reg);
         if (matches === null || matches.length < 2) {
-            alert("Could not find page count defined in pdf file.");
+            throw new Error("Could not find page count defined in pdf file.");
             return 0;
         }
         var page_count = matches[1];

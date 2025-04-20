@@ -66,11 +66,9 @@ function importPdfAndExportPages(pdf_file_path, import_pdf_options, color_profil
         var save_file_folder_name = parent_dir + "/" + pdf_file.name + "_" + datetimeString(new Date());
         var save_file_folder = new Folder(save_file_folder_name);
         if (!save_file_folder.create()) {
-            alert("Could not create folder: " + save_file_folder);
-            return;
+            throw new Error("Could not create folder: " + save_file_folder);
         } else {
             exportPdfPages(pdf_file, pdf_open_options, color_profile, save_file_folder, export_types_options);
-            return;
         }
     });
     

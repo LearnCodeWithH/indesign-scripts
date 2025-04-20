@@ -82,7 +82,7 @@ function createTextLayersFromData(textData, docWidth, docHeight, docDpi) {
             }
         } catch(e) {
             // Handle any errors in text styling
-            alert("Error applying text styles: " + e.message);
+            throw new Error("Error applying text styles: " + e.message);
         }
     }
 }

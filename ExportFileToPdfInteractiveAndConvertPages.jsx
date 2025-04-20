@@ -23,16 +23,15 @@ function main(){
 
     // NOTE: The dialog export prefs override this, so you can't set it.
     // app.pdfExportPreferences.viewPDF = false;
-    ensureSaveFileViaDialogue("Choose a location to save to Pdf.", "Pdf files:*.pdf", default_file_location,
-        function(save_file) {
-            // Save_file has the file path
-            // /c/Program%20Files/Adobe/Adobe%20InDesign%20CC%202018/Resources/Adobe%20PDF/settings/mul/High%20Quality%20Print.joboptions
-            // Sets dialog to first preset.
-            export_preset = app.pdfExportPresets[0];
-            active_doc.exportFile(ExportFormat.INTERACTIVE_PDF, save_file, true, export_preset);
+    var save_file = requireSaveFileViaDialogue("Choose a location to save to Pdf.", "Pdf files:*.pdf", default_file_location);
+       
+    // Save_file has the file path
+    // /c/Program%20Files/Adobe/Adobe%20InDesign%20CC%202018/Resources/Adobe%20PDF/settings/mul/High%20Quality%20Print.joboptions
+    // Sets dialog to first preset.
+    export_preset = app.pdfExportPresets[0];
+    active_doc.exportFile(ExportFormat.INTERACTIVE_PDF, save_file, true, export_preset);
 
-            convertPdfToPsdViaPhotoshop(save_file, active_doc);
-        });
+    convertPdfToPsdViaPhotoshop(save_file, active_doc);
 }
 
 function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
@@ -48,7 +47,7 @@ function convertPdfToPsdViaPhotoshop(pdf_file, active_doc) {
         included_config["export_png8"] === true || included_config["export_jpeg"] === true) {
         bt_script.sendToPhotoshop();
     } else {
-        alert("No export types enabled. Please enable at least one export type in 'ImportPdfAndExportPages.config.js'");
+        throw new Error("No export types enabled. Please enable at least one export type in 'ImportPdfAndExportPages.config.js'");
     }
 }
 
