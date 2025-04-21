@@ -80,3 +80,17 @@ function any(obj, func) {
   }
   return result;
 }
+
+function order_by_index(layers, ascending) {
+    var ordering = ascending ? 1 : -1;
+    layers.sort(function(a, b) {
+        if (a.index < b.index) {
+            return -ordering;
+        } else if (a.index > b.index) {
+            return ordering;
+        } else {
+            return 0;
+        }
+    });
+    return layers;
+}

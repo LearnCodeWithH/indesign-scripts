@@ -6,7 +6,7 @@
 
 // Utf-8 test: 漢字
 
-function createTextLayersFromData(import_pdf_options, color_profile, layer_infos) {
+function createTextLayersFromData(import_pdf_options, color_profile, layer_infos, user_export_folder) {
     var open_document_mode = colorModeToOpenDocumentMode(import_pdf_options.color_mode);
     var pdf_open_options = configurePdfOpenOptions(open_document_mode, import_pdf_options.dpi_res, import_pdf_options.anti_alias);
     pdf_open_options.page = 1; // All pdfs only have one page here.

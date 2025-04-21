@@ -12,6 +12,13 @@ function usingFile(file, mode, func) {
     }
 }
 
+function usingFolder(folder, func) {
+    if (!folder.exists) {
+        folder.create();
+    }
+    return func(folder);
+}
+
 // Opened files already have aliases resolved: https://www.indesignjs.de/extendscriptAPI/indesign-latest/index.html#File.html#d1e6347__d1e7098
 function resolveFileThroughAliases(file) {
     while (file.alias) {

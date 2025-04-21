@@ -119,14 +119,9 @@ function moveTextToOwnLayer(doc, sourceLayer, pages) {
     if (!pages || !pages.length) {
         throw new Error("No pages provided for processing");
     }
-    
-    // Create a new layer above the source layer
-    var textLayer = doc.layers.add();
-    textLayer.name = sourceLayer.name + " (TextFrames)";
-    
-    // Position the new layer directly above the source layer
-    textLayer.move(LocationOptions.BEFORE, sourceLayer);
-    
+
+    var framesByPageNum = {};
+    var hasAnyFrames = false;
     // Process each page
     for (var i = 0; i < pages.length; i++) {
         var page = pages[i];
@@ -139,10 +134,27 @@ function moveTextToOwnLayer(doc, sourceLayer, pages) {
                 frames.push(frame);
             }
         }
+
+        hasAnyFrames = hasAnyFrames || frames.length > 0;
+        framesByPageNum[page.name] = frames;
+    }
+
+    var textLayer = null;
+    if (hasAnyFrames) {
+        // Create a new layer above the source layer
+        textLayer = doc.layers.add();
+        textLayer.name = sourceLayer.name + " (TextFrames)";
         
-        // Move each text frame to the new layer
-        for (var k = 0; k < frames.length; k++) {
-            frames[k].itemLayer = textLayer;
+        // Position the new layer directly above the source layer
+        textLayer.move(LocationOptions.BEFORE, sourceLayer);
+
+        for (var pageNum in framesByPageNum) {
+            var frames = framesByPageNum[pageNum];
+            
+            // Move each text frame to the new layer
+            for (var k = 0; k < frames.length; k++) {
+                frames[k].itemLayer = textLayer;
+            }
         }
     }
     

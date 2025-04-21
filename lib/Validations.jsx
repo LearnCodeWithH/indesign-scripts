@@ -3,12 +3,21 @@
 #include './Functional.jsx';
 #include './File.jsx';
 
-function scriptRunScope(func) {
+function scriptRunScope(func, fullDebugInfo) {
+    var printDebugInfo = fullDebugInfo || false;
     try {
         return func();
     } catch (error) {
-        alert(error.message);
+        if (!printDebugInfo) {
+            alert(error.message);
+        } else {
+            alert(debugErrorFormatString(error));
+        }
     }
+}
+
+function debugErrorFormatString(error) {
+    return "Error in " + error.fileName + "@" + error.line + "\n" + error.message;
 }
 
 function requireDocument() {

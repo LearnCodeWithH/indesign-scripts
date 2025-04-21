@@ -150,4 +150,45 @@ runner.addTest("any should handle an array with one item", function(runner) {
     runner.assertFalse(result, "any did not handle single-item array correctly when condition is false");
 });
 
+runner.addTest("order_by_index should sort objects in ascending order", function(runner) {
+    var layers = [
+        { name: "Layer 1", index: 3 },
+        { name: "Layer 2", index: 1 },
+        { name: "Layer 3", index: 2 }
+    ];
+    
+    var sorted = order_by_index(layers, true);
+    
+    runner.assertEquals(1, sorted[0].index, "First layer should have lowest index");
+    runner.assertEquals(2, sorted[1].index, "Second layer should have middle index");
+    runner.assertEquals(3, sorted[2].index, "Third layer should have highest index");
+});
+
+runner.addTest("order_by_index should sort objects in descending order", function(runner) {
+    var layers = [
+        { name: "Layer 1", index: 3 },
+        { name: "Layer 2", index: 1 },
+        { name: "Layer 3", index: 2 }
+    ];
+    
+    var sorted = order_by_index(layers, false);
+    
+    runner.assertEquals(3, sorted[0].index, "First layer should have highest index");
+    runner.assertEquals(2, sorted[1].index, "Second layer should have middle index");
+    runner.assertEquals(1, sorted[2].index, "Third layer should have lowest index");
+});
+
+runner.addTest("order_by_index should handle empty array", function(runner) {
+    var layers = [];
+    var sorted = order_by_index(layers, true);
+    runner.assertEquals(0, sorted.length, "Array should still be empty");
+});
+
+runner.addTest("order_by_index should handle array with one item", function(runner) {
+    var layers = [{ name: "Single Layer", index: 5 }];
+    var sorted = order_by_index(layers, true);
+    runner.assertEquals(5, sorted[0].index, "Single layer's index should be unchanged");
+    runner.assertEquals(1, sorted.length, "Array should still have one item");
+});
+
 runner.runTests();
