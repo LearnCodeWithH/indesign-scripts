@@ -272,6 +272,9 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
     bt_script
         .addFile(script_path + "/lib/Datetime.jsx")
         .addFile(script_path + "/lib/File.jsx")
+        .addFile(script_path + "/lib/Functional.jsx")
+        .addFile(script_path + "/lib/bridgetalk/PSPdfImport.jsx")
+        .addFile(script_path + "/lib/bridgetalk/PSConversions.jsx")
         .addFile(script_path + "/lib/bridgetalk/BuildPsdFromPdfPSEntrypoint.jsx")
         .addFunctionCall("createTextLayersFromData", function(symbolBuilder) {
             var import_pdf_options_symbol = {};
