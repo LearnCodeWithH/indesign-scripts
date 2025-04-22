@@ -68,24 +68,40 @@ function createContentLayerFromInfo(psdDocument, pdfOpenOptions, contentLayerInf
     // Unlock the layer for copy
     contentDoc.artLayers[0].allLocked = false;
 
-    // Copy the first art layer into a new layer in psdDocument
-    contentDoc.artLayers[0].copy();
-    
-    // Activate the target document
-    app.activeDocument = psdDocument;
-    
-    // Paste the copied content
-    var newLayer = psdDocument.paste();
-    newLayer.name = contentLayerInfo.name;
-    
-    // Position the layer if coordinates are provided
-    // if (contentLayerInfo.bounds) {
-    //     newLayer.translate(contentLayerInfo.bounds.x || 0, contentLayerInfo.bounds.y || 0);
-    // }
-    
-    // Send to back in layer ordering
-    newLayer.move(psdDocument.layers[psdDocument.layers.length - 1], ElementPlacement.PLACEAFTER);
-    
+    // Check if the art layer is empty
+    var isLayerEmpty = true;
+    try {
+        // Try to get the bounds of the layer - if it succeeds and returns valid bounds, the layer is not empty
+        var bounds = contentDoc.artLayers[0].bounds;
+        if (bounds && bounds.length === 4 && 
+            (bounds[2] > bounds[0] && bounds[3] > bounds[1])) {
+            isLayerEmpty = false;
+        }
+    } catch (e) {
+        // If an error occurs, assume the layer is empty
+        isLayerEmpty = true;
+    }
+
+    if (!isLayerEmpty) {
+        // Copy the first art layer into a new layer in psdDocument
+        contentDoc.artLayers[0].copy();
+
+        // Activate the target document
+        app.activeDocument = psdDocument;
+
+        // Paste the copied content
+        var newLayer = psdDocument.paste();
+        newLayer.name = contentLayerInfo.name;
+
+        // Position the layer if coordinates are provided
+        // TODO: Check if positioning is handled by pdf?
+        // if (contentLayerInfo.bounds) {
+        //     newLayer.translate(contentLayerInfo.bounds.x || 0, contentLayerInfo.bounds.y || 0);
+        // }
+
+        // Send to back in layer ordering
+        newLayer.move(psdDocument.layers[psdDocument.layers.length - 1], ElementPlacement.PLACEAFTER);
+    }
     // Close the content document
     contentDoc.close(SaveOptions.DONOTSAVECHANGES);
     
