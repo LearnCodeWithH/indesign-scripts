@@ -190,6 +190,15 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     var textItem = textLayer.textItem;
     textItem.contents = fullText;
     
+    // TODO:
+    // Handle text justification
+    
+    // NOTE: Style runs need to handle:
+    // font family, font point size, kerning, font color, 
+    // letter spacing (tracking), line spacing (leading),
+    // horizontal/vertical scale, baseline shift, superscript/subscript,
+    // font style (bold, italic), text justification
+
     // Apply different styles to different parts of the text
     applyStyleRuns(textLayer, styleRuns);
     
