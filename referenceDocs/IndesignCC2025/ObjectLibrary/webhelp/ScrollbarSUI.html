@@ -1,0 +1,1087 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="A scrollbar with a draggable scroll indicator and stepper buttons to move the indicator. The scrollbar control has a horizontal orientation if the width is greater than the height at creation time, or ..." /><meta name="copyright" content="(C) Copyright 2024" /><meta name="DC.rights.owner" content="(C) Copyright 2024" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="Scrollbar (SUI)" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="d1e19216" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=2017092911"><!----></link><title>Scrollbar (SUI)</title><!--  Generated with Oxygen version 19.1, build number 2017092911.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=2017092911"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css?buildId=2017092911" /><link rel="stylesheet" type="text/css" href="skin.css" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=2017092911"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=2017092911"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e19216">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">
+      <span class="keyword">Scrollbar (SUI)</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">A scrollbar with a draggable scroll indicator and stepper buttons to move the indicator.</p>
+
+      <p class="p description">
+        The scrollbar control has a horizontal orientation if the width is greater than the height at creation time, or vertical if its height is greater than its width.
+        Calls the onChange() callback after the position of the indicator is changed or if its notify() method is called. Calls the onChanging() callback repeatedly while the user is moving the indicator. Scrollbars are often created with an associated EditText field to display the current value of the scrollbar, and to allow setting the scrollbar's position to a specific value.
+      </p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e19216__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e19216__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <section class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e19216__d1e19667">addEventListener</a>,  <a class="xref" href="#d1e19216__d1e19736">dispatchEvent</a>,  <a class="xref" href="#d1e19216__d1e19754">hide</a>,  <a class="xref" href="#d1e19216__d1e19760">notify</a>,  <a class="xref" href="#d1e19216__d1e19872">onActivate</a>,  <a class="xref" href="#d1e19216__d1e19881">onChange</a>,  <a class="xref" href="#d1e19216__d1e19887">onChanging</a>,  <a class="xref" href="#d1e19216__d1e19896">onDeactivate</a>,  <a class="xref" href="#d1e19216__d1e19905">onDraw</a>,  <a class="xref" href="#d1e19216__d1e19921">onShortcutKey</a>,  <a class="xref" href="#d1e19216__d1e19799">removeEventListener</a>,  <a class="xref" href="#d1e19216__d1e19857">show</a>
+         </p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a>, <a class="xref" href="BoundsSUI.html#d1e24987">Bounds (SUI)</a>, <a class="xref" href="DimensionSUI.html#d1e24931">Dimension (SUI)</a>, <a class="xref" href="Number.html#d1e5485">Number</a>, <a class="xref" href="Object.html#d1e626">Object</a>, <a class="xref" href="PointSUI.html#d1e24851">Point (SUI)</a>, <a class="xref" href="ScriptUIGraphicsSUI.html#d1e12656">ScriptUIGraphics (SUI)</a>, <a class="xref" href="String.html#d1e4583">String</a>, <a class="xref" href="WindowSUI.html#d1e10891">Window (SUI)</a>
+         </p>
+
+      </section>
+
+      <section class="section" id="d1e19216__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:10%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2681371e171">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e177">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e183">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e189">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">active</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">True if this element is active.</p>
+
+                        <p class="p description">
+            An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
+          </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">alignment</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">
+            The alignment style for this element. If defined, this value overrides the alignChildren setting for the parent container.
+          </p>
+
+                        <p class="p description">
+            This can be a single string, which indicates the alignment for the orientation specified in the parent container, or an array of two strings, indicating both the horizontal and vertical alignment (in that order). Allowed values depend on the orientation value of the parent container. They are not case sensitive.
+            
+              For orientation=row:top, bottom, fill
+                        
+                        
+              For orientation=column: left, right, fill
+                        
+                        
+              For orientation=stack:top, bottom, left, right, fill
+                        
+                     </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">bounds</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="BoundsSUI.html#d1e24987">Bounds (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The boundaries of the element, in parent-relative coordinates. </p>
+
+                        <p class="p description">Setting an element's size or location changes its bounds property, and vice-versa.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">children</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e977">Array</a> of <a class="xref" href="Object.html#d1e626">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">An array of child elements.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">enabled</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">True if this element is enabled.</p>
+
+                        <p class="p description">An enabled element can accept input, according to its type. When false, control elements do not accept input, and all types of elements have a dimmed appearance. </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">graphics</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="ScriptUIGraphicsSUI.html#d1e12656">ScriptUIGraphics (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">
+            The graphics object that can be used to customize the element's appearance, in response to the onDraw() event.
+          </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">helpTip</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The help text that is displayed when the mouse hovers over the element.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">indent</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The number of pixels to indent the element during automatic layout.</p>
+
+                        <p class="p description">Applies for column orientation and left alignment, or row orientation and top alignment.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">jumpdelta</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The amount to increment or decrement a scrollbar indicator's position when the user clicks ahead or behind the moveable element.</p>
+
+                        <p class="p description"> Default is 20% of the range between the maxvalue and minvalue property values. </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">location</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="PointSUI.html#d1e24851">Point (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The upper left corner of this element relative to its parent.</p>
+
+                        <p class="p description">The location is defined as [bounds.x, bounds.y]. Setting an element's location changes its bounds property, and vice-versa. </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">maximumSize</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="DimensionSUI.html#d1e24931">Dimension (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description"> The maximum height and width to which the element can be resized.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">maxvalue</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">
+            The maximum value allowed in the value property.
+          </p>
+
+                        <p class="p description">
+            Together with minvalue, sets the scrolling range. Default is 100.
+          </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">minimumSize</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="DimensionSUI.html#d1e24931">Dimension (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description"> The minimum height and width to which the element can be resized.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">minvalue</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">
+            The minimum value allowed in the value property.
+          </p>
+
+                        <p class="p description">
+            Together with  maxvalue, sets the scrolling range.Default is 0.
+          </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">parent</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 "> </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The parent element.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">preferredSize</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="DimensionSUI.html#d1e24931">Dimension (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The preferred size, used by layout managers to determine the best size for each element.</p>
+
+                        <p class="p description">If not explicitly set by a script, value is established by the UI framework in which ScriptUI is employed, and is based on such attributes of the element as its text, font, font size, icon size, and other UI framework-specific attributes.A script can explicitly set this value before the layout manager is invoked in order to establish an element size other than the default. </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">properties</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e626">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">An object that contains one or more creation properties of the container (properties used only when the element is created). </p>
+
+                        <p class="p description">
+            A Scrollbar object has no creation properties. The third argument of the add() method that creates it is the initial value, and the fourth and fifth arguments are the minimum and maximum values of the range.
+          </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">shortcutKey</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">
+            The key sequence that invokes the  onShortcutKey() callback for this element (in Windows only).
+          </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">size</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="DimensionSUI.html#d1e24931">Dimension (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The current dimensions of this element.</p>
+
+                        <p class="p description">
+            Initially undefined, and unless explicitly set by a script, it is defined by a LayoutManager . A script can explicitly set size before the layout manager is invoked to establish an element size other than the preferredSize or the default size, but this is not recommended. Defined as [bounds.width, bounds.height]. Setting an element's size changes its bounds property, and vice-versa.
+          </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">stepdelta</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The amount by which to increment or decrement a scrollbar element's position when the user clicks a stepper button. </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">type</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The element type, "scrollbar".</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">value</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The current position of the indicator. </p>
+
+                        <p class="p description">If set to a value outside the range specified by minvalue and maxvalue, it is automatically reset to the closest boundary.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">visible</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">True if this element is shown, false if it is hidden.</p>
+
+                        <p class="p description">When a container is hidden, its children are also hidden, but they retain their own visibility values, and are shown or hidden accordingly when the parent is next shown.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">window</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="WindowSUI.html#d1e10891">Window (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The window that this element belongs to.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e171 ">
+                        <p class="p clip_button">windowBounds</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e177 ">
+                        <p class="p">
+                           <a class="xref" href="BoundsSUI.html#d1e24987">Bounds (SUI)</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e183 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e189 ">
+                        <p class="p description">The bounds of this element relative to the top-level parent window.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section" id="d1e19216__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e19216__d1e19667">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a> 
+            <strong class="ph b clip_button">addEventListener</strong> (eventName:<em class="ph i">String</em>, handler:<em class="ph i">Function</em>, capturePhase:<em class="ph i">Boolean</em>=Boolean)</p>
+
+         <p class="p description">Registers an event handler for a particular type of event occuring in this element.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2681371e1062">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e1068">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e1074">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e1062 ">
+                        <p class="p">eventName</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1068 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1074 ">
+                        <p class="p description">The name of the event.</p>
+
+                        <p class="p description">
+                Event names are listed in the JavaScript Tools Guide.
+              </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e1062 ">
+                        <p class="p">handler</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1068 ">
+                        <p class="p">
+                           <a class="xref" href="Function.html#d1e3604">Function</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1074 ">
+                        <p class="p description">The function that handles the event.</p>
+
+                        <p class="p description">
+                This can be the name of a function defined in the extension, or a locally defined handler function to be executed when the event occurs. A handler function takes one argument, the UIEvent object.
+              </p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e1062 ">
+                        <p class="p">capturePhase</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1068 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1074 ">
+                        <p class="p description">When true, the handler is called only in the capturing phase of the event propagation. </p>
+
+                        <p class="p description">Default is false, meaning that the handler is called in the bubbling phase if this object is an ancestor of the target, or in the at-target phase if this object is itself the target.</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e19216__d1e19736">
+            <a class="xref" href="EventSUI.html#d1e25517">Event (SUI)</a> 
+            <strong class="ph b clip_button">dispatchEvent</strong> ()</p>
+
+         <p class="p description">Simulates the occurrence of an event in this target. </p>
+
+         <p class="p description">
+            A script can create a UIEvent object for a specific event and pass it to this method to start the event propagation for the event.
+          </p>
+
+         <p class="p methodName" id="d1e19216__d1e19754">undefined <strong class="ph b clip_button">hide</strong> ()</p>
+
+         <p class="p description">Hides this element.</p>
+
+         <p class="p methodName" id="d1e19216__d1e19760">undefined <strong class="ph b clip_button">notify</strong> ([eventName:<em class="ph i">String</em>])</p>
+
+         <p class="p description">Sends a notification message, simulating the specified user interaction event. </p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2681371e1227">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e1233">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e1239">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e1227 ">
+                        <p class="p">eventName</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1233 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1239 ">
+                        <p class="p description">The name of the control event handler to call. </p>
+
+                        <p class="p description">
+                One of: onClick, onChange, onChanging. By default, simulates the onChange event for an edittext control, an onClick event for controls that support that event.
+              </p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e19216__d1e19872">undefined <strong class="ph b clip_button">onActivate</strong> ()</p>
+
+         <p class="p description">An event-handler callback function, called when the element acquires the keyboard focus.</p>
+
+         <p class="p description">
+            Called when the user gives the control the keyboard focus by clicking it or tabbing into it.
+          </p>
+
+         <p class="p methodName" id="d1e19216__d1e19881">undefined <strong class="ph b clip_button">onChange</strong> ()</p>
+
+         <p class="p description">An event-handler callback function, called when the user has finished dragging the position indicator, or has clicked the control.</p>
+
+         <p class="p methodName" id="d1e19216__d1e19887">undefined <strong class="ph b clip_button">onChanging</strong> ()</p>
+
+         <p class="p description">An event-handler callback function, called when the content of the element is in the process of changing</p>
+
+         <p class="p description">The handler is called for any motion of the position indicator while this control has the input focus.</p>
+
+         <p class="p methodName" id="d1e19216__d1e19896">undefined <strong class="ph b clip_button">onDeactivate</strong> ()</p>
+
+         <p class="p description">An event-handler callback function, called when the element loses the keyboard focus.</p>
+
+         <p class="p description">
+            Called when the user moves the keyboard focus from the previously active control to another control.
+          </p>
+
+         <p class="p methodName" id="d1e19216__d1e19905">undefined <strong class="ph b clip_button">onDraw</strong> ()</p>
+
+         <p class="p description">An event-handler callback function, called when the window is about to be drawn. </p>
+
+         <p class="p description">
+            Allows the script to modify or control the appearance, using the control’s associated ScriptUIGraphics object. Handler takes one argument, a DrawState object.
+          </p>
+
+         <p class="p methodName" id="d1e19216__d1e19921">undefined <strong class="ph b clip_button">onShortcutKey</strong> ()</p>
+
+         <p class="p description">
+            An event-handler callback function, called when the element's shortcutKey sequence is typed in the active window.
+          </p>
+
+         <p class="p description">In Windows only.</p>
+
+         <p class="p methodName" id="d1e19216__d1e19799">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a> 
+            <strong class="ph b clip_button">removeEventListener</strong> (eventName:<em class="ph i">String</em>, handler:<em class="ph i">Function</em>, capturePhase:<em class="ph i">Boolean</em>=Boolean)</p>
+
+         <p class="p description">Unregisters an event handler for a particular type of event occuring in this element.</p>
+
+         <p class="p description"> All arguments must be identical to those that were used to register the event handler.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2681371e1391">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e1397">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2681371e1403">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e1391 ">
+                        <p class="p">eventName</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1397 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1403 ">
+                        <p class="p description">The name of the event.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e1391 ">
+                        <p class="p">handler</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1397 ">
+                        <p class="p">
+                           <a class="xref" href="Function.html#d1e3604">Function</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1403 ">
+                        <p class="p description">The function that handles the event.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2681371e1391 ">
+                        <p class="p">capturePhase</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1397 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2681371e1403 ">
+                        <p class="p description">Whether to call the handler only in the capturing phase of the event propagation.</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e19216__d1e19857">undefined <strong class="ph b clip_button">show</strong> ()</p>
+
+         <p class="p description">Shows this element.</p>
+
+         <p class="p description"> When a window or container is hidden, its children are also hidden, but when it is shown again, the children retain their own visibility states.</p>
+
+      </section>
+
+   </div>
+
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information"><div>
+	<p>These files are <a href="https://github.com/grefel/extendscriptApiDoc" target="_blank">transformed</a> from data by <a href="http://www.adobe.com" target="_blank">Adobe Systems Incorporated</a>. If questions arise stick to the original versions of the files supplied by Adobe. InDesign, PhotoShop, Illustrator, ExtendScript and ScriptUI are trademarks of <a href="http://www.adobe.com/" target="_blank">Adobe Systems Incorporated</a>.</p>	
+</div></div></footer></body>
+</html>

@@ -1,0 +1,925 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="A path or drawing object, such as the outline of a shape or a straight or curved line, which contains sub paths that comprise its geometry. Go to Property Listing | Method Listing Methods: add , ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="PathItem"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="d1e56224"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>PathItem</title><!--  Generated with Oxygen version 17.0, build number 2015052917.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e56224">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+   <h1 class="title topictitle1">
+      <span class="keyword">PathItem</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">A path or drawing object, such as the outline of a shape or a straight or curved line, which contains sub paths that comprise its geometry.</p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e56224__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e56224__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <div class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e56224__d1e56286">add</a>,  <a class="xref" href="#d1e56224__d1e56298">duplicate</a>,  <a class="xref" href="#d1e56224__d1e56331">remove</a>,  <a class="xref" href="#d1e56224__d1e56337">removeAll</a>,  <a class="xref" href="#d1e56224__d1e56343">duplicate</a>,  <a class="xref" href="#d1e56224__d1e56370">makeSelection</a>,  <a class="xref" href="#d1e56224__d1e56416">fillPath</a>,  <a class="xref" href="#d1e56224__d1e56510">strokePath</a>,  <a class="xref" href="#d1e56224__d1e56543">makeClippingPath</a>,  <a class="xref" href="#d1e56224__d1e56564">select</a>,  <a class="xref" href="#d1e56224__d1e56570">deselect</a>
+         </p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="PathKind.html#d1e36663">PathKind</a>, <a class="xref" href="String.html#d1e4543">String</a>, <a class="xref" href="SubPathItems.html#d1e39740">SubPathItems</a>
+         </p>
+
+      </div>
+
+      <div class="section" id="d1e56224__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+               
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="20%" id="d217028e134">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d217028e140">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d217028e146">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d217028e152">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d217028e134 ">
+                        <p data-clipboard-text=".kind" class="p clip_button">kind</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e140 ">
+                        <p class="p">
+                           <a class="xref" href="PathKind.html#d1e36663">PathKind</a>
+                        </p>
+
+                        <p data-clipboard-text="PathKind.NORMALPATH" class="p enumInPTable clip_button">PathKind.NORMALPATH</p>
+
+                        <p data-clipboard-text="PathKind.CLIPPINGPATH" class="p enumInPTable clip_button">PathKind.CLIPPINGPATH</p>
+
+                        <p data-clipboard-text="PathKind.WORKPATH" class="p enumInPTable clip_button">PathKind.WORKPATH</p>
+
+                        <p data-clipboard-text="PathKind.VECTORMASK" class="p enumInPTable clip_button">PathKind.VECTORMASK</p>
+
+                        <p data-clipboard-text="PathKind.TEXTMASK" class="p enumInPTable clip_button">PathKind.TEXTMASK</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e146 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e152 ">
+                        <p class="p description">The type of path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d217028e134 ">
+                        <p data-clipboard-text=".name" class="p clip_button">name</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e140 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e146 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e152 ">
+                        <p class="p description">The name of the path item.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d217028e134 ">
+                        <p data-clipboard-text=".parent" class="p clip_button">parent</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e140 "> </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e146 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e152 ">
+                        <p class="p description">The object's container.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d217028e134 ">
+                        <p data-clipboard-text=".subPathItems" class="p clip_button">subPathItems</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e140 ">
+                        <p class="p">
+                           <a class="xref" href="SubPathItems.html#d1e39740">SubPathItems</a>
+                           <em class="ph i">
+                              <a class="xref" href="SubPathItem.html#d1e56579">SubPathItem</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e146 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e152 ">
+                        <p class="p description">The sub path objects for this path item.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d217028e134 ">
+                        <p data-clipboard-text=".typename" class="p clip_button">typename</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e140 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e146 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e152 ">
+                        <p class="p description">The class name of the object.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+      </div>
+
+      <div class="section" id="d1e56224__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e56224__d1e56286">
+            <a class="xref" href="PathItem.html#d1e56224">PathItem</a> 
+            <strong data-clipboard-text=".add()" class="ph b clip_button">add</strong> ()</p>
+
+         <p class="p description">Adds an element.</p>
+
+         <p class="p methodName" id="d1e56224__d1e56570">undefined <strong data-clipboard-text=".deselect()" class="ph b clip_button">deselect</strong> ()</p>
+
+         <p class="p description">Unselects the selection, no path items are selected.</p>
+
+         <p class="p methodName" id="d1e56224__d1e56298">
+            <a class="xref" href="PathItem.html#d1e56224">PathItem</a> 
+            <strong data-clipboard-text=".duplicate()" class="ph b clip_button">duplicate</strong> (relativeObject:<em class="ph i">Object</em>, insertionLocation:<em class="ph i">ElementPlacement</em>)</p>
+
+         <p class="p description">Duplicate this object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d217028e399">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d217028e405">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d217028e411">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e399 ">
+                        <p class="p">relativeObject</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e405 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e624">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e411 "> </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e399 ">
+                        <p class="p">insertionLocation</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e405 ">
+                        <p class="p">
+                           <a class="xref" href="ElementPlacement.html#d1e57359">ElementPlacement</a>
+                        </p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEAFTER" class="p enumInPTable clip_button">ElementPlacement.PLACEAFTER</p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEBEFORE" class="p enumInPTable clip_button">ElementPlacement.PLACEBEFORE</p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEATEND" class="p enumInPTable clip_button">ElementPlacement.PLACEATEND</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e411 "> </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e56224__d1e56343">
+            <a class="xref" href="PathItem.html#d1e56224">PathItem</a> 
+            <strong data-clipboard-text=".duplicate()" class="ph b clip_button">duplicate</strong> ([name:<em class="ph i">String</em>])</p>
+
+         <p class="p description">Duplicates this path item.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d217028e505">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d217028e511">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d217028e517">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e505 ">
+                        <p class="p">name</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e511 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e517 ">
+                        <p class="p description">The name for the new path.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e56224__d1e56416">undefined <strong data-clipboard-text=".fillPath()" class="ph b clip_button">fillPath</strong> ([fillColor:<em class="ph i">Varies</em>], [mode:<em class="ph i">ColorBlendMode</em>], [opacity:<em class="ph i">Number</em>], [preserveTransparency:<em class="ph i">Boolean</em>], [feather:<em class="ph i">Number</em>], [antiAlias:<em class="ph i">Boolean</em>], [wholePath:<em class="ph i">Boolean</em>])</p>
+
+         <p class="p description">Fills the area enclosed by the path.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d217028e601">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d217028e607">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d217028e613">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e601 ">
+                        <p class="p">fillColor</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e607 ">
+                        <p class="p">Varies</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e613 ">
+                        <p class="p description">The color of the fill for this path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e601 ">
+                        <p class="p">mode</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e607 ">
+                        <p class="p">
+                           <a class="xref" href="ColorBlendMode.html#d1e30835">ColorBlendMode</a>
+                        </p>
+
+                        <p data-clipboard-text="ColorBlendMode.NORMAL" class="p enumInPTable clip_button">ColorBlendMode.NORMAL</p>
+
+                        <p data-clipboard-text="ColorBlendMode.DISSOLVE" class="p enumInPTable clip_button">ColorBlendMode.DISSOLVE</p>
+
+                        <p data-clipboard-text="ColorBlendMode.BEHIND" class="p enumInPTable clip_button">ColorBlendMode.BEHIND</p>
+
+                        <p data-clipboard-text="ColorBlendMode.CLEAR" class="p enumInPTable clip_button">ColorBlendMode.CLEAR</p>
+
+                        <p data-clipboard-text="ColorBlendMode.DARKEN" class="p enumInPTable clip_button">ColorBlendMode.DARKEN</p>
+
+                        <p data-clipboard-text="ColorBlendMode.MULTIPLY" class="p enumInPTable clip_button">ColorBlendMode.MULTIPLY</p>
+
+                        <p data-clipboard-text="ColorBlendMode.COLORBURN" class="p enumInPTable clip_button">ColorBlendMode.COLORBURN</p>
+
+                        <p data-clipboard-text="ColorBlendMode.LINEARBURN" class="p enumInPTable clip_button">ColorBlendMode.LINEARBURN</p>
+
+                        <p data-clipboard-text="ColorBlendMode.LIGHTEN" class="p enumInPTable clip_button">ColorBlendMode.LIGHTEN</p>
+
+                        <p data-clipboard-text="ColorBlendMode.SCREEN" class="p enumInPTable clip_button">ColorBlendMode.SCREEN</p>
+
+                        <p data-clipboard-text="ColorBlendMode.COLORDODGE" class="p enumInPTable clip_button">ColorBlendMode.COLORDODGE</p>
+
+                        <p data-clipboard-text="ColorBlendMode.LINEARDODGE" class="p enumInPTable clip_button">ColorBlendMode.LINEARDODGE</p>
+
+                        <p data-clipboard-text="ColorBlendMode.OVERLAY" class="p enumInPTable clip_button">ColorBlendMode.OVERLAY</p>
+
+                        <p data-clipboard-text="ColorBlendMode.SOFTLIGHT" class="p enumInPTable clip_button">ColorBlendMode.SOFTLIGHT</p>
+
+                        <p data-clipboard-text="ColorBlendMode.HARDLIGHT" class="p enumInPTable clip_button">ColorBlendMode.HARDLIGHT</p>
+
+                        <p data-clipboard-text="ColorBlendMode.VIVIDLIGHT" class="p enumInPTable clip_button">ColorBlendMode.VIVIDLIGHT</p>
+
+                        <p data-clipboard-text="ColorBlendMode.LINEARLIGHT" class="p enumInPTable clip_button">ColorBlendMode.LINEARLIGHT</p>
+
+                        <p data-clipboard-text="ColorBlendMode.PINLIGHT" class="p enumInPTable clip_button">ColorBlendMode.PINLIGHT</p>
+
+                        <p data-clipboard-text="ColorBlendMode.DIFFERENCE" class="p enumInPTable clip_button">ColorBlendMode.DIFFERENCE</p>
+
+                        <p data-clipboard-text="ColorBlendMode.EXCLUSION" class="p enumInPTable clip_button">ColorBlendMode.EXCLUSION</p>
+
+                        <p data-clipboard-text="ColorBlendMode.SUBTRACT" class="p enumInPTable clip_button">ColorBlendMode.SUBTRACT</p>
+
+                        <p data-clipboard-text="ColorBlendMode.DIVIDE" class="p enumInPTable clip_button">ColorBlendMode.DIVIDE</p>
+
+                        <p data-clipboard-text="ColorBlendMode.HUE" class="p enumInPTable clip_button">ColorBlendMode.HUE</p>
+
+                        <p data-clipboard-text="ColorBlendMode.SATURATION" class="p enumInPTable clip_button">ColorBlendMode.SATURATION</p>
+
+                        <p data-clipboard-text="ColorBlendMode.COLOR" class="p enumInPTable clip_button">ColorBlendMode.COLOR</p>
+
+                        <p data-clipboard-text="ColorBlendMode.LUMINOSITY" class="p enumInPTable clip_button">ColorBlendMode.LUMINOSITY</p>
+
+                        <p data-clipboard-text="ColorBlendMode.HARDMIX" class="p enumInPTable clip_button">ColorBlendMode.HARDMIX</p>
+
+                        <p data-clipboard-text="ColorBlendMode.LIGHTERCOLOR" class="p enumInPTable clip_button">ColorBlendMode.LIGHTERCOLOR</p>
+
+                        <p data-clipboard-text="ColorBlendMode.DARKERCOLOR" class="p enumInPTable clip_button">ColorBlendMode.DARKERCOLOR</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e613 ">
+                        <p class="p description">The blending mode of the fill for this path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e601 ">
+                        <p class="p">opacity</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e607 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e613 ">
+                        <p class="p description">The opacity of the fill for this path (as a percentage). Range: 0.0 to 100.0.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e601 ">
+                        <p class="p">preserveTransparency</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e607 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e613 ">
+                        <p class="p description">If true, transparency is preserved.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e601 ">
+                        <p class="p">feather</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e607 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e613 ">
+                        <p class="p description">The feather amount in pixels. Range: 0.0 to 250.0.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e601 ">
+                        <p class="p">antiAlias</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e607 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e613 ">
+                        <p class="p description">If true, uses anti-aliasing for the selection.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e601 ">
+                        <p class="p">wholePath</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e607 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e613 ">
+                        <p class="p description">If true, uses all subpaths when doing the fill.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e56224__d1e56543">undefined <strong data-clipboard-text=".makeClippingPath()" class="ph b clip_button">makeClippingPath</strong> ([flatness:<em class="ph i">Number</em>])</p>
+
+         <p class="p description">Makes this path item the clipping path for this document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d217028e916">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d217028e922">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d217028e928">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e916 ">
+                        <p class="p">flatness</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e922 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e928 ">
+                        <p class="p description">Flatness in device pixels; tells the PostScript printer how to approximate curves. Range: 0.2 to 100).</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e56224__d1e56370">undefined <strong data-clipboard-text=".makeSelection()" class="ph b clip_button">makeSelection</strong> ([feather:<em class="ph i">Number</em>], [antiAlias:<em class="ph i">Boolean</em>], [operation:<em class="ph i">SelectionType</em>])</p>
+
+         <p class="p description">Makes a selection object, whose border is the path, from this path item object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d217028e999">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d217028e1005">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d217028e1011">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e999 ">
+                        <p class="p">feather</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e1005 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e1011 ">
+                        <p class="p description">The feather amount in pixels. Range: 0.0 to 250.0.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e999 ">
+                        <p class="p">antiAlias</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e1005 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e1011 ">
+                        <p class="p description">If true, the selection uses anti-aliasing.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e999 ">
+                        <p class="p">operation</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e1005 ">
+                        <p class="p">
+                           <a class="xref" href="SelectionType.html#d1e32389">SelectionType</a>
+                        </p>
+
+                        <p data-clipboard-text="SelectionType.REPLACE" class="p enumInPTable clip_button">SelectionType.REPLACE</p>
+
+                        <p data-clipboard-text="SelectionType.EXTEND" class="p enumInPTable clip_button">SelectionType.EXTEND</p>
+
+                        <p data-clipboard-text="SelectionType.DIMINISH" class="p enumInPTable clip_button">SelectionType.DIMINISH</p>
+
+                        <p data-clipboard-text="SelectionType.INTERSECT" class="p enumInPTable clip_button">SelectionType.INTERSECT</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e1011 ">
+                        <p class="p description">The selection behavior relative to the existing selection (when a selection already exists).</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e56224__d1e56331">undefined <strong data-clipboard-text=".remove()" class="ph b clip_button">remove</strong> ()</p>
+
+         <p class="p description">Deletes this object.</p>
+
+         <p class="p methodName" id="d1e56224__d1e56337">undefined <strong data-clipboard-text=".removeAll()" class="ph b clip_button">removeAll</strong> ()</p>
+
+         <p class="p description">Deletes all elements.</p>
+
+         <p class="p methodName" id="d1e56224__d1e56564">undefined <strong data-clipboard-text=".select()" class="ph b clip_button">select</strong> ()</p>
+
+         <p class="p description">Makes this path item the active or selected path item.</p>
+
+         <p class="p methodName" id="d1e56224__d1e56510">undefined <strong data-clipboard-text=".strokePath()" class="ph b clip_button">strokePath</strong> ([tool:<em class="ph i">ToolType</em>], [simulatePressure:<em class="ph i">Boolean</em>])</p>
+
+         <p class="p description">Strokes the path.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d217028e1168">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d217028e1174">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d217028e1180">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e1168 ">
+                        <p class="p">tool</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e1174 ">
+                        <p class="p">
+                           <a class="xref" href="ToolType.html#d1e36856">ToolType</a>
+                        </p>
+
+                        <p data-clipboard-text="ToolType.PENCIL" class="p enumInPTable clip_button">ToolType.PENCIL</p>
+
+                        <p data-clipboard-text="ToolType.BRUSH" class="p enumInPTable clip_button">ToolType.BRUSH</p>
+
+                        <p data-clipboard-text="ToolType.ERASER" class="p enumInPTable clip_button">ToolType.ERASER</p>
+
+                        <p data-clipboard-text="ToolType.BACKGROUNDERASER" class="p enumInPTable clip_button">ToolType.BACKGROUNDERASER</p>
+
+                        <p data-clipboard-text="ToolType.CLONESTAMP" class="p enumInPTable clip_button">ToolType.CLONESTAMP</p>
+
+                        <p data-clipboard-text="ToolType.PATTERNSTAMP" class="p enumInPTable clip_button">ToolType.PATTERNSTAMP</p>
+
+                        <p data-clipboard-text="ToolType.HEALINGBRUSH" class="p enumInPTable clip_button">ToolType.HEALINGBRUSH</p>
+
+                        <p data-clipboard-text="ToolType.HISTORYBRUSH" class="p enumInPTable clip_button">ToolType.HISTORYBRUSH</p>
+
+                        <p data-clipboard-text="ToolType.ARTHISTORYBRUSH" class="p enumInPTable clip_button">ToolType.ARTHISTORYBRUSH</p>
+
+                        <p data-clipboard-text="ToolType.SMUDGE" class="p enumInPTable clip_button">ToolType.SMUDGE</p>
+
+                        <p data-clipboard-text="ToolType.BLUR" class="p enumInPTable clip_button">ToolType.BLUR</p>
+
+                        <p data-clipboard-text="ToolType.SHARPEN" class="p enumInPTable clip_button">ToolType.SHARPEN</p>
+
+                        <p data-clipboard-text="ToolType.DODGE" class="p enumInPTable clip_button">ToolType.DODGE</p>
+
+                        <p data-clipboard-text="ToolType.BURN" class="p enumInPTable clip_button">ToolType.BURN</p>
+
+                        <p data-clipboard-text="ToolType.SPONGE" class="p enumInPTable clip_button">ToolType.SPONGE</p>
+
+                        <p data-clipboard-text="ToolType.COLORREPLACEMENTTOOL" class="p enumInPTable clip_button">ToolType.COLORREPLACEMENTTOOL</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e1180 ">
+                        <p class="p description">The tool to use when stroking the path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d217028e1168 ">
+                        <p class="p">simulatePressure</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d217028e1174 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d217028e1180 ">
+                        <p class="p description">If true, simulates the pressure when using the tool.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Return</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="PathItem.html#d1e56224">PathItem</a>.<a class="xref" href="PathItem.html#d1e56224__d1e56286">add</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PathItems.html#d1e39609">PathItems</a>.<a class="xref" href="PathItems.html#d1e39609__d1e39616">add</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PathItem.html#d1e56224">PathItem</a>.<a class="xref" href="PathItem.html#d1e56224__d1e56298">duplicate</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PathItem.html#d1e56224">PathItem</a>.<a class="xref" href="PathItem.html#d1e56224__d1e56343">duplicate</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PathItems.html#d1e39609">PathItems</a>.<a class="xref" href="PathItems.html#d1e39609__d1e39714">[]</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PathItems.html#d1e39609">PathItems</a>.<a class="xref" href="PathItems.html#d1e39609__d1e39690">getByName</a>()</p>
+
+      </div>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+<script type="text/javascript"><!--
+        $(".clip_button").click(function(){
+            var temp = this.innerHTML;
+            this.innerHTML  = this.getAttribute('data-clipboard-text'); 
+            var range = document.createRange();
+            range.selectNode(this);
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            this.innerHTML = temp;
+        });
+
+      $( ".clip_button" ).hover(
+        function() {
+          $( this ).addClass("is-hover");
+        }, function() {
+          $( this ).removeClass("is-hover");
+        }
+      );
+      --></script></body>
+</html>

@@ -1,0 +1,4200 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="A table row. Go to Property Listing | Method Listing Methods: addEventListener , changeGlyph , changeGrep , changeText , changeTransliterate , createOutlines , findGlyph , findGrep , findText , ..." /><meta name="copyright" content="(C) Copyright 2024" /><meta name="DC.rights.owner" content="(C) Copyright 2024" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="Row" /><meta name="DC.Relation" scheme="URI" content="Table.html" /><meta name="DC.Relation" scheme="URI" content="Cell.html" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="d1e449471" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=2017092911"><!----></link><title>Row</title><!--  Generated with Oxygen version 19.1, build number 2017092911.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=2017092911"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css?buildId=2017092911" /><link rel="stylesheet" type="text/css" href="skin.css" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=2017092911"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=2017092911"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e449471">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"><span class="topic_breadcrumb_link"><a class="navheader_parent_path" href="Story.html" title="Story">Story</a></span><span class="topic_breadcrumb_link"><a class="navheader_parent_path" href="Table.html" title="Table">Table</a></span></span></td><td><span id="topic_navigation_links" class="navheader">
+<span class="navparent"><a class="link" href="Table.html" title="Table"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Table</span></a></span>  </span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">
+      <span class="keyword">Row</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">A table row.</p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e449471__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e449471__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <section class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e449471__d1e451351">addEventListener</a>,  <a class="xref" href="#d1e449471__d1e451417">changeGlyph</a>,  <a class="xref" href="#d1e449471__d1e451446">changeGrep</a>,  <a class="xref" href="#d1e449471__d1e451475">changeText</a>,  <a class="xref" href="#d1e449471__d1e451504">changeTransliterate</a>,  <a class="xref" href="#d1e449471__d1e451534">createOutlines</a>,  <a class="xref" href="#d1e449471__d1e451566">findGlyph</a>,  <a class="xref" href="#d1e449471__d1e451595">findGrep</a>,  <a class="xref" href="#d1e449471__d1e451624">findText</a>,  <a class="xref" href="#d1e449471__d1e451653">findTransliterate</a>,  <a class="xref" href="#d1e449471__d1e451682">getElements</a>,  <a class="xref" href="#d1e449471__d1e451697">merge</a>,  <a class="xref" href="#d1e449471__d1e451742">recompose</a>,  <a class="xref" href="#d1e449471__d1e451748">redistribute</a>,  <a class="xref" href="#d1e449471__d1e451799">remove</a>,  <a class="xref" href="#d1e449471__d1e451805">removeEventListener</a>,  <a class="xref" href="#d1e449471__d1e451871">select</a>,  <a class="xref" href="#d1e449471__d1e451896">split</a>,  <a class="xref" href="#d1e449471__d1e451917">toSource</a>,  <a class="xref" href="#d1e449471__d1e451929">toSpecifier</a>,  <a class="xref" href="#d1e449471__d1e451941">unmerge</a>
+         </p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a>, <a class="xref" href="Cells.html#d1e442482">Cells</a>, <a class="xref" href="Column.html#d1e446570">Column</a>, <a class="xref" href="Columns.html#d1e449056">Columns</a>, <a class="xref" href="EventListeners.html#d1e33911">EventListeners</a>, <a class="xref" href="Events.html#d1e37599">Events</a>, <a class="xref" href="FirstBaseline.html#d1e76820">FirstBaseline</a>, <a class="xref" href="HorizontalOrVertical.html#d1e76708">HorizontalOrVertical</a>, <a class="xref" href="NothingEnum.html#d1e88726">NothingEnum</a>, <a class="xref" href="Number.html#d1e5485">Number</a>, <a class="xref" href="Object.html#d1e626">Object</a>, <a class="xref" href="PageItem.html#d1e208939">PageItem</a>, <a class="xref" href="PageItems.html#d1e212778">PageItems</a>, <a class="xref" href="Row.html#d1e449471">Row</a>, <a class="xref" href="RowTypes.html#d1e95166">RowTypes</a>, <a class="xref" href="Rows.html#d1e451958">Rows</a>, <a class="xref" href="SpecialCharacters.html#d1e77395">SpecialCharacters</a>, <a class="xref" href="StartParagraph.html#d1e76606">StartParagraph</a>, <a class="xref" href="String.html#d1e4583">String</a>, <a class="xref" href="StrokeStyle.html#d1e434684">StrokeStyle</a>, <a class="xref" href="Swatch.html#d1e68490">Swatch</a>, <a class="xref" href="VerticalJustification.html#d1e76922">VerticalJustification</a>
+         </p>
+
+      </section>
+
+      <section class="section" id="d1e449471__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:10%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e251">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e257">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e263">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e269">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">autoGrow</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the height of the cell or the cells in the Row can increase or decrease automatically to fit cell content. Note: Allows cells to grow or shrink to the maximum or minimum height, if specified.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomEdgeStrokeColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the bottom edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomEdgeStrokeGapColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the gap of the bottom edge border stroke. Note: Not valid when bottom edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomEdgeStrokeGapOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the gap color of the bottom edge border stroke will overprint. Note: Not valid when bottom edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomEdgeStrokeGapTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the bottom edge border stroke gap color. (Range: 0 to 100) Note: Not valid when bottom edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomEdgeStrokeOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the bottom edge border stroke will overprint.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomEdgeStrokeTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the bottom edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomEdgeStrokeType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="StrokeStyle.html#d1e434684">StrokeStyle</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke type of the bottom edge. Can also accept: String.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomEdgeStrokeWeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke weight of the bottom edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">bottomInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The bottom inset of the cell.The API has been deprecated. Use TextBottomInset or GraphicBottomInset</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">cells</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Cells.html#d1e442482">Cells</a>
+                           <em class="ph i">
+                              <a class="xref" href="Cell.html#d1e439379">Cell</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">A collection of table cells.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">clipContentToCell</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, clips the cell's content to width and height of the cell. The API has been deprecated. Use ClipContentsToTextCell or ClipContentsToPageItemCell</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">clipContentToGraphicCell</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, clips the graphic cell's content to width and height of the cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">clipContentToTextCell</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, clips the text cell's content to width and height of the cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">columnSpan</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The number of columns that the object spans.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">columns</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Columns.html#d1e449056">Columns</a>
+                           <em class="ph i">
+                              <a class="xref" href="Column.html#d1e446570">Column</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">A collection of table columns.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">contents</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p enumInPTable clip_button">NothingEnum.NOTHING</p>
+
+                        <p class="p">NothingEnums<em class="ph i">
+                              <a class="xref" href="NothingEnum.html#d1e88726">NothingEnum</a>
+                           </em>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="PageItem.html#d1e208939">PageItem</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="SpecialCharacters.html#d1e77395">SpecialCharacters</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ARABIC_COMMA</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ARABIC_KASHIDA</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ARABIC_QUESTION_MARK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ARABIC_SEMICOLON</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.AUTO_PAGE_NUMBER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.BULLET_CHARACTER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.COLUMN_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.COPYRIGHT_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DEGREE_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DISCRETIONARY_HYPHEN</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DISCRETIONARY_LINE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DOTTED_CIRCLE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DOUBLE_LEFT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DOUBLE_RIGHT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DOUBLE_STRAIGHT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ELLIPSIS_CHARACTER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EM_DASH</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EM_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.END_NESTED_STYLE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EN_DASH</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EN_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EVEN_PAGE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FIGURE_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FIXED_WIDTH_NONBREAKING_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FLUSH_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FOOTNOTE_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FORCED_LINE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FRAME_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HAIR_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HEBREW_GERESH</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HEBREW_GERSHAYIM</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HEBREW_MAQAF</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HEBREW_SOF_PASUK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.INDENT_HERE_TAB</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.LEFT_TO_RIGHT_EMBEDDING</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.LEFT_TO_RIGHT_MARK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.LEFT_TO_RIGHT_OVERRIDE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.NEXT_PAGE_NUMBER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.NONBREAKING_HYPHEN</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.NONBREAKING_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ODD_PAGE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.PAGE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.PARAGRAPH_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.POP_DIRECTIONAL_FORMATTING</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.PREVIOUS_PAGE_NUMBER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.PUNCTUATION_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.QUARTER_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.REGISTERED_TRADEMARK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.RIGHT_INDENT_TAB</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.RIGHT_TO_LEFT_EMBEDDING</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.RIGHT_TO_LEFT_MARK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.RIGHT_TO_LEFT_OVERRIDE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SECTION_MARKER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SECTION_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SINGLE_LEFT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SINGLE_RIGHT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SINGLE_STRAIGHT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SIXTH_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.TEXT_VARIABLE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.THIN_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.THIRD_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.TRADEMARK_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ZERO_WIDTH_JOINER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ZERO_WIDTH_NONJOINER</p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e977">Array</a> of Strings<em class="ph i">
+                              <a class="xref" href="String.html#d1e4583">String</a>
+                           </em>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="PageItems.html#d1e212778">PageItems</a>
+                           <em class="ph i">
+                              <a class="xref" href="PageItem.html#d1e208939">PageItem</a>
+                           </em>
+                        </p>
+
+                        <p class="p">PageItemsCanalsoaccept:PageItem</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The text contents. For rows or columns, when specified as a string, the sting populates each cell in the row or column; when specified as an array, the first value in the array populates the left-most cell in the row or the top-most cell in the column; the next value populates the next cell to the right (for rows) or the next lowest cell (for columns), and so on. Can return: PageItem, String, SpecialCharacters enumerator or Array of Strings, SpecialCharacters enumerators or PageItems. Can also accept: PageItem, NothingEnum enumerator or Array of Strings, SpecialCharacters enumerators, NothingEnum enumerators or PageItems.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineInFront</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, draws the diagonal line in front of cell contents.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineStrokeColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The diagonal line color, specified as a swatch.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineStrokeGapColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the gap of the diagonal line stroke. Note: Not valid when diagonal line stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineStrokeGapOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the stroke gap of the diagonal line will overprint. Note: Not valid when diagonal line stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineStrokeGapTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the diagonal line stroke gap color. Note: Not valid when diagonal line stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineStrokeOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the diagonal line stroke will overprint.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineStrokeTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The diagonal line tint (as a percentage). (Range: 0 to 100)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineStrokeType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="StrokeStyle.html#d1e434684">StrokeStyle</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke type of the diagonal line(s). Can also accept: String.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">diagonalLineStrokeWeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The diagonal line stroke weight.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">eventListeners</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="EventListeners.html#d1e33911">EventListeners</a>
+                           <em class="ph i">
+                              <a class="xref" href="EventListener.html#d1e31102">EventListener</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">A collection of event listeners.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">events</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Events.html#d1e37599">Events</a>
+                           <em class="ph i">
+                              <a class="xref" href="Event.html#d1e34352">Event</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">A collection of events.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">fillColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the fill of the object. Can also accept: String.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">fillTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the fill of the object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">firstBaselineOffset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="FirstBaseline.html#d1e76820">FirstBaseline</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">FirstBaseline.ASCENT_OFFSET</p>
+
+                        <p class="p enumInPTable clip_button">FirstBaseline.CAP_HEIGHT</p>
+
+                        <p class="p enumInPTable clip_button">FirstBaseline.EMBOX_HEIGHT</p>
+
+                        <p class="p enumInPTable clip_button">FirstBaseline.FIXED_HEIGHT</p>
+
+                        <p class="p enumInPTable clip_button">FirstBaseline.LEADING_OFFSET</p>
+
+                        <p class="p enumInPTable clip_button">FirstBaseline.X_HEIGHT</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The distance between the baseline of the text and the top inset of the cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">gradientFillAngle</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The angle of a linear gradient applied to the fill of the object. (Range: -180 to 180)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">gradientFillLength</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The length (of a linear gradient) or radius (of a radial gradient) applied to the fill of the object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">gradientFillStart</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e977">Array</a> of <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e977">Array</a> of <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The starting point (in page coordinates) of a gradient applied to the fill of the Row, in the format [x, y].</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">graphicBottomInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The bottom inset of the graphic cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">graphicLeftInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The left inset of the graphic cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">graphicRightInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The right inset of the graphic cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">graphicTopInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The top inset of the graphic cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">height</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The height of the Row. For a table or column, specifies the sum of the row heights.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">index</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The index of the Row within its containing object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerColumnStrokeColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The color, specified as a swatch, of the inner column border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerColumnStrokeGapColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the gap of the inner column border stroke. Note: Not valid when inner column stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerColumnStrokeGapOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the gap color of the inner column border stroke will overprint. Note: Not valid when inner column stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerColumnStrokeGapTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the inner column border stroke gap color. (Range: 0 to 100) Note: Not valid when inner column stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerColumnStrokeOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the inner column border stroke will overprint.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerColumnStrokeTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the inner column border stroke. (Range: 0 to 100)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerColumnStrokeType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="StrokeStyle.html#d1e434684">StrokeStyle</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke type of the inner column. Can also accept: String.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerColumnStrokeWeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke weight of the inner column border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerRowStrokeColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The color, specified as a swatch, of the inner row border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerRowStrokeGapColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the gap of the inner row border stroke. Note: Not valid when inner row stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerRowStrokeGapOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the gap color of the inner row border stroke will overprint. Note: Not valid when inner row stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerRowStrokeGapTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the inner row border stroke. (Range: 0 to 100) Note: Not valid when inner row stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerRowStrokeOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the inner row border stroke will overprint.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerRowStrokeTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the inner row border stroke. (Range: 0 to 100)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerRowStrokeType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="StrokeStyle.html#d1e434684">StrokeStyle</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke type of the inner row. Can also accept: String.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">innerRowStrokeWeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke weight of the inner row border strokes.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">isValid</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">Returns true if the object specifier resolves to valid objects.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">keepWithNextRow</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, keeps the row with the next row when the table is split across text frames or pages.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftEdgeStrokeColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the left edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftEdgeStrokeGapColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the gap of the left edge border stroke. Note: Not valid when left edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftEdgeStrokeGapOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the gap color of the left edge border stroke will overprint. Note: Not valid when left edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftEdgeStrokeGapTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the left edge border stroke gap color. (Range: 0 to 100) Note: Not valid when left edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftEdgeStrokeOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the left edge border stroke will overprint.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftEdgeStrokeTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the left edge border stroke. (Range: 0 to 100)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftEdgeStrokeType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="StrokeStyle.html#d1e434684">StrokeStyle</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke type of the left edge. Can also accept: String.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftEdgeStrokeWeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke weight of the left edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">leftInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The left inset of the cell.The API has been deprecated. Use TextLeftInset or GraphicLeftInset</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">maximumHeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The maximum height to which cells in the Row may grow. Note: The maximum height cannot be exceeded even when auto grow is set to true. Also, the maximum height can affect redistribution.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">minimumFirstBaselineOffset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The space between the baseline of the text and the top inset of the frame or cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">minimumHeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The minimum height of the cells in the Row. Note: When auto grow is true, cells can automatically grow larger than this amount when content is added. Also, the minimum height can affect redistribution.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">name</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The name of the Row.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">overflows</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the story has overset text.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">overprintFill</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the fill of the object will overprint.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">paragraphSpacingLimit</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The maximum space that can be added between paragraphs in a cell. Note: Valid only when vertical justification is justified.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">parent</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Table.html#d1e442845">Table</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The parent of the Row (a Table).</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">parentColumn</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Column.html#d1e446570">Column</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The parent column of the cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">parentRow</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Row.html#d1e449471">Row</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The parent row of the cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">properties</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e626">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">A property that allows setting of several properties at the same time.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightEdgeStrokeColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The color, specified as a swatch, of the right edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightEdgeStrokeGapColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the gap of the right edge border stroke. Note: Not valid when right edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightEdgeStrokeGapOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the gap color of the right edge border stroke will overprint. Note: Not valid when right edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightEdgeStrokeGapTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the right edge border stroke gap color. (Range: 0 to 100) Note: Not valid when right edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightEdgeStrokeOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the right edge border stroke will overprint.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightEdgeStrokeTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the right edge border stroke. (Range: 0 to 100)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightEdgeStrokeType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="StrokeStyle.html#d1e434684">StrokeStyle</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke type of the right edge. Can also accept: String.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightEdgeStrokeWeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke weight of the right edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rightInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The right inset of the cell.The API has been deprecated. Use TextLeftInset or GraphicRightInset</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rotationAngle</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The rotation angle (in degrees) of the cell, specified as one of the following values: 0, 90, 180, or 270.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rowSpan</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The number of rows that the object spans.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rowType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="RowTypes.html#d1e95166">RowTypes</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">RowTypes.BODY_ROW</p>
+
+                        <p class="p enumInPTable clip_button">RowTypes.FOOTER_ROW</p>
+
+                        <p class="p enumInPTable clip_button">RowTypes.HEADER_ROW</p>
+
+                        <p class="p enumInPTable clip_button">RowTypes.MIXED_STATE</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The row type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">rows</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Rows.html#d1e451958">Rows</a>
+                           <em class="ph i">
+                              <a class="xref" href="Row.html#d1e449471">Row</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">A collection of table rows.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">startRow</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="StartParagraph.html#d1e76606">StartParagraph</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">StartParagraph.ANYWHERE</p>
+
+                        <p class="p enumInPTable clip_button">StartParagraph.NEXT_COLUMN</p>
+
+                        <p class="p enumInPTable clip_button">StartParagraph.NEXT_EVEN_PAGE</p>
+
+                        <p class="p enumInPTable clip_button">StartParagraph.NEXT_FRAME</p>
+
+                        <p class="p enumInPTable clip_button">StartParagraph.NEXT_ODD_PAGE</p>
+
+                        <p class="p enumInPTable clip_button">StartParagraph.NEXT_PAGE</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">Indicates where to start the row.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">textBottomInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The bottom inset of the text cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">textLeftInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The left inset of the text cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">textRightInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The right inset of the text cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">textTopInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The top inset of the text cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topEdgeStrokeColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the top edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topEdgeStrokeGapColor</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Swatch.html#d1e68490">Swatch</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The swatch (color, gradient, tint, or mixed ink) applied to the gap of the top edge border stroke. Note: Not valid when top edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topEdgeStrokeGapOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the gap color of the top edge border stroke will overprint. Note: Not valid when top edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topEdgeStrokeGapTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the top edge border stroke gap color. (Range: 0 to 100) Note: Not valid when top edge stroke type is solid.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topEdgeStrokeOverprint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, the top edge border stroke will overprint.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topEdgeStrokeTint</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The tint (as a percentage) of the top edge border stroke. (Range: 0 to 100)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topEdgeStrokeType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="StrokeStyle.html#d1e434684">StrokeStyle</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke type of the top edge. Can also accept: String.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topEdgeStrokeWeight</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The stroke weight of the top edge border stroke.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topInset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The top inset of the cell. The API has been deprecated. Use TextTopInset or GraphicTopInset</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topLeftDiagonalLine</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, draws a diagonal line starting from the top left.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">topRightDiagonalLine</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">If true, draws a diagonal line starting from the top right.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">verticalJustification</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="VerticalJustification.html#d1e76922">VerticalJustification</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">VerticalJustification.BOTTOM_ALIGN</p>
+
+                        <p class="p enumInPTable clip_button">VerticalJustification.CENTER_ALIGN</p>
+
+                        <p class="p enumInPTable clip_button">VerticalJustification.JUSTIFY_ALIGN</p>
+
+                        <p class="p enumInPTable clip_button">VerticalJustification.TOP_ALIGN</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The vertical alignment of cell.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">width</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The width of the Row. For a table or row, specifies the sum of the column widths.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e251 ">
+                        <p class="p clip_button">writingDirection</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e257 ">
+                        <p class="p">
+                           <a class="xref" href="HorizontalOrVertical.html#d1e76708">HorizontalOrVertical</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">HorizontalOrVertical.HORIZONTAL</p>
+
+                        <p class="p enumInPTable clip_button">HorizontalOrVertical.VERTICAL</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e263 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e269 ">
+                        <p class="p description">The direction of the text in the cell.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section" id="d1e449471__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e449471__d1e451351">
+            <a class="xref" href="EventListener.html#d1e31102">EventListener</a> 
+            <strong class="ph b clip_button">addEventListener</strong> (eventType:<em class="ph i">String</em>, handler:<em class="ph i">Varies File JavaScriptFunction</em>, [captures:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Adds an event listener.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e4365">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4371">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4377">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4365 ">
+                        <p class="p">eventType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4371 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4377 ">
+                        <p class="p description">The event type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4365 ">
+                        <p class="p">handler</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4371 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6347">File</a>
+                        </p>
+
+                        <p class="p">JavaScriptFunction</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4377 ">
+                        <p class="p description">The event handler. Can accept: File or JavaScript Function.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4365 ">
+                        <p class="p">captures</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4371 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4377 ">
+                        <p class="p description">This parameter is obsolete. (Optional)</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451417">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">changeGlyph</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds glyphs that match the find what value and replaces the glyphs with the change to value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e4502">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4508">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4514">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4502 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4508 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4514 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451446">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">changeGrep</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find what value and replaces the text with the change to value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e4582">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4588">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4594">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4582 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4588 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4594 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451475">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">changeText</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find what value and replaces the text with the change to value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e4663">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4669">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4675">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4663 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4669 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4675 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451504">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">changeTransliterate</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find character type value and replaces the text with the change character type value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e4743">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4749">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4755">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4743 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4749 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4755 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451534">
+            <a class="xref" href="PageItem.html#d1e208939">PageItem</a> 
+            <strong class="ph b clip_button">createOutlines</strong> ([deleteOriginal:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Converts text to outlines. Each line of text becomes a polygon object. When the converted text is a single letter that has no internal spaces or detached parts, the polygon contains only a single path. Note: To determine whether a font allows the creation of outlines, see allow outlines.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e4824">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4830">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4836">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4824 ">
+                        <p class="p">deleteOriginal</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4830 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4836 ">
+                        <p class="p description">If true, deletes the original text. If false, creates the outlines as separate object(s) on top of the text.  (Optional)</p>
+
+                        <p class="p"> (default: true)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451566">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">findGlyph</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds glyphs that match the find what value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e4907">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4913">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4919">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4907 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4913 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4919 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451595">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">findGrep</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find what value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e4988">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e4994">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5000">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e4988 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e4994 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5000 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451624">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">findText</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find what value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e5068">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5074">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5080">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5068 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5074 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5080 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451653">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">findTransliterate</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find character type value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e5149">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5155">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5161">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5149 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5155 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5161 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451682">
+            <a class="xref" href="Row.html#d1e449471">Row</a> 
+            <strong class="ph b clip_button">getElements</strong> ()</p>
+
+         <p class="p description">Resolves the object specifier, creating an array of object references.</p>
+
+         <p class="p methodName" id="d1e449471__d1e451697">
+            <a class="xref" href="Cell.html#d1e439379">Cell</a> 
+            <strong class="ph b clip_button">merge</strong> (with:<em class="ph i">Varies Cell Row Column</em>)</p>
+
+         <p class="p description">Merges the cells.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e5243">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5249">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5255">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5243 ">
+                        <p class="p">with</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5249 ">
+                        <p class="p">
+                           <a class="xref" href="Cell.html#d1e439379">Cell</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Row.html#d1e449471">Row</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Column.html#d1e446570">Column</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5255 ">
+                        <p class="p description">The cell(s) to merge with. Can accept: Cell, Row or Column. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451742">undefined <strong class="ph b clip_button">recompose</strong> ()</p>
+
+         <p class="p description">Recomposes the text in the Row.</p>
+
+         <p class="p methodName" id="d1e449471__d1e451748">undefined <strong class="ph b clip_button">redistribute</strong> (using:<em class="ph i">HorizontalOrVertical</em>, thru:<em class="ph i">Varies Cell Column Row</em>)</p>
+
+         <p class="p description">Redistributes the specified range of Rows so that the Rows have a uniform size. Note: The maximum or minimum height or width specified for some of the cells in the range may prevent them from being exactly even.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e5345">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5351">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5357">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5345 ">
+                        <p class="p">using</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5351 ">
+                        <p class="p">
+                           <a class="xref" href="HorizontalOrVertical.html#d1e76708">HorizontalOrVertical</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">HorizontalOrVertical.HORIZONTAL</p>
+
+                        <p class="p enumInPTable clip_button">HorizontalOrVertical.VERTICAL</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5357 ">
+                        <p class="p description">The direction in which to redistribute.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5345 ">
+                        <p class="p">thru</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5351 ">
+                        <p class="p">
+                           <a class="xref" href="Cell.html#d1e439379">Cell</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Column.html#d1e446570">Column</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Row.html#d1e449471">Row</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5357 ">
+                        <p class="p description">The last Row in the range. Can accept: Cell, Column or Row. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451799">undefined <strong class="ph b clip_button">remove</strong> ()</p>
+
+         <p class="p description">Deletes the Row.</p>
+
+         <p class="p methodName" id="d1e449471__d1e451805">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a> 
+            <strong class="ph b clip_button">removeEventListener</strong> (eventType:<em class="ph i">String</em>, handler:<em class="ph i">Varies File JavaScriptFunction</em>, [captures:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Removes the event listener.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e5486">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5492">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5498">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5486 ">
+                        <p class="p">eventType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5492 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5498 ">
+                        <p class="p description">The registered event type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5486 ">
+                        <p class="p">handler</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5492 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6347">File</a>
+                        </p>
+
+                        <p class="p">JavaScriptFunction</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5498 ">
+                        <p class="p description">The registered event handler. Can accept: File or JavaScript Function.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5486 ">
+                        <p class="p">captures</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5492 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5498 ">
+                        <p class="p description">This parameter is obsolete. (Optional)</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451871">undefined <strong class="ph b clip_button">select</strong> ([existingSelection:<em class="ph i">SelectionOptions</em>=SelectionOptions])</p>
+
+         <p class="p description">Selects the object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e5619">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5625">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5631">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5619 ">
+                        <p class="p">existingSelection</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5625 ">
+                        <p class="p">
+                           <a class="xref" href="SelectionOptions.html#d1e104050">SelectionOptions</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">SelectionOptions.ADD_TO</p>
+
+                        <p class="p enumInPTable clip_button">SelectionOptions.REMOVE_FROM</p>
+
+                        <p class="p enumInPTable clip_button">SelectionOptions.REPLACE_WITH</p>
+
+                        <p class="p enumInPTable clip_button">SelectionOptions.SET_KEY</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5631 ">
+                        <p class="p description">The selection status of the Row in relation to previously selected objects. (Optional)</p>
+
+                        <p class="p"> (default: SelectionOptions.REPLACE_WITH)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451896">undefined <strong class="ph b clip_button">split</strong> (using:<em class="ph i">HorizontalOrVertical</em>)</p>
+
+         <p class="p description">Splits the cell along the specified axis.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2594937e5710">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5716">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2594937e5722">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2594937e5710 ">
+                        <p class="p">using</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5716 ">
+                        <p class="p">
+                           <a class="xref" href="HorizontalOrVertical.html#d1e76708">HorizontalOrVertical</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">HorizontalOrVertical.HORIZONTAL</p>
+
+                        <p class="p enumInPTable clip_button">HorizontalOrVertical.VERTICAL</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2594937e5722 ">
+                        <p class="p description">The direction in which to split the cell.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e449471__d1e451917">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toSource</strong> ()</p>
+
+         <p class="p description">Generates a string which, if executed, will return the Row.</p>
+
+         <p class="p methodName" id="d1e449471__d1e451929">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toSpecifier</strong> ()</p>
+
+         <p class="p description">Retrieves the object specifier.</p>
+
+         <p class="p methodName" id="d1e449471__d1e451941">
+            <a class="xref" href="Cell.html#d1e439379">Cell</a> 
+            <strong class="ph b clip_button">unmerge</strong> ()</p>
+
+         <p class="p description">Unmerges all merged cells in the Row.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Object of</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="Cell.html#d1e439379">Cell</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Event.html#d1e34352">Event</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EventListener.html#d1e31102">EventListener</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="MutationEvent.html#d1e38204">MutationEvent</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Cell.html#d1e439379">Cell</a>.parentRow</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Column.html#d1e446570">Column</a>.parentRow</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Row.html#d1e449471">Row</a>.parentRow</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Return</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="Row.html#d1e449471">Row</a>.<a class="xref" href="Row.html#d1e449471__d1e451682">getElements</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452086">anyItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452110">everyItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452305">nextItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452332">previousItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452137">item</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e451980">[]</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452176">itemByName</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452203">itemByRange</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452125">firstItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452280">lastItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rows.html#d1e451958">Rows</a>.<a class="xref" href="Rows.html#d1e451958__d1e452292">middleItem</a>()</p>
+
+      </section>
+
+   </div>
+
+<nav role="navigation" class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="Cell.html">Cell</a></strong><br />
+</li>
+</ul>
+</nav></article></main><footer role="contentinfo"><div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="Table.html" title="Table"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Table</span></a></span>  </div><div class="footer" id="webhelp_copyright_information"><div>
+	<p>These files are <a href="https://github.com/grefel/extendscriptApiDoc" target="_blank">transformed</a> from data by <a href="http://www.adobe.com" target="_blank">Adobe Systems Incorporated</a>. If questions arise stick to the original versions of the files supplied by Adobe. InDesign, PhotoShop, Illustrator, ExtendScript and ScriptUI are trademarks of <a href="http://www.adobe.com/" target="_blank">Adobe Systems Incorporated</a>.</p>	
+</div></div></footer></body>
+</html>

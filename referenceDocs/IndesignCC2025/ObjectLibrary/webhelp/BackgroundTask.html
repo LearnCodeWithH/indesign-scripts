@@ -1,0 +1,864 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="background task Go to Property Listing | Method Listing Methods: addEventListener , cancelTask , getElements , queryProperty , removeEventListener , toSource , toSpecifier , waitForTask Objects: ..." /><meta name="copyright" content="(C) Copyright 2024" /><meta name="DC.rights.owner" content="(C) Copyright 2024" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="BackgroundTask" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="d1e48912" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=2017092911"><!----></link><title>BackgroundTask</title><!--  Generated with Oxygen version 19.1, build number 2017092911.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=2017092911"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css?buildId=2017092911" /><link rel="stylesheet" type="text/css" href="skin.css" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=2017092911"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=2017092911"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e48912">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">
+      <span class="keyword">BackgroundTask</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">background task</p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e48912__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e48912__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <section class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e48912__d1e49086">addEventListener</a>,  <a class="xref" href="#d1e48912__d1e49152">cancelTask</a>,  <a class="xref" href="#d1e48912__d1e49158">getElements</a>,  <a class="xref" href="#d1e48912__d1e49172">queryProperty</a>,  <a class="xref" href="#d1e48912__d1e49199">removeEventListener</a>,  <a class="xref" href="#d1e48912__d1e49266">toSource</a>,  <a class="xref" href="#d1e48912__d1e49278">toSpecifier</a>,  <a class="xref" href="#d1e48912__d1e49290">waitForTask</a>
+         </p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a>, <a class="xref" href="EventListeners.html#d1e33911">EventListeners</a>, <a class="xref" href="Events.html#d1e37599">Events</a>, <a class="xref" href="Number.html#d1e5485">Number</a>, <a class="xref" href="Object.html#d1e626">Object</a>, <a class="xref" href="String.html#d1e4583">String</a>, <a class="xref" href="TaskState.html#d1e103077">TaskState</a>, </p>
+
+      </section>
+
+      <section class="section" id="d1e48912__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:10%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d142131e142">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e148">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e154">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e160">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">alerts</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e977">Array</a> of  2 TaskAlertType enumerators</p>
+
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e977">Array</a> of Strings<em class="ph i">
+                              <a class="xref" href="String.html#d1e4583">String</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">The alerts encountered while running this task object. Can return: Array of Array of 2 TaskAlertType enumerators or Strings.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">documentName</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">The document name on which this task operates.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">eventListeners</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="EventListeners.html#d1e33911">EventListeners</a>
+                           <em class="ph i">
+                              <a class="xref" href="EventListener.html#d1e31102">EventListener</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">A collection of event listeners.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">events</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="Events.html#d1e37599">Events</a>
+                           <em class="ph i">
+                              <a class="xref" href="Event.html#d1e34352">Event</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">A collection of events.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">id</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">The unique ID of the BackgroundTask.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">index</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">The index of the BackgroundTask within its containing object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">isValid</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">Returns true if the object specifier resolves to valid objects.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">name</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">The name of the BackgroundTask.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">parent</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="Application.html#d1e42291">Application</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">The parent of the BackgroundTask (a Application).</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">percentDone</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">Progress information for this task.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">properties</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e626">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">A property that allows setting of several properties at the same time.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e142 ">
+                        <p class="p clip_button">status</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e148 ">
+                        <p class="p">
+                           <a class="xref" href="TaskState.html#d1e103077">TaskState</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">TaskState.CANCELLED</p>
+
+                        <p class="p enumInPTable clip_button">TaskState.CANCELLING</p>
+
+                        <p class="p enumInPTable clip_button">TaskState.COMPLETED</p>
+
+                        <p class="p enumInPTable clip_button">TaskState.QUEUED</p>
+
+                        <p class="p enumInPTable clip_button">TaskState.RUNNING</p>
+
+                        <p class="p enumInPTable clip_button">TaskState.WAITING</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e154 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e160 ">
+                        <p class="p description">The current status of this task object.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section" id="d1e48912__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e48912__d1e49086">
+            <a class="xref" href="EventListener.html#d1e31102">EventListener</a> 
+            <strong class="ph b clip_button">addEventListener</strong> (eventType:<em class="ph i">String</em>, handler:<em class="ph i">Varies File JavaScriptFunction</em>, [captures:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Adds an event listener.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d142131e638">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e644">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e650">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e638 ">
+                        <p class="p">eventType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e644 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e650 ">
+                        <p class="p description">The event type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e638 ">
+                        <p class="p">handler</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e644 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6347">File</a>
+                        </p>
+
+                        <p class="p">JavaScriptFunction</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e650 ">
+                        <p class="p description">The event handler. Can accept: File or JavaScript Function.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e638 ">
+                        <p class="p">captures</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e644 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e650 ">
+                        <p class="p description">This parameter is obsolete. (Optional)</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e48912__d1e49152">undefined <strong class="ph b clip_button">cancelTask</strong> ()</p>
+
+         <p class="p description">Cancels the specified background task.</p>
+
+         <p class="p methodName" id="d1e48912__d1e49158">
+            <a class="xref" href="BackgroundTask.html#d1e48912">BackgroundTask</a> 
+            <strong class="ph b clip_button">getElements</strong> ()</p>
+
+         <p class="p description">Resolves the object specifier, creating an array of object references.</p>
+
+         <p class="p methodName" id="d1e48912__d1e49172">Varies <strong class="ph b clip_button">queryProperty</strong> (name:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Queries for a particular property in the task metadata.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d142131e793">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e799">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e805">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e793 ">
+                        <p class="p">name</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e799 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e805 ">
+                        <p class="p description">The task property being queried</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e48912__d1e49199">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a> 
+            <strong class="ph b clip_button">removeEventListener</strong> (eventType:<em class="ph i">String</em>, handler:<em class="ph i">Varies File JavaScriptFunction</em>, [captures:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Removes the event listener.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d142131e880">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e886">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d142131e892">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e880 ">
+                        <p class="p">eventType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e886 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e892 ">
+                        <p class="p description">The registered event type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e880 ">
+                        <p class="p">handler</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e886 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6347">File</a>
+                        </p>
+
+                        <p class="p">JavaScriptFunction</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e892 ">
+                        <p class="p description">The registered event handler. Can accept: File or JavaScript Function.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d142131e880 ">
+                        <p class="p">captures</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e886 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d142131e892 ">
+                        <p class="p description">This parameter is obsolete. (Optional)</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e48912__d1e49266">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toSource</strong> ()</p>
+
+         <p class="p description">Generates a string which, if executed, will return the BackgroundTask.</p>
+
+         <p class="p methodName" id="d1e48912__d1e49278">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toSpecifier</strong> ()</p>
+
+         <p class="p description">Retrieves the object specifier.</p>
+
+         <p class="p methodName" id="d1e48912__d1e49290">
+            <a class="xref" href="TaskState.html#d1e103077">TaskState</a> 
+            <strong class="ph b clip_button">waitForTask</strong> ()</p>
+
+         <p class="p description">Waits for the task to finish.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Object of</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="Event.html#d1e34352">Event</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EventListener.html#d1e31102">EventListener</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="MutationEvent.html#d1e38204">MutationEvent</a>.parent</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Return</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTask.html#d1e48912">BackgroundTask</a>.<a class="xref" href="BackgroundTask.html#d1e48912__d1e49158">getElements</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49354">anyItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49378">everyItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49600">nextItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49627">previousItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49444">itemByID</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49405">item</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49327">[]</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49471">itemByName</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49498">itemByRange</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49392">firstItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49575">lastItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="BackgroundTasks.html#d1e49305">BackgroundTasks</a>.<a class="xref" href="BackgroundTasks.html#d1e49305__d1e49587">middleItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Document.html#d1e49668">Document</a>.<a class="xref" href="Document.html#d1e49668__d1e52795">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="FormField.html#d1e128293">FormField</a>.<a class="xref" href="FormField.html#d1e128293__d1e129863">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Button.html#d1e132411">Button</a>.<a class="xref" href="Button.html#d1e132411__d1e134468">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="MultiStateObject.html#d1e138075">MultiStateObject</a>.<a class="xref" href="MultiStateObject.html#d1e138075__d1e139875">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="CheckBox.html#d1e142484">CheckBox</a>.<a class="xref" href="CheckBox.html#d1e142484__d1e144504">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ComboBox.html#d1e147112">ComboBox</a>.<a class="xref" href="ComboBox.html#d1e147112__d1e149171">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ListBox.html#d1e151779">ListBox</a>.<a class="xref" href="ListBox.html#d1e151779__d1e153850">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="RadioButton.html#d1e156459">RadioButton</a>.<a class="xref" href="RadioButton.html#d1e156459__d1e158479">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextBox.html#d1e161087">TextBox</a>.<a class="xref" href="TextBox.html#d1e161087__d1e163156">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="SignatureField.html#d1e165764">SignatureField</a>.<a class="xref" href="SignatureField.html#d1e165764__d1e167748">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Movie.html#d1e170357">Movie</a>.<a class="xref" href="Movie.html#d1e170357__d1e172094">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Sound.html#d1e175382">Sound</a>.<a class="xref" href="Sound.html#d1e175382__d1e177046">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PageItem.html#d1e208939">PageItem</a>.<a class="xref" href="PageItem.html#d1e208939__d1e210641">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Oval.html#d1e213141">Oval</a>.<a class="xref" href="Oval.html#d1e213141__d1e215191">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Rectangle.html#d1e218082">Rectangle</a>.<a class="xref" href="Rectangle.html#d1e218082__d1e220144">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="GraphicLine.html#d1e223036">GraphicLine</a>.<a class="xref" href="GraphicLine.html#d1e223036__d1e225049">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Polygon.html#d1e227933">Polygon</a>.<a class="xref" href="Polygon.html#d1e227933__d1e229983">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Group.html#d1e232907">Group</a>.<a class="xref" href="Group.html#d1e232907__d1e234726">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Image.html#d1e237349">Image</a>.<a class="xref" href="Image.html#d1e237349__d1e239059">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EPS.html#d1e241588">EPS</a>.<a class="xref" href="EPS.html#d1e241588__d1e243247">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PDF.html#d1e245776">PDF</a>.<a class="xref" href="PDF.html#d1e245776__d1e247419">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="WMF.html#d1e249949">WMF</a>.<a class="xref" href="WMF.html#d1e249949__d1e251531">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PICT.html#d1e254060">PICT</a>.<a class="xref" href="PICT.html#d1e254060__d1e255642">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Graphic.html#d1e258171">Graphic</a>.<a class="xref" href="Graphic.html#d1e258171__d1e259883">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="SplineItem.html#d1e268448">SplineItem</a>.<a class="xref" href="SplineItem.html#d1e268448__d1e270461">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EPSText.html#d1e273242">EPSText</a>.<a class="xref" href="EPSText.html#d1e273242__d1e274830">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ImportedPage.html#d1e277386">ImportedPage</a>.<a class="xref" href="ImportedPage.html#d1e277386__d1e278974">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="SVG.html#d1e281530">SVG</a>.<a class="xref" href="SVG.html#d1e281530__d1e283266">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="MediaItem.html#d1e286778">MediaItem</a>.<a class="xref" href="MediaItem.html#d1e286778__d1e288302">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="HtmlItem.html#d1e295292">HtmlItem</a>.<a class="xref" href="HtmlItem.html#d1e295292__d1e296813">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Text.html#d1e461232">Text</a>.<a class="xref" href="Text.html#d1e461232__d1e467572">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Character.html#d1e469645">Character</a>.<a class="xref" href="Character.html#d1e469645__d1e475988">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Word.html#d1e478061">Word</a>.<a class="xref" href="Word.html#d1e478061__d1e484404">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Line.html#d1e486478">Line</a>.<a class="xref" href="Line.html#d1e486478__d1e492821">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextColumn.html#d1e494894">TextColumn</a>.<a class="xref" href="TextColumn.html#d1e494894__d1e501237">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Paragraph.html#d1e503310">Paragraph</a>.<a class="xref" href="Paragraph.html#d1e503310__d1e509671">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextStyleRange.html#d1e511745">TextStyleRange</a>.<a class="xref" href="TextStyleRange.html#d1e511745__d1e518088">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="InsertionPoint.html#d1e520161">InsertionPoint</a>.<a class="xref" href="InsertionPoint.html#d1e520161__d1e526516">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>.<a class="xref" href="TextFrame.html#d1e528640__d1e530878">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Story.html#d1e534017">Story</a>.<a class="xref" href="Story.html#d1e534017__d1e540280">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EndnoteTextFrame.html#d1e556375">EndnoteTextFrame</a>.<a class="xref" href="EndnoteTextFrame.html#d1e556375__d1e558569">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="XMLElement.html#d1e608077">XMLElement</a>.<a class="xref" href="XMLElement.html#d1e608077__d1e608908">asynchronousExportFile</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="XmlStory.html#d1e617257">XmlStory</a>.<a class="xref" href="XmlStory.html#d1e617257__d1e623506">asynchronousExportFile</a>()</p>
+
+      </section>
+
+   </div>
+
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information"><div>
+	<p>These files are <a href="https://github.com/grefel/extendscriptApiDoc" target="_blank">transformed</a> from data by <a href="http://www.adobe.com" target="_blank">Adobe Systems Incorporated</a>. If questions arise stick to the original versions of the files supplied by Adobe. InDesign, PhotoShop, Illustrator, ExtendScript and ScriptUI are trademarks of <a href="http://www.adobe.com/" target="_blank">Adobe Systems Incorporated</a>.</p>	
+</div></div></footer></body>
+</html>

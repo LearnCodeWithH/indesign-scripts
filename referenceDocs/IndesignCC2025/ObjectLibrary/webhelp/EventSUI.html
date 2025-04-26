@@ -1,0 +1,468 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="Base class for UIEvent. Encapsulates input event information for an event that propagates through a container and control hierarchy. Implements W3C standard event handling. Go to Property Listing | ..." /><meta name="copyright" content="(C) Copyright 2024" /><meta name="DC.rights.owner" content="(C) Copyright 2024" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="Event (SUI)" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="d1e25517" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=2017092911"><!----></link><title>Event (SUI)</title><!--  Generated with Oxygen version 19.1, build number 2017092911.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=2017092911"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css?buildId=2017092911" /><link rel="stylesheet" type="text/css" href="skin.css" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=2017092911"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=2017092911"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e25517">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">
+      <span class="keyword">Event (SUI)</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">
+        Base class for UIEvent.
+      </p>
+
+      <p class="p description">Encapsulates input event information for an event that propagates through a container and control hierarchy.  Implements W3C standard event handling. </p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e25517__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e25517__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <section class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e25517__d1e25678">preventDefault</a>,  <a class="xref" href="#d1e25517__d1e25684">stopPropagation</a>
+         </p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a>, <a class="xref" href="Object.html#d1e626">Object</a>, <a class="xref" href="String.html#d1e4583">String</a>
+         </p>
+
+      </section>
+
+      <section class="section" id="d1e25517__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:10%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d976248e104">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d976248e110">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d976248e116">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d976248e122">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e104 ">
+                        <p class="p clip_button">bubbles</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e110 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e116 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e122 ">
+                        <p class="p description">True if the event is of a type that bubbles.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e104 ">
+                        <p class="p clip_button">cancelable</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e110 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e116 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e122 ">
+                        <p class="p description">True if the default action associated with the event can be canceled with preventDefault().</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e104 ">
+                        <p class="p clip_button">captures</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e110 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e116 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e122 ">
+                        <p class="p description">True if this event can be captured.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e104 ">
+                        <p class="p clip_button">currentTarget</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e110 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e116 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e122 ">
+                        <p class="p description">The event target object which is currently handling the event. During capturing and bubbling, this is different from the property target.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e104 ">
+                        <p class="p clip_button">eventPhase</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e110 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e116 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e122 ">
+                        <p class="p description">The current phase of event propagation; one of none, target, capture, bubble.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e104 ">
+                        <p class="p clip_button">target</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e110 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e626">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e116 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e122 ">
+                        <p class="p description">The event target object for this event.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e104 ">
+                        <p class="p clip_button">timeStamp</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e110 ">
+                        <p class="p">DateSUI</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e116 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e122 ">
+                        <p class="p description">The date and time at which the event occurred.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e104 ">
+                        <p class="p clip_button">type</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e110 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e116 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e122 ">
+                        <p class="p description">The name of the event that this object represents.</p>
+
+                        <p class="p description">
+            Event types are listed in the JavaScript Tools Guide.
+          </p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section" id="d1e25517__iEvents"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:10%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d976248e406">
+                        <p class="p">Name</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d976248e412">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d976248e418">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d976248e424">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e406 ">
+                        <p class="p clip_button">AT_TARGET</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e412 ">
+                        <p class="p">VariesSUI</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e418 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e424 "> </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e406 ">
+                        <p class="p clip_button">BUBBLING_PHASE</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e412 ">
+                        <p class="p">VariesSUI</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e418 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e424 "> </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e406 ">
+                        <p class="p clip_button">CAPTURING_PHASE</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e412 ">
+                        <p class="p">VariesSUI</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e418 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e424 "> </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d976248e406 ">
+                        <p class="p clip_button">NOT_DISPATCHING</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e412 ">
+                        <p class="p">VariesSUI</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e418 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d976248e424 "> </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section" id="d1e25517__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e25517__d1e25678">undefined <strong class="ph b clip_button">preventDefault</strong> ()</p>
+
+         <p class="p description">Prevents the default action associated with this event from being called.</p>
+
+         <p class="p methodName" id="d1e25517__d1e25684">undefined <strong class="ph b clip_button">stopPropagation</strong> ()</p>
+
+         <p class="p description">Stops the propagation of this event.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Return</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="EventsSUI.html#d1e25724">Events (SUI)</a>.<a class="xref" href="EventsSUI.html#d1e25724__d1e25739">createEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="StaticTextSUI.html#d1e13944">StaticText (SUI)</a>.<a class="xref" href="StaticTextSUI.html#d1e13944__d1e14415">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ButtonSUI.html#d1e14580">Button (SUI)</a>.<a class="xref" href="ButtonSUI.html#d1e14580__d1e15054">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="IconButtonSUI.html#d1e15243">IconButton (SUI)</a>.<a class="xref" href="IconButtonSUI.html#d1e15243__d1e15681">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EditTextSUI.html#d1e15870">EditText (SUI)</a>.<a class="xref" href="EditTextSUI.html#d1e15870__d1e16405">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ListBoxSUI.html#d1e16613">ListBox (SUI)</a>.<a class="xref" href="ListBoxSUI.html#d1e16613__d1e17258">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="DropDownListSUI.html#d1e17517">DropDownList (SUI)</a>.<a class="xref" href="DropDownListSUI.html#d1e17517__d1e18065">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="CheckboxSUI.html#d1e18528">Checkbox (SUI)</a>.<a class="xref" href="CheckboxSUI.html#d1e18528__d1e19027">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ScrollbarSUI.html#d1e19216">Scrollbar (SUI)</a>.<a class="xref" href="ScrollbarSUI.html#d1e19216__d1e19736">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="RadioButtonSUI.html#d1e19935">RadioButton (SUI)</a>.<a class="xref" href="RadioButtonSUI.html#d1e19935__d1e20431">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="SliderSUI.html#d1e20620">Slider (SUI)</a>.<a class="xref" href="SliderSUI.html#d1e20620__d1e21119">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ProgressbarSUI.html#d1e21318">Progressbar (SUI)</a>.<a class="xref" href="ProgressbarSUI.html#d1e21318__d1e21750">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TreeViewSUI.html#d1e21863">TreeView (SUI)</a>.<a class="xref" href="TreeViewSUI.html#d1e21863__d1e22396">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="FlashPlayerSUI.html#d1e22692">FlashPlayer (SUI)</a>.<a class="xref" href="FlashPlayerSUI.html#d1e22692__d1e23061">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="GroupSUI.html#d1e23314">Group (SUI)</a>.<a class="xref" href="GroupSUI.html#d1e23314__d1e23900">dispatchEvent</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="PanelSUI.html#d1e24044">Panel (SUI)</a>.<a class="xref" href="PanelSUI.html#d1e24044__d1e24707">dispatchEvent</a>()</p>
+
+      </section>
+
+   </div>
+
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information"><div>
+	<p>These files are <a href="https://github.com/grefel/extendscriptApiDoc" target="_blank">transformed</a> from data by <a href="http://www.adobe.com" target="_blank">Adobe Systems Incorporated</a>. If questions arise stick to the original versions of the files supplied by Adobe. InDesign, PhotoShop, Illustrator, ExtendScript and ScriptUI are trademarks of <a href="http://www.adobe.com/" target="_blank">Adobe Systems Incorporated</a>.</p>	
+</div></div></footer></body>
+</html>

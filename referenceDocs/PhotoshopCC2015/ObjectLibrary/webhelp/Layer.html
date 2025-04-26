@@ -1,0 +1,1076 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="A layer object. Layers may contain nested layers, which are called sublayers in the user interface. The layer object contains all of the page items in the specific layer as elements. Your script can ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="Layer"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="d1e54501"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Layer</title><!--  Generated with Oxygen version 17.0, build number 2015052917.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e54501">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+   <h1 class="title topictitle1">
+      <span class="keyword">Layer</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">A layer object.</p>
+
+      <p class="p description">Layers may contain nested layers, which are called sublayers in the user interface. The layer object contains all of the page items in the specific layer as elements. Your script can access page items as elements of either the layer object or the document object.</p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e54501__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e54501__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <div class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e54501__d1e54671">move</a>,  <a class="xref" href="#d1e54501__d1e54704">duplicate</a>,  <a class="xref" href="#d1e54501__d1e54737">moveToEnd</a>,  <a class="xref" href="#d1e54501__d1e54755">remove</a>,  <a class="xref" href="#d1e54501__d1e54762">removeAll</a>,  <a class="xref" href="#d1e54501__d1e54768">unlink</a>,  <a class="xref" href="#d1e54501__d1e54774">link</a>,  <a class="xref" href="#d1e54501__d1e54795">translate</a>,  <a class="xref" href="#d1e54501__d1e54828">rotate</a>,  <a class="xref" href="#d1e54501__d1e54864">resize</a>
+         </p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="BlendMode.html#d1e30404">BlendMode</a>, <a class="xref" href="Boolean.html#d1e5707">Boolean</a>, <a class="xref" href="Layer.html#d1e54501">Layer</a>, <a class="xref" href="Number.html#d1e5437">Number</a>, <a class="xref" href="String.html#d1e4543">String</a>, <a class="xref" href="XMPMetadata.html#d1e57127">XMPMetadata</a>
+         </p>
+
+      </div>
+
+      <div class="section" id="d1e54501__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+               
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="20%" id="d168687e147">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e153">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e159">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d168687e165">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".allLocked" class="p clip_button">allLocked</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">If true, the layer's contents and settings are locked.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".blendMode" class="p clip_button">blendMode</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">
+                           <a class="xref" href="BlendMode.html#d1e30404">BlendMode</a>
+                        </p>
+
+                        <p data-clipboard-text="BlendMode.PASSTHROUGH" class="p enumInPTable clip_button">BlendMode.PASSTHROUGH</p>
+
+                        <p data-clipboard-text="BlendMode.NORMAL" class="p enumInPTable clip_button">BlendMode.NORMAL</p>
+
+                        <p data-clipboard-text="BlendMode.DISSOLVE" class="p enumInPTable clip_button">BlendMode.DISSOLVE</p>
+
+                        <p data-clipboard-text="BlendMode.DARKEN" class="p enumInPTable clip_button">BlendMode.DARKEN</p>
+
+                        <p data-clipboard-text="BlendMode.MULTIPLY" class="p enumInPTable clip_button">BlendMode.MULTIPLY</p>
+
+                        <p data-clipboard-text="BlendMode.COLORBURN" class="p enumInPTable clip_button">BlendMode.COLORBURN</p>
+
+                        <p data-clipboard-text="BlendMode.LINEARBURN" class="p enumInPTable clip_button">BlendMode.LINEARBURN</p>
+
+                        <p data-clipboard-text="BlendMode.LIGHTEN" class="p enumInPTable clip_button">BlendMode.LIGHTEN</p>
+
+                        <p data-clipboard-text="BlendMode.SCREEN" class="p enumInPTable clip_button">BlendMode.SCREEN</p>
+
+                        <p data-clipboard-text="BlendMode.COLORDODGE" class="p enumInPTable clip_button">BlendMode.COLORDODGE</p>
+
+                        <p data-clipboard-text="BlendMode.LINEARDODGE" class="p enumInPTable clip_button">BlendMode.LINEARDODGE</p>
+
+                        <p data-clipboard-text="BlendMode.OVERLAY" class="p enumInPTable clip_button">BlendMode.OVERLAY</p>
+
+                        <p data-clipboard-text="BlendMode.SOFTLIGHT" class="p enumInPTable clip_button">BlendMode.SOFTLIGHT</p>
+
+                        <p data-clipboard-text="BlendMode.HARDLIGHT" class="p enumInPTable clip_button">BlendMode.HARDLIGHT</p>
+
+                        <p data-clipboard-text="BlendMode.VIVIDLIGHT" class="p enumInPTable clip_button">BlendMode.VIVIDLIGHT</p>
+
+                        <p data-clipboard-text="BlendMode.LINEARLIGHT" class="p enumInPTable clip_button">BlendMode.LINEARLIGHT</p>
+
+                        <p data-clipboard-text="BlendMode.PINLIGHT" class="p enumInPTable clip_button">BlendMode.PINLIGHT</p>
+
+                        <p data-clipboard-text="BlendMode.DIFFERENCE" class="p enumInPTable clip_button">BlendMode.DIFFERENCE</p>
+
+                        <p data-clipboard-text="BlendMode.EXCLUSION" class="p enumInPTable clip_button">BlendMode.EXCLUSION</p>
+
+                        <p data-clipboard-text="BlendMode.SUBTRACT" class="p enumInPTable clip_button">BlendMode.SUBTRACT</p>
+
+                        <p data-clipboard-text="BlendMode.DIVIDE" class="p enumInPTable clip_button">BlendMode.DIVIDE</p>
+
+                        <p data-clipboard-text="BlendMode.HUE" class="p enumInPTable clip_button">BlendMode.HUE</p>
+
+                        <p data-clipboard-text="BlendMode.SATURATION" class="p enumInPTable clip_button">BlendMode.SATURATION</p>
+
+                        <p data-clipboard-text="BlendMode.COLORBLEND" class="p enumInPTable clip_button">BlendMode.COLORBLEND</p>
+
+                        <p data-clipboard-text="BlendMode.LUMINOSITY" class="p enumInPTable clip_button">BlendMode.LUMINOSITY</p>
+
+                        <p data-clipboard-text="BlendMode.HARDMIX" class="p enumInPTable clip_button">BlendMode.HARDMIX</p>
+
+                        <p data-clipboard-text="BlendMode.LIGHTERCOLOR" class="p enumInPTable clip_button">BlendMode.LIGHTERCOLOR</p>
+
+                        <p data-clipboard-text="BlendMode.DARKERCOLOR" class="p enumInPTable clip_button">BlendMode.DARKERCOLOR</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">The mode to use when compositing an object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".bounds" class="p clip_button">bounds</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">UnitRect</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">If the Layer is a layer set, this property returns a reference to the corresponding layer set object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".boundsNoEffects" class="p clip_button">boundsNoEffects</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">UnitRect</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">Bounding rectangle of the Layer not including effects.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".id" class="p clip_button">id</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">The unique ID of this layer.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".itemIndex" class="p clip_button">itemIndex</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">The layer index sans layer groups, how Photoshop would index them.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".linkedLayers" class="p clip_button">linkedLayers</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Layer.html#d1e54501">Layer</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">The layers linked to this layer.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".name" class="p clip_button">name</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">The name of the layer.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".opacity" class="p clip_button">opacity</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">The layer's master opacity (as a percentage). Range: 0.0 to 100.0.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".parent" class="p clip_button">parent</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 "> </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">The object's container.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".typename" class="p clip_button">typename</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">The class name of the object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".visible" class="p clip_button">visible</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">If true, the layer is visible.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d168687e147 ">
+                        <p data-clipboard-text=".xmpMetadata" class="p clip_button">xmpMetadata</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e153 ">
+                        <p class="p">
+                           <a class="xref" href="XMPMetadata.html#d1e57127">XMPMetadata</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e159 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e165 ">
+                        <p class="p description">XMP metadata associated with the Layer.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+      </div>
+
+      <div class="section" id="d1e54501__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e54501__d1e54704">
+            <a class="xref" href="Layer.html#d1e54501">Layer</a> 
+            <strong data-clipboard-text=".duplicate()" class="ph b clip_button">duplicate</strong> (relativeObject:<em class="ph i">Object</em>, insertionLocation:<em class="ph i">ElementPlacement</em>)</p>
+
+         <p class="p description">Duplicate this object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d168687e691">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e697">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d168687e703">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e691 ">
+                        <p class="p">relativeObject</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e697 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e624">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e703 "> </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e691 ">
+                        <p class="p">insertionLocation</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e697 ">
+                        <p class="p">
+                           <a class="xref" href="ElementPlacement.html#d1e57359">ElementPlacement</a>
+                        </p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEAFTER" class="p enumInPTable clip_button">ElementPlacement.PLACEAFTER</p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEBEFORE" class="p enumInPTable clip_button">ElementPlacement.PLACEBEFORE</p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEATEND" class="p enumInPTable clip_button">ElementPlacement.PLACEATEND</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e703 "> </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e54501__d1e54774">undefined <strong data-clipboard-text=".link()" class="ph b clip_button">link</strong> (with:<em class="ph i">Layer</em>)</p>
+
+         <p class="p description">Links the layer with the specified layer.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d168687e794">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e800">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d168687e806">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e794 ">
+                        <p class="p">with</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e800 ">
+                        <p class="p">
+                           <a class="xref" href="Layer.html#d1e54501">Layer</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e806 ">
+                        <p class="p description">The layer to link to.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e54501__d1e54671">
+            <a class="xref" href="Layer.html#d1e54501">Layer</a> 
+            <strong data-clipboard-text=".move()" class="ph b clip_button">move</strong> (relativeObject:<em class="ph i">Object</em>, insertionLocation:<em class="ph i">ElementPlacement</em>)</p>
+
+         <p class="p description">Move the object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d168687e877">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e883">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d168687e889">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e877 ">
+                        <p class="p">relativeObject</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e883 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e624">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e889 "> </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e877 ">
+                        <p class="p">insertionLocation</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e883 ">
+                        <p class="p">
+                           <a class="xref" href="ElementPlacement.html#d1e57359">ElementPlacement</a>
+                        </p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEAFTER" class="p enumInPTable clip_button">ElementPlacement.PLACEAFTER</p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEBEFORE" class="p enumInPTable clip_button">ElementPlacement.PLACEBEFORE</p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEATEND" class="p enumInPTable clip_button">ElementPlacement.PLACEATEND</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e889 "> </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e54501__d1e54737">undefined <strong data-clipboard-text=".moveToEnd()" class="ph b clip_button">moveToEnd</strong> ([layerSet:<em class="ph i">LayerSet</em>])</p>
+
+         <p class="p description">...</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d168687e980">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e986">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d168687e992">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e980 ">
+                        <p class="p">layerSet</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e986 ">
+                        <p class="p">
+                           <a class="xref" href="LayerSet.html#d1e51657">LayerSet</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e992 "> </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e54501__d1e54755">undefined <strong data-clipboard-text=".remove()" class="ph b clip_button">remove</strong> ()</p>
+
+         <p class="p description">Deletes this object.</p>
+
+         <p class="p methodName" id="d1e54501__d1e54762">undefined <strong data-clipboard-text=".removeAll()" class="ph b clip_button">removeAll</strong> ()</p>
+
+         <p class="p description">Deletes all elements.</p>
+
+         <p class="p methodName" id="d1e54501__d1e54864">undefined <strong data-clipboard-text=".resize()" class="ph b clip_button">resize</strong> ([horizontal:<em class="ph i">Number</em>=Number], [vertical:<em class="ph i">Number</em>=Number], [anchor:<em class="ph i">AnchorPosition</em>=AnchorPosition])</p>
+
+         <p class="p description">Scales the object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d168687e1077">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e1083">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d168687e1089">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e1077 ">
+                        <p class="p">horizontal</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e1083 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e1089 ">
+                        <p class="p description">The amount to scale the object horizontally (as a percentage).</p>
+
+                        <p class="p"> (default: 100)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e1077 ">
+                        <p class="p">vertical</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e1083 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e1089 ">
+                        <p class="p description">The amount to scale the object vertically (as a percentage).</p>
+
+                        <p class="p"> (default: 100)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e1077 ">
+                        <p class="p">anchor</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e1083 ">
+                        <p class="p">
+                           <a class="xref" href="AnchorPosition.html#d1e27947">AnchorPosition</a>
+                        </p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPLEFT" class="p enumInPTable clip_button">AnchorPosition.TOPLEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPCENTER" class="p enumInPTable clip_button">AnchorPosition.TOPCENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPRIGHT" class="p enumInPTable clip_button">AnchorPosition.TOPRIGHT</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLELEFT" class="p enumInPTable clip_button">AnchorPosition.MIDDLELEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLECENTER" class="p enumInPTable clip_button">AnchorPosition.MIDDLECENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLERIGHT" class="p enumInPTable clip_button">AnchorPosition.MIDDLERIGHT</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMLEFT" class="p enumInPTable clip_button">AnchorPosition.BOTTOMLEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMCENTER" class="p enumInPTable clip_button">AnchorPosition.BOTTOMCENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMRIGHT" class="p enumInPTable clip_button">AnchorPosition.BOTTOMRIGHT</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e1089 ">
+                        <p class="p description">The point to resize about.</p>
+
+                        <p class="p"> (default: AnchorPosition.MIDDLECENTER)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e54501__d1e54828">undefined <strong data-clipboard-text=".rotate()" class="ph b clip_button">rotate</strong> (angle:<em class="ph i">Number</em>, [anchor:<em class="ph i">AnchorPosition</em>=AnchorPosition])</p>
+
+         <p class="p description">Rotates the object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d168687e1243">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e1249">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d168687e1255">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e1243 ">
+                        <p class="p">angle</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e1249 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e1255 ">
+                        <p class="p description">The number of degrees to rotate the object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e1243 ">
+                        <p class="p">anchor</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e1249 ">
+                        <p class="p">
+                           <a class="xref" href="AnchorPosition.html#d1e27947">AnchorPosition</a>
+                        </p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPLEFT" class="p enumInPTable clip_button">AnchorPosition.TOPLEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPCENTER" class="p enumInPTable clip_button">AnchorPosition.TOPCENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPRIGHT" class="p enumInPTable clip_button">AnchorPosition.TOPRIGHT</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLELEFT" class="p enumInPTable clip_button">AnchorPosition.MIDDLELEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLECENTER" class="p enumInPTable clip_button">AnchorPosition.MIDDLECENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLERIGHT" class="p enumInPTable clip_button">AnchorPosition.MIDDLERIGHT</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMLEFT" class="p enumInPTable clip_button">AnchorPosition.BOTTOMLEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMCENTER" class="p enumInPTable clip_button">AnchorPosition.BOTTOMCENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMRIGHT" class="p enumInPTable clip_button">AnchorPosition.BOTTOMRIGHT</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e1255 ">
+                        <p class="p description">The point to rotate about.</p>
+
+                        <p class="p"> (default: AnchorPosition.MIDDLECENTER)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e54501__d1e54795">undefined <strong data-clipboard-text=".translate()" class="ph b clip_button">translate</strong> ([deltaX:<em class="ph i">UnitValue</em>], [deltaY:<em class="ph i">UnitValue</em>])</p>
+
+         <p class="p description">Moves the object relative to its current position.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d168687e1379">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d168687e1385">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d168687e1391">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e1379 ">
+                        <p class="p">deltaX</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e1385 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e1391 ">
+                        <p class="p description">The amount to move the object horizontally.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d168687e1379 ">
+                        <p class="p">deltaY</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d168687e1385 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d168687e1391 ">
+                        <p class="p description">The amount to move the object vertically.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e54501__d1e54768">undefined <strong data-clipboard-text=".unlink()" class="ph b clip_button">unlink</strong> ()</p>
+
+         <p class="p description">Unlinks the layer.</p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Object of</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="Layer.html#d1e54501">Layer</a>.linkedLayers</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Document.html#d1e47935">Document</a>.activeLayer</p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Return</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="Layer.html#d1e54501">Layer</a>.<a class="xref" href="Layer.html#d1e54501__d1e54704">duplicate</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Layers.html#d1e38743">Layers</a>.<a class="xref" href="Layers.html#d1e38743__d1e38811">[]</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Layers.html#d1e38743">Layers</a>.<a class="xref" href="Layers.html#d1e38743__d1e38786">getByName</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Layer.html#d1e54501">Layer</a>.<a class="xref" href="Layer.html#d1e54501__d1e54671">move</a>()</p>
+
+      </div>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+<script type="text/javascript"><!--
+        $(".clip_button").click(function(){
+            var temp = this.innerHTML;
+            this.innerHTML  = this.getAttribute('data-clipboard-text'); 
+            var range = document.createRange();
+            range.selectNode(this);
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            this.innerHTML = temp;
+        });
+
+      $( ".clip_button" ).hover(
+        function() {
+          $( this ).addClass("is-hover");
+        }, function() {
+          $( this ).removeClass("is-hover");
+        }
+      );
+      --></script></body>
+</html>

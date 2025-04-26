@@ -1,0 +1,2104 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="A text object that is on a path. Go to Property Listing | Method Listing Methods: addEventListener , changeGlyph , changeGrep , changeText , changeTransliterate , extractLabel , findGlyph , findGrep , ..." /><meta name="copyright" content="(C) Copyright 2024" /><meta name="DC.rights.owner" content="(C) Copyright 2024" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="TextPath" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="d1e568831" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=2017092911"><!----></link><title>TextPath</title><!--  Generated with Oxygen version 19.1, build number 2017092911.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=2017092911"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css?buildId=2017092911" /><link rel="stylesheet" type="text/css" href="skin.css" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=2017092911"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=2017092911"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e568831">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">
+      <span class="keyword">TextPath</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">A text object that is on a path.</p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e568831__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e568831__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <section class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e568831__d1e569386">addEventListener</a>,  <a class="xref" href="#d1e568831__d1e569452">changeGlyph</a>,  <a class="xref" href="#d1e568831__d1e569481">changeGrep</a>,  <a class="xref" href="#d1e568831__d1e569510">changeText</a>,  <a class="xref" href="#d1e568831__d1e569539">changeTransliterate</a>,  <a class="xref" href="#d1e568831__d1e569569">extractLabel</a>,  <a class="xref" href="#d1e568831__d1e569596">findGlyph</a>,  <a class="xref" href="#d1e568831__d1e569625">findGrep</a>,  <a class="xref" href="#d1e568831__d1e569654">findText</a>,  <a class="xref" href="#d1e568831__d1e569683">findTransliterate</a>,  <a class="xref" href="#d1e568831__d1e569712">getElements</a>,  <a class="xref" href="#d1e568831__d1e569727">insertLabel</a>,  <a class="xref" href="#d1e568831__d1e569760">remove</a>,  <a class="xref" href="#d1e568831__d1e569766">removeEventListener</a>,  <a class="xref" href="#d1e568831__d1e569832">toSource</a>,  <a class="xref" href="#d1e568831__d1e569844">toSpecifier</a>
+         </p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a>, <a class="xref" href="Characters.html#d1e477752">Characters</a>, <a class="xref" href="EventListeners.html#d1e33911">EventListeners</a>, <a class="xref" href="Events.html#d1e37599">Events</a>, <a class="xref" href="FlipValues.html#d1e90420">FlipValues</a>, <a class="xref" href="InsertionPoints.html#d1e528331">InsertionPoints</a>, <a class="xref" href="Lines.html#d1e494585">Lines</a>, <a class="xref" href="Number.html#d1e5485">Number</a>, <a class="xref" href="Object.html#d1e626">Object</a>, <a class="xref" href="Paragraphs.html#d1e511436">Paragraphs</a>, <a class="xref" href="PathTypeAlignments.html#d1e90364">PathTypeAlignments</a>, <a class="xref" href="SpecialCharacters.html#d1e77395">SpecialCharacters</a>, <a class="xref" href="Story.html#d1e534017">Story</a>, <a class="xref" href="String.html#d1e4583">String</a>, <a class="xref" href="TextColumns.html#d1e503001">TextColumns</a>, <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>, <a class="xref" href="TextFrameContents.html#d1e77309">TextFrameContents</a>, <a class="xref" href="TextPath.html#d1e568831">TextPath</a>, <a class="xref" href="TextPathEffects.html#d1e90146">TextPathEffects</a>, <a class="xref" href="TextStyleRanges.html#d1e519852">TextStyleRanges</a>, <a class="xref" href="TextTypeAlignments.html#d1e90232">TextTypeAlignments</a>, <a class="xref" href="Texts.html#d1e469336">Texts</a>, <a class="xref" href="Words.html#d1e486169">Words</a>
+         </p>
+
+      </section>
+
+      <section class="section" id="d1e568831__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:10%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e241">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e247">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e253">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e259">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">centerBracket</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The halfway point between the start bracket and the end bracket.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">characters</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Characters.html#d1e477752">Characters</a>
+                           <em class="ph i">
+                              <a class="xref" href="Character.html#d1e469645">Character</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of characters.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">contents</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="TextFrameContents.html#d1e77309">TextFrameContents</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">TextFrameContents.PLACEHOLDER_TEXT</p>
+
+                        <p class="p enumInPTable clip_button">TextFrameContents.PLACEHOLDER_TEXT_ARABIC</p>
+
+                        <p class="p enumInPTable clip_button">TextFrameContents.PLACEHOLDER_TEXT_CYRILLIC</p>
+
+                        <p class="p enumInPTable clip_button">TextFrameContents.PLACEHOLDER_TEXT_GREEK</p>
+
+                        <p class="p enumInPTable clip_button">TextFrameContents.PLACEHOLDER_TEXT_HEBREW</p>
+
+                        <p class="p">
+                           <a class="xref" href="SpecialCharacters.html#d1e77395">SpecialCharacters</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ARABIC_COMMA</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ARABIC_KASHIDA</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ARABIC_QUESTION_MARK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ARABIC_SEMICOLON</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.AUTO_PAGE_NUMBER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.BULLET_CHARACTER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.COLUMN_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.COPYRIGHT_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DEGREE_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DISCRETIONARY_HYPHEN</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DISCRETIONARY_LINE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DOTTED_CIRCLE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DOUBLE_LEFT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DOUBLE_RIGHT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.DOUBLE_STRAIGHT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ELLIPSIS_CHARACTER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EM_DASH</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EM_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.END_NESTED_STYLE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EN_DASH</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EN_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.EVEN_PAGE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FIGURE_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FIXED_WIDTH_NONBREAKING_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FLUSH_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FOOTNOTE_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FORCED_LINE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.FRAME_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HAIR_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HEBREW_GERESH</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HEBREW_GERSHAYIM</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HEBREW_MAQAF</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.HEBREW_SOF_PASUK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.INDENT_HERE_TAB</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.LEFT_TO_RIGHT_EMBEDDING</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.LEFT_TO_RIGHT_MARK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.LEFT_TO_RIGHT_OVERRIDE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.NEXT_PAGE_NUMBER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.NONBREAKING_HYPHEN</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.NONBREAKING_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ODD_PAGE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.PAGE_BREAK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.PARAGRAPH_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.POP_DIRECTIONAL_FORMATTING</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.PREVIOUS_PAGE_NUMBER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.PUNCTUATION_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.QUARTER_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.REGISTERED_TRADEMARK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.RIGHT_INDENT_TAB</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.RIGHT_TO_LEFT_EMBEDDING</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.RIGHT_TO_LEFT_MARK</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.RIGHT_TO_LEFT_OVERRIDE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SECTION_MARKER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SECTION_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SINGLE_LEFT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SINGLE_RIGHT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SINGLE_STRAIGHT_QUOTE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.SIXTH_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.TEXT_VARIABLE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.THIN_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.THIRD_SPACE</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.TRADEMARK_SYMBOL</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ZERO_WIDTH_JOINER</p>
+
+                        <p class="p enumInPTable clip_button">SpecialCharacters.ZERO_WIDTH_NONJOINER</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The contents of the text frame. Can return: String, TextFrameContents enumerator or SpecialCharacters enumerator.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">endBracket</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The end of the type on a path. Note: Additional text becomes overset text unless the text is linked to another path or text frame.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">endTextFrame</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="TextPath.html#d1e568831">TextPath</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The last text frame in the thread. Can return: TextFrame or TextPath.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">eventListeners</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="EventListeners.html#d1e33911">EventListeners</a>
+                           <em class="ph i">
+                              <a class="xref" href="EventListener.html#d1e31102">EventListener</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of event listeners.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">events</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Events.html#d1e37599">Events</a>
+                           <em class="ph i">
+                              <a class="xref" href="Event.html#d1e34352">Event</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of events.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">flipPathEffect</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="FlipValues.html#d1e90420">FlipValues</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">FlipValues.FLIPPED</p>
+
+                        <p class="p enumInPTable clip_button">FlipValues.NOT_FLIPPED</p>
+
+                        <p class="p enumInPTable clip_button">FlipValues.UNDEFINED_FLIP_VALUE</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The flip effect applied to the type on a path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">id</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The unique ID of the TextPath.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">index</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The index of the TextPath within its containing object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">insertionPoints</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="InsertionPoints.html#d1e528331">InsertionPoints</a>
+                           <em class="ph i">
+                              <a class="xref" href="InsertionPoint.html#d1e520161">InsertionPoint</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of insertion points.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">isValid</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">Returns true if the object specifier resolves to valid objects.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">label</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A property that can be set to any string.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">lines</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Lines.html#d1e494585">Lines</a>
+                           <em class="ph i">
+                              <a class="xref" href="Line.html#d1e486478">Line</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of lines.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">name</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The name of the TextPath; this is an alias to the TextPath's label property.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">nextTextFrame</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>
+                        </p>
+
+                        <p class="p">TextPathCanalsoaccept:NothingEnum</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The next text frame in the thread. Can return: TextFrame or TextPath. Can also accept: NothingEnum enumerator.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">overflows</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">If true, the story has overset text.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">paragraphs</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Paragraphs.html#d1e511436">Paragraphs</a>
+                           <em class="ph i">
+                              <a class="xref" href="Paragraph.html#d1e503310">Paragraph</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of paragraphs.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">parent</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="EndnoteTextFrame.html#d1e556375">EndnoteTextFrame</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="GraphicLine.html#d1e223036">GraphicLine</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Oval.html#d1e213141">Oval</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Polygon.html#d1e227933">Polygon</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="Rectangle.html#d1e218082">Rectangle</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="EPSText.html#d1e273242">EPSText</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="SplineItem.html#d1e268448">SplineItem</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The parent of the TextPath (a SplineItem, Polygon, GraphicLine, Rectangle, Oval, TextFrame, EndnoteTextFrame or EPSText).</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">parentStory</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Story.html#d1e534017">Story</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The story that contains the text.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">pathAlignment</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="PathTypeAlignments.html#d1e90364">PathTypeAlignments</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">PathTypeAlignments.BOTTOM_PATH_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">PathTypeAlignments.CENTER_PATH_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">PathTypeAlignments.TOP_PATH_ALIGNMENT</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The alignment of the type on a path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">pathEffect</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="TextPathEffects.html#d1e90146">TextPathEffects</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">TextPathEffects.GRAVITY_PATH_EFFECT</p>
+
+                        <p class="p enumInPTable clip_button">TextPathEffects.RAINBOW_PATH_EFFECT</p>
+
+                        <p class="p enumInPTable clip_button">TextPathEffects.RIBBON_PATH_EFFECT</p>
+
+                        <p class="p enumInPTable clip_button">TextPathEffects.SKEW_PATH_EFFECT</p>
+
+                        <p class="p enumInPTable clip_button">TextPathEffects.STAIR_STEP_PATH_EFFECT</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The effect applied to the type on a path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">pathSpacing</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The spacing applied to the type on a path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">previousTextFrame</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>
+                        </p>
+
+                        <p class="p">TextPathCanalsoaccept:NothingEnum</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The previous text frame in the thread. Can return: TextFrame or TextPath. Can also accept: NothingEnum enumerator.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">properties</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e626">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A property that allows setting of several properties at the same time.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">startBracket</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The location of the start of the type on the path, expressed in points. Note: 0 is the first point on the path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">startTextFrame</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>
+                        </p>
+
+                        <p class="p">
+                           <a class="xref" href="TextPath.html#d1e568831">TextPath</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The first text frame in the thread. Can return: TextFrame or TextPath.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">textAlignment</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="TextTypeAlignments.html#d1e90232">TextTypeAlignments</a>
+                        </p>
+
+                        <p class="p enumInPTable clip_button">TextTypeAlignments.ABOVE_RIGHT_EM_BOX_TEXT_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">TextTypeAlignments.ABOVE_RIGHT_ICF_BOX_TEXT_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">TextTypeAlignments.ASCENDER_TEXT_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">TextTypeAlignments.BASELINE_TEXT_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">TextTypeAlignments.BELOW_LEFT_EM_BOX_TEXT_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">TextTypeAlignments.BELOW_LEFT_ICF_BOX_TEXT_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">TextTypeAlignments.CENTER_TEXT_ALIGNMENT</p>
+
+                        <p class="p enumInPTable clip_button">TextTypeAlignments.DESCENDER_TEXT_ALIGNMENT</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The alignment applied to the type on a path.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">textColumns</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="TextColumns.html#d1e503001">TextColumns</a>
+                           <em class="ph i">
+                              <a class="xref" href="TextColumn.html#d1e494894">TextColumn</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of text columns.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">textFrameIndex</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">The index of the text frame within the story.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">textStyleRanges</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="TextStyleRanges.html#d1e519852">TextStyleRanges</a>
+                           <em class="ph i">
+                              <a class="xref" href="TextStyleRange.html#d1e511745">TextStyleRange</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of text style ranges.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">texts</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Texts.html#d1e469336">Texts</a>
+                           <em class="ph i">
+                              <a class="xref" href="Text.html#d1e461232">Text</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of text objects.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e241 ">
+                        <p class="p clip_button">words</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e247 ">
+                        <p class="p">
+                           <a class="xref" href="Words.html#d1e486169">Words</a>
+                           <em class="ph i">
+                              <a class="xref" href="Word.html#d1e478061">Word</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e253 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e259 ">
+                        <p class="p description">A collection of words.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section" id="d1e568831__iEvents"><h2 class="title sectiontitle">Constants/Events</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:10%" /><col style="width:50%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e1756">
+                        <p class="p">Name</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e1762">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e1768">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e1774">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e1756 ">
+                        <p class="p clip_button">AFTER_PLACE</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1762 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1768 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1774 ">
+                        <p class="p description">Dispatched after a TextPath is placed. This event bubbles. This event is not cancelable.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e1756 ">
+                        <p class="p clip_button">BEFORE_PLACE</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1762 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1768 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1774 ">
+                        <p class="p description">Dispatched before a TextPath is placed. This event bubbles. This event is cancelable.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section" id="d1e568831__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e568831__d1e569386">
+            <a class="xref" href="EventListener.html#d1e31102">EventListener</a> 
+            <strong class="ph b clip_button">addEventListener</strong> (eventType:<em class="ph i">String</em>, handler:<em class="ph i">Varies File JavaScriptFunction</em>, [captures:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Adds an event listener.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e1892">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e1898">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e1904">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e1892 ">
+                        <p class="p">eventType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1898 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1904 ">
+                        <p class="p description">The event type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e1892 ">
+                        <p class="p">handler</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1898 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6347">File</a>
+                        </p>
+
+                        <p class="p">JavaScriptFunction</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1904 ">
+                        <p class="p description">The event handler. Can accept: File or JavaScript Function.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e1892 ">
+                        <p class="p">captures</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1898 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e1904 ">
+                        <p class="p description">This parameter is obsolete. (Optional)</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569452">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">changeGlyph</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds glyphs that match the find what value and replaces the glyphs with the change to value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2029">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2035">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2041">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2029 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2035 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2041 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569481">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">changeGrep</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find what value and replaces the text with the change to value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2109">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2115">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2121">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2109 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2115 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2121 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569510">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">changeText</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find what value and replaces the text with the change to value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2190">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2196">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2202">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2190 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2196 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2202 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569539">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">changeTransliterate</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find character type value and replaces the text with the change character type value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2270">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2276">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2282">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2270 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2276 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2282 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569569">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">extractLabel</strong> (key:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Gets the label value associated with the specified key.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2351">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2357">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2363">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2351 ">
+                        <p class="p">key</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2357 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2363 ">
+                        <p class="p description">The key.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569596">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">findGlyph</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds glyphs that match the find what value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2431">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2437">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2443">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2431 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2437 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2443 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569625">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">findGrep</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find what value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2512">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2518">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2524">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2512 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2518 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2524 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569654">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">findText</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find what value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2592">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2598">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2604">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2592 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2598 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2604 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569683">
+            <a class="xref" href="Text.html#d1e461232">Text</a> 
+            <strong class="ph b clip_button">findTransliterate</strong> (reverseOrder:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Finds text that matches the find character type value.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2673">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2679">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2685">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2673 ">
+                        <p class="p">reverseOrder</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2679 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2685 ">
+                        <p class="p description">If true, returns the results in reverse order. (Optional)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569712">
+            <a class="xref" href="TextPath.html#d1e568831">TextPath</a> 
+            <strong class="ph b clip_button">getElements</strong> ()</p>
+
+         <p class="p description">Resolves the object specifier, creating an array of object references.</p>
+
+         <p class="p methodName" id="d1e568831__d1e569727">undefined <strong class="ph b clip_button">insertLabel</strong> (key:<em class="ph i">String</em>, value:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Sets the label to the value associated with the specified key.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2766">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2772">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2778">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2766 ">
+                        <p class="p">key</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2772 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2778 ">
+                        <p class="p description">The key.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2766 ">
+                        <p class="p">value</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2772 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2778 ">
+                        <p class="p description">The value.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569760">undefined <strong class="ph b clip_button">remove</strong> ()</p>
+
+         <p class="p description">Deletes the TextPath.</p>
+
+         <p class="p methodName" id="d1e568831__d1e569766">
+            <a class="xref" href="Boolean.html#d1e5762">Boolean</a> 
+            <strong class="ph b clip_button">removeEventListener</strong> (eventType:<em class="ph i">String</em>, handler:<em class="ph i">Varies File JavaScriptFunction</em>, [captures:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Removes the event listener.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d3298379e2886">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2892">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d3298379e2898">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2886 ">
+                        <p class="p">eventType</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2892 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2898 ">
+                        <p class="p description">The registered event type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2886 ">
+                        <p class="p">handler</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2892 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6347">File</a>
+                        </p>
+
+                        <p class="p">JavaScriptFunction</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2898 ">
+                        <p class="p description">The registered event handler. Can accept: File or JavaScript Function.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d3298379e2886 ">
+                        <p class="p">captures</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2892 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5762">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d3298379e2898 ">
+                        <p class="p description">This parameter is obsolete. (Optional)</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e568831__d1e569832">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toSource</strong> ()</p>
+
+         <p class="p description">Generates a string which, if executed, will return the TextPath.</p>
+
+         <p class="p methodName" id="d1e568831__d1e569844">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toSpecifier</strong> ()</p>
+
+         <p class="p description">Retrieves the object specifier.</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Object of</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>.startTextFrame</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EndnoteTextFrame.html#d1e556375">EndnoteTextFrame</a>.startTextFrame</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPath.html#d1e568831">TextPath</a>.startTextFrame</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextFrame.html#d1e528640">TextFrame</a>.endTextFrame</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EndnoteTextFrame.html#d1e556375">EndnoteTextFrame</a>.endTextFrame</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPath.html#d1e568831">TextPath</a>.endTextFrame</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Character.html#d1e469645">Character</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Event.html#d1e34352">Event</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="EventListener.html#d1e31102">EventListener</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="InsertionPoint.html#d1e520161">InsertionPoint</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Line.html#d1e486478">Line</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="MutationEvent.html#d1e38204">MutationEvent</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Paragraph.html#d1e503310">Paragraph</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Text.html#d1e461232">Text</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextColumn.html#d1e494894">TextColumn</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextStyleRange.html#d1e511745">TextStyleRange</a>.parent</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Word.html#d1e478061">Word</a>.parent</p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Return</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e569908">add</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPath.html#d1e568831">TextPath</a>.<a class="xref" href="TextPath.html#d1e568831__d1e569712">getElements</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e569935">anyItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e569959">everyItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e570181">nextItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e570208">previousItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e570025">itemByID</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e569986">item</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e569881">[]</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e570052">itemByName</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e570079">itemByRange</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e569974">firstItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e570156">lastItem</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="TextPaths.html#d1e569859">TextPaths</a>.<a class="xref" href="TextPaths.html#d1e569859__d1e570169">middleItem</a>()</p>
+
+      </section>
+
+   </div>
+
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information"><div>
+	<p>These files are <a href="https://github.com/grefel/extendscriptApiDoc" target="_blank">transformed</a> from data by <a href="http://www.adobe.com" target="_blank">Adobe Systems Incorporated</a>. If questions arise stick to the original versions of the files supplied by Adobe. InDesign, PhotoShop, Illustrator, ExtendScript and ScriptUI are trademarks of <a href="http://www.adobe.com/" target="_blank">Adobe Systems Incorporated</a>.</p>	
+</div></div></footer></body>
+</html>

@@ -1,0 +1,4962 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="An object within a document that contains the visual elements of the image (equivalent to a layer in the Adobe Photoshop application). Go to Property Listing | Method Listing Methods: add , applyStyle ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="ArtLayer"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="d1e51762"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>ArtLayer</title><!--  Generated with Oxygen version 17.0, build number 2015052917.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e51762">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"></td><td><div class="navheader"></div></td></tr></tbody></table>
+
+   <h1 class="title topictitle1">
+      <span class="keyword">ArtLayer</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">An object within a document that contains the visual elements of the image (equivalent to a layer in the Adobe Photoshop application).</p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e51762__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e51762__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <div class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e51762__d1e51960">add</a>,  <a class="xref" href="#d1e51762__d1e51973">applyStyle</a>,  <a class="xref" href="#d1e51762__d1e51994">applyStyleFile</a>,  <a class="xref" href="#d1e51762__d1e52012">saveStyleFile</a>,  <a class="xref" href="#d1e51762__d1e52066">clear</a>,  <a class="xref" href="#d1e51762__d1e52072">copy</a>,  <a class="xref" href="#d1e51762__d1e52096">cut</a>,  <a class="xref" href="#d1e51762__d1e52103">merge</a>,  <a class="xref" href="#d1e51762__d1e52115">rasterize</a>,  <a class="xref" href="#d1e51762__d1e52136">applyAverage</a>,  <a class="xref" href="#d1e51762__d1e52142">applyGaussianBlur</a>,  <a class="xref" href="#d1e51762__d1e52163">applyLensBlur</a>,  <a class="xref" href="#d1e51762__d1e52402">applyBlur</a>,  <a class="xref" href="#d1e51762__d1e52409">applyBlurMore</a>,  <a class="xref" href="#d1e51762__d1e52415">applyMotionBlur</a>,  <a class="xref" href="#d1e51762__d1e52456">applyRadialBlur</a>,  <a class="xref" href="#d1e51762__d1e52521">applySmartBlur</a>,  <a class="xref" href="#d1e51762__d1e52578">applyDiffuseGlow</a>,  <a class="xref" href="#d1e51762__d1e52647">applyDisplace</a>,  <a class="xref" href="#d1e51762__d1e52717">applyGlassEffect</a>,  <a class="xref" href="#d1e51762__d1e52826">applyOceanRipple</a>,  <a class="xref" href="#d1e51762__d1e52875">applyPinch</a>,  <a class="xref" href="#d1e51762__d1e52896">applyPolarCoordinates</a>,  <a class="xref" href="#d1e51762__d1e52917">applyRipple</a>,  <a class="xref" href="#d1e51762__d1e52950">applyShear</a>,  <a class="xref" href="#d1e51762__d1e52986">applySpherize</a>,  <a class="xref" href="#d1e51762__d1e53019">applyTwirl</a>,  <a class="xref" href="#d1e51762__d1e53040">applyWave</a>,  <a class="xref" href="#d1e51762__d1e53210">applyZigZag</a>,  <a class="xref" href="#d1e51762__d1e53255">applyAddNoise</a>,  <a class="xref" href="#d1e51762__d1e53300">applyDespeckle</a>,  <a class="xref" href="#d1e51762__d1e53307">applyDustAndScratches</a>,  <a class="xref" href="#d1e51762__d1e53356">applyMedianNoise</a>,  <a class="xref" href="#d1e51762__d1e53385">applyClouds</a>,  <a class="xref" href="#d1e51762__d1e53391">applyDifferenceClouds</a>,  <a class="xref" href="#d1e51762__d1e53397">applyLensFlare</a>,  <a class="xref" href="#d1e51762__d1e53450">applyTextureFill</a>,  <a class="xref" href="#d1e51762__d1e53472">applySharpen</a>,  <a class="xref" href="#d1e51762__d1e53478">applySharpenEdges</a>,  <a class="xref" href="#d1e51762__d1e53484">applySharpenMore</a>,  <a class="xref" href="#d1e51762__d1e53490">applyUnSharpMask</a>,  <a class="xref" href="#d1e51762__d1e53551">applyDeInterlace</a>,  <a class="xref" href="#d1e51762__d1e53584">applyNTSC</a>,  <a class="xref" href="#d1e51762__d1e53591">applyCustomFilter</a>,  <a class="xref" href="#d1e51762__d1e53638">applyHighPass</a>,  <a class="xref" href="#d1e51762__d1e53659">applyMaximum</a>,  <a class="xref" href="#d1e51762__d1e53688">applyMinimum</a>,  <a class="xref" href="#d1e51762__d1e53717">applyOffset</a>,  <a class="xref" href="#d1e51762__d1e53762">adjustLevels</a>,  <a class="xref" href="#d1e51762__d1e53848">autoLevels</a>,  <a class="xref" href="#d1e51762__d1e53854">autoContrast</a>,  <a class="xref" href="#d1e51762__d1e53860">adjustCurves</a>,  <a class="xref" href="#d1e51762__d1e53883">adjustBrightnessContrast</a>,  <a class="xref" href="#d1e51762__d1e53916">adjustColorBalance</a>,  <a class="xref" href="#d1e51762__d1e53979">desaturate</a>,  <a class="xref" href="#d1e51762__d1e53986">selectiveColor</a>,  <a class="xref" href="#d1e51762__d1e54131">mixChannels</a>,  <a class="xref" href="#d1e51762__d1e54169">invert</a>,  <a class="xref" href="#d1e51762__d1e54175">equalize</a>,  <a class="xref" href="#d1e51762__d1e54181">threshold</a>,  <a class="xref" href="#d1e51762__d1e54202">posterize</a>,  <a class="xref" href="#d1e51762__d1e54232">photoFilter</a>,  <a class="xref" href="#d1e51762__d1e54291">shadowHighlight</a>
+         </p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="Boolean.html#d1e5707">Boolean</a>, <a class="xref" href="LayerKind.html#d1e35200">LayerKind</a>, <a class="xref" href="Number.html#d1e5437">Number</a>, <a class="xref" href="String.html#d1e4543">String</a>, <a class="xref" href="TextItem.html#d1e55313">TextItem</a>
+         </p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Hierarchy:</h2>
+         
+         <p class="p">Superclass: 
+									<a class="xref" href="Layer.html#d1e54501">Layer</a>
+         </p>
+
+         <p class="p">Class: ArtLayer</p>
+
+      </div>
+
+      <div class="section" id="d1e51762__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+               
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="20%" id="d18372e376">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e382">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e388">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e394">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".fillOpacity" class="p clip_button">fillOpacity</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The interior opacity of the layer. Range: 0.0 to 100.0.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".filterMaskDensity" class="p clip_button">filterMaskDensity</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The density of the filter mask (between 0.0 and 100.0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".filterMaskFeather" class="p clip_button">filterMaskFeather</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The feather of the filter mask (between 0.0 and 250.0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".grouped" class="p clip_button">grouped</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">If true, the layer is grouped with the layer below.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".isBackgroundLayer" class="p clip_button">isBackgroundLayer</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">If true, the layer is a background layer.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".kind" class="p clip_button">kind</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="LayerKind.html#d1e35200">LayerKind</a>
+                        </p>
+
+                        <p data-clipboard-text="LayerKind.NORMAL" class="p enumInPTable clip_button">LayerKind.NORMAL</p>
+
+                        <p data-clipboard-text="LayerKind.TEXT" class="p enumInPTable clip_button">LayerKind.TEXT</p>
+
+                        <p data-clipboard-text="LayerKind.SOLIDFILL" class="p enumInPTable clip_button">LayerKind.SOLIDFILL</p>
+
+                        <p data-clipboard-text="LayerKind.GRADIENTFILL" class="p enumInPTable clip_button">LayerKind.GRADIENTFILL</p>
+
+                        <p data-clipboard-text="LayerKind.PATTERNFILL" class="p enumInPTable clip_button">LayerKind.PATTERNFILL</p>
+
+                        <p data-clipboard-text="LayerKind.LEVELS" class="p enumInPTable clip_button">LayerKind.LEVELS</p>
+
+                        <p data-clipboard-text="LayerKind.CURVES" class="p enumInPTable clip_button">LayerKind.CURVES</p>
+
+                        <p data-clipboard-text="LayerKind.COLORBALANCE" class="p enumInPTable clip_button">LayerKind.COLORBALANCE</p>
+
+                        <p data-clipboard-text="LayerKind.BRIGHTNESSCONTRAST" class="p enumInPTable clip_button">LayerKind.BRIGHTNESSCONTRAST</p>
+
+                        <p data-clipboard-text="LayerKind.HUESATURATION" class="p enumInPTable clip_button">LayerKind.HUESATURATION</p>
+
+                        <p data-clipboard-text="LayerKind.SELECTIVECOLOR" class="p enumInPTable clip_button">LayerKind.SELECTIVECOLOR</p>
+
+                        <p data-clipboard-text="LayerKind.CHANNELMIXER" class="p enumInPTable clip_button">LayerKind.CHANNELMIXER</p>
+
+                        <p data-clipboard-text="LayerKind.GRADIENTMAP" class="p enumInPTable clip_button">LayerKind.GRADIENTMAP</p>
+
+                        <p data-clipboard-text="LayerKind.INVERSION" class="p enumInPTable clip_button">LayerKind.INVERSION</p>
+
+                        <p data-clipboard-text="LayerKind.THRESHOLD" class="p enumInPTable clip_button">LayerKind.THRESHOLD</p>
+
+                        <p data-clipboard-text="LayerKind.POSTERIZE" class="p enumInPTable clip_button">LayerKind.POSTERIZE</p>
+
+                        <p data-clipboard-text="LayerKind.SMARTOBJECT" class="p enumInPTable clip_button">LayerKind.SMARTOBJECT</p>
+
+                        <p data-clipboard-text="LayerKind.PHOTOFILTER" class="p enumInPTable clip_button">LayerKind.PHOTOFILTER</p>
+
+                        <p data-clipboard-text="LayerKind.EXPOSURE" class="p enumInPTable clip_button">LayerKind.EXPOSURE</p>
+
+                        <p data-clipboard-text="LayerKind.LAYER3D" class="p enumInPTable clip_button">LayerKind.LAYER3D</p>
+
+                        <p data-clipboard-text="LayerKind.VIDEO" class="p enumInPTable clip_button">LayerKind.VIDEO</p>
+
+                        <p data-clipboard-text="LayerKind.BLACKANDWHITE" class="p enumInPTable clip_button">LayerKind.BLACKANDWHITE</p>
+
+                        <p data-clipboard-text="LayerKind.VIBRANCE" class="p enumInPTable clip_button">LayerKind.VIBRANCE</p>
+
+                        <p data-clipboard-text="LayerKind.COLORLOOKUP" class="p enumInPTable clip_button">LayerKind.COLORLOOKUP</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">Sets the layer kind (such as 'text layer') for an empty layer. Valid only when the layer is empty and when 'is background layer ' is false. You can use the 'kind ' property to make a background layer a normal layer; however, to make a layer a background layer, you must set 'is background layer' to true.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".layerMaskDensity" class="p clip_button">layerMaskDensity</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The density of the layer mask (between 0.0 and 100.0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".layerMaskFeather" class="p clip_button">layerMaskFeather</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The feather of the layer mask (between 0.0 and 250.0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".parent" class="p clip_button">parent</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 "> </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The object's container.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".pixelsLocked" class="p clip_button">pixelsLocked</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">If true, the pixels in the layer's image cannot be edited.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".positionLocked" class="p clip_button">positionLocked</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">If true, the pixels in the layer's image cannot be moved within the layer.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".textItem" class="p clip_button">textItem</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="TextItem.html#d1e55313">TextItem</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The text that is associated with the layer. Valid only when 'kind' is text layer.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".transparentPixelsLocked" class="p clip_button">transparentPixelsLocked</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">If true, editing is confined to the opaque portions of the layer.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".typename" class="p clip_button">typename</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The class name of the object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".vectorMaskDensity" class="p clip_button">vectorMaskDensity</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The density of the vector mask (between 0.0 and 100.0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d18372e376 ">
+                        <p data-clipboard-text=".vectorMaskFeather" class="p clip_button">vectorMaskFeather</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e382 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e388 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e394 ">
+                        <p class="p description">The feather of the vector mask (between 0.0 and 250.0)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+      </div>
+
+      <div class="section" id="d1e51762__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e51762__d1e51960">
+            <a class="xref" href="ArtLayer.html#d1e51762">ArtLayer</a> 
+            <strong data-clipboard-text=".add()" class="ph b clip_button">add</strong> ()</p>
+
+         <p class="p description">Adds an element.</p>
+
+         <p class="p methodName" id="d1e51762__d1e53883">undefined <strong data-clipboard-text=".adjustBrightnessContrast()" class="ph b clip_button">adjustBrightnessContrast</strong> (brightness:<em class="ph i">Int</em>, contrast:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Adjusts the brightness and constrast.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e1023">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e1029">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e1035">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1023 ">
+                        <p class="p">brightness</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1029 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1035 ">
+                        <p class="p description">The brightness amount. Range: -100 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1023 ">
+                        <p class="p">contrast</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1029 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1035 ">
+                        <p class="p description">The contrast amount. Range: -100 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53916">undefined <strong data-clipboard-text=".adjustColorBalance()" class="ph b clip_button">adjustColorBalance</strong> ([shadows:<em class="ph i">Array of Int</em>], [midtones:<em class="ph i">Array of Int</em>], [highlights:<em class="ph i">Array of Int</em>], [preserveLuminosity:<em class="ph i">Boolean</em>])</p>
+
+         <p class="p description">Adjusts the color balance of the layer's component channels.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e1125">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e1131">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e1137">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1125 ">
+                        <p class="p">shadows</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1131 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1137 ">
+                        <p class="p description">The adjustments for the shadows. The array must include three values (in the range -100 to 100), which represent cyan or red, magenta or green, and yellow or blue, when the document mode is CMYK or RGB.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1125 ">
+                        <p class="p">midtones</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1131 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1137 ">
+                        <p class="p description">The adjustments for the midtones. The array must include three values (in the range -100 to 100), which represent cyan or red, magenta or green, and yellow or blue, when the document mode is CMYK or RGB.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1125 ">
+                        <p class="p">highlights</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1131 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1137 ">
+                        <p class="p description">The adjustments for the highlights. The array must include three values (in the range -100 to 100), which represent cyan or red, magenta or green, and yellow or blue, when the document mode is CMYK or RGB.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1125 ">
+                        <p class="p">preserveLuminosity</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1131 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1137 ">
+                        <p class="p description">If true, luminosity is preserved.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53860">undefined <strong data-clipboard-text=".adjustCurves()" class="ph b clip_button">adjustCurves</strong> (curveShape:<em class="ph i">Array of Point</em>)</p>
+
+         <p class="p description">Adjusts the tonal range of the selected channel using up to fourteen points.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e1277">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e1283">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e1289">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1277 ">
+                        <p class="p">curveShape</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1283 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Point.html#d1e57166">Point</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1289 ">
+                        <p class="p description">The curve points. The number of points must be between 2 and 14.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53762">undefined <strong data-clipboard-text=".adjustLevels()" class="ph b clip_button">adjustLevels</strong> (inputRangeStart:<em class="ph i">Int</em>, inputRangeEnd:<em class="ph i">Int</em>, inputRangeGamma:<em class="ph i">Number</em>, outputRangeStart:<em class="ph i">Int</em>, outputRangeEnd:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Adjusts levels of the selected channels.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e1370">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e1376">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e1382">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1370 ">
+                        <p class="p">inputRangeStart</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1376 ">
+                        <p class="p">Int (range 0 - 253)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1382 ">
+                        <p class="p description">The input levels minimum. Range: 0 to 253.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1370 ">
+                        <p class="p">inputRangeEnd</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1376 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1382 ">
+                        <p class="p description">The input levels maximum. Range: (input range start + 2) to 253.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1370 ">
+                        <p class="p">inputRangeGamma</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1376 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1382 ">
+                        <p class="p description">The input levels gamma. Range: 0.10 to 9.99.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1370 ">
+                        <p class="p">outputRangeStart</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1376 ">
+                        <p class="p">Int (range 0 - 253)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1382 ">
+                        <p class="p description">The output levels minimum. Range: 0 to 253.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1370 ">
+                        <p class="p">outputRangeEnd</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1376 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1382 ">
+                        <p class="p description">The output levels maximum. Range: (output range start + 2) to 253.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53255">undefined <strong data-clipboard-text=".applyAddNoise()" class="ph b clip_button">applyAddNoise</strong> (amount:<em class="ph i">Number</em>, distribution:<em class="ph i">NoiseDistribution</em>, monochromatic:<em class="ph i">Boolean</em>)</p>
+
+         <p class="p description">Applies the add noise filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e1537">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e1543">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e1549">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1537 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1543 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1549 ">
+                        <p class="p description">The amount of noise (as a percentage). Range: 0.1 to 400.0.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1537 ">
+                        <p class="p">distribution</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1543 ">
+                        <p class="p">
+                           <a class="xref" href="NoiseDistribution.html#d1e33300">NoiseDistribution</a>
+                        </p>
+
+                        <p data-clipboard-text="NoiseDistribution.UNIFORM" class="p enumInPTable clip_button">NoiseDistribution.UNIFORM</p>
+
+                        <p data-clipboard-text="NoiseDistribution.GAUSSIAN" class="p enumInPTable clip_button">NoiseDistribution.GAUSSIAN</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1549 ">
+                        <p class="p description">The noise distribution type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1537 ">
+                        <p class="p">monochromatic</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1543 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1549 ">
+                        <p class="p description">If true, applies the filter only to the tonal elements in the image without changing the colors.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52136">undefined <strong data-clipboard-text=".applyAverage()" class="ph b clip_button">applyAverage</strong> ()</p>
+
+         <p class="p description">Applies the average filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e52402">undefined <strong data-clipboard-text=".applyBlur()" class="ph b clip_button">applyBlur</strong> ()</p>
+
+         <p class="p description">Applies the blur filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e52409">undefined <strong data-clipboard-text=".applyBlurMore()" class="ph b clip_button">applyBlurMore</strong> ()</p>
+
+         <p class="p description">Applies the blur more filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e53385">undefined <strong data-clipboard-text=".applyClouds()" class="ph b clip_button">applyClouds</strong> ()</p>
+
+         <p class="p description">Applies the clouds filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e53591">undefined <strong data-clipboard-text=".applyCustomFilter()" class="ph b clip_button">applyCustomFilter</strong> (characteristics:<em class="ph i">Array of Int</em>, scale:<em class="ph i">Int</em>, offset:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies the custom filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e1712">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e1718">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e1724">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1712 ">
+                        <p class="p">characteristics</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1718 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1724 ">
+                        <p class="p description">The custom filter characteristics. This is an array of 25 values that corresponds to a left-to-right, top-to- bottom traversal of the array presented in the Custom dialog in the user interface (Filter &gt; Other &gt; Custom).</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1712 ">
+                        <p class="p">scale</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1718 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1724 ">
+                        <p class="p description">The value by which to divide the sum of the brightness values of the pixels included in the calculation.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1712 ">
+                        <p class="p">offset</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1718 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1724 ">
+                        <p class="p description">The value to be added to the result of the scale calculation.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53551">undefined <strong data-clipboard-text=".applyDeInterlace()" class="ph b clip_button">applyDeInterlace</strong> (eliminateFields:<em class="ph i">EliminateFields</em>, createFields:<em class="ph i">CreateFields</em>)</p>
+
+         <p class="p description">Applies the de-interlace filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e1834">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e1840">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e1846">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1834 ">
+                        <p class="p">eliminateFields</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1840 ">
+                        <p class="p">
+                           <a class="xref" href="EliminateFields.html#d1e33409">EliminateFields</a>
+                        </p>
+
+                        <p data-clipboard-text="EliminateFields.ODDFIELDS" class="p enumInPTable clip_button">EliminateFields.ODDFIELDS</p>
+
+                        <p data-clipboard-text="EliminateFields.EVENFIELDS" class="p enumInPTable clip_button">EliminateFields.EVENFIELDS</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1846 ">
+                        <p class="p description">The fields to eliminate.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1834 ">
+                        <p class="p">createFields</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1840 ">
+                        <p class="p">
+                           <a class="xref" href="CreateFields.html#d1e33448">CreateFields</a>
+                        </p>
+
+                        <p data-clipboard-text="CreateFields.DUPLICATION" class="p enumInPTable clip_button">CreateFields.DUPLICATION</p>
+
+                        <p data-clipboard-text="CreateFields.INTERPOLATION" class="p enumInPTable clip_button">CreateFields.INTERPOLATION</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1846 ">
+                        <p class="p description">The method to use to replace eliminated fields.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53300">undefined <strong data-clipboard-text=".applyDespeckle()" class="ph b clip_button">applyDespeckle</strong> ()</p>
+
+         <p class="p description">Applies the despeckle filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e53391">undefined <strong data-clipboard-text=".applyDifferenceClouds()" class="ph b clip_button">applyDifferenceClouds</strong> ()</p>
+
+         <p class="p description">Applies the difference clouds filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e52578">undefined <strong data-clipboard-text=".applyDiffuseGlow()" class="ph b clip_button">applyDiffuseGlow</strong> (graininess:<em class="ph i">Int</em>, glowAmount:<em class="ph i">Int</em>, clearAmount:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies the diffuse glow filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e1972">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e1978">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e1984">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1972 ">
+                        <p class="p">graininess</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1978 ">
+                        <p class="p">Int (range 0 - 10)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1984 ">
+                        <p class="p description">The amount of graininess. Range: 0 to 10.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1972 ">
+                        <p class="p">glowAmount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1978 ">
+                        <p class="p">Int (range 0 - 20)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1984 ">
+                        <p class="p description">The glow amount. Range: 0 to 20.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e1972 ">
+                        <p class="p">clearAmount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e1978 ">
+                        <p class="p">Int (range 0 - 20)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e1984 ">
+                        <p class="p description">The clear amount. Range: 0 to 20.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52647">undefined <strong data-clipboard-text=".applyDisplace()" class="ph b clip_button">applyDisplace</strong> (horizontalScale:<em class="ph i">Int</em>, verticalScale:<em class="ph i">Int</em>, displacementType:<em class="ph i">DisplacementMapType</em>, undefinedAreas:<em class="ph i">UndefinedAreas</em>, displacementMapFile:<em class="ph i">File</em>)</p>
+
+         <p class="p description">Applies the displace filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e2100">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e2106">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e2112">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2100 ">
+                        <p class="p">horizontalScale</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2106 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2112 ">
+                        <p class="p description">The amount of horizontal distortion. Range: -999 to 999.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2100 ">
+                        <p class="p">verticalScale</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2106 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2112 ">
+                        <p class="p description">The amount of vertical distortion. Range: -999 to 999.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2100 ">
+                        <p class="p">displacementType</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2106 ">
+                        <p class="p">
+                           <a class="xref" href="DisplacementMapType.html#d1e33153">DisplacementMapType</a>
+                        </p>
+
+                        <p data-clipboard-text="DisplacementMapType.STRETCHTOFIT" class="p enumInPTable clip_button">DisplacementMapType.STRETCHTOFIT</p>
+
+                        <p data-clipboard-text="DisplacementMapType.TILE" class="p enumInPTable clip_button">DisplacementMapType.TILE</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2112 ">
+                        <p class="p description">The displacement type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2100 ">
+                        <p class="p">undefinedAreas</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2106 ">
+                        <p class="p">
+                           <a class="xref" href="UndefinedAreas.html#d1e33005">UndefinedAreas</a>
+                        </p>
+
+                        <p data-clipboard-text="UndefinedAreas.WRAPAROUND" class="p enumInPTable clip_button">UndefinedAreas.WRAPAROUND</p>
+
+                        <p data-clipboard-text="UndefinedAreas.REPEATEDGEPIXELS" class="p enumInPTable clip_button">UndefinedAreas.REPEATEDGEPIXELS</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2112 ">
+                        <p class="p description">The treatment of undistorted areas.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2100 ">
+                        <p class="p">displacementMapFile</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2106 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2112 ">
+                        <p class="p description">The distortion image map.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53307">undefined <strong data-clipboard-text=".applyDustAndScratches()" class="ph b clip_button">applyDustAndScratches</strong> (radius:<em class="ph i">Int</em>, threshold:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies the dust and scratches filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e2283">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e2289">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e2295">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2283 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2289 ">
+                        <p class="p">Int (range 1 - 16)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2295 ">
+                        <p class="p description">The size (in pixels) of the area searched for dissimilar pixels. Range: 1 to 16.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2283 ">
+                        <p class="p">threshold</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2289 ">
+                        <p class="p">Int (range 0 - 255)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2295 ">
+                        <p class="p description">Determines how dissimilar the pixels should be before they are eliminated. Range: 0 to 255.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52142">undefined <strong data-clipboard-text=".applyGaussianBlur()" class="ph b clip_button">applyGaussianBlur</strong> (radius:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Applies the gaussian blur filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e2377">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e2383">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e2389">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2377 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2383 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2389 ">
+                        <p class="p description">The blur width in pixels. Range: 1.0 to 250.0.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52717">undefined <strong data-clipboard-text=".applyGlassEffect()" class="ph b clip_button">applyGlassEffect</strong> (distortion:<em class="ph i">Int</em>, smoothness:<em class="ph i">Int</em>, scaling:<em class="ph i">Int</em>, [invert:<em class="ph i">Boolean</em>=Boolean], [texture:<em class="ph i">TextureType</em>], [textureFile:<em class="ph i">File</em>])</p>
+
+         <p class="p description">Applies the glass filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e2469">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e2475">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e2481">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2469 ">
+                        <p class="p">distortion</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2475 ">
+                        <p class="p">Int (range 0 - 20)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2481 ">
+                        <p class="p description">The amount of distortion. Range: 0 to 20.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2469 ">
+                        <p class="p">smoothness</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2475 ">
+                        <p class="p">Int (range 1 - 15)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2481 ">
+                        <p class="p description">The smoothness. Range: 1 to 15.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2469 ">
+                        <p class="p">scaling</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2475 ">
+                        <p class="p">Int (range 50 - 200)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2481 ">
+                        <p class="p description">The amount of scaling. Range: 50 to 200.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2469 ">
+                        <p class="p">invert</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2475 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2481 ">
+                        <p class="p description">If true, the texture is inverted.</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2469 ">
+                        <p class="p">texture</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2475 ">
+                        <p class="p">
+                           <a class="xref" href="TextureType.html#d1e32828">TextureType</a>
+                        </p>
+
+                        <p data-clipboard-text="TextureType.BLOCKS" class="p enumInPTable clip_button">TextureType.BLOCKS</p>
+
+                        <p data-clipboard-text="TextureType.CANVAS" class="p enumInPTable clip_button">TextureType.CANVAS</p>
+
+                        <p data-clipboard-text="TextureType.FROSTED" class="p enumInPTable clip_button">TextureType.FROSTED</p>
+
+                        <p data-clipboard-text="TextureType.TINYLENS" class="p enumInPTable clip_button">TextureType.TINYLENS</p>
+
+                        <p data-clipboard-text="TextureType.FILE" class="p enumInPTable clip_button">TextureType.FILE</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2481 ">
+                        <p class="p description">The type of texture.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2469 ">
+                        <p class="p">textureFile</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2475 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2481 ">
+                        <p class="p description">The file from which to load the texture type.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53638">undefined <strong data-clipboard-text=".applyHighPass()" class="ph b clip_button">applyHighPass</strong> (radius:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Applies the high pass filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e2679">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e2685">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e2691">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2679 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2685 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2691 ">
+                        <p class="p description">The width (in pixels) of the radius where edge details are retained.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52163">undefined <strong data-clipboard-text=".applyLensBlur()" class="ph b clip_button">applyLensBlur</strong> ([source:<em class="ph i">DepthMapSource</em>=DepthMapSource], [focalDistance:<em class="ph i">Int</em>=Int], [invertDepthMap:<em class="ph i">Boolean</em>=Boolean], [shape:<em class="ph i">Geometry</em>=Geometry], [radius:<em class="ph i">Int</em>=Int], [bladeCurvature:<em class="ph i">Int</em>=Int], [rotation:<em class="ph i">Int</em>=Int], [brightness:<em class="ph i">Int</em>=Int], [threshold:<em class="ph i">Int</em>=Int], [amount:<em class="ph i">Int</em>=Int], [distribution:<em class="ph i">NoiseDistribution</em>=NoiseDistribution], [monochromatic:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Apply the lens blur filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e2790">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e2796">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e2802">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">source</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">
+                           <a class="xref" href="DepthMapSource.html#d1e37443">DepthMapSource</a>
+                        </p>
+
+                        <p data-clipboard-text="DepthMapSource.NONE" class="p enumInPTable clip_button">DepthMapSource.NONE</p>
+
+                        <p data-clipboard-text="DepthMapSource.TRANSPARENCYCHANNEL" class="p enumInPTable clip_button">DepthMapSource.TRANSPARENCYCHANNEL</p>
+
+                        <p data-clipboard-text="DepthMapSource.LAYERMASK" class="p enumInPTable clip_button">DepthMapSource.LAYERMASK</p>
+
+                        <p data-clipboard-text="DepthMapSource.IMAGEHIGHLIGHT" class="p enumInPTable clip_button">DepthMapSource.IMAGEHIGHLIGHT</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The source for the depth map.</p>
+
+                        <p class="p"> (default: DepthMapSource.NONE)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">focalDistance</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The blur focal distance (in pixels) for the depth map. RangeL 0 to 255. Valid only when 'source' is transparency or layer mask.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">invertDepthMap</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">If true, inverts the depth map.</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">shape</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">
+                           <a class="xref" href="Geometry.html#d1e37513">Geometry</a>
+                        </p>
+
+                        <p data-clipboard-text="Geometry.TRIANGLE" class="p enumInPTable clip_button">Geometry.TRIANGLE</p>
+
+                        <p data-clipboard-text="Geometry.PENTAGON" class="p enumInPTable clip_button">Geometry.PENTAGON</p>
+
+                        <p data-clipboard-text="Geometry.HEXAGON" class="p enumInPTable clip_button">Geometry.HEXAGON</p>
+
+                        <p data-clipboard-text="Geometry.SQUARE" class="p enumInPTable clip_button">Geometry.SQUARE</p>
+
+                        <p data-clipboard-text="Geometry.HEPTAGON" class="p enumInPTable clip_button">Geometry.HEPTAGON</p>
+
+                        <p data-clipboard-text="Geometry.OCTAGON" class="p enumInPTable clip_button">Geometry.OCTAGON</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The shape of the iris.</p>
+
+                        <p class="p"> (default: Geometry.HEXAGON)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The radius of the iris. Range: 0 to 100.</p>
+
+                        <p class="p"> (default: 15)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">bladeCurvature</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The blade curvature of the iris. Range: 0 to 100.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">rotation</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">Int (range 0 - 360)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The rotation of the iris (in degrees). Range: 0 to 360.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">brightness</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The brightness for the specular highlights. Range: 0 to 100.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">threshold</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">Int (range 0 - 255)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The threshold for the specular highlights. Range: 0 to 255.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The amount of noise. Range: 0 to 100.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">distribution</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">
+                           <a class="xref" href="NoiseDistribution.html#d1e33300">NoiseDistribution</a>
+                        </p>
+
+                        <p data-clipboard-text="NoiseDistribution.UNIFORM" class="p enumInPTable clip_button">NoiseDistribution.UNIFORM</p>
+
+                        <p data-clipboard-text="NoiseDistribution.GAUSSIAN" class="p enumInPTable clip_button">NoiseDistribution.GAUSSIAN</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">The distribution value for the noise.</p>
+
+                        <p class="p"> (default: NoiseDistribution.UNIFORM)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e2790 ">
+                        <p class="p">monochromatic</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e2796 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e2802 ">
+                        <p class="p description">If true, the noise is monochromatic.</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53397">undefined <strong data-clipboard-text=".applyLensFlare()" class="ph b clip_button">applyLensFlare</strong> (brightness:<em class="ph i">Int</em>, flareCenter:<em class="ph i">UnitPoint</em>, lensType:<em class="ph i">LensType</em>)</p>
+
+         <p class="p description">Applies the lens flare filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3195">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3201">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3207">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3195 ">
+                        <p class="p">brightness</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3201 ">
+                        <p class="p">Int (range 10 - 300)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3207 ">
+                        <p class="p description">The flare brightness. Range: 10 to 300.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3195 ">
+                        <p class="p">flareCenter</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3201 ">
+                        <p class="p">UnitPoint</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3207 ">
+                        <p class="p description">The position of the flare center.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3195 ">
+                        <p class="p">lensType</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3201 ">
+                        <p class="p">
+                           <a class="xref" href="LensType.html#d1e33340">LensType</a>
+                        </p>
+
+                        <p data-clipboard-text="LensType.ZOOMLENS" class="p enumInPTable clip_button">LensType.ZOOMLENS</p>
+
+                        <p data-clipboard-text="LensType.PRIME35" class="p enumInPTable clip_button">LensType.PRIME35</p>
+
+                        <p data-clipboard-text="LensType.PRIME105" class="p enumInPTable clip_button">LensType.PRIME105</p>
+
+                        <p data-clipboard-text="LensType.MOVIEPRIME" class="p enumInPTable clip_button">LensType.MOVIEPRIME</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3207 ">
+                        <p class="p description">The lens type.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53659">undefined <strong data-clipboard-text=".applyMaximum()" class="ph b clip_button">applyMaximum</strong> (radius:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Applies the maximum filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3325">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3331">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3337">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3325 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3331 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3337 ">
+                        <p class="p description">The choke area (in pixels). Range: 0 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53356">undefined <strong data-clipboard-text=".applyMedianNoise()" class="ph b clip_button">applyMedianNoise</strong> (radius:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Applies the median noise filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3402">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3408">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3414">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3402 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3408 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3414 ">
+                        <p class="p description">The size of the area searched for pixels of similar brightness. Range: 0 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53688">undefined <strong data-clipboard-text=".applyMinimum()" class="ph b clip_button">applyMinimum</strong> (radius:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Applies the minimum filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3478">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3484">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3490">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3478 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3484 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a> (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3490 ">
+                        <p class="p description">The spread area (in pixels). Range: 0 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52415">undefined <strong data-clipboard-text=".applyMotionBlur()" class="ph b clip_button">applyMotionBlur</strong> (angle:<em class="ph i">Int</em>, radius:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Applies the motion blur filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3558">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3564">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3570">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3558 ">
+                        <p class="p">angle</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3564 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3570 ">
+                        <p class="p description">The angle (in degrees). Range: -360 to 360.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3558 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3564 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a> (range 1 - 999)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3570 ">
+                        <p class="p description">The radius (in pixels). Range: 1 to 999.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53584">undefined <strong data-clipboard-text=".applyNTSC()" class="ph b clip_button">applyNTSC</strong> ()</p>
+
+         <p class="p description">Applies the NTSC colors filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e52826">undefined <strong data-clipboard-text=".applyOceanRipple()" class="ph b clip_button">applyOceanRipple</strong> (size:<em class="ph i">Int</em>, magnitude:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies the ocean ripple filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3667">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3673">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3679">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3667 ">
+                        <p class="p">size</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3673 ">
+                        <p class="p">Int (range 1 - 15)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3679 ">
+                        <p class="p description">The ripple size. Range: 1 to 15.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3667 ">
+                        <p class="p">magnitude</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3673 ">
+                        <p class="p">Int (range 0 - 20)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3679 ">
+                        <p class="p description">The ripple magnitude. Range: 0 to 20.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53717">undefined <strong data-clipboard-text=".applyOffset()" class="ph b clip_button">applyOffset</strong> (horizontal:<em class="ph i">UnitValue</em>, vertical:<em class="ph i">UnitValue</em>, undefinedAreas:<em class="ph i">OffsetUndefinedAreas</em>)</p>
+
+         <p class="p description">Applies the offset filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3767">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3773">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3779">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3767 ">
+                        <p class="p">horizontal</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3773 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3779 ">
+                        <p class="p description">The amount (in pixels) to move the selection horizontally (to the right). Range: -6144 to 6144.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3767 ">
+                        <p class="p">vertical</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3773 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3779 ">
+                        <p class="p description">The amount (in pixels) to move the selection vertically (downward). Range: -6144 to 6144.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3767 ">
+                        <p class="p">undefinedAreas</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3773 ">
+                        <p class="p">
+                           <a class="xref" href="OffsetUndefinedAreas.html#d1e33045">OffsetUndefinedAreas</a>
+                        </p>
+
+                        <p data-clipboard-text="OffsetUndefinedAreas.SETTOBACKGROUND" class="p enumInPTable clip_button">OffsetUndefinedAreas.SETTOBACKGROUND</p>
+
+                        <p data-clipboard-text="OffsetUndefinedAreas.WRAPAROUND" class="p enumInPTable clip_button">OffsetUndefinedAreas.WRAPAROUND</p>
+
+                        <p data-clipboard-text="OffsetUndefinedAreas.REPEATEDGEPIXELS" class="p enumInPTable clip_button">OffsetUndefinedAreas.REPEATEDGEPIXELS</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3779 ">
+                        <p class="p description">The method for filling areas left blank by the offset.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52875">undefined <strong data-clipboard-text=".applyPinch()" class="ph b clip_button">applyPinch</strong> (amount:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies the pinch filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3902">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3908">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3914">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3902 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3908 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3914 ">
+                        <p class="p description">The pinch amount. Range: -100 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52896">undefined <strong data-clipboard-text=".applyPolarCoordinates()" class="ph b clip_button">applyPolarCoordinates</strong> (conversion:<em class="ph i">PolarConversionType</em>)</p>
+
+         <p class="p description">Applies the polar coordinates filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e3975">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e3981">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e3987">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e3975 ">
+                        <p class="p">conversion</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e3981 ">
+                        <p class="p">
+                           <a class="xref" href="PolarConversionType.html#d1e32912">PolarConversionType</a>
+                        </p>
+
+                        <p data-clipboard-text="PolarConversionType.RECTANGULARTOPOLAR" class="p enumInPTable clip_button">PolarConversionType.RECTANGULARTOPOLAR</p>
+
+                        <p data-clipboard-text="PolarConversionType.POLARTORECTANGULAR" class="p enumInPTable clip_button">PolarConversionType.POLARTORECTANGULAR</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e3987 ">
+                        <p class="p description">The conversion type.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52456">undefined <strong data-clipboard-text=".applyRadialBlur()" class="ph b clip_button">applyRadialBlur</strong> (amount:<em class="ph i">Int</em>, blurMethod:<em class="ph i">RadialBlurMethod</em>, blurQuality:<em class="ph i">RadialBlurQuality</em>, [blurCenter:<em class="ph i">UnitPoint</em>])</p>
+
+         <p class="p description">Applies the radial blur filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4066">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4072">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4078">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4066 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4072 ">
+                        <p class="p">Int (range 1 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4078 ">
+                        <p class="p description">The amount of blur. Range: 1 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4066 ">
+                        <p class="p">blurMethod</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4072 ">
+                        <p class="p">
+                           <a class="xref" href="RadialBlurMethod.html#d1e32620">RadialBlurMethod</a>
+                        </p>
+
+                        <p data-clipboard-text="RadialBlurMethod.SPIN" class="p enumInPTable clip_button">RadialBlurMethod.SPIN</p>
+
+                        <p data-clipboard-text="RadialBlurMethod.ZOOM" class="p enumInPTable clip_button">RadialBlurMethod.ZOOM</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4078 ">
+                        <p class="p description">The blur method to use.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4066 ">
+                        <p class="p">blurQuality</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4072 ">
+                        <p class="p">
+                           <a class="xref" href="RadialBlurQuality.html#d1e32659">RadialBlurQuality</a>
+                        </p>
+
+                        <p data-clipboard-text="RadialBlurQuality.DRAFT" class="p enumInPTable clip_button">RadialBlurQuality.DRAFT</p>
+
+                        <p data-clipboard-text="RadialBlurQuality.GOOD" class="p enumInPTable clip_button">RadialBlurQuality.GOOD</p>
+
+                        <p data-clipboard-text="RadialBlurQuality.BEST" class="p enumInPTable clip_button">RadialBlurQuality.BEST</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4078 ">
+                        <p class="p description">The smoothness or graininess of the blurred image.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4066 ">
+                        <p class="p">blurCenter</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4072 ">
+                        <p class="p">UnitPoint</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4078 ">
+                        <p class="p description">Position (unit value)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52917">undefined <strong data-clipboard-text=".applyRipple()" class="ph b clip_button">applyRipple</strong> (amount:<em class="ph i">Int</em>, size:<em class="ph i">RippleSize</em>)</p>
+
+         <p class="p description">Applies the ripple filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4228">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4234">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4240">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4228 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4234 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4240 ">
+                        <p class="p description">The ripple amount. Range: -999 to 999.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4228 ">
+                        <p class="p">size</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4234 ">
+                        <p class="p">
+                           <a class="xref" href="RippleSize.html#d1e32951">RippleSize</a>
+                        </p>
+
+                        <p data-clipboard-text="RippleSize.SMALL" class="p enumInPTable clip_button">RippleSize.SMALL</p>
+
+                        <p data-clipboard-text="RippleSize.MEDIUM" class="p enumInPTable clip_button">RippleSize.MEDIUM</p>
+
+                        <p data-clipboard-text="RippleSize.LARGE" class="p enumInPTable clip_button">RippleSize.LARGE</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4240 ">
+                        <p class="p description">The ripple size.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53472">undefined <strong data-clipboard-text=".applySharpen()" class="ph b clip_button">applySharpen</strong> ()</p>
+
+         <p class="p description">Applies the sharpen filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e53478">undefined <strong data-clipboard-text=".applySharpenEdges()" class="ph b clip_button">applySharpenEdges</strong> ()</p>
+
+         <p class="p description">Applies the sharpen edges filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e53484">undefined <strong data-clipboard-text=".applySharpenMore()" class="ph b clip_button">applySharpenMore</strong> ()</p>
+
+         <p class="p description">Applies the sharpen more filter.</p>
+
+         <p class="p methodName" id="d1e51762__d1e52950">undefined <strong data-clipboard-text=".applyShear()" class="ph b clip_button">applyShear</strong> (curve:<em class="ph i">Array of Varies</em>, undefinedAreas:<em class="ph i">UndefinedAreas</em>)</p>
+
+         <p class="p description">Applies the shear filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4365">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4371">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4377">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4365 ">
+                        <p class="p">curve</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4371 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of Varies</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4377 ">
+                        <p class="p description">Specification of the shear curve in points as x,y coordinate pairs in the format [[x1, y1],[x2, y2]]. Any number of coordinate pairs can be specified.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4365 ">
+                        <p class="p">undefinedAreas</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4371 ">
+                        <p class="p">
+                           <a class="xref" href="UndefinedAreas.html#d1e33005">UndefinedAreas</a>
+                        </p>
+
+                        <p data-clipboard-text="UndefinedAreas.WRAPAROUND" class="p enumInPTable clip_button">UndefinedAreas.WRAPAROUND</p>
+
+                        <p data-clipboard-text="UndefinedAreas.REPEATEDGEPIXELS" class="p enumInPTable clip_button">UndefinedAreas.REPEATEDGEPIXELS</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4377 ">
+                        <p class="p description">The treatment of areas left blank by the distortion.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52521">undefined <strong data-clipboard-text=".applySmartBlur()" class="ph b clip_button">applySmartBlur</strong> (radius:<em class="ph i">Number</em>, threshold:<em class="ph i">Number</em>, blurQuality:<em class="ph i">SmartBlurQuality</em>, mode:<em class="ph i">SmartBlurMode</em>)</p>
+
+         <p class="p description">Applies the smart blur filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4482">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4488">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4494">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4482 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4488 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4494 ">
+                        <p class="p description">The blur radius. Range: 0 - 1000.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4482 ">
+                        <p class="p">threshold</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4488 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4494 ">
+                        <p class="p description">The blur threshold. Range: 0 - 1000.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4482 ">
+                        <p class="p">blurQuality</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4488 ">
+                        <p class="p">
+                           <a class="xref" href="SmartBlurQuality.html#d1e32714">SmartBlurQuality</a>
+                        </p>
+
+                        <p data-clipboard-text="SmartBlurQuality.LOW" class="p enumInPTable clip_button">SmartBlurQuality.LOW</p>
+
+                        <p data-clipboard-text="SmartBlurQuality.MEDIUM" class="p enumInPTable clip_button">SmartBlurQuality.MEDIUM</p>
+
+                        <p data-clipboard-text="SmartBlurQuality.HIGH" class="p enumInPTable clip_button">SmartBlurQuality.HIGH</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4494 ">
+                        <p class="p description">The smoothness or graininess of the blurred image.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4482 ">
+                        <p class="p">mode</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4488 ">
+                        <p class="p">
+                           <a class="xref" href="SmartBlurMode.html#d1e32768">SmartBlurMode</a>
+                        </p>
+
+                        <p data-clipboard-text="SmartBlurMode.NORMAL" class="p enumInPTable clip_button">SmartBlurMode.NORMAL</p>
+
+                        <p data-clipboard-text="SmartBlurMode.EDGEONLY" class="p enumInPTable clip_button">SmartBlurMode.EDGEONLY</p>
+
+                        <p data-clipboard-text="SmartBlurMode.OVERLAYEDGE" class="p enumInPTable clip_button">SmartBlurMode.OVERLAYEDGE</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4494 ">
+                        <p class="p description">The smart blur mode.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52986">undefined <strong data-clipboard-text=".applySpherize()" class="ph b clip_button">applySpherize</strong> (amount:<em class="ph i">Int</em>, mode:<em class="ph i">SpherizeMode</em>)</p>
+
+         <p class="p description">Applies the spherize filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4654">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4660">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4666">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4654 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4660 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4666 ">
+                        <p class="p description">The amount of distortion. Range: -100 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4654 ">
+                        <p class="p">mode</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4660 ">
+                        <p class="p">
+                           <a class="xref" href="SpherizeMode.html#d1e33099">SpherizeMode</a>
+                        </p>
+
+                        <p data-clipboard-text="SpherizeMode.NORMAL" class="p enumInPTable clip_button">SpherizeMode.NORMAL</p>
+
+                        <p data-clipboard-text="SpherizeMode.HORIZONTAL" class="p enumInPTable clip_button">SpherizeMode.HORIZONTAL</p>
+
+                        <p data-clipboard-text="SpherizeMode.VERTICAL" class="p enumInPTable clip_button">SpherizeMode.VERTICAL</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4666 ">
+                        <p class="p description">The distortion mode.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e51973">undefined <strong data-clipboard-text=".applyStyle()" class="ph b clip_button">applyStyle</strong> (styleName:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Applies the specified style to the layer.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4761">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4767">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4773">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4761 ">
+                        <p class="p">styleName</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4767 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4773 ">
+                        <p class="p description">The layer style to apply.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e51994">undefined <strong data-clipboard-text=".applyStyleFile()" class="ph b clip_button">applyStyleFile</strong> (file:<em class="ph i">File</em>)</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4834">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4840">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4846">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4834 ">
+                        <p class="p">file</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4840 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4846 ">
+                        <p class="p description">Style file to apply.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53450">undefined <strong data-clipboard-text=".applyTextureFill()" class="ph b clip_button">applyTextureFill</strong> (textureFile:<em class="ph i">File</em>)</p>
+
+         <p class="p description">Applies the texture fill filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4911">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4917">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4923">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4911 ">
+                        <p class="p">textureFile</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4917 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4923 ">
+                        <p class="p description">The texture file. Must be a grayscale Photoshop file.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53019">undefined <strong data-clipboard-text=".applyTwirl()" class="ph b clip_button">applyTwirl</strong> (angle:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies the twirl filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e4987">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e4993">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e4999">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e4987 ">
+                        <p class="p">angle</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e4993 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e4999 ">
+                        <p class="p description">The twirl angle. Range: -999 to 999.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53490">undefined <strong data-clipboard-text=".applyUnSharpMask()" class="ph b clip_button">applyUnSharpMask</strong> (amount:<em class="ph i">Number</em>, radius:<em class="ph i">Number</em>, threshold:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies the unsharp mask filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e5066">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e5072">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e5078">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5066 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5072 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a> (range 1 - 500)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5078 ">
+                        <p class="p description">The amount of sharpening (as a percentage). Range: 1 to 500.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5066 ">
+                        <p class="p">radius</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5072 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5078 ">
+                        <p class="p description">The radius in pixels. Range: 0.1 to 250.0.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5066 ">
+                        <p class="p">threshold</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5072 ">
+                        <p class="p">Int (range 0 - 255)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5078 ">
+                        <p class="p description">The contrast threshold. Range: 0 to 255.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53040">undefined <strong data-clipboard-text=".applyWave()" class="ph b clip_button">applyWave</strong> (generatorNumber:<em class="ph i">Int</em>, minimumWavelength:<em class="ph i">Int</em>, maximumWavelength:<em class="ph i">Int</em>, minimumAmplitude:<em class="ph i">Int</em>, maximumAmplitude:<em class="ph i">Int</em>, horizontalScale:<em class="ph i">Int</em>, verticalScale:<em class="ph i">Int</em>, waveType:<em class="ph i">WaveType</em>, undefinedAreas:<em class="ph i">UndefinedAreas</em>, randomSeed:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies the wave filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e5216">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e5222">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e5228">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">generatorNumber</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">Int (range 1 - 999)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The number of generators. Range: 1 to 999.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">minimumWavelength</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">Int (range 1 - 998)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The minimum wave length. Range: 1 to 998.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">maximumWavelength</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The maximum wave length. Range: 2 to (minimum wavelength + 1)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">minimumAmplitude</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">Int (range 1 - 998)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The minimum amplitude. Range: 1 to 998.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">maximumAmplitude</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The maximum amplitude. Range: 2 to (minimum amplitude + 1)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">horizontalScale</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">Int (range 1 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The amount of horizontal scale (as a percentage). Range: 1 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">verticalScale</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">Int (range 1 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The amount of vertical scale (as a percentage). Range: 1 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">waveType</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">
+                           <a class="xref" href="WaveType.html#d1e33192">WaveType</a>
+                        </p>
+
+                        <p data-clipboard-text="WaveType.SINE" class="p enumInPTable clip_button">WaveType.SINE</p>
+
+                        <p data-clipboard-text="WaveType.TRIANGULAR" class="p enumInPTable clip_button">WaveType.TRIANGULAR</p>
+
+                        <p data-clipboard-text="WaveType.SQUARE" class="p enumInPTable clip_button">WaveType.SQUARE</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The wave type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">undefinedAreas</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">
+                           <a class="xref" href="UndefinedAreas.html#d1e33005">UndefinedAreas</a>
+                        </p>
+
+                        <p data-clipboard-text="UndefinedAreas.WRAPAROUND" class="p enumInPTable clip_button">UndefinedAreas.WRAPAROUND</p>
+
+                        <p data-clipboard-text="UndefinedAreas.REPEATEDGEPIXELS" class="p enumInPTable clip_button">UndefinedAreas.REPEATEDGEPIXELS</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The treatment of areas left blank by the distortion.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5216 ">
+                        <p class="p">randomSeed</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5222 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5228 ">
+                        <p class="p description">The random seed.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53210">undefined <strong data-clipboard-text=".applyZigZag()" class="ph b clip_button">applyZigZag</strong> (amount:<em class="ph i">Int</em>, ridges:<em class="ph i">Int</em>, style:<em class="ph i">ZigZagType</em>)</p>
+
+         <p class="p description">Applies the zigzag filter.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e5508">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e5514">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e5520">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5508 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5514 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5520 ">
+                        <p class="p description">The amount of zigzag. Range: -100 to 100.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5508 ">
+                        <p class="p">ridges</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5514 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5520 ">
+                        <p class="p description">The ridge length.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5508 ">
+                        <p class="p">style</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5514 ">
+                        <p class="p">
+                           <a class="xref" href="ZigZagType.html#d1e33246">ZigZagType</a>
+                        </p>
+
+                        <p data-clipboard-text="ZigZagType.AROUNDCENTER" class="p enumInPTable clip_button">ZigZagType.AROUNDCENTER</p>
+
+                        <p data-clipboard-text="ZigZagType.OUTFROMCENTER" class="p enumInPTable clip_button">ZigZagType.OUTFROMCENTER</p>
+
+                        <p data-clipboard-text="ZigZagType.PONDRIPPLES" class="p enumInPTable clip_button">ZigZagType.PONDRIPPLES</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5520 ">
+                        <p class="p description">The zigzag style.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53854">undefined <strong data-clipboard-text=".autoContrast()" class="ph b clip_button">autoContrast</strong> ()</p>
+
+         <p class="p description">Adjusts the contrast of the selected channels automatically.</p>
+
+         <p class="p methodName" id="d1e51762__d1e53848">undefined <strong data-clipboard-text=".autoLevels()" class="ph b clip_button">autoLevels</strong> ()</p>
+
+         <p class="p description">Adjust the levels of the selected channels using the auto levels option.</p>
+
+         <p class="p methodName" id="d1e51762__d1e52066">undefined <strong data-clipboard-text=".clear()" class="ph b clip_button">clear</strong> ()</p>
+
+         <p class="p description">Cuts the layer without moving it to the clipboard.</p>
+
+         <p class="p methodName" id="d1e51762__d1e52072">undefined <strong data-clipboard-text=".copy()" class="ph b clip_button">copy</strong> ([merge:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Copies the layer to the clipboard.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e5663">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e5669">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e5675">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5663 ">
+                        <p class="p">merge</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5669 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5675 ">
+                        <p class="p description">If true, the copy includes all visible layers. If false, the copy only copies from the current layer.</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52096">undefined <strong data-clipboard-text=".cut()" class="ph b clip_button">cut</strong> ()</p>
+
+         <p class="p description">Cuts the layer to the clipboard.</p>
+
+         <p class="p methodName" id="d1e51762__d1e53979">undefined <strong data-clipboard-text=".desaturate()" class="ph b clip_button">desaturate</strong> ()</p>
+
+         <p class="p description">Converts a color image to a grayscale image in the current color mode by assigning equal values of each component color to each pixel.</p>
+
+         <p class="p methodName" id="d1e51762__d1e54175">undefined <strong data-clipboard-text=".equalize()" class="ph b clip_button">equalize</strong> ()</p>
+
+         <p class="p description">Redistributes the brightness values of pixels in an image to more evenly represent the entire range of brightness levels within the image.</p>
+
+         <p class="p methodName" id="d1e51762__d1e54169">undefined <strong data-clipboard-text=".invert()" class="ph b clip_button">invert</strong> ()</p>
+
+         <p class="p description">Inverts the colors in the layer by converting the brightness value of each pixel in the channels to the inverse value on the 256-step color-values scale.</p>
+
+         <p class="p methodName" id="d1e51762__d1e52103">
+            <a class="xref" href="ArtLayer.html#d1e51762">ArtLayer</a> 
+            <strong data-clipboard-text=".merge()" class="ph b clip_button">merge</strong> ()</p>
+
+         <p class="p description">Merges the layer down, removing the layer from the document. Returns a reference to the art layer that this layer is merged into.</p>
+
+         <p class="p methodName" id="d1e51762__d1e54131">undefined <strong data-clipboard-text=".mixChannels()" class="ph b clip_button">mixChannels</strong> (outputChannels:<em class="ph i">Array of Varies</em>, [monochrome:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Modifies a targeted (output) color channel using a mix of the existing color channels in the image. (output channels = An array of channel specifications. For each component channel, specify a list of adjustment values (-200 to 200) followed by a 'constant' value (-200 to 200).) When monochrome = true, the maximum number of channel value specifications is 1. Valid only when 'document mode' = RGB or CMYK. RGB arrays must include four doubles. CMYK arrays must include five doubles.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e5796">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e5802">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e5808">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5796 ">
+                        <p class="p">outputChannels</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5802 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of Varies</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5808 ">
+                        <p class="p description">A list of channel specifications. For each component channel that the document has, you must specify a list of adjustment values followed by a 'constant' value.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5796 ">
+                        <p class="p">monochrome</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5802 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5808 ">
+                        <p class="p description">If true, uses monochrome mixing. Note: If this is true, you can only specify one channel value.</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e54232">undefined <strong data-clipboard-text=".photoFilter()" class="ph b clip_button">photoFilter</strong> ([fillColor:<em class="ph i">SolidColor</em>], [density:<em class="ph i">Int</em>=Int], [preserveLuminosity:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Adjusts the layer's color balance and temperature as if a color filter had been applied.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e5907">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e5913">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e5919">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5907 ">
+                        <p class="p">fillColor</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5913 ">
+                        <p class="p">
+                           <a class="xref" href="SolidColor.html#d1e43592">SolidColor</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5919 ">
+                        <p class="p description">The color to use for the fill.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5907 ">
+                        <p class="p">density</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5913 ">
+                        <p class="p">Int (range 1 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5919 ">
+                        <p class="p description">The density (as a percentage) of the filter effect. Range: 1 to 100.</p>
+
+                        <p class="p"> (default: 25)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e5907 ">
+                        <p class="p">preserveLuminosity</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e5913 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e5919 ">
+                        <p class="p description">If true, luminosity is preserved.</p>
+
+                        <p class="p"> (default: true)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e54202">undefined <strong data-clipboard-text=".posterize()" class="ph b clip_button">posterize</strong> (levels:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Specifies the number of tonal levels for each channel and then maps pixels to the closest matching level.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e6035">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e6041">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e6047">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6035 ">
+                        <p class="p">levels</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6041 ">
+                        <p class="p">Int (range 2 - 255)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6047 ">
+                        <p class="p description">The tonal levels. Range: 2 to 255.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52115">undefined <strong data-clipboard-text=".rasterize()" class="ph b clip_button">rasterize</strong> (target:<em class="ph i">RasterizeType</em>)</p>
+
+         <p class="p description">Converts the targeted content in the layer into a flat, raster image.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e6108">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e6114">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e6120">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6108 ">
+                        <p class="p">target</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6114 ">
+                        <p class="p">
+                           <a class="xref" href="RasterizeType.html#d1e31271">RasterizeType</a>
+                        </p>
+
+                        <p data-clipboard-text="RasterizeType.TEXTCONTENTS" class="p enumInPTable clip_button">RasterizeType.TEXTCONTENTS</p>
+
+                        <p data-clipboard-text="RasterizeType.SHAPE" class="p enumInPTable clip_button">RasterizeType.SHAPE</p>
+
+                        <p data-clipboard-text="RasterizeType.FILLCONTENT" class="p enumInPTable clip_button">RasterizeType.FILLCONTENT</p>
+
+                        <p data-clipboard-text="RasterizeType.LAYERCLIPPINGPATH" class="p enumInPTable clip_button">RasterizeType.LAYERCLIPPINGPATH</p>
+
+                        <p data-clipboard-text="RasterizeType.ENTIRELAYER" class="p enumInPTable clip_button">RasterizeType.ENTIRELAYER</p>
+
+                        <p data-clipboard-text="RasterizeType.LINKEDLAYERS" class="p enumInPTable clip_button">RasterizeType.LINKEDLAYERS</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6120 ">
+                        <p class="p description">What to rasterize.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e52012">undefined <strong data-clipboard-text=".saveStyleFile()" class="ph b clip_button">saveStyleFile</strong> (file:<em class="ph i">File</em>, [thumbnail:<em class="ph i">File</em>], [thumbnailSize:<em class="ph i">Int</em>], [backgroundValue:<em class="ph i">Number</em>])</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e6209">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e6215">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e6221">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6209 ">
+                        <p class="p">file</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6215 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6221 ">
+                        <p class="p description">File to save the style to.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6209 ">
+                        <p class="p">thumbnail</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6215 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6221 ">
+                        <p class="p description">File to save the style thumbnail to.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6209 ">
+                        <p class="p">thumbnailSize</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6215 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6221 ">
+                        <p class="p description">Size of thumbnail to save.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6209 ">
+                        <p class="p">backgroundValue</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6215 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6221 ">
+                        <p class="p description">Background grayvalue.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e53986">undefined <strong data-clipboard-text=".selectiveColor()" class="ph b clip_button">selectiveColor</strong> (selectionMethod:<em class="ph i">AdjustmentReference</em>, [reds:<em class="ph i">Array of Number</em>], [yellows:<em class="ph i">Array of Number</em>], [greens:<em class="ph i">Array of Number</em>], [cyans:<em class="ph i">Array of Number</em>], [blues:<em class="ph i">Array of Number</em>], [magentas:<em class="ph i">Array of Number</em>], [whites:<em class="ph i">Array of Number</em>], [neutrals:<em class="ph i">Array of Number</em>], [blacks:<em class="ph i">Array of Number</em>])</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e6382">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e6388">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e6394">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">selectionMethod</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="AdjustmentReference.html#d1e34691">AdjustmentReference</a>
+                        </p>
+
+                        <p data-clipboard-text="AdjustmentReference.RELATIVE" class="p enumInPTable clip_button">AdjustmentReference.RELATIVE</p>
+
+                        <p data-clipboard-text="AdjustmentReference.ABSOLUTE" class="p enumInPTable clip_button">AdjustmentReference.ABSOLUTE</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Modifies the amount of a process color in a specified primary color without affecting the other primary colors.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">reds</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">yellows</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">greens</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">cyans</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">blues</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">magentas</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">whites</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">neutrals</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6382 ">
+                        <p class="p">blacks</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6388 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6394 ">
+                        <p class="p description">Array of 4 values: cyan, magenta, yellow, black.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e54291">undefined <strong data-clipboard-text=".shadowHighlight()" class="ph b clip_button">shadowHighlight</strong> ([shadowAmount:<em class="ph i">Int</em>=Int], [shadowWidth:<em class="ph i">Int</em>=Int], [shadowRaduis:<em class="ph i">Int</em>=Int], [highlightAmount:<em class="ph i">Int</em>=Int], [highlightWidth:<em class="ph i">Int</em>=Int], [highlightRaduis:<em class="ph i">Int</em>=Int], [colorCorrection:<em class="ph i">Int</em>=Int], [midtoneContrast:<em class="ph i">Int</em>=Int], [blackClip:<em class="ph i">Number</em>=Number], [whiteClip:<em class="ph i">Number</em>=Number])</p>
+
+         <p class="p description">Adjusts the range of tones in the shadows and highlights.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e6754">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e6760">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e6766">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">shadowAmount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">The shadow amount, as a percentage. Range: 0 to 100.</p>
+
+                        <p class="p"> (default: 50)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">shadowWidth</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">The shadow width, as a percentage. Range: 0 to 100 for tonal width (0 = narrow), (100 = broad).</p>
+
+                        <p class="p"> (default: 50)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">shadowRaduis</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">Int (range 0 - 2500)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">The shadow radius (in pixels). Range: 0 to 2500.</p>
+
+                        <p class="p"> (default: 30)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">highlightAmount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">The highlight amount, as a percentage. Range: 0 to 100.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">highlightWidth</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">The highlight width. Range: 0 to 100 for tonal width (0 = narrow), (100 = broad).</p>
+
+                        <p class="p"> (default: 50)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">highlightRaduis</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">Int (range 0 - 2500)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">The highlight radius (in pixels). Range: 0 to 2500.</p>
+
+                        <p class="p"> (default: 30)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">colorCorrection</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">The amount to adjust the colors in the changed portion of the image. Range: -100 to 100.</p>
+
+                        <p class="p"> (default: 20)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">midtoneContrast</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">The amount of midtone contrast. Range: -100 to 100.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">blackClip</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">Fractions of whites to be clipped. Range: 0.000 to 50.000.</p>
+
+                        <p class="p"> (default: 0.01)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e6754 ">
+                        <p class="p">whiteClip</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e6760 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e6766 ">
+                        <p class="p description">Fractions of blacks to be clipped. Range: 0.000 to 50.000.</p>
+
+                        <p class="p"> (default: 0.01)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e51762__d1e54181">undefined <strong data-clipboard-text=".threshold()" class="ph b clip_button">threshold</strong> (level:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Converts grayscale or color images to high-contrast, B/W images by converting pixels lighter than the specified threshold to white and pixels darker than the threshold to black.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d18372e7055">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d18372e7061">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d18372e7067">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d18372e7055 ">
+                        <p class="p">level</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d18372e7061 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d18372e7067 ">
+                        <p class="p description">The threshold level.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Object of</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="Document.html#d1e47935">Document</a>.backgroundLayer</p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Return</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="ArtLayers.html#d1e38943">ArtLayers</a>.<a class="xref" href="ArtLayers.html#d1e38943__d1e38950">add</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ArtLayer.html#d1e51762">ArtLayer</a>.<a class="xref" href="ArtLayer.html#d1e51762__d1e51960">add</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ArtLayers.html#d1e38943">ArtLayers</a>.<a class="xref" href="ArtLayers.html#d1e38943__d1e39023">[]</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ArtLayers.html#d1e38943">ArtLayers</a>.<a class="xref" href="ArtLayers.html#d1e38943__d1e38999">getByName</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="ArtLayer.html#d1e51762">ArtLayer</a>.<a class="xref" href="ArtLayer.html#d1e51762__d1e52103">merge</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="LayerSet.html#d1e51657">LayerSet</a>.<a class="xref" href="LayerSet.html#d1e51657__d1e51748">merge</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Document.html#d1e47935">Document</a>.<a class="xref" href="Document.html#d1e47935__d1e48733">paste</a>()</p>
+
+      </div>
+
+   </div>
+
+<div class="navfooter"><!----></div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+<script type="text/javascript"><!--
+        $(".clip_button").click(function(){
+            var temp = this.innerHTML;
+            this.innerHTML  = this.getAttribute('data-clipboard-text'); 
+            var range = document.createRange();
+            range.selectNode(this);
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            this.innerHTML = temp;
+        });
+
+      $( ".clip_button" ).hover(
+        function() {
+          $( this ).addClass("is-hover");
+        }, function() {
+          $( this ).removeClass("is-hover");
+        }
+      );
+      --></script></body>
+</html>

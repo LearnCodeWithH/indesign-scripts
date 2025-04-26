@@ -1,0 +1,1360 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="description" content="A character string. Each character is adressable by index. Go to Property Listing | Method Listing Methods: String , anchor , big , blink , bold , charAt , charCodeAt , concat , fixed , fontcolor , ..." /><meta name="copyright" content="(C) Copyright 2024" /><meta name="DC.rights.owner" content="(C) Copyright 2024" /><meta name="DC.Type" content="topic" /><meta name="DC.Title" content="String" /><meta name="DC.Format" content="XHTML" /><meta name="DC.Identifier" content="d1e4583" /><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css?buildId=2017092911"><!----></link><title>String</title><!--  Generated with Oxygen version 19.1, build number 2017092911.  --><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css?buildId=2017092911"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css?buildId=2017092911" /><link rel="stylesheet" type="text/css" href="skin.css" /><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-3.1.1.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/log.js?buildId=2017092911"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js?buildId=2017092911"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e4583">
+<header role="banner"><table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td style="width:75%;"><span class="topic_breadcrumb_links"></span></td><td><span id="topic_navigation_links" class="navheader"></span></td></tr></tbody></table></header><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+   <h1 class="title topictitle1" id="ariaid-title1">
+      <span class="keyword">String</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">A character string. Each character is adressable by index.</p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e4583__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e4583__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <section class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e4583__d1e4592">String</a>,  <a class="xref" href="#d1e4583__d1e4678">anchor</a>,  <a class="xref" href="#d1e4583__d1e4705">big</a>,  <a class="xref" href="#d1e4583__d1e4717">blink</a>,  <a class="xref" href="#d1e4583__d1e4729">bold</a>,  <a class="xref" href="#d1e4583__d1e4741">charAt</a>,  <a class="xref" href="#d1e4583__d1e4772">charCodeAt</a>,  <a class="xref" href="#d1e4583__d1e4802">concat</a>,  <a class="xref" href="#d1e4583__d1e4835">fixed</a>,  <a class="xref" href="#d1e4583__d1e4847">fontcolor</a>,  <a class="xref" href="#d1e4583__d1e4874">fontsize</a>,  <a class="xref" href="#d1e4583__d1e4629">fromCharCode</a>,  <a class="xref" href="#d1e4583__d1e4901">indexOf</a>,  <a class="xref" href="#d1e4583__d1e4944">italics</a>,  <a class="xref" href="#d1e4583__d1e4956">lastIndexOf</a>,  <a class="xref" href="#d1e4583__d1e5001">link</a>,  <a class="xref" href="#d1e4583__d1e5028">localeCompare</a>,  <a class="xref" href="#d1e4583__d1e5055">match</a>,  <a class="xref" href="#d1e4583__d1e5082">replace</a>,  <a class="xref" href="#d1e4583__d1e5113">search</a>,  <a class="xref" href="#d1e4583__d1e5134">slice</a>,  <a class="xref" href="#d1e4583__d1e5184">small</a>,  <a class="xref" href="#d1e4583__d1e5196">split</a>,  <a class="xref" href="#d1e4583__d1e5241">strike</a>,  <a class="xref" href="#d1e4583__d1e5253">sub</a>,  <a class="xref" href="#d1e4583__d1e5266">substr</a>,  <a class="xref" href="#d1e4583__d1e5315">substring</a>,  <a class="xref" href="#d1e4583__d1e5365">sup</a>,  <a class="xref" href="#d1e4583__d1e5377">toLocaleLowerCase</a>,  <a class="xref" href="#d1e4583__d1e5392">toLocaleUpperCase</a>,  <a class="xref" href="#d1e4583__d1e5407">toLowerCase</a>,  <a class="xref" href="#d1e4583__d1e5426">toSource</a>,  <a class="xref" href="#d1e4583__d1e5441">toString</a>,  <a class="xref" href="#d1e4583__d1e5453">toUpperCase</a>,  <a class="xref" href="#d1e4583__d1e5471">valueOf</a>
+         </p>
+
+      </section>
+
+      <section class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="Number.html#d1e5485">Number</a>
+         </p>
+
+      </section>
+
+      <section class="section" id="d1e4583__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all"><colgroup><col style="width:20%" /><col style="width:10%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e229">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e235">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e241">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e247">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e229 ">
+                        <p class="p clip_button">length</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e235 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e241 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e247 ">
+                        <p class="p description">The length of the string.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+      </section>
+
+      <section class="section" id="d1e4583__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p noMarginConstructor">
+            <strong class="ph b">Constructor</strong>
+         </p>
+
+         <p class="p methodName" id="d1e4583__d1e4592">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">String</strong> (value:<em class="ph i">Varies</em>)</p>
+
+         <p class="p description">Returns a string representation of the value given as an argument.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e335">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e341">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e347">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e335 ">
+                        <p class="p">value</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e341 ">
+                        <p class="p">Varies</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e347 ">
+                        <p class="p description">A number, variable, or object to convert to a string.</p>
+
+                        <p class="p description"></p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4678">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">anchor</strong> (name:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;a&gt; tag.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e414">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e420">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e426">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e414 ">
+                        <p class="p">name</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e420 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e426 ">
+                        <p class="p description">The text to be stored in the anchors' name attribute.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4705">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">big</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;big&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e4717">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">blink</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;blink&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e4729">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">bold</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;b&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e4741">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">charAt</strong> (index:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Returns the character at the specified index.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e534">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e540">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e546">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e534 ">
+                        <p class="p">index</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e540 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e546 ">
+                        <p class="p description">An integer between 0 and string.length -1, specifying the character to return.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4772">
+            <a class="xref" href="Number.html#d1e5485">Number</a> 
+            <strong class="ph b clip_button">charCodeAt</strong> (index:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Returns the Unicode value of the character at the given index.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e615">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e621">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e627">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e615 ">
+                        <p class="p">index</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e621 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e627 ">
+                        <p class="p description">An integer between 0 and string.length -1, specifying the character.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4802">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">concat</strong> (value:<em class="ph i">String</em>)</p>
+
+         <p class="p description">If necessary, converts the one or more given values to strings.</p>
+
+         <p class="p description">Those values are concatenated with the original string, the result is returned. The original string is not effected.  Returns the concatenated string.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e699">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e705">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e711">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e699 ">
+                        <p class="p">value</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e705 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e711 ">
+                        <p class="p description">The values to be concatenated with the given string.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4835">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">fixed</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;tt&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e4847">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">fontcolor</strong> (color:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;font&gt; tag.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e792">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e798">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e804">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e792 ">
+                        <p class="p">color</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e798 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e804 ">
+                        <p class="p description">The value to be stored in the tag's color attribute.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4874">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">fontsize</strong> (size:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;font&gt; tag.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e873">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e879">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e885">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e873 ">
+                        <p class="p">size</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e879 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e885 ">
+                        <p class="p description">The value to be stored in the tag's size attribute.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4629">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">fromCharCode</strong> (value1:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Returns a string created by concatenation one or more characters specified as ASCII values.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e953">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e959">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e965">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e953 ">
+                        <p class="p">value1</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e959 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e965 ">
+                        <p class="p description">One or more ASCII values.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4901">
+            <a class="xref" href="Number.html#d1e5485">Number</a> 
+            <strong class="ph b clip_button">indexOf</strong> (searchValue:<em class="ph i">String</em>, [offset:<em class="ph i">Number</em>])</p>
+
+         <p class="p description">Returns the index within the string of the first occurrence of the specified string, starting the search at fromIndex if provided.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1037">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1043">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1049">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1037 ">
+                        <p class="p">searchValue</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1043 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1049 ">
+                        <p class="p description">The string for which to search.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1037 ">
+                        <p class="p">offset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1043 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1049 ">
+                        <p class="p description">The starting offset of the search.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e4944">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">italics</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;i&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e4956">
+            <a class="xref" href="Number.html#d1e5485">Number</a> 
+            <strong class="ph b clip_button">lastIndexOf</strong> (searchValue:<em class="ph i">String</em>, [offset:<em class="ph i">Number</em>])</p>
+
+         <p class="p description">Returns the index within the string of the last occurrence of the specified value.</p>
+
+         <p class="p description">The string is searched backward, starting at fromIndex.  Returns the index within the string where the last occurrence of searchValue was found, or -1 if it was not found.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1162">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1168">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1174">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1162 ">
+                        <p class="p">searchValue</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1168 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1174 ">
+                        <p class="p description">The string for which to search.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1162 ">
+                        <p class="p">offset</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1168 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1174 ">
+                        <p class="p description">The starting offset of the search.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5001">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">link</strong> (href:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;a&gt; tag.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1267">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1273">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1279">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1267 ">
+                        <p class="p">href</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1273 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1279 ">
+                        <p class="p description">The value to be stored in the tag's href attribute.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5028">
+            <a class="xref" href="Number.html#d1e5485">Number</a> 
+            <strong class="ph b clip_button">localeCompare</strong> (what:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Performs a localized comparison of two strings.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1348">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1354">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1360">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1348 ">
+                        <p class="p">what</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1354 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1360 ">
+                        <p class="p description">The string to compare with.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5055">
+            <a class="xref" href="Array.html#d1e977">Array</a> 
+            <strong class="ph b clip_button">match</strong> (regexp:<em class="ph i">RegExp</em>)</p>
+
+         <p class="p description">
+						Matches a string against a regular expression.
+					</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1428">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1434">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1440">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1428 ">
+                        <p class="p">regexp</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1434 ">
+                        <p class="p">
+                           <a class="xref" href="RegExp.html#d1e5861">RegExp</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1440 ">
+                        <p class="p description">The regular expression to use.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5082">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">replace</strong> (what:<em class="ph i">Varies</em>, with:<em class="ph i">String</em>)</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1509">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1515">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1521">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1509 ">
+                        <p class="p">what</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1515 ">
+                        <p class="p">Varies</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1521 "> </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1509 ">
+                        <p class="p">with</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1515 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1521 "> </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5113">
+            <a class="xref" href="Number.html#d1e5485">Number</a> 
+            <strong class="ph b clip_button">search</strong> (search:<em class="ph i">RegExp</em>)</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1599">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1605">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1611">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1599 ">
+                        <p class="p">search</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1605 ">
+                        <p class="p">
+                           <a class="xref" href="RegExp.html#d1e5861">RegExp</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1611 "> </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5134">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">slice</strong> (startSlice:<em class="ph i">Number</em>, [endSlice:<em class="ph i">Number</em>])</p>
+
+         <p class="p description">Extracts a substring of the given string and returns it as a new string.</p>
+
+         <p class="p description">The substring begins at startSlice, and includes all characters up to, but not including the character at the index endSlice.   A negative value indexes from the end of the string.  For example, a negative value for startSlice is resolved as: string. length + startSlice.  The original string is unchanged.  Returns a substring of characters from the given string, starting at startSlice and ending with endSlice-1.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1682">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1688">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1694">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1682 ">
+                        <p class="p">startSlice</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1688 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1694 ">
+                        <p class="p description">The index at which to begin extraction.</p>
+
+                        <p class="p description"></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1682 ">
+                        <p class="p">endSlice</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1688 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1694 ">
+                        <p class="p description">The index at which to end extraction.</p>
+
+                        <p class="p description">If omitted, slice extracts to the end of the string.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5184">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">small</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;small&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5196">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">split</strong> (delimiter:<em class="ph i">String</em>, limit:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Splits a string into a group of substrings, places those strings in an array, and returns the array.</p>
+
+         <p class="p description">The substrings are created by breaking the original string at places that match delimiter, the delimiter characters are removed.  Returns an array whose elements are the substrings.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1812">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1818">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1824">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1812 ">
+                        <p class="p">delimiter</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1818 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4583">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1824 ">
+                        <p class="p description">Specifies the string to use for delimiting.</p>
+
+                        <p class="p description">If delimiter is omitted, the array returned contains one element, consisting of the entire string.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1812 ">
+                        <p class="p">limit</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1818 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1824 "> </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5241">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">strike</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;strike&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5253">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">sub</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;sub&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5266">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">substr</strong> (start:<em class="ph i">Number</em>, length:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Returns a string containing the characters beginning at the specified index, start, through the specified number of characters.</p>
+
+         <p class="p description">The original string is unchanged.  Returns a string containing the extracted characters.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e1949">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1955">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e1961">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1949 ">
+                        <p class="p">start</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1955 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1961 ">
+                        <p class="p description">Location at which to begin extracting characters.</p>
+
+                        <p class="p description"></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e1949 ">
+                        <p class="p">length</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1955 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e1961 ">
+                        <p class="p description">(OptIonal) The number of characters to extract.</p>
+
+                        <p class="p description"></p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5315">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">substring</strong> (indexA:<em class="ph i">Number</em>, indexB:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Returns a substring of the given string by extracting characters from indexA up to but not including indexB.</p>
+
+         <p class="p description">The original string is unchanged.  Returns a substring of characters from the given string, starting at indexA and ending with indexB-1.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all"><colgroup><col style="width:30%" /><col style="width:10%" /><col style="width:60%" /></colgroup><thead class="thead" style="text-align:left;">
+                  <tr>
+                     <th class="entry cellrowborder" id="d2946217e2065">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e2071">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry cellrowborder" id="d2946217e2077">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+<tbody class="tbody">
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e2065 ">
+                        <p class="p">indexA</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e2071 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e2077 ">
+                        <p class="p description">The index to begin extracting.</p>
+
+                        <p class="p description"></p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr>
+                     <td class="entry cellrowborder" headers="d2946217e2065 ">
+                        <p class="p">indexB</p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e2071 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5485">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry cellrowborder" headers="d2946217e2077 ">
+                        <p class="p description">(Optional) The index at which to end extraction.</p>
+
+                        <p class="p description">If omitted, slice extracts to the end of the string.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+</table>
+</div>
+
+         <p class="p methodName" id="d1e4583__d1e5365">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">sup</strong> ()</p>
+
+         <p class="p description">Returns a string consisting of this string enclosed in a &lt;sup&gt; tag.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5377">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toLocaleLowerCase</strong> ()</p>
+
+         <p class="p description">Returns a new string which contains all the characters of the original string converted to lowercase (localized).</p>
+
+         <p class="p description">The original string is unchanged.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5392">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toLocaleUpperCase</strong> ()</p>
+
+         <p class="p description">Returns a new string which contains all the characters of the original string converted to uppercase (localized).</p>
+
+         <p class="p description">The original string is unchanged.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5407">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toLowerCase</strong> ()</p>
+
+         <p class="p description">Returns a new string which contains all the characters of the original string converted to lowercase.</p>
+
+         <p class="p description">The original string is unchanged.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5426">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toSource</strong> ()</p>
+
+         <p class="p description">
+						Creates a string representation of this object that can be fed back to eval() to re-create an object. Works only with built-in classes.
+					</p>
+
+         <p class="p methodName" id="d1e4583__d1e5441">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toString</strong> ()</p>
+
+         <p class="p description">Returns itself.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5453">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">toUpperCase</strong> ()</p>
+
+         <p class="p description">Returns a new string which contains all the characters of the original string converted to uppercase.</p>
+
+         <p class="p description">The original string is unchanged.</p>
+
+         <p class="p methodName" id="d1e4583__d1e5471">
+            <a class="xref" href="String.html#d1e4583">String</a> 
+            <strong class="ph b clip_button">valueOf</strong> ()</p>
+
+         <p class="p description">Returns itself.</p>
+
+      </section>
+
+   </div>
+
+</article></main><footer role="contentinfo"><div class="navfooter"><!----></div><div class="footer" id="webhelp_copyright_information"><div>
+	<p>These files are <a href="https://github.com/grefel/extendscriptApiDoc" target="_blank">transformed</a> from data by <a href="http://www.adobe.com" target="_blank">Adobe Systems Incorporated</a>. If questions arise stick to the original versions of the files supplied by Adobe. InDesign, PhotoShop, Illustrator, ExtendScript and ScriptUI are trademarks of <a href="http://www.adobe.com/" target="_blank">Adobe Systems Incorporated</a>.</p>	
+</div></div></footer></body>
+</html>

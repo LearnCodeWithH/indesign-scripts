@@ -1,0 +1,3056 @@
+
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+<head><meta name="description" content="The active containment object for the layers and all other objects in the script; the basic canvas for the file. Go to Property Listing | Method Listing Methods: duplicate , close , convertProfile , ..."></meta><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><meta name="copyright" content="(C) Copyright 2005"></meta><meta name="DC.rights.owner" content="(C) Copyright 2005"></meta><meta name="DC.Type" content="topic"></meta><meta name="DC.Title" content="Document"></meta><meta name="DC.Relation" scheme="URI" content="Application.html"></meta><meta name="DC.Format" content="XHTML"></meta><meta name="DC.Identifier" content="d1e47935"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/commonltr.css"><!----></link><title>Document</title><!--  Generated with Oxygen version 17.0, build number 2015052917.  --><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/css/webhelp_topic.css"><!----></link><link rel="stylesheet" type="text/css" href="oxygen-webhelp/resources/skins/skin.css"><!----></link><script type="text/javascript"><!--
+          
+          var prefix = "index.html";
+          
+          --></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-1.8.2.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.cookie.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery-ui.custom.min.js"><!----></script><script type="text/javascript" src="oxygen-webhelp/resources/js/jquery.highlight-3.js"><!----></script><script type="text/javascript" charset="utf-8" src="oxygen-webhelp/resources/js/webhelp_topic.js"><!----></script></head>
+<body onload="highlightSearchTerm()" class="frmBody" id="d1e47935">
+<table class="nav"><tbody><tr><td colspan="2"><div id="printlink"><a href="javascript:window.print();" title="Print this page"></a></div><div id="permalink"><a href="#" title="Link to this page"></a></div></td></tr><tr><td width="75%"><a class="navheader_parent_path" href="Application.html" title="Application">Application</a></td><td><div class="navheader">
+<span class="navparent"><a class="link" href="Application.html" title="Application"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Application</span></a></span>  </div></td></tr></tbody></table>
+
+   <h1 class="title topictitle1">
+      <span class="keyword">Document</span>
+   </h1>
+
+   <div class="body">
+      <p class="p description">The active containment object for the layers and all other objects in the script; the basic canvas for the file.</p>
+
+      <p class="p quicklinks">
+         Go to <strong class="ph b">
+            <a class="xref" href="#d1e47935__iProps">Property Listing</a>
+         </strong> | <strong class="ph b">
+            <a class="xref" href="#d1e47935__iMethods">Method Listing</a>
+         </strong>
+      </p>
+
+      <div class="section"><h2 class="title sectiontitle">Methods:</h2>
+         
+         <p class="p"> 
+            <a class="xref" href="#d1e47935__d1e48419">duplicate</a>,  <a class="xref" href="#d1e47935__d1e48452">close</a>,  <a class="xref" href="#d1e47935__d1e48477">convertProfile</a>,  <a class="xref" href="#d1e47935__d1e48537">changeMode</a>,  <a class="xref" href="#d1e47935__d1e48570">crop</a>,  <a class="xref" href="#d1e47935__d1e48630">exportDocument</a>,  <a class="xref" href="#d1e47935__d1e48678">flipCanvas</a>,  <a class="xref" href="#d1e47935__d1e48699">importAnnotations</a>,  <a class="xref" href="#d1e47935__d1e48721">flatten</a>,  <a class="xref" href="#d1e47935__d1e48727">mergeVisibleLayers</a>,  <a class="xref" href="#d1e47935__d1e48733">paste</a>,  <a class="xref" href="#d1e47935__d1e48763">print</a>,  <a class="xref" href="#d1e47935__d1e48829">printOneCopy</a>,  <a class="xref" href="#d1e47935__d1e48835">revealAll</a>,  <a class="xref" href="#d1e47935__d1e48842">rasterizeAllLayers</a>,  <a class="xref" href="#d1e47935__d1e48848">recordMeasurements</a>,  <a class="xref" href="#d1e47935__d1e48883">rotateCanvas</a>,  <a class="xref" href="#d1e47935__d1e48904">resizeCanvas</a>,  <a class="xref" href="#d1e47935__d1e48952">resizeImage</a>,  <a class="xref" href="#d1e47935__d1e49033">splitChannels</a>,  <a class="xref" href="#d1e47935__d1e49048">save</a>,  <a class="xref" href="#d1e47935__d1e49054">saveAs</a>,  <a class="xref" href="#d1e47935__d1e49111">suspendHistory</a>,  <a class="xref" href="#d1e47935__d1e49144">trap</a>,  <a class="xref" href="#d1e47935__d1e49165">trim</a>,  <a class="xref" href="#d1e47935__d1e49249">duplicate</a>,  <a class="xref" href="#d1e47935__d1e49289">autoCount</a>
+         </p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Objects:</h2>
+         
+         <p class="p">
+            <a class="xref" href="ArtLayer.html#d1e51762">ArtLayer</a>, <a class="xref" href="ArtLayers.html#d1e38943">ArtLayers</a>, <a class="xref" href="BitsPerChannelType.html#d1e33587">BitsPerChannelType</a>, <a class="xref" href="Boolean.html#d1e5707">Boolean</a>, <a class="xref" href="Channel.html#d1e54920">Channel</a>, <a class="xref" href="Channels.html#d1e39049">Channels</a>, <a class="xref" href="ColorProfileType.html#d1e27465">ColorProfileType</a>, <a class="xref" href="ColorSamplers.html#d1e40179">ColorSamplers</a>, <a class="xref" href="CountItems.html#d1e40062">CountItems</a>, <a class="xref" href="DocumentInfo.html#d1e49330">DocumentInfo</a>, <a class="xref" href="DocumentMode.html#d1e27214">DocumentMode</a>, <a class="xref" href="DocumentPrintSettings.html#d1e50366">DocumentPrintSettings</a>, <a class="xref" href="File.html#d1e6276">File</a>, <a class="xref" href="Guides.html#d1e39155">Guides</a>, <a class="xref" href="HistoryState.html#d1e55186">HistoryState</a>, <a class="xref" href="HistoryStates.html#d1e39261">HistoryStates</a>, <a class="xref" href="Layer.html#d1e54501">Layer</a>, <a class="xref" href="LayerComps.html#d1e39348">LayerComps</a>, <a class="xref" href="LayerSets.html#d1e38837">LayerSets</a>, <a class="xref" href="Layers.html#d1e38743">Layers</a>, <a class="xref" href="MeasurementScale.html#d1e56813">MeasurementScale</a>, <a class="xref" href="Number.html#d1e5437">Number</a>, <a class="xref" href="PathItems.html#d1e39609">PathItems</a>, <a class="xref" href="Selection.html#d1e50768">Selection</a>, <a class="xref" href="String.html#d1e4543">String</a>, <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>, <a class="xref" href="XMPMetadata.html#d1e57127">XMPMetadata</a>
+         </p>
+
+      </div>
+
+      <div class="section" id="d1e47935__iProps"><h2 class="title sectiontitle">Property Listing</h2>
+         
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+               
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="20%" id="d82193e301">
+                        <p class="p">Property</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e307">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e313">
+                        <p class="p">Access</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e319">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".activeChannels" class="p clip_button">activeChannels</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Channel.html#d1e54920">Channel</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The selected channels.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".activeHistoryBrushSource" class="p clip_button">activeHistoryBrushSource</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="HistoryState.html#d1e55186">HistoryState</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The history state to use with the history brush.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".activeHistoryState" class="p clip_button">activeHistoryState</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="HistoryState.html#d1e55186">HistoryState</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The current history state for this document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".activeLayer" class="p clip_button">activeLayer</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Layer.html#d1e54501">Layer</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The selected layer.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".artLayers" class="p clip_button">artLayers</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="ArtLayers.html#d1e38943">ArtLayers</a>
+                           <em class="ph i">
+                              <a class="xref" href="ArtLayer.html#d1e51762">ArtLayer</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The art layers collection in the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".backgroundLayer" class="p clip_button">backgroundLayer</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="ArtLayer.html#d1e51762">ArtLayer</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The background layer for the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".bitsPerChannel" class="p clip_button">bitsPerChannel</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="BitsPerChannelType.html#d1e33587">BitsPerChannelType</a>
+                        </p>
+
+                        <p data-clipboard-text="BitsPerChannelType.ONE" class="p enumInPTable clip_button">BitsPerChannelType.ONE</p>
+
+                        <p data-clipboard-text="BitsPerChannelType.EIGHT" class="p enumInPTable clip_button">BitsPerChannelType.EIGHT</p>
+
+                        <p data-clipboard-text="BitsPerChannelType.SIXTEEN" class="p enumInPTable clip_button">BitsPerChannelType.SIXTEEN</p>
+
+                        <p data-clipboard-text="BitsPerChannelType.THIRTYTWO" class="p enumInPTable clip_button">BitsPerChannelType.THIRTYTWO</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The number of bits per channel.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".channels" class="p clip_button">channels</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Channels.html#d1e39049">Channels</a>
+                           <em class="ph i">
+                              <a class="xref" href="Channel.html#d1e54920">Channel</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The channels collection in this document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".colorProfileName" class="p clip_button">colorProfileName</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The name of the color profile. Valid only when no value is specified for color profile kind (to indicate a custom color profile).</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".colorProfileType" class="p clip_button">colorProfileType</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="ColorProfileType.html#d1e27465">ColorProfileType</a>
+                        </p>
+
+                        <p data-clipboard-text="ColorProfileType.NONE" class="p enumInPTable clip_button">ColorProfileType.NONE</p>
+
+                        <p data-clipboard-text="ColorProfileType.WORKING" class="p enumInPTable clip_button">ColorProfileType.WORKING</p>
+
+                        <p data-clipboard-text="ColorProfileType.CUSTOM" class="p enumInPTable clip_button">ColorProfileType.CUSTOM</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The type of color model that defines the working space of the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".colorSamplers" class="p clip_button">colorSamplers</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="ColorSamplers.html#d1e40179">ColorSamplers</a>
+                           <em class="ph i">
+                              <a class="xref" href="ColorSampler.html#d1e57030">ColorSampler</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The current color samplers associated with the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".componentChannels" class="p clip_button">componentChannels</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="Channel.html#d1e54920">Channel</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The color component channels for this document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".countItems" class="p clip_button">countItems</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="CountItems.html#d1e40062">CountItems</a>
+                           <em class="ph i">
+                              <a class="xref" href="CountItem.html#d1e56965">CountItem</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The current count items in the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".fullName" class="p clip_button">fullName</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The full path name of the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".guides" class="p clip_button">guides</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Guides.html#d1e39155">Guides</a>
+                           <em class="ph i">
+                              <a class="xref" href="Guide.html#d1e55122">Guide</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The guides in this document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".height" class="p clip_button">height</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The height of the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".histogram" class="p clip_button">histogram</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">A histogram showing the number of pixels at each color intensity level for the composite channel.</p>
+
+                        <p class="p description">Valid only when 'mode' = RGB, CMYK, or indexed.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".historyStates" class="p clip_button">historyStates</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="HistoryStates.html#d1e39261">HistoryStates</a>
+                           <em class="ph i">
+                              <a class="xref" href="HistoryState.html#d1e55186">HistoryState</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The history states collection in this document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".id" class="p clip_button">id</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The unique ID of this document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".info" class="p clip_button">info</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="DocumentInfo.html#d1e49330">DocumentInfo</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">Metadata about the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".layerComps" class="p clip_button">layerComps</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="LayerComps.html#d1e39348">LayerComps</a>
+                           <em class="ph i">
+                              <a class="xref" href="LayerComp.html#d1e56081">LayerComp</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The layer comps collection in this document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".layerSets" class="p clip_button">layerSets</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="LayerSets.html#d1e38837">LayerSets</a>
+                           <em class="ph i">
+                              <a class="xref" href="LayerSet.html#d1e51657">LayerSet</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The layer sets collection in the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".layers" class="p clip_button">layers</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Layers.html#d1e38743">Layers</a>
+                           <em class="ph i">
+                              <a class="xref" href="Layer.html#d1e54501">Layer</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The layers collection in the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".managed" class="p clip_button">managed</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">If true, the document is a workgroup document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".measurementScale" class="p clip_button">measurementScale</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="MeasurementScale.html#d1e56813">MeasurementScale</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The measurement scale of the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".mode" class="p clip_button">mode</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="DocumentMode.html#d1e27214">DocumentMode</a>
+                        </p>
+
+                        <p data-clipboard-text="DocumentMode.GRAYSCALE" class="p enumInPTable clip_button">DocumentMode.GRAYSCALE</p>
+
+                        <p data-clipboard-text="DocumentMode.RGB" class="p enumInPTable clip_button">DocumentMode.RGB</p>
+
+                        <p data-clipboard-text="DocumentMode.CMYK" class="p enumInPTable clip_button">DocumentMode.CMYK</p>
+
+                        <p data-clipboard-text="DocumentMode.LAB" class="p enumInPTable clip_button">DocumentMode.LAB</p>
+
+                        <p data-clipboard-text="DocumentMode.BITMAP" class="p enumInPTable clip_button">DocumentMode.BITMAP</p>
+
+                        <p data-clipboard-text="DocumentMode.INDEXEDCOLOR" class="p enumInPTable clip_button">DocumentMode.INDEXEDCOLOR</p>
+
+                        <p data-clipboard-text="DocumentMode.MULTICHANNEL" class="p enumInPTable clip_button">DocumentMode.MULTICHANNEL</p>
+
+                        <p data-clipboard-text="DocumentMode.DUOTONE" class="p enumInPTable clip_button">DocumentMode.DUOTONE</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The color profile.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".name" class="p clip_button">name</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The document name.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".parent" class="p clip_button">parent</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 "> </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The object's container.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".path" class="p clip_button">path</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The path to the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".pathItems" class="p clip_button">pathItems</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="PathItems.html#d1e39609">PathItems</a>
+                           <em class="ph i">
+                              <a class="xref" href="PathItem.html#d1e56224">PathItem</a>
+                           </em>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The path items collection in this document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".pixelAspectRatio" class="p clip_button">pixelAspectRatio</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The (custom) pixel aspect ratio of the document. Range: 0.100 to 10.000.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".printSettings" class="p clip_button">printSettings</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="DocumentPrintSettings.html#d1e50366">DocumentPrintSettings</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">Document print settings.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".quickMaskMode" class="p clip_button">quickMaskMode</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">read/write</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">If true, the document is in Quick Mask mode.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".resolution" class="p clip_button">resolution</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The resolution of the document (in pixels per inch)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".saved" class="p clip_button">saved</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">If true, the document been saved since the last change.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".selection" class="p clip_button">selection</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="Selection.html#d1e50768">Selection</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The selected area of the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".typename" class="p clip_button">typename</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The class name of the object.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".width" class="p clip_button">width</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The width of the document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="20%" headers="d82193e301 ">
+                        <p data-clipboard-text=".xmpMetadata" class="p clip_button">xmpMetadata</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e307 ">
+                        <p class="p">
+                           <a class="xref" href="XMPMetadata.html#d1e57127">XMPMetadata</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e313 ">
+                        <p class="p">readonly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e319 ">
+                        <p class="p description">The XMP properties of the document. The Camera RAW settings are stored here.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+      </div>
+
+      <div class="section" id="d1e47935__iMethods"><h2 class="title sectiontitle">Method Listing</h2>
+         
+         <p class="p methodName" id="d1e47935__d1e49289">undefined <strong data-clipboard-text=".autoCount()" class="ph b clip_button">autoCount</strong> (channel:<em class="ph i">Channel</em>, threshold:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Counts the objects in the document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e1699">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e1705">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e1711">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e1699 ">
+                        <p class="p">channel</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e1705 ">
+                        <p class="p">
+                           <a class="xref" href="Channel.html#d1e54920">Channel</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e1711 ">
+                        <p class="p description">The channel to use for counting.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e1699 ">
+                        <p class="p">threshold</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e1705 ">
+                        <p class="p">Int (range 0 - 255)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e1711 ">
+                        <p class="p description">Threshold to use for counting. Range: 0 to 255.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48537">undefined <strong data-clipboard-text=".changeMode()" class="ph b clip_button">changeMode</strong> (destinationMode:<em class="ph i">ChangeMode</em>, [options:<em class="ph i">DocumentConversionOptions</em>])</p>
+
+         <p class="p description">Changes the mode of the document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e1800">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e1806">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e1812">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e1800 ">
+                        <p class="p">destinationMode</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e1806 ">
+                        <p class="p">
+                           <a class="xref" href="ChangeMode.html#d1e27344">ChangeMode</a>
+                        </p>
+
+                        <p data-clipboard-text="ChangeMode.GRAYSCALE" class="p enumInPTable clip_button">ChangeMode.GRAYSCALE</p>
+
+                        <p data-clipboard-text="ChangeMode.RGB" class="p enumInPTable clip_button">ChangeMode.RGB</p>
+
+                        <p data-clipboard-text="ChangeMode.CMYK" class="p enumInPTable clip_button">ChangeMode.CMYK</p>
+
+                        <p data-clipboard-text="ChangeMode.LAB" class="p enumInPTable clip_button">ChangeMode.LAB</p>
+
+                        <p data-clipboard-text="ChangeMode.BITMAP" class="p enumInPTable clip_button">ChangeMode.BITMAP</p>
+
+                        <p data-clipboard-text="ChangeMode.INDEXEDCOLOR" class="p enumInPTable clip_button">ChangeMode.INDEXEDCOLOR</p>
+
+                        <p data-clipboard-text="ChangeMode.MULTICHANNEL" class="p enumInPTable clip_button">ChangeMode.MULTICHANNEL</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e1812 ">
+                        <p class="p description">The mode to change to.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e1800 ">
+                        <p class="p">options</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e1806 ">
+                        <p class="p">
+                           <a class="xref" href="DocumentConversionOptions.html#d1e43367">DocumentConversionOptions</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e1812 ">
+                        <p class="p description">Options for changing the mode.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48452">undefined <strong data-clipboard-text=".close()" class="ph b clip_button">close</strong> ([saving:<em class="ph i">SaveOptionsType</em>=SaveOptionsType])</p>
+
+         <p class="p description">Closes the document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e1923">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e1929">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e1935">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e1923 ">
+                        <p class="p">saving</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e1929 ">
+                        <p class="p">
+                           <a class="xref" href="SaveOptionsType.html#d1e26997">SaveOptionsType</a>
+                        </p>
+
+                        <p data-clipboard-text="SaveOptionsType.SAVECHANGES" class="p enumInPTable clip_button">SaveOptionsType.SAVECHANGES</p>
+
+                        <p data-clipboard-text="SaveOptionsType.DONOTSAVECHANGES" class="p enumInPTable clip_button">SaveOptionsType.DONOTSAVECHANGES</p>
+
+                        <p data-clipboard-text="SaveOptionsType.PROMPTTOSAVECHANGES" class="p enumInPTable clip_button">SaveOptionsType.PROMPTTOSAVECHANGES</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e1935 ">
+                        <p class="p description">Specifies whether changes should be saved before closing.</p>
+
+                        <p class="p"> (default: SaveOptionsType.PROMPTTOSAVECHANGES)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48477">undefined <strong data-clipboard-text=".convertProfile()" class="ph b clip_button">convertProfile</strong> (destinationProfile:<em class="ph i">String</em>, intent:<em class="ph i">Intent</em>, [blackPointCompensation:<em class="ph i">Boolean</em>], [dither:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Converts the document from using one color profile to using another.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2021">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2027">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2033">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2021 ">
+                        <p class="p">destinationProfile</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2027 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2033 ">
+                        <p class="p description">The color profile to convert to. Either a string specifying a color profile, one of the working color spaces, or Lab color.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2021 ">
+                        <p class="p">intent</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2027 ">
+                        <p class="p">
+                           <a class="xref" href="Intent.html#d1e27758">Intent</a>
+                        </p>
+
+                        <p data-clipboard-text="Intent.PERCEPTUAL" class="p enumInPTable clip_button">Intent.PERCEPTUAL</p>
+
+                        <p data-clipboard-text="Intent.SATURATION" class="p enumInPTable clip_button">Intent.SATURATION</p>
+
+                        <p data-clipboard-text="Intent.RELATIVECOLORIMETRIC" class="p enumInPTable clip_button">Intent.RELATIVECOLORIMETRIC</p>
+
+                        <p data-clipboard-text="Intent.ABSOLUTECOLORIMETRIC" class="p enumInPTable clip_button">Intent.ABSOLUTECOLORIMETRIC</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2033 ">
+                        <p class="p description">The conversion intent.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2021 ">
+                        <p class="p">blackPointCompensation</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2027 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2033 ">
+                        <p class="p description">If true, black point compensation is used.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2021 ">
+                        <p class="p">dither</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2027 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2033 ">
+                        <p class="p description">If true, dither is used.</p>
+
+                        <p class="p"> (default: true)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48570">undefined <strong data-clipboard-text=".crop()" class="ph b clip_button">crop</strong> (bounds:<em class="ph i">UnitRect</em>, [angle:<em class="ph i">Number</em>=Number], [width:<em class="ph i">UnitValue</em>], [height:<em class="ph i">UnitValue</em>])</p>
+
+         <p class="p description">Crops the document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2196">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2202">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2208">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2196 ">
+                        <p class="p">bounds</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2202 ">
+                        <p class="p">UnitRect</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2208 ">
+                        <p class="p description">The area to crop.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2196 ">
+                        <p class="p">angle</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2202 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2208 ">
+                        <p class="p description">The angle of cropping bounds.</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2196 ">
+                        <p class="p">width</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2202 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2208 ">
+                        <p class="p description">The width of the resulting document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2196 ">
+                        <p class="p">height</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2202 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2208 ">
+                        <p class="p description">The height of the resulting document.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48419">
+            <a class="xref" href="Document.html#d1e47935">Document</a> 
+            <strong data-clipboard-text=".duplicate()" class="ph b clip_button">duplicate</strong> (relativeObject:<em class="ph i">Object</em>, insertionLocation:<em class="ph i">ElementPlacement</em>)</p>
+
+         <p class="p description">Duplicate this object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2354">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2360">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2366">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2354 ">
+                        <p class="p">relativeObject</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2360 ">
+                        <p class="p">
+                           <a class="xref" href="Object.html#d1e624">Object</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2366 "> </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2354 ">
+                        <p class="p">insertionLocation</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2360 ">
+                        <p class="p">
+                           <a class="xref" href="ElementPlacement.html#d1e57359">ElementPlacement</a>
+                        </p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEAFTER" class="p enumInPTable clip_button">ElementPlacement.PLACEAFTER</p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEBEFORE" class="p enumInPTable clip_button">ElementPlacement.PLACEBEFORE</p>
+
+                        <p data-clipboard-text="ElementPlacement.PLACEATEND" class="p enumInPTable clip_button">ElementPlacement.PLACEATEND</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2366 "> </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e49249">
+            <a class="xref" href="Document.html#d1e47935">Document</a> 
+            <strong data-clipboard-text=".duplicate()" class="ph b clip_button">duplicate</strong> ([name:<em class="ph i">String</em>], [mergeLayersOnly:<em class="ph i">Boolean</em>])</p>
+
+         <p class="p description">Creates a duplicate of the document object.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2463">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2469">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2475">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2463 ">
+                        <p class="p">name</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2469 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2475 ">
+                        <p class="p description">The name of the new document.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2463 ">
+                        <p class="p">mergeLayersOnly</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2469 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2475 ">
+                        <p class="p description">If ture, duplicates merged layers only.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48630">undefined <strong data-clipboard-text=".exportDocument()" class="ph b clip_button">exportDocument</strong> (exportIn:<em class="ph i">File</em>, [exportAs:<em class="ph i">ExportType</em>=ExportType], [options:<em class="ph i">ExportOptions</em>])</p>
+
+         <p class="p description">Exports the document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2571">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2577">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2583">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2571 ">
+                        <p class="p">exportIn</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2577 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2583 ">
+                        <p class="p description">The file to export to.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2571 ">
+                        <p class="p">exportAs</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2577 ">
+                        <p class="p">
+                           <a class="xref" href="ExportType.html#d1e32458">ExportType</a>
+                        </p>
+
+                        <p data-clipboard-text="ExportType.ILLUSTRATORPATHS" class="p enumInPTable clip_button">ExportType.ILLUSTRATORPATHS</p>
+
+                        <p data-clipboard-text="ExportType.SAVEFORWEB" class="p enumInPTable clip_button">ExportType.SAVEFORWEB</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2583 ">
+                        <p class="p description">The type of export.</p>
+
+                        <p class="p"> (default: ExportType.ILLUSTRATORPATHS)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2571 ">
+                        <p class="p">options</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2577 ">
+                        <p class="p">
+                           <a class="xref" href="ExportOptions.html#d1e43045">ExportOptions</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2583 ">
+                        <p class="p description">Options for the specified export type.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48721">undefined <strong data-clipboard-text=".flatten()" class="ph b clip_button">flatten</strong> ()</p>
+
+         <p class="p description">Flattens all layers.</p>
+
+         <p class="p methodName" id="d1e47935__d1e48678">undefined <strong data-clipboard-text=".flipCanvas()" class="ph b clip_button">flipCanvas</strong> (direction:<em class="ph i">Direction</em>)</p>
+
+         <p class="p description">Flips the canvas horizontally or vertically.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2716">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2722">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2728">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2716 ">
+                        <p class="p">direction</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2722 ">
+                        <p class="p">
+                           <a class="xref" href="Direction.html#d1e27839">Direction</a>
+                        </p>
+
+                        <p data-clipboard-text="Direction.HORIZONTAL" class="p enumInPTable clip_button">Direction.HORIZONTAL</p>
+
+                        <p data-clipboard-text="Direction.VERTICAL" class="p enumInPTable clip_button">Direction.VERTICAL</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2728 ">
+                        <p class="p description">The direction in which to flip the canvas.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48699">undefined <strong data-clipboard-text=".importAnnotations()" class="ph b clip_button">importAnnotations</strong> (file:<em class="ph i">File</em>)</p>
+
+         <p class="p description">Imports annotations into the document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2798">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2804">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2810">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2798 ">
+                        <p class="p">file</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2804 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2810 ">
+                        <p class="p description">The document to import annotations from.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48727">undefined <strong data-clipboard-text=".mergeVisibleLayers()" class="ph b clip_button">mergeVisibleLayers</strong> ()</p>
+
+         <p class="p description">Flattens all visible layers in the document.</p>
+
+         <p class="p methodName" id="d1e47935__d1e48733">
+            <a class="xref" href="ArtLayer.html#d1e51762">ArtLayer</a> 
+            <strong data-clipboard-text=".paste()" class="ph b clip_button">paste</strong> ([intoSelection:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Pastes contents of the clipboard into the document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2888">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2894">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2900">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2888 ">
+                        <p class="p">intoSelection</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2894 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2900 ">
+                        <p class="p description">If true, contents are pasted into the current selection.</p>
+
+                        <p class="p"> (default: false)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48763">undefined <strong data-clipboard-text=".print()" class="ph b clip_button">print</strong> ([sourceSpace:<em class="ph i">SourceSpaceType</em>=SourceSpaceType], [printSpace:<em class="ph i">String</em>], [intent:<em class="ph i">Intent</em>=Intent], [blackPointCompensation:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Prints the document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e2976">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e2982">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e2988">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2976 ">
+                        <p class="p">sourceSpace</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2982 ">
+                        <p class="p">
+                           <a class="xref" href="SourceSpaceType.html#d1e35161">SourceSpaceType</a>
+                        </p>
+
+                        <p data-clipboard-text="SourceSpaceType.DOCUMENT" class="p enumInPTable clip_button">SourceSpaceType.DOCUMENT</p>
+
+                        <p data-clipboard-text="SourceSpaceType.PROOF" class="p enumInPTable clip_button">SourceSpaceType.PROOF</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2988 ">
+                        <p class="p description">The color space for the source.</p>
+
+                        <p class="p"> (default: SourceSpaceType.DOCUMENT)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2976 ">
+                        <p class="p">printSpace</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2982 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2988 ">
+                        <p class="p description">The color space for the printer. Can be "nothing" (meaning same as source); one of the working spaces or Lab color; or a string specifying a color space. Default: nothing.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2976 ">
+                        <p class="p">intent</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2982 ">
+                        <p class="p">
+                           <a class="xref" href="Intent.html#d1e27758">Intent</a>
+                        </p>
+
+                        <p data-clipboard-text="Intent.PERCEPTUAL" class="p enumInPTable clip_button">Intent.PERCEPTUAL</p>
+
+                        <p data-clipboard-text="Intent.SATURATION" class="p enumInPTable clip_button">Intent.SATURATION</p>
+
+                        <p data-clipboard-text="Intent.RELATIVECOLORIMETRIC" class="p enumInPTable clip_button">Intent.RELATIVECOLORIMETRIC</p>
+
+                        <p data-clipboard-text="Intent.ABSOLUTECOLORIMETRIC" class="p enumInPTable clip_button">Intent.ABSOLUTECOLORIMETRIC</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2988 ">
+                        <p class="p description">The color conversion intent.</p>
+
+                        <p class="p"> (default: Intent.RELATIVECOLORIMETRIC)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e2976 ">
+                        <p class="p">blackPointCompensation</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e2982 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e2988 ">
+                        <p class="p description">If true, black point compensation is used.</p>
+
+                        <p class="p"> (default: true)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48829">undefined <strong data-clipboard-text=".printOneCopy()" class="ph b clip_button">printOneCopy</strong> ()</p>
+
+         <p class="p description">Print one copy of the document.</p>
+
+         <p class="p methodName" id="d1e47935__d1e48842">undefined <strong data-clipboard-text=".rasterizeAllLayers()" class="ph b clip_button">rasterizeAllLayers</strong> ()</p>
+
+         <p class="p description">Rasterizes all layers.</p>
+
+         <p class="p methodName" id="d1e47935__d1e48848">undefined <strong data-clipboard-text=".recordMeasurements()" class="ph b clip_button">recordMeasurements</strong> ([source:<em class="ph i">MeasurementSource</em>], [dataPoints:<em class="ph i">Array of String</em>])</p>
+
+         <p class="p description">Records the measurements of document.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e3177">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e3183">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e3189">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3177 ">
+                        <p class="p">source</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3183 ">
+                        <p class="p">
+                           <a class="xref" href="MeasurementSource.html#d1e38420">MeasurementSource</a>
+                        </p>
+
+                        <p data-clipboard-text="MeasurementSource.MEASURESELECTION" class="p enumInPTable clip_button">MeasurementSource.MEASURESELECTION</p>
+
+                        <p data-clipboard-text="MeasurementSource.MEASURECOUNTTOOL" class="p enumInPTable clip_button">MeasurementSource.MEASURECOUNTTOOL</p>
+
+                        <p data-clipboard-text="MeasurementSource.MEASURERULERTOOL" class="p enumInPTable clip_button">MeasurementSource.MEASURERULERTOOL</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3189 ">
+                        <p class="p description">The source of the measurements to record.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3177 ">
+                        <p class="p">dataPoints</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3183 ">
+                        <p class="p">
+                           <a class="xref" href="Array.html#d1e968">Array</a> of <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3189 ">
+                        <p class="p description">An array of identifiers of data points to record. Any data points not appropriate for the specified source are ignored.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48904">undefined <strong data-clipboard-text=".resizeCanvas()" class="ph b clip_button">resizeCanvas</strong> ([width:<em class="ph i">UnitValue</em>], [height:<em class="ph i">UnitValue</em>], [anchor:<em class="ph i">AnchorPosition</em>=AnchorPosition])</p>
+
+         <p class="p description">Changes the size of the canvas.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e3297">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e3303">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e3309">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3297 ">
+                        <p class="p">width</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3303 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3309 ">
+                        <p class="p description">The desired width of the canvas.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3297 ">
+                        <p class="p">height</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3303 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3309 ">
+                        <p class="p description">The desired height of the canvas.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3297 ">
+                        <p class="p">anchor</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3303 ">
+                        <p class="p">
+                           <a class="xref" href="AnchorPosition.html#d1e27947">AnchorPosition</a>
+                        </p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPLEFT" class="p enumInPTable clip_button">AnchorPosition.TOPLEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPCENTER" class="p enumInPTable clip_button">AnchorPosition.TOPCENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.TOPRIGHT" class="p enumInPTable clip_button">AnchorPosition.TOPRIGHT</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLELEFT" class="p enumInPTable clip_button">AnchorPosition.MIDDLELEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLECENTER" class="p enumInPTable clip_button">AnchorPosition.MIDDLECENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.MIDDLERIGHT" class="p enumInPTable clip_button">AnchorPosition.MIDDLERIGHT</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMLEFT" class="p enumInPTable clip_button">AnchorPosition.BOTTOMLEFT</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMCENTER" class="p enumInPTable clip_button">AnchorPosition.BOTTOMCENTER</p>
+
+                        <p data-clipboard-text="AnchorPosition.BOTTOMRIGHT" class="p enumInPTable clip_button">AnchorPosition.BOTTOMRIGHT</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3309 ">
+                        <p class="p description">The anchor point to resize around.</p>
+
+                        <p class="p"> (default: AnchorPosition.MIDDLECENTER)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48952">undefined <strong data-clipboard-text=".resizeImage()" class="ph b clip_button">resizeImage</strong> ([width:<em class="ph i">UnitValue</em>], [height:<em class="ph i">UnitValue</em>], [resolution:<em class="ph i">Number</em>], [resampleMethod:<em class="ph i">ResampleMethod</em>=ResampleMethod], [amount:<em class="ph i">Int</em>=Int])</p>
+
+         <p class="p description">Changes the size of the image.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e3468">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e3474">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e3480">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3468 ">
+                        <p class="p">width</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3474 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3480 ">
+                        <p class="p description">The desired width of the image.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3468 ">
+                        <p class="p">height</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3474 ">
+                        <p class="p">
+                           <a class="xref" href="UnitValue.html#d1e10264">UnitValue</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3480 ">
+                        <p class="p description">The desired height of the image.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3468 ">
+                        <p class="p">resolution</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3474 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3480 ">
+                        <p class="p description">The resolution (in pixels per inch)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3468 ">
+                        <p class="p">resampleMethod</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3474 ">
+                        <p class="p">
+                           <a class="xref" href="ResampleMethod.html#d1e28092">ResampleMethod</a>
+                        </p>
+
+                        <p data-clipboard-text="ResampleMethod.NONE" class="p enumInPTable clip_button">ResampleMethod.NONE</p>
+
+                        <p data-clipboard-text="ResampleMethod.NEARESTNEIGHBOR" class="p enumInPTable clip_button">ResampleMethod.NEARESTNEIGHBOR</p>
+
+                        <p data-clipboard-text="ResampleMethod.BILINEAR" class="p enumInPTable clip_button">ResampleMethod.BILINEAR</p>
+
+                        <p data-clipboard-text="ResampleMethod.BICUBIC" class="p enumInPTable clip_button">ResampleMethod.BICUBIC</p>
+
+                        <p data-clipboard-text="ResampleMethod.BICUBICSHARPER" class="p enumInPTable clip_button">ResampleMethod.BICUBICSHARPER</p>
+
+                        <p data-clipboard-text="ResampleMethod.BICUBICSMOOTHER" class="p enumInPTable clip_button">ResampleMethod.BICUBICSMOOTHER</p>
+
+                        <p data-clipboard-text="ResampleMethod.BICUBICAUTOMATIC" class="p enumInPTable clip_button">ResampleMethod.BICUBICAUTOMATIC</p>
+
+                        <p data-clipboard-text="ResampleMethod.AUTOMATIC" class="p enumInPTable clip_button">ResampleMethod.AUTOMATIC</p>
+
+                        <p data-clipboard-text="ResampleMethod.PRESERVEDETAILS" class="p enumInPTable clip_button">ResampleMethod.PRESERVEDETAILS</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3480 ">
+                        <p class="p description">The downsample method.</p>
+
+                        <p class="p"> (default: ResampleMethod.BICUBIC)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3468 ">
+                        <p class="p">amount</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3474 ">
+                        <p class="p">Int (range 0 - 100)</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3480 ">
+                        <p class="p description">Amount of noise value when using preserve details (range: 0 - 100)</p>
+
+                        <p class="p"> (default: 0)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e48835">undefined <strong data-clipboard-text=".revealAll()" class="ph b clip_button">revealAll</strong> ()</p>
+
+         <p class="p description">Expands the document to show clipped sections.</p>
+
+         <p class="p methodName" id="d1e47935__d1e48883">undefined <strong data-clipboard-text=".rotateCanvas()" class="ph b clip_button">rotateCanvas</strong> (angle:<em class="ph i">Number</em>)</p>
+
+         <p class="p description">Rotates the canvas.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e3683">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e3689">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e3695">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3683 ">
+                        <p class="p">angle</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3689 ">
+                        <p class="p">
+                           <a class="xref" href="Number.html#d1e5437">Number</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3695 ">
+                        <p class="p description">The number of degrees to rotate. A positive angle rotates the canvas clockwise; a negative value rotates the canvas counter-clockwise.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e49048">undefined <strong data-clipboard-text=".save()" class="ph b clip_button">save</strong> ()</p>
+
+         <p class="p description">Saves the document.</p>
+
+         <p class="p methodName" id="d1e47935__d1e49054">undefined <strong data-clipboard-text=".saveAs()" class="ph b clip_button">saveAs</strong> (saveIn:<em class="ph i">File</em>, [options:<em class="ph i">Varies</em>], [asCopy:<em class="ph i">Boolean</em>], [extensionType:<em class="ph i">MacExtensionType</em>])</p>
+
+         <p class="p description">Saves the document with the specified save options.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e3778">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e3784">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e3790">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3778 ">
+                        <p class="p">saveIn</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3784 ">
+                        <p class="p">
+                           <a class="xref" href="File.html#d1e6276">File</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3790 ">
+                        <p class="p description">The file to save to, specified as a string containing the full file path or an alias. If not specified, the document is saved to its existing file.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3778 ">
+                        <p class="p">options</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3784 ">
+                        <p class="p">Varies</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3790 ">
+                        <p class="p description">Options for the specified file type.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3778 ">
+                        <p class="p">asCopy</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3784 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3790 ">
+                        <p class="p description">Saves the document as a copy, leaving the original open.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3778 ">
+                        <p class="p">extensionType</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3784 ">
+                        <p class="p">
+                           <a class="xref" href="MacExtensionType.html#d1e29450">MacExtensionType</a>
+                        </p>
+
+                        <p data-clipboard-text="MacExtensionType.NONE" class="p enumInPTable clip_button">MacExtensionType.NONE</p>
+
+                        <p data-clipboard-text="MacExtensionType.LOWERCASE" class="p enumInPTable clip_button">MacExtensionType.LOWERCASE</p>
+
+                        <p data-clipboard-text="MacExtensionType.UPPERCASE" class="p enumInPTable clip_button">MacExtensionType.UPPERCASE</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3790 ">
+                        <p class="p description">Appends the specified extension to the file name.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e49033">
+            <a class="xref" href="Document.html#d1e47935">Document</a> 
+            <strong data-clipboard-text=".splitChannels()" class="ph b clip_button">splitChannels</strong> ()</p>
+
+         <p class="p description">Splits the channels of the document.</p>
+
+         <p class="p methodName" id="d1e47935__d1e49111">undefined <strong data-clipboard-text=".suspendHistory()" class="ph b clip_button">suspendHistory</strong> (historyString:<em class="ph i">String</em>, javaScriptString:<em class="ph i">String</em>)</p>
+
+         <p class="p description">Provides a single history state for the entire script. Allows a single undo for all actions taken in the script.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e3951">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e3957">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e3963">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3951 ">
+                        <p class="p">historyString</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3957 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3963 ">
+                        <p class="p description">The string to use for the history state.</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e3951 ">
+                        <p class="p">javaScriptString</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e3957 ">
+                        <p class="p">
+                           <a class="xref" href="String.html#d1e4543">String</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e3963 ">
+                        <p class="p description">A string of JavaScript code to execute during the suspension of history.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e49144">undefined <strong data-clipboard-text=".trap()" class="ph b clip_button">trap</strong> (width:<em class="ph i">Int</em>)</p>
+
+         <p class="p description">Applies trapping to a CMYK document. Valid only when 'mode' = CMYK.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e4053">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e4059">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e4065">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e4053 ">
+                        <p class="p">width</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e4059 ">
+                        <p class="p">Int</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e4065 ">
+                        <p class="p description">The trap width in pixels.</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+         <p class="p methodName" id="d1e47935__d1e49165">undefined <strong data-clipboard-text=".trim()" class="ph b clip_button">trim</strong> ([type:<em class="ph i">TrimType</em>=TrimType], [top:<em class="ph i">Boolean</em>=Boolean], [left:<em class="ph i">Boolean</em>=Boolean], [bottom:<em class="ph i">Boolean</em>=Boolean], [right:<em class="ph i">Boolean</em>=Boolean])</p>
+
+         <p class="p description">Trims the transparent area around the image on the specified sides of the canvas.</p>
+
+         
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" class="table parameterTable" frame="border" border="1" rules="all">
+               
+               
+               
+               <thead class="thead" align="left">
+                  <tr class="row">
+                     <th class="entry" valign="top" width="30%" id="d82193e4138">
+                        <p class="p">Parameter</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="10%" id="d82193e4144">
+                        <p class="p">Type</p>
+
+                     </th>
+
+                     <th class="entry" valign="top" width="60%" id="d82193e4150">
+                        <p class="p">Description</p>
+
+                     </th>
+
+                  </tr>
+
+               </thead>
+
+               <tbody class="tbody">
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e4138 ">
+                        <p class="p">type</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e4144 ">
+                        <p class="p">
+                           <a class="xref" href="TrimType.html#d1e29705">TrimType</a>
+                        </p>
+
+                        <p data-clipboard-text="TrimType.TRANSPARENT" class="p enumInPTable clip_button">TrimType.TRANSPARENT</p>
+
+                        <p data-clipboard-text="TrimType.TOPLEFT" class="p enumInPTable clip_button">TrimType.TOPLEFT</p>
+
+                        <p data-clipboard-text="TrimType.BOTTOMRIGHT" class="p enumInPTable clip_button">TrimType.BOTTOMRIGHT</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e4150 ">
+                        <p class="p description">The color or type of pixels to base the trim on.</p>
+
+                        <p class="p"> (default: TrimType.TOPLEFT)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e4138 ">
+                        <p class="p">top</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e4144 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e4150 ">
+                        <p class="p description">If true, trims away the top of the document.</p>
+
+                        <p class="p"> (default: true)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e4138 ">
+                        <p class="p">left</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e4144 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e4150 ">
+                        <p class="p description">If true, trims away the left of the document.</p>
+
+                        <p class="p"> (default: true)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e4138 ">
+                        <p class="p">bottom</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e4144 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e4150 ">
+                        <p class="p description">If true, trims away the bottom of the document.</p>
+
+                        <p class="p"> (default: true)</p>
+
+                     </td>
+
+                  </tr>
+
+                  <tr class="row">
+                     <td class="entry" valign="top" width="30%" headers="d82193e4138 ">
+                        <p class="p">right</p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="10%" headers="d82193e4144 ">
+                        <p class="p">
+                           <a class="xref" href="Boolean.html#d1e5707">Boolean</a>
+                        </p>
+
+                     </td>
+
+                     <td class="entry" valign="top" width="60%" headers="d82193e4150 ">
+                        <p class="p description">If true, trims away the right of the document.</p>
+
+                        <p class="p"> (default: true)</p>
+
+                     </td>
+
+                  </tr>
+
+               </tbody>
+
+            </table>
+</div>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Object of</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="Application.html#d1e46246">Application</a>.activeDocument</p>
+
+      </div>
+
+      <div class="section"><h2 class="title sectiontitle">Return</h2>
+         
+         <p class="p noMargin">
+            <a class="xref" href="Documents.html#d1e38514">Documents</a>.<a class="xref" href="Documents.html#d1e38514__d1e38521">add</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Document.html#d1e47935">Document</a>.<a class="xref" href="Document.html#d1e47935__d1e49249">duplicate</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Document.html#d1e47935">Document</a>.<a class="xref" href="Document.html#d1e47935__d1e48419">duplicate</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Documents.html#d1e38514">Documents</a>.<a class="xref" href="Documents.html#d1e38514__d1e38717">[]</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Documents.html#d1e38514">Documents</a>.<a class="xref" href="Documents.html#d1e38514__d1e38693">getByName</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Application.html#d1e46246">Application</a>.<a class="xref" href="Application.html#d1e46246__d1e47149">open</a>()</p>
+
+         <p class="p noMargin">
+            <a class="xref" href="Document.html#d1e47935">Document</a>.<a class="xref" href="Document.html#d1e47935__d1e49033">splitChannels</a>()</p>
+
+      </div>
+
+   </div>
+
+<div class="related-links"></div>
+<div class="navfooter"><!---->
+<span class="navparent"><a class="link" href="Application.html" title="Application"><span class="navheader_label">Parent topic</span><span class="navheader_separator">: </span><span class="navheader_linktext">Application</span></a></span>  </div><div class="footer">WebHelp output generated by<a class="oxyFooter" href="http://www.oxygenxml.com" target="_blank"><span class="oXygenLogo"><img src="oxygen-webhelp/resources/img/LogoOxygen100x22.png" alt="Oxygen"></img></span><span class="xmlauthor">XML Author</span></a></div>
+<script type="text/javascript"><!--
+        $(".clip_button").click(function(){
+            var temp = this.innerHTML;
+            this.innerHTML  = this.getAttribute('data-clipboard-text'); 
+            var range = document.createRange();
+            range.selectNode(this);
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            this.innerHTML = temp;
+        });
+
+      $( ".clip_button" ).hover(
+        function() {
+          $( this ).addClass("is-hover");
+        }, function() {
+          $( this ).removeClass("is-hover");
+        }
+      );
+      --></script></body>
+</html>
