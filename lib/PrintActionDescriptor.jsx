@@ -6,8 +6,12 @@
  */
 
 #target photoshop
+#include './DebugFileLogger.jsx'
 #include './DescriptorInfo.jsx'
 #include './Validations.jsx'
+#include './bridgetalk/SymbolBuilder.jsx'
+
+var g2SymbolBuilder = createSymbolBuilder();
 
 // Initialize descriptorInfo at the global scope
 var descriptorInfo = new DescriptorInfo();
@@ -100,11 +104,77 @@ function printActionDescriptor(actionName, outputPath) {
         };
         
         var result = descriptorInfo.getProperties(actionDesc, params);
+        
+        // Process children if they exist
+        processActionChildren(actionDesc, actionName, outputPath);
+        
         alert("Action descriptor for '" + actionName + "' saved to: " + outputPath);
         
         return result;
     } catch (e) {
         alert("Error: " + debugErrorFormatString(e));
+    }
+}
+
+/**
+ * Process and output children of an action descriptor
+ * @param {ActionDescriptor} actionDesc - The action descriptor to process
+ * @param {String} actionName - The name of the action
+ * @param {String} outputPath - Path where to save the output file
+ */
+function processActionChildren(actionDesc, actionName, outputPath) {
+    try {
+        // Check if the descriptor has numberOfChildren property
+        DebugLogger.writeObject("NmbC => ", actionDesc.hasKey(charIDToTypeID('NmbC')));
+        if (actionDesc.hasKey(charIDToTypeID('NmbC'))) {
+            DebugLogger.writeObject("NmbC => ", actionDesc.getInteger(charIDToTypeID('NmbC')));
+            var numberOfChildren = actionDesc.getInteger(charIDToTypeID('NmbC'));
+            
+            if (numberOfChildren > 0) {
+                var childrenData = {
+                    actionName: actionName,
+                    children: []
+                };
+                
+                // Get all children
+                for (var i = 1; i <= numberOfChildren; i++) {
+                    // Create a reference to the child
+                    var childRef = new ActionReference();
+                    childRef.putIndex(charIDToTypeID('Actn'), i); 
+                    childRef.putName(charIDToTypeID('ASet'), actionName);
+                    
+                    try {
+                        var childDesc = executeActionGet(childRef);
+                        
+                        // Use DescriptorInfo to get child properties
+                        var childParams = {
+                            reference: true,
+                            extended: true,
+                            saveToFile: outputPath.replace(".json", "-child-" + i + ".json")
+                        };
+                        
+                        var childProps = descriptorInfo.getProperties(childDesc, childParams);
+                        childrenData.children.push(childProps);
+                    } catch (childErr) {
+                        // If we can't get a specific child, just log it and continue
+                        DebugLogger.write("Error getting child " + i + ": " + debugErrorFormatString(childErr));
+                    }
+                }
+                
+                // Save children data to a separate file
+                var childrenFilePath = outputPath.replace(".json", "-children.json");
+                var childrenFile = new File(childrenFilePath);
+                childrenFile.encoding = "UTF-8";
+                
+                if (childrenFile.open("w")) {
+                    childrenFile.write(g2SymbolBuilder.buildValue(childrenData));
+                    childrenFile.close();
+                    $.writeln("Children data saved to: " + childrenFilePath);
+                }
+            }
+        }
+    } catch (e) {
+        $.writeln("Error processing children: " + debugErrorFormatString(e));
     }
 }
 
