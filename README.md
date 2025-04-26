@@ -24,6 +24,10 @@ The scripts will be available under `indesign-scripts` folder in the InDesign sc
   * For example, you can copy all files from this repository into there.
 * Scripts in that folder will appear in the scripts panel window.
 
+## Libraries
+
+Some scripts make use of the awesome [JSON-Action-Manager](https://codeberg.org/tonton-pixel/json-photoshop-scripting/src/branch/master/JSON-Action-Manager) project to keep sane when scripting action manager.
+
 ## Scripts
 
 ### Style Scripts
