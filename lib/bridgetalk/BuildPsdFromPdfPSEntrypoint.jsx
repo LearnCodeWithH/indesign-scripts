@@ -156,9 +156,10 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
         // Create text item with the bounds
         var textItem = textLayer.textItem;
         textItem.kind = TextType.PARAGRAPHTEXT;
-        textItem.position = [left, top];
-        textItem.width = bounds.width;
-        textItem.height = bounds.height;
+        
+        // Make sure we set the bounds using the proper rectangle coordinates
+        // Note: Photoshop expects [left, top, right, bottom]
+        textItem.bounds = [left, top, right, bottom];
     }
     
     // Handle rotation
@@ -196,12 +197,9 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     }
     
     // Set the text content
-    var textItem = textLayer.textItem;
-    textItem.contents = fullText;
+    textLayer.textItem.contents = fullText;
     
-    // TODO:
-    // Handle text justification
-    
+    // TODO: Handle justification and alignment
     // NOTE: Style runs need to handle:
     // font family, font point size, kerning, font color, 
     // letter spacing (tracking), line spacing (leading),
