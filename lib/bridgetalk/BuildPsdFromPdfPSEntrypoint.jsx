@@ -11,6 +11,10 @@
 // Requires stitching "lib/jam/jamHelpers.jsxinc" when running through Bridgetalk
 // Requires stitching "lib/jam/jamText.jsxinc" when running through Bridgetalk
 
+#include "../jam/jamEngine.jsxinc"
+#include "../jam/jamUtils.jsxinc"
+#include "../jam/jamHelpers.jsxinc"
+#include "../jam/jamText.jsxinc"
 
 // Utf-8 test: 漢字
 
@@ -214,27 +218,11 @@ function applyStyleRuns(textLayer, styleRuns) {
     if (!styleRuns || styleRuns.length === 0) return;
     
     // Get the text content from styleRuns
-    var fullText = "";
-    for (var i = 0; i < styleRuns.length; i++) {
-        fullText += styleRuns[i].text;
-    }
+    var fullText = getFullTextFromStyleRuns(styleRuns);
     
     try {
         // Create a structured layer text object using the JAM format
-        var layerTextObj = {
-            layerText: {
-                textKey: fullText,
-                textShape: [
-                    {
-                        textType: "point",
-                        orientation: "horizontal"
-                    }
-                ],
-                textStyleRange: [],
-                paragraphStyleRange: []
-            },
-            typeUnit: "pixelsUnit"
-        };
+        var layerTextObj = createBaseLayerTextObject(fullText);
         
         // Process each style run and add to textStyleRange
         var position = 0;
@@ -244,84 +232,7 @@ function applyStyleRuns(textLayer, styleRuns) {
             var to = position + run.text.length;
             
             // Create text style for this range
-            var textStyle = {
-                // Font properties
-                fontPostScriptName: run.fontPostScriptName || run.fontFamily,
-                fontName: run.fontFamily,
-                size: run.pointSize
-            };
-            
-            // Handle tracking (letter spacing)
-            if (run.tracking !== undefined) {
-                textStyle.tracking = run.tracking;
-            }
-            
-            // Handle font color
-            if (run.fillColor) {
-                if (typeof run.fillColor === "string" && run.fillColor !== "None") {
-                    // Convert color string to RGB color object
-                    var color = parseColor(run.fillColor);
-                    if (color && color.rgb) {
-                        textStyle.color = { 
-                            red: color.rgb.red,
-                            green: color.rgb.green,
-                            blue: color.rgb.blue
-                        };
-                    }
-                } else if (run.fillColor.r !== undefined) {
-                    // Direct RGB values
-                    textStyle.color = {
-                        red: run.fillColor.r,
-                        green: run.fillColor.g,
-                        blue: run.fillColor.b
-                    };
-                }
-            }
-            
-            // Handle leading (line spacing)
-            if (run.leading) {
-                textStyle.leading = run.leading;
-            }
-            
-            // Handle horizontal scale
-            if (run.horizontalScale) {
-                textStyle.horizontalScale = run.horizontalScale;
-            }
-            
-            // Handle vertical scale
-            if (run.verticalScale) {
-                textStyle.verticalScale = run.verticalScale;
-            }
-            
-            // Handle baseline shift (superscript/subscript)
-            if (run.baselineShift !== undefined) {
-                textStyle.baselineShift = run.baselineShift;
-            } else if (run.baseline) {
-                // Set appropriate baseline property based on baseline type
-                if (run.baseline === "superscript") {
-                    textStyle.baseline = "superScript";
-                } else if (run.baseline === "subscript") {
-                    textStyle.baseline = "subScript";
-                }
-            }
-            
-            // Handle kerning method
-            if (run.kerningMethod) {
-                switch (run.kerningMethod) {
-                    case "Metrics":
-                        textStyle.autoKern = "metricsKern";
-                        break;
-                    case "Optical":
-                        textStyle.autoKern = "opticalKern";
-                        break;
-                }
-            }
-            
-            // Handle font style (bold, italic)
-            if (run.fontStyle) {
-                textStyle.syntheticBold = run.fontStyle.indexOf("Bold") !== -1;
-                textStyle.syntheticItalic = run.fontStyle.indexOf("Italic") !== -1;
-            }
+            var textStyle = createTextStyleForRun(run);
             
             // Add the style range to our layer text object
             layerTextObj.layerText.textStyleRange.push({
@@ -331,69 +242,200 @@ function applyStyleRuns(textLayer, styleRuns) {
             });
             
             // Add paragraph style for alignment
-            if (run.justification) {
-                var alignment;
-                switch (run.justification) {
-                    case "LEFT_ALIGN":
-                        alignment = "left";
-                        break;
-                    case "RIGHT_ALIGN":
-                        alignment = "right";
-                        break;
-                    case "CENTER_ALIGN":
-                        alignment = "center";
-                        break;
-                    case "JUSTIFIED":
-                        alignment = "justifyAll";
-                        break;
-                    default:
-                        alignment = "left";
-                }
-                
-                // Check if we already have a paragraph style for this range
-                var foundParagraphStyle = false;
-                for (var j = 0; j < layerTextObj.layerText.paragraphStyleRange.length; j++) {
-                    var paraRange = layerTextObj.layerText.paragraphStyleRange[j];
-                    if (paraRange.from <= from && paraRange.to >= to) {
-                        foundParagraphStyle = true;
-                        break;
-                    }
-                }
-                
-                if (!foundParagraphStyle) {
-                    layerTextObj.layerText.paragraphStyleRange.push({
-                        from: from,
-                        to: to,
-                        paragraphStyle: {
-                            alignment: alignment
-                        }
-                    });
-                }
-            }
+            addParagraphStyleForRun(layerTextObj, run, from, to);
             
             // Update position for next range
             position = to;
         }
         
-        // We need to create a reference to our text layer to modify it
-        var idTxLr = charIDToTypeID("TxLr");
-        var ref = new ActionReference();
-        ref.putIdentifier(idTxLr, textLayer.id);
-        
-        // Use JAM to set the text data to our layer
-        var textLayerDesc = jamText.toLayerTextObject(layerTextObj);
-        jamEngine.jsonPlay(
-            "set",
-            {
-                "target": ["<reference>", [["layer", ["<identifier>", textLayer.id]]]],
-                "to": textLayerDesc
-            }
-        );
+        // Apply the layer text object to the text layer
+        applyLayerTextObjectToLayer(textLayer, layerTextObj);
         
     } catch (e) {
         // Fallback to basic styling method if JAM fails
         alert("Error applying text styles: " + e.message);
     }
+}
+
+function getFullTextFromStyleRuns(styleRuns) {
+    var fullText = "";
+    for (var i = 0; i < styleRuns.length; i++) {
+        fullText += styleRuns[i].text;
+    }
+    return fullText;
+}
+
+function createBaseLayerTextObject(fullText) {
+    return {
+        layerText: {
+            textKey: fullText,
+            textShape: [
+                {
+                    textType: "point",
+                    orientation: "horizontal"
+                }
+            ],
+            textStyleRange: [],
+            paragraphStyleRange: []
+        },
+        typeUnit: "pixelsUnit"
+    };
+}
+
+function createTextStyleForRun(run) {
+    var textStyle = {
+        // Font properties
+        fontPostScriptName: run.fontPostScriptName || run.fontFamily,
+        fontName: run.fontFamily,
+        size: run.pointSize
+    };
+    
+    applyTracking(textStyle, run);
+    applyFontColor(textStyle, run);
+    applyLeading(textStyle, run);
+    applyScaling(textStyle, run);
+    applyBaselineProperties(textStyle, run);
+    applyKerningMethod(textStyle, run);
+    applyFontStyle(textStyle, run);
+    
+    return textStyle;
+}
+
+function applyTracking(textStyle, run) {
+    if (run.tracking !== undefined) {
+        textStyle.tracking = run.tracking;
+    }
+}
+
+function applyFontColor(textStyle, run) {
+    if (run.fillColor) {
+        if (typeof run.fillColor === "string" && run.fillColor !== "None") {
+            // Convert color string to RGB color object
+            var color = parseColor(run.fillColor);
+            if (color && color.rgb) {
+                textStyle.color = { 
+                    red: color.rgb.red,
+                    green: color.rgb.green,
+                    blue: color.rgb.blue
+                };
+            }
+        } else if (run.fillColor.r !== undefined) {
+            // Direct RGB values
+            textStyle.color = {
+                red: run.fillColor.r,
+                green: run.fillColor.g,
+                blue: run.fillColor.b
+            };
+        }
+    }
+}
+
+function applyLeading(textStyle, run) {
+    if (run.leading) {
+        textStyle.leading = run.leading;
+    }
+}
+
+function applyScaling(textStyle, run) {
+    if (run.horizontalScale) {
+        textStyle.horizontalScale = run.horizontalScale;
+    }
+    
+    if (run.verticalScale) {
+        textStyle.verticalScale = run.verticalScale;
+    }
+}
+
+function applyBaselineProperties(textStyle, run) {
+    if (run.baselineShift !== undefined) {
+        textStyle.baselineShift = run.baselineShift;
+    } else if (run.baseline) {
+        // Set appropriate baseline property based on baseline type
+        if (run.baseline === "superscript") {
+            textStyle.baseline = "superScript";
+        } else if (run.baseline === "subscript") {
+            textStyle.baseline = "subScript";
+        }
+    }
+}
+
+function applyKerningMethod(textStyle, run) {
+    if (run.kerningMethod) {
+        switch (run.kerningMethod) {
+            case "Metrics":
+                textStyle.autoKern = "metricsKern";
+                break;
+            case "Optical":
+                textStyle.autoKern = "opticalKern";
+                break;
+        }
+    }
+}
+
+function applyFontStyle(textStyle, run) {
+    if (run.fontStyle) {
+        textStyle.syntheticBold = run.fontStyle.indexOf("Bold") !== -1;
+        textStyle.syntheticItalic = run.fontStyle.indexOf("Italic") !== -1;
+    }
+}
+
+function addParagraphStyleForRun(layerTextObj, run, from, to) {
+    if (run.justification) {
+        var alignment = getAlignmentForJustification(run.justification);
+        
+        // Check if we already have a paragraph style for this range
+        if (!paragraphStyleExistsForRange(layerTextObj, from, to)) {
+            layerTextObj.layerText.paragraphStyleRange.push({
+                from: from,
+                to: to,
+                paragraphStyle: {
+                    alignment: alignment
+                }
+            });
+        }
+    }
+}
+
+function getAlignmentForJustification(justification) {
+    switch (justification) {
+        case "LEFT_ALIGN":
+            return "left";
+        case "RIGHT_ALIGN":
+            return "right";
+        case "CENTER_ALIGN":
+            return "center";
+        case "JUSTIFIED":
+            return "justifyAll";
+        default:
+            return "left";
+    }
+}
+
+function paragraphStyleExistsForRange(layerTextObj, from, to) {
+    for (var j = 0; j < layerTextObj.layerText.paragraphStyleRange.length; j++) {
+        var paraRange = layerTextObj.layerText.paragraphStyleRange[j];
+        if (paraRange.from <= from && paraRange.to >= to) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function applyLayerTextObjectToLayer(textLayer, layerTextObj) {
+    // We need to create a reference to our text layer to modify it
+    var idTxLr = charIDToTypeID("TxLr");
+    var ref = new ActionReference();
+    ref.putIdentifier(idTxLr, textLayer.id);
+    
+    // Use JAM to set the text data to our layer
+    var textLayerDesc = jamText.toLayerTextObject(layerTextObj);
+    jamEngine.jsonPlay(
+        "set",
+        {
+            "target": ["<reference>", [["layer", ["<identifier>", textLayer.id]]]],
+            "to": textLayerDesc
+        }
+    );
 }
 
 function buildTextLayerName(textDataEntry) {
