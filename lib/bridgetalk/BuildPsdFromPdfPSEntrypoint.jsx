@@ -260,9 +260,28 @@ function applyStyleRuns(textLayer, styleRuns) {
 function getFullTextFromStyleRuns(styleRuns) {
     var fullText = "";
     for (var i = 0; i < styleRuns.length; i++) {
-        fullText += styleRuns[i].text;
+        fullText += sanitizeUnicodeText(styleRuns[i].text);
     }
     return fullText;
+}
+
+// Sanitize Unicode text to handle special characters properly
+function sanitizeUnicodeText(text) {
+    if (!text) return "";
+    
+    // Replace problematic Unicode characters with their proper equivalents
+    // Smart single quotes
+    text = text.replace(/[\u2018\u2019]/g, "'");
+    // Smart double quotes
+    text = text.replace(/[\u201C\u201D]/g, '"');
+    // Em dash
+    text = text.replace(/\u2014/g, "--");
+    // En dash
+    text = text.replace(/\u2013/g, "-");
+    // Ellipsis
+    text = text.replace(/\u2026/g, "...");
+    
+    return text;
 }
 
 function createBaseLayerTextObject(fullText) {
