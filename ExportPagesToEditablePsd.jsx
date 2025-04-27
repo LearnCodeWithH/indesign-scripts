@@ -275,6 +275,10 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
         .addFile(script_path + "/lib/Functional.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSPdfImport.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSConversions.jsx")
+        .addFile(script_path + "/lib/jam/jamEngine.jsxinc")
+        .addFile(script_path + "/lib/jam/jamUtils.jsxinc")
+        .addFile(script_path + "/lib/jam/jamHelpers.jsxinc")
+        .addFile(script_path + "/lib/jam/jamText.jsxinc")
         .addFile(script_path + "/lib/bridgetalk/BuildPsdFromPdfPSEntrypoint.jsx")
         .addFunctionCall("createTextLayersFromData", function(symbolBuilder) {
             var import_pdf_options_symbol = {};

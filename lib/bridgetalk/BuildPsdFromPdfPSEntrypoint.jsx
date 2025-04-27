@@ -6,6 +6,11 @@
 // Requires stitching "lib/Functional.jsx" when running through Bridgetalk
 // Requires stitching "lib/bridgetalk/PSConversions.jsx" when running through Bridgetalk
 // Requires stitching "lib/bridgetalk/PSPdfImport.jsx" when running through Bridgetalk
+// Requires stitching "lib/jam/jamEngine.jsxinc" when running through Bridgetalk
+// Requires stitching "lib/jam/jamUtils.jsxinc" when running through Bridgetalk
+// Requires stitching "lib/jam/jamHelpers.jsxinc" when running through Bridgetalk
+// Requires stitching "lib/jam/jamText.jsxinc" when running through Bridgetalk
+
 
 // Utf-8 test: 漢字
 
@@ -214,228 +219,181 @@ function applyStyleRuns(textLayer, styleRuns) {
         fullText += styleRuns[i].text;
     }
     
-    // CharIDs and StringIDs for action descriptors
-    var idTxLr = charIDToTypeID("TxLr");
-    var idTxt = charIDToTypeID("Txt ");
-    var idTxtt = charIDToTypeID("Txtt");
-    var idFrom = charIDToTypeID("From");
-    var idT = charIDToTypeID("T   ");
-    var idnull = charIDToTypeID("null");
-    var idsetd = charIDToTypeID("setd");
-    var idTextStyle = stringIDToTypeID("textStyle");
-    var idBaseline = stringIDToTypeID("baseline");
-    var idKrng = charIDToTypeID("Krng");
-    
-    // Create the main descriptor for text layer modification
-    var mainDesc = new ActionDescriptor();
-    
-    // Set the target text layer
-    var layerRef = new ActionReference();
-    layerRef.putIdentifier(idTxLr, textLayer.id);
-    mainDesc.putReference(idnull, layerRef);
-    
-    // Create descriptor for text contents and styles
-    var textDesc = new ActionDescriptor();
-    textDesc.putString(idTxt, fullText);
-    
-    // Create a list of text style ranges
-    var styleRangeList = new ActionList();
-    
-    // Track position in the text string
-    var position = 0;
-    
-    // Process each style run
-    for (var j = 0; j < styleRuns.length; j++) {
-        var run = styleRuns[j];
-        var from = position;
-        var to = position + run.text.length;
-        
-        // Create descriptor for this text range
-        var rangeDesc = new ActionDescriptor();
-        rangeDesc.putInteger(idFrom, from);
-        rangeDesc.putInteger(idT, to);
-        
-        // Create style object
-        var styleDesc = new ActionDescriptor();
-        
-        // Apply font family
-        if (run.fontFamily) {
-            styleDesc.putString(stringIDToTypeID("fontName"), run.fontFamily);
-            styleDesc.putString(stringIDToTypeID("fontPostScriptName"), run.fontPostScriptName || run.fontFamily);
-        }
-        
-        // Apply font size
-        if (run.pointSize) {
-            styleDesc.putUnitDouble(charIDToTypeID("Sz  "), charIDToTypeID("#Pnt"), run.pointSize);
-        }
-        
-        // Apply kerning method
-        if (run.kerningMethod) {
-            var kerningMethod;
-            switch(run.kerningMethod) {
-                case "Metrics":
-                    kerningMethod = stringIDToTypeID("metricsKern");
-                    break;
-                case "Optical":
-                    kerningMethod = stringIDToTypeID("opticalKern");
-                    break;
-                default:
-                    // Default to metrics if not specified or unknown
-                    kerningMethod = stringIDToTypeID("metricsKern");
-            }
-            styleDesc.putEnumerated(stringIDToTypeID("autoKern"), stringIDToTypeID("autoKernType"), kerningMethod);
-        }
-        
-        // Apply font color
-        if (run.fillColor) {
-            var colorDesc = new ActionDescriptor();
-            
-            // Determine color type and set values
-            if (run.fillColor.r !== undefined) {
-                // RGB color
-                var rgbDesc = new ActionDescriptor();
-                rgbDesc.putDouble(charIDToTypeID('Rd  '), run.fillColor.r);
-                rgbDesc.putDouble(charIDToTypeID('Grn '), run.fillColor.g);
-                rgbDesc.putDouble(charIDToTypeID('Bl  '), run.fillColor.b);
-                colorDesc.putObject(charIDToTypeID('Clr '), charIDToTypeID('RGBC'), rgbDesc);
-            } else if (typeof run.fillColor === "string") {
-                // Color as string - convert to RGB
-                var color = parseColor(run.fillColor);
-                var rgbDesc = new ActionDescriptor();
-                rgbDesc.putDouble(charIDToTypeID('Rd  '), color.rgb.red);
-                rgbDesc.putDouble(charIDToTypeID('Grn '), color.rgb.green);
-                rgbDesc.putDouble(charIDToTypeID('Bl  '), color.rgb.blue);
-                colorDesc.putObject(charIDToTypeID('Clr '), charIDToTypeID('RGBC'), rgbDesc);
-            }
-            
-            styleDesc.putObject(charIDToTypeID('Clr '), charIDToTypeID('Clr '), colorDesc);
-        }
-        
-        // Apply tracking (letter spacing)
-        if (run.tracking) {
-            styleDesc.putInteger(charIDToTypeID("Trck"), run.tracking);
-        }
-        
-        // Apply leading (line spacing)
-        if (run.leading) {
-            styleDesc.putUnitDouble(charIDToTypeID("Ldng"), charIDToTypeID("#Pnt"), run.leading);
-        }
-        
-        // Apply horizontal/vertical scale
-        if (run.horizontalScale) {
-            styleDesc.putDouble(stringIDToTypeID("horizontalScale"), run.horizontalScale);
-        }
-        
-        if (run.verticalScale) {
-            styleDesc.putDouble(stringIDToTypeID("verticalScale"), run.verticalScale);
-        }
-        
-        // Apply baseline shift (superscript/subscript)
-        if (run.baselineShift !== undefined && run.baselineShift !== 0) {
-            styleDesc.putUnitDouble(stringIDToTypeID("baselineShift"), charIDToTypeID("#Pnt"), run.baselineShift);
-        } else if (run.baseline) {
-            if (run.baseline === "superscript") {
-                styleDesc.putEnumerated(idBaseline, idBaseline, stringIDToTypeID("superScript"));
-            } else if (run.baseline === "subscript") {
-                styleDesc.putEnumerated(idBaseline, idBaseline, stringIDToTypeID("subScript"));
-            } else {
-                styleDesc.putEnumerated(idBaseline, idBaseline, stringIDToTypeID("normal"));
-            }
-        }
-        
-        // Apply font style (bold, italic)
-        if (run.fontStyle) {
-            if (run.fontStyle.indexOf("Bold") !== -1) {
-                styleDesc.putBoolean(stringIDToTypeID("syntheticBold"), true);
-            }
-            if (run.fontStyle.indexOf("Italic") !== -1) {
-                styleDesc.putBoolean(stringIDToTypeID("syntheticItalic"), true);
-            }
-        }
-        
-        // Apply text justification
-        // NO WORK
-        if (run.justification) {
-            var justID;
-            switch (run.justification) {
-                case "LEFT_ALIGN":
-                    justID = stringIDToTypeID("left");
-                    break;
-                case "RIGHT_ALIGN":
-                    justID = stringIDToTypeID("right");
-                    break;
-                case "CENTER_ALIGN":
-                    justID = stringIDToTypeID("center");
-                    break;
-                case "JUSTIFIED":
-                    justID = stringIDToTypeID("justifyAll");
-                    break;
-            }
-            if (justID) {
-                styleDesc.putEnumerated(charIDToTypeID("Justf"), stringIDToTypeID("textGridding"), justID);
-            }
-        }
-        
-        // Apply the style object to the range
-        rangeDesc.putObject(idTextStyle, idTextStyle, styleDesc);
-        
-        // Add the range to the list
-        styleRangeList.putObject(idTxtt, rangeDesc);
-        
-        // Update position for the next run
-        position = to;
-    }
-    
-    // Add the style ranges to the text descriptor
-    textDesc.putList(idTxtt, styleRangeList);
-    
-    // Process specific kerning values between characters if needed
-    var kerningList = new ActionList();
-    var hasKerningValues = false;
-    
-    // Create kerning ranges for specific kerning values
-    for (var k = 0; k < styleRuns.length; k++) {
-        var run = styleRuns[k];
-        
-        // If run has specific kerning value (not Optical or Metrics)
-        if (run.kerning && run.kerning !== "" && 
-            run.kerningMethod !== "Optical" && run.kerningMethod !== "Metrics") {
-            
-            try {
-                // Parse the kerning value - could be a string or number
-                var kerningValue = parseInt(run.kerning, 10);
-                
-                if (!isNaN(kerningValue) && kerningValue !== 0) {
-                    // Find position in the full text
-                    var charPos = 0;
-                    for (var m = 0; m < k; m++) {
-                        charPos += styleRuns[m].text.length;
+    try {
+        // Create a structured layer text object using the JAM format
+        var layerTextObj = {
+            layerText: {
+                textKey: fullText,
+                textShape: [
+                    {
+                        textType: "point",
+                        orientation: "horizontal"
                     }
-                    
-                    // Apply kerning to each character pair in this run
-                    for (var p = charPos; p < charPos + run.text.length - 1; p++) {
-                        var kernDesc = new ActionDescriptor();
-                        kernDesc.putInteger(idFrom, p);
-                        kernDesc.putInteger(idT, p + 1);
-                        kernDesc.putInteger(idKrng, kerningValue);
-                        kerningList.putObject(stringIDToTypeID("kerningRange"), kernDesc);
-                        hasKerningValues = true;
+                ],
+                textStyleRange: [],
+                paragraphStyleRange: []
+            },
+            typeUnit: "pixelsUnit"
+        };
+        
+        // Process each style run and add to textStyleRange
+        var position = 0;
+        for (var i = 0; i < styleRuns.length; i++) {
+            var run = styleRuns[i];
+            var from = position;
+            var to = position + run.text.length;
+            
+            // Create text style for this range
+            var textStyle = {
+                // Font properties
+                fontPostScriptName: run.fontPostScriptName || run.fontFamily,
+                fontName: run.fontFamily,
+                size: run.pointSize
+            };
+            
+            // Handle tracking (letter spacing)
+            if (run.tracking !== undefined) {
+                textStyle.tracking = run.tracking;
+            }
+            
+            // Handle font color
+            if (run.fillColor) {
+                if (typeof run.fillColor === "string" && run.fillColor !== "None") {
+                    // Convert color string to RGB color object
+                    var color = parseColor(run.fillColor);
+                    if (color && color.rgb) {
+                        textStyle.color = { 
+                            red: color.rgb.red,
+                            green: color.rgb.green,
+                            blue: color.rgb.blue
+                        };
+                    }
+                } else if (run.fillColor.r !== undefined) {
+                    // Direct RGB values
+                    textStyle.color = {
+                        red: run.fillColor.r,
+                        green: run.fillColor.g,
+                        blue: run.fillColor.b
+                    };
+                }
+            }
+            
+            // Handle leading (line spacing)
+            if (run.leading) {
+                textStyle.leading = run.leading;
+            }
+            
+            // Handle horizontal scale
+            if (run.horizontalScale) {
+                textStyle.horizontalScale = run.horizontalScale;
+            }
+            
+            // Handle vertical scale
+            if (run.verticalScale) {
+                textStyle.verticalScale = run.verticalScale;
+            }
+            
+            // Handle baseline shift (superscript/subscript)
+            if (run.baselineShift !== undefined) {
+                textStyle.baselineShift = run.baselineShift;
+            } else if (run.baseline) {
+                // Set appropriate baseline property based on baseline type
+                if (run.baseline === "superscript") {
+                    textStyle.baseline = "superScript";
+                } else if (run.baseline === "subscript") {
+                    textStyle.baseline = "subScript";
+                }
+            }
+            
+            // Handle kerning method
+            if (run.kerningMethod) {
+                switch (run.kerningMethod) {
+                    case "Metrics":
+                        textStyle.autoKern = "metricsKern";
+                        break;
+                    case "Optical":
+                        textStyle.autoKern = "opticalKern";
+                        break;
+                }
+            }
+            
+            // Handle font style (bold, italic)
+            if (run.fontStyle) {
+                textStyle.syntheticBold = run.fontStyle.indexOf("Bold") !== -1;
+                textStyle.syntheticItalic = run.fontStyle.indexOf("Italic") !== -1;
+            }
+            
+            // Add the style range to our layer text object
+            layerTextObj.layerText.textStyleRange.push({
+                from: from,
+                to: to,
+                textStyle: textStyle
+            });
+            
+            // Add paragraph style for alignment
+            if (run.justification) {
+                var alignment;
+                switch (run.justification) {
+                    case "LEFT_ALIGN":
+                        alignment = "left";
+                        break;
+                    case "RIGHT_ALIGN":
+                        alignment = "right";
+                        break;
+                    case "CENTER_ALIGN":
+                        alignment = "center";
+                        break;
+                    case "JUSTIFIED":
+                        alignment = "justifyAll";
+                        break;
+                    default:
+                        alignment = "left";
+                }
+                
+                // Check if we already have a paragraph style for this range
+                var foundParagraphStyle = false;
+                for (var j = 0; j < layerTextObj.layerText.paragraphStyleRange.length; j++) {
+                    var paraRange = layerTextObj.layerText.paragraphStyleRange[j];
+                    if (paraRange.from <= from && paraRange.to >= to) {
+                        foundParagraphStyle = true;
+                        break;
                     }
                 }
-            } catch (e) {
-                // Skip if kerning value can't be parsed
+                
+                if (!foundParagraphStyle) {
+                    layerTextObj.layerText.paragraphStyleRange.push({
+                        from: from,
+                        to: to,
+                        paragraphStyle: {
+                            alignment: alignment
+                        }
+                    });
+                }
             }
+            
+            // Update position for next range
+            position = to;
         }
+        
+        // We need to create a reference to our text layer to modify it
+        var idTxLr = charIDToTypeID("TxLr");
+        var ref = new ActionReference();
+        ref.putIdentifier(idTxLr, textLayer.id);
+        
+        // Use JAM to set the text data to our layer
+        var textLayerDesc = jamText.toLayerTextObject(layerTextObj);
+        jamEngine.jsonPlay(
+            "set",
+            {
+                "target": ["<reference>", [["layer", ["<identifier>", textLayer.id]]]],
+                "to": textLayerDesc
+            }
+        );
+        
+    } catch (e) {
+        // Fallback to basic styling method if JAM fails
+        alert("Error applying text styles: " + e.message);
     }
-    
-    // Add kerning ranges to the text descriptor if any exist
-    if (hasKerningValues) {
-        textDesc.putList(stringIDToTypeID("kerningRange"), kerningList);
-    }
-    
-    // Finalize and execute the action
-    mainDesc.putObject(idT, idTxLr, textDesc);
-    executeAction(idsetd, mainDesc, DialogModes.NO);
 }
 
 function buildTextLayerName(textDataEntry) {
@@ -447,48 +405,21 @@ function buildTextLayerName(textDataEntry) {
 
 // Helper function to parse color strings
 function parseColor(colorString) {
-    if (!colorString || colorString === "None") {
-        return new SolidColor();
+    // Default to black if parsing fails
+    var result = {rgb: {red: 0, green: 0, blue: 0}};
+    
+    if (colorString === "Black") {
+        // Already set to black
+    } else if (colorString === "White") {
+        result.rgb = {red: 255, green: 255, blue: 255};
+    } else if (colorString === "Red") {
+        result.rgb = {red: 255, green: 0, blue: 0};
+    } else if (colorString === "Green") {
+        result.rgb = {red: 0, green: 255, blue: 0};
+    } else if (colorString === "Blue") {
+        result.rgb = {red: 0, green: 0, blue: 255};
     }
+    // Add more named colors as needed
     
-    var color = new SolidColor();
-    
-    // Handle named colors
-    switch (colorString) {
-        case "Black":
-            color.rgb.red = 0;
-            color.rgb.green = 0;
-            color.rgb.blue = 0;
-            break;
-        case "White":
-            color.rgb.red = 255;
-            color.rgb.green = 255;
-            color.rgb.blue = 255;
-            break;
-        case "Red":
-            color.rgb.red = 255;
-            color.rgb.green = 0;
-            color.rgb.blue = 0;
-            break;
-        case "Green":
-            color.rgb.red = 0;
-            color.rgb.green = 255;
-            color.rgb.blue = 0;
-            break;
-        case "Blue":
-            color.rgb.red = 0;
-            color.rgb.green = 0;
-            color.rgb.blue = 255;
-            break;
-        // Add more named colors as needed
-        
-        default:
-            // If colorString is in format "R,G,B" or other formats, parse it here
-            // For now, default to black
-            color.rgb.red = 0;
-            color.rgb.green = 0;
-            color.rgb.blue = 0;
-    }
-    
-    return color;
+    return result;
 }
