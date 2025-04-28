@@ -11,11 +11,6 @@
 // Requires stitching "lib/jam/jamHelpers.jsxinc" when running through Bridgetalk
 // Requires stitching "lib/jam/jamText.jsxinc" when running through Bridgetalk
 
-#include "../jam/jamEngine.jsxinc"
-#include "../jam/jamUtils.jsxinc"
-#include "../jam/jamHelpers.jsxinc"
-#include "../jam/jamText.jsxinc"
-
 // Utf-8 test: 漢字
 
 function createTextLayersFromData(import_pdf_options, color_profile, page_info_by_page_num, user_export_folder) {
