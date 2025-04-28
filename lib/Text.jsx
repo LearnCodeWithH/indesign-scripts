@@ -1,6 +1,9 @@
 //Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
-function parseTextDataFromTextFrames(textFrames) {
+// Make sure we include the Graphics library for color conversion
+#include "Graphics.jsx"
+
+function parseTextDataFromTextFrames(doc, textFrames) {
     if (!textFrames || textFrames.length === 0) {
         return []; // No text frames to process
     }
@@ -27,13 +30,10 @@ function parseTextDataFromTextFrames(textFrames) {
                 }
             }
 
-            var fillColorInfo = "";
+            // Convert fill color to portable format
+            var portableColor = null;
             if (range.fillColor) {
-                if (typeof range.fillColor === "string") {
-                    fillColorInfo = range.fillColor;
-                } else {
-                    fillColorInfo = range.fillColor.name;
-                }
+                portableColor = convertInDesignColorToPortable(doc, range.fillColor);
             }
 
             var kerningValue = "";
@@ -49,7 +49,7 @@ function parseTextDataFromTextFrames(textFrames) {
                 pointSize: range.pointSize,
                 leading: range.leading,
                 tracking: range.tracking,
-                fillColor: fillColorInfo,
+                fillColor: portableColor,
                 horizontalScale: range.horizontalScale,
                 verticalScale: range.verticalScale,
                 baselineShift: range.baselineShift,
@@ -59,13 +59,16 @@ function parseTextDataFromTextFrames(textFrames) {
             });
         }
 
-        var frameFillColor = "None";
+        // Convert frame fill color to portable format
+        var framePortableColor = null;
         if (frame.fillColor) {
-            if (typeof frame.fillColor === "string") {
-                frameFillColor = frame.fillColor;
-            } else {
-                frameFillColor = frame.fillColor.name;
-            }
+            framePortableColor = convertInDesignColorToPortable(doc, frame.fillColor);
+        }
+        
+        // Convert frame stroke color to portable format
+        var frameStrokePortableColor = null;
+        if (frame.strokeColor) {
+            frameStrokePortableColor = convertInDesignColorToPortable(doc, frame.strokeColor);
         }
 
         textData.push({
@@ -79,8 +82,8 @@ function parseTextDataFromTextFrames(textFrames) {
             frameRotation: frame.rotationAngle,
             skew: frame.shearAngle,
             strokeWeight: frame.strokeWeight,
-            strokeColor: frame.strokeColor.name,
-            fillColor: frameFillColor
+            strokeColor: frameStrokePortableColor,
+            fillColor: framePortableColor,
         });
     }
     return textData;

@@ -326,24 +326,8 @@ function applyTracking(textStyle, run) {
 
 function applyFontColor(textStyle, run) {
     if (run.fillColor) {
-        if (typeof run.fillColor === "string" && run.fillColor !== "None") {
-            // Convert color string to RGB color object
-            var color = parseColor(run.fillColor);
-            if (color && color.rgb) {
-                textStyle.color = { 
-                    red: color.rgb.red,
-                    green: color.rgb.green,
-                    blue: color.rgb.blue
-                };
-            }
-        } else if (run.fillColor.r !== undefined) {
-            // Direct RGB values
-            textStyle.color = {
-                red: run.fillColor.r,
-                green: run.fillColor.g,
-                blue: run.fillColor.b
-            };
-        }
+        // Direct RGB values
+        textStyle.color = portableColorToPSColor(run.fillColor);
     }
 }
 

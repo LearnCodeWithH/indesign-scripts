@@ -49,7 +49,7 @@ function main() {
             // Each page contains at least one content layer for pixel dimensions.
             var contentLayerInfoByPageNum = exportContentLayersToInfo(doc, contentLayersOrdered, pages, pageInfoByPageNum);
 
-            var textLayerInfoByPageNum = exportTextLayersToInfo(textLayersOrdered, pages, pageInfoByPageNum);
+            var textLayerInfoByPageNum = exportTextLayersToInfo(doc, textLayersOrdered, pages, pageInfoByPageNum);
 
             exportContentLayerInfoToPdf(doc, modified_preset, contentLayerInfoByPageNum);
 
@@ -222,7 +222,7 @@ function exportContentLayerInfoToPdf(doc, pdfExportPreset, contentLayerInfoByPag
     }
 }
 
-function exportTextLayersToInfo(textLayersOrdered, pages, pageInfoByPageNum) {
+function exportTextLayersToInfo(doc, textLayersOrdered, pages, pageInfoByPageNum) {
     var textLayerInfoByPageNum = {};
     for (var i = 0; i < pages.length; i++) {
         var page = pages[i];
@@ -242,7 +242,7 @@ function exportTextLayersToInfo(textLayersOrdered, pages, pageInfoByPageNum) {
             var textFramesByPage = getTextFramesFromLayerByPages(layer, [page]);
 
             var textFrames = textFramesByPage[page.name];
-            var textData = parseTextDataFromTextFrames(textFrames);
+            var textData = parseTextDataFromTextFrames(doc, textFrames);
         
             // Store content layer info for Photoshop processing
             layerInfo.push({
@@ -291,7 +291,7 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
                 symbolBuilder.buildValue(import_pdf_options_symbol),
                 symbolBuilder.buildValue(color_profile),
                 symbolBuilder.buildValue(pageInfoByPageNum),
-                symbolBuilder.buildValue(user_export_folder)
+                symbolBuilder.buildValue(user_export_folder.fullName)
             ];
         });
 
@@ -299,5 +299,6 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
         bt_script.outputToFile(doc.filePath + "/stitched_script.jsx");
     }
 
+    // TODO: Remove when ready for production
     // bt_script.sendToPhotoshop();
 }

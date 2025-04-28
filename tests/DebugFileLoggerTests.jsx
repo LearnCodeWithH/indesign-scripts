@@ -348,5 +348,82 @@ runner.addTest("Test writeObject with circular references", function(test) {
     test.assertTrue(content.indexOf("Object 2") !== -1, "Log should contain second object name");
 });
 
+// Test writeObject with property exclusion
+runner.addTest("Test writeObject with excluded properties", function(test) {
+    // Create an object with properties that should be excluded
+    var sensitiveObj = {
+        name: "Public Information",
+        email: "user@example.com",
+        password: "supersecret",
+        apiKey: "sk_test_abcdef12345",
+        details: {
+            address: "123 Main St",
+            ssn: "123-45-6789",
+            notes: "Regular notes"
+        }
+    };
+    
+    // Define properties to exclude
+    var excludedProps = ["password", "apiKey", "ssn"];
+    
+    // Log the object with exclusions
+    testLogger.writeObject("Sensitive Object with Exclusions", sensitiveObj, 5, excludedProps);
+    
+    // Verify the output
+    var content = readFileContents(testLogFile);
+    
+    // Should contain the non-excluded properties
+    test.assertTrue(content.indexOf("name:") !== -1, "Log should show non-excluded property 'name'");
+    test.assertTrue(content.indexOf("Public Information") !== -1, "Log should show value of non-excluded property");
+    test.assertTrue(content.indexOf("email:") !== -1, "Log should show non-excluded property 'email'");
+    
+    // Should indicate excluded properties
+    test.assertTrue(content.indexOf("password: [EXCLUDED BY FILTER]") !== -1, 
+        "Log should mark password as excluded");
+    test.assertTrue(content.indexOf("apiKey: [EXCLUDED BY FILTER]") !== -1, 
+        "Log should mark apiKey as excluded");
+    
+    // Should NOT contain the actual sensitive values
+    test.assertTrue(content.indexOf("supersecret") === -1, 
+        "Log should not contain password value");
+    test.assertTrue(content.indexOf("sk_test_abcdef12345") === -1, 
+        "Log should not contain apiKey value");
+    
+    // Test nested object exclusions
+    test.assertTrue(content.indexOf("address:") !== -1, 
+        "Log should contain nested non-excluded property");
+    test.assertTrue(content.indexOf("123 Main St") !== -1, 
+        "Log should contain nested non-excluded value");
+    test.assertTrue(content.indexOf("ssn: [EXCLUDED BY FILTER]") !== -1, 
+        "Log should mark nested property as excluded");
+    test.assertTrue(content.indexOf("123-45-6789") === -1, 
+        "Log should not contain nested excluded value");
+    
+    // Test object property count includes excluded properties
+    test.assertTrue(content.indexOf("Object {5 properties") !== -1, 
+        "Log should count total properties including excluded ones");
+    test.assertTrue(content.indexOf("properties, 2 excluded") !== -1, 
+        "Log should indicate number of excluded properties");
+});
+
+// Test writeObject with empty exclusion list
+runner.addTest("Test writeObject with empty exclusion list", function(test) {
+    var testObj = {
+        name: "Test Object",
+        value: 42
+    };
+    
+    // Pass an empty array as excludeObjectProperties
+    testLogger.writeObject("Object with empty exclusion list", testObj, 5, []);
+    
+    // Verify all properties are displayed
+    var content = readFileContents(testLogFile);
+    test.assertTrue(content.indexOf("name:") !== -1, "Log should show property when exclusion list is empty");
+    test.assertTrue(content.indexOf("value:") !== -1, "Log should show property when exclusion list is empty");
+    test.assertTrue(content.indexOf("Test Object") !== -1, "Log should show value when exclusion list is empty");
+    test.assertTrue(content.indexOf("[EXCLUDED BY FILTER]") === -1, 
+        "Log should not contain exclusion markers when none are specified");
+});
+
 // Run all tests
 runner.runTests();

@@ -7,6 +7,7 @@
 
 // Include date/time helper functions for timestamps
 #include './Datetime.jsx';
+#include './Functional.jsx';
 
 /**
  * Creates a new debug file logger
@@ -88,14 +89,18 @@ function createDebugLogger(filename, baseFolderPath) {
      * @param {string} prefix - Message prefix to describe the object
      * @param {any} obj - The object, array or primitive to inspect
      * @param {number} [maxDepth=10] - Maximum recursion depth
+     * @param {Array} [excludeObjectProperties=[]] - Array of property names to exclude from detailed inspection
      */
-    logger.writeObject = function(prefix, obj, maxDepth) {
+    logger.writeObject = function(prefix, obj, maxDepth, excludeObjectProperties) {
         if (!logFile || !logFile.exists) {
             if (!initLogFile()) return;
         }
         
         // Default max depth to prevent infinite recursion with circular references
         maxDepth = (typeof maxDepth === 'number') ? maxDepth : 10;
+        
+        // Default excludeObjectProperties to an empty array if not provided
+        excludeObjectProperties = (excludeObjectProperties instanceof Array) ? excludeObjectProperties : [];
         
         try {
             // Generate timestamp prefix
@@ -106,7 +111,7 @@ function createDebugLogger(filename, baseFolderPath) {
             logFile.writeln(timestamp + prefix + ":");
             
             // Start the recursive inspection with initial indentation
-            inspectAndWrite(obj, "  ", 0, maxDepth);
+            inspectAndWrite(obj, "  ", 0, maxDepth, excludeObjectProperties);
             
             // Flush immediately for debugging
             logFile.close();
@@ -120,7 +125,7 @@ function createDebugLogger(filename, baseFolderPath) {
      * Helper function to recursively inspect and write object contents
      * @private
      */
-    function inspectAndWrite(value, indent, depth, maxDepth) {
+    function inspectAndWrite(value, indent, depth, maxDepth, excludeObjectProperties) {
         if (depth >= maxDepth) {
             logFile.writeln(indent + "[MAX DEPTH REACHED]");
             return;
@@ -175,7 +180,7 @@ function createDebugLogger(filename, baseFolderPath) {
             logFile.writeln(indent + "Array[" + value.length + "]:");
             for (var i = 0; i < value.length; i++) {
                 logFile.writeln(indent + "  [" + i + "]:");
-                inspectAndWrite(value[i], indent + "    ", depth + 1, maxDepth);
+                inspectAndWrite(value[i], indent + "    ", depth + 1, maxDepth, excludeObjectProperties);
             }
             return;
         }
@@ -187,13 +192,21 @@ function createDebugLogger(filename, baseFolderPath) {
             
             // Try to get all properties
             var props = [];
+            var excludedProps = [];
+            
             for (var key in value) {
                 if (value.hasOwnProperty(key)) {
-                    props.push(key);
+                    if (!any(excludeObjectProperties, function(excludeProp) { return key === excludeProp; })) {
+                        props.push(key);
+                    } else {
+                        excludedProps.push(key);
+                    }
                 }
             }
             
-            logFile.writeln(indent + typeName + " {" + props.length + " properties}:");
+            var totalProps = props.length + excludedProps.length;
+            logFile.writeln(indent + typeName + " {" + totalProps + " properties" + 
+                (excludedProps.length > 0 ? ", " + excludedProps.length + " excluded" : "") + "}:");
             
             // Write each property
             for (var p = 0; p < props.length; p++) {
@@ -204,11 +217,17 @@ function createDebugLogger(filename, baseFolderPath) {
                     // Try to get the property safely (might throw for some ExtendScript objects)
                     var propValue = value[propName];
                     logFile.writeln(indent + "  " + propName + ":");
-                    inspectAndWrite(propValue, indent + "    ", depth + 1, maxDepth);
+                    inspectAndWrite(propValue, indent + "    ", depth + 1, maxDepth, excludeObjectProperties);
                 } catch (propError) {
                     // Some properties may throw when accessed in ExtendScript
                     logFile.writeln(indent + "  " + propName + ": [ERROR: " + propError.message + "]");
                 }
+            }
+            
+            // Write excluded properties
+            for (var e = 0; e < excludedProps.length; e++) {
+                var excludedProp = excludedProps[e];
+                logFile.writeln(indent + "  " + excludedProp + ": [EXCLUDED BY FILTER]");
             }
         } catch (objError) {
             // If anything goes wrong accessing the object

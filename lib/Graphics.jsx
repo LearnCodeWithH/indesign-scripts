@@ -132,3 +132,58 @@ function setLosslessPdfPreset(preset) {
     preset.monochromeBitmapCompression = BitmapCompression.NONE;
     preset.monochromeBitmapSampling = Sampling.NONE;   
 }
+
+/**
+ * Converts InDesign colors to a portable RGB format that Photoshop can use
+ * @param {Document} doc - InDesign document containing the color
+ * @param {Color|String} color - InDesign color object or color name
+ * @returns {Object} RGB color object in format {r: 0-255, g: 0-255, b: 0-255} or null if color is "None"
+ */
+function convertInDesignColorToPortable(doc, color) {
+    if (!color || color === "None") {
+        return null;
+    }
+    
+    // The ink values that create the color, specified as a percentage for each ink. 
+    // Note: The number of values required and the range depends on the color space. 
+    // For RGB, specify three values, with each value in the range 0 to 255; 
+    // for CMYK, specify four values representing C, M, Y, and K, with each value in the range 0 to 100; 
+    // for LAB, specify three values representing L (Range: 0 to 100), A (Range: -128 to 127), and B (Range: -128 to 127); 
+    // for mixed ink, specify values for each ink in the ink list, with each value in the range 0 to 100.
+
+    var typedColor = color;
+    if (typeof typedColor === "string") {
+        typedColor = doc.colors.itemByName(color);
+        if (!typedColor) {
+            typedColor = doc.tints.itemByName(color);
+        }
+    }
+    
+    if (typeof typedColor === "object" && typedColor.constructor.name === "Color") {
+        if (!isSupportedPortableColorSpace(typedColor.space)) {
+            return null;
+        }
+        return {
+            space: typedColor.space,
+            colorValue: typedColor.colorValue,
+        }
+    } else if (typeof typedColor === "object" && typedColor.constructor.name === "Tine") {
+        if (!isSupportedPortableColorSpace(typedColor.space)) {
+            return null;
+        }
+        return {
+            space: typedColor.space,
+            colorValue: typedColor.colorValue,
+        }
+    }
+    
+    // We don't support MixedInks or Gradients, so treat as no color.
+    return null;
+}
+
+function isSupportedPortableColorSpace(colorSpace) {
+    return any(["RGB", "CMYK", "HSB", "LAB"], function(supportedColorSpace) {
+        return colorSpace === supportedColorSpace;
+    });
+}
+
