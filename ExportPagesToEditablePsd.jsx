@@ -20,6 +20,10 @@ function main() {
     requireDocument();
     requirePage(app.activeDocument);
 
+    // var bt2 = createBridgeTalkScript()
+    //     .addFile((new File($.fileName)).parent + "/lib/jam/jamJSON.jsxinc");
+    // bt2.outputToFile(app.activeDocument.filePath + "/delta.jsx");
+
     transientDocumentScope(app.activeDocument, function(doc) {
         var pages = [ doc.layoutWindows[0].activePage ];
         // var pages = doc.pages;
@@ -249,7 +253,7 @@ function exportTextLayersToInfo(doc, textLayersOrdered, pages, pageInfoByPageNum
             var jsonSaveFile = new File(pageInfo.pageFolderPath + "/" + jsonFileName + ".json");
 
             usingFile(jsonSaveFile, "w", function(jsonFile) {
-                jsonFile.write(JSON.stringify(textData, null, 4)); 
+                jsonFile.write(jamJSON.stringify(textData, null, 4)); 
             });
         
             // Store content layer info for Photoshop processing
@@ -290,7 +294,7 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
         .addFile(script_path + "/lib/jam/jamUtils.jsxinc")
         .addFile(script_path + "/lib/jam/jamHelpers.jsxinc")
         .addFile(script_path + "/lib/jam/jamText.jsxinc")
-        .addFile(script_path + "/lib/jam/jamJSON.jsxinc")
+        // .addFile(script_path + "/lib/jam/jamJSON.jsxinc") // Can't use jamJSON with bridgetalk due to encoding errors with \"
         .addFile(script_path + "/lib/bridgetalk/BuildPsdFromPdfPSEntrypoint.jsx")
         .addFunctionCall("createTextLayersFromData", function(symbolBuilder) {
             var import_pdf_options_symbol = {};
@@ -311,7 +315,6 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
         bt_script.outputToFile(doc.filePath + "/stitched_script.jsx");
     }
 
-    // TODO: Bridgetalk has a different output than the written script, layer names have 're put everywhere.
     // TODO: Remove when ready for production
-    // bt_script.sendToPhotoshop();
+    bt_script.sendToPhotoshop();
 }

@@ -69,7 +69,7 @@ function createSymbolBuilder() {
          */
         sb.encodeString = function(str) {
             var escapedStr = str.toString()
-                .replace(/\"/g, "\\\"")
+                .replace(/\x22/g, "\\\"")   // Double quote as ascii hex code to avoid bridgetalk encoding issues
                 .replace(/\n/g, "\\n")      // Line feed
                 .replace(/\r/g, "\\r")      // Carriage return
                 .replace(/\t/g, "\\t");     // Tab

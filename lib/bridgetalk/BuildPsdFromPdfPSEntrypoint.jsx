@@ -10,7 +10,6 @@
 // Requires stitching "lib/jam/jamUtils.jsxinc" when running through Bridgetalk
 // Requires stitching "lib/jam/jamHelpers.jsxinc" when running through Bridgetalk
 // Requires stitching "lib/jam/jamText.jsxinc" when running through Bridgetalk
-// Requires stitching "lib/jam/jamJSON.jsxinc" when running through Bridgetalk
 
 // Utf-8 test: 漢字
 
@@ -120,7 +119,8 @@ function createTextLayerGroupFromInfo(psdDocument, textLayerInfo) {
     usingFile(jsonFile, "r", function(jsonFile) {
         // Read the JSON file and parse it into an object
         var jsonText = jsonFile.read();
-        textData = JSON.parse(jsonText);
+        // Can't use jamJSON with bridgetalk due to encoding errors with slash double quotes
+        textData = eval('(' + jsonText + ')');
     });
     
     // Make a layer group for the text layers
@@ -263,20 +263,21 @@ function getFullTextFromStyleRuns(styleRuns) {
 function sanitizeUnicodeText(text) {
     if (!text) return "";
     
-    DebugLogger.write("Pre: " + text);
-    // Replace problematic Unicode characters with their proper equivalents
-    // Smart single quotes
-    text = text.replace(/[\u2018\u2019]/g, "'");
-    // Smart double quotes
-    text = text.replace(/[\u201C\u201D]/g, '"');
-    // Em dash
-    text = text.replace(/\u2014/g, "--");
-    // En dash
-    text = text.replace(/\u2013/g, "-");
-    // Ellipsis
-    text = text.replace(/\u2026/g, "...");
+    // NOTE: Appears sanitizing is not needed anymore, but keeping for reference
+    // DebugLogger.write("Pre: " + text);
+    // // Replace problematic Unicode characters with their proper equivalents
+    // // Smart single quotes
+    // text = text.replace(/[\u2018\u2019]/g, "'");
+    // // Smart double quotes
+    // text = text.replace(/[\u201C\u201D]/g, '"');
+    // // Em dash
+    // text = text.replace(/\u2014/g, "--");
+    // // En dash
+    // text = text.replace(/\u2013/g, "-");
+    // // Ellipsis
+    // text = text.replace(/\u2026/g, "...");
 
-    DebugLogger.write("Post: " + text);
+    // DebugLogger.write("Post: " + text);
     
     return text;
 }

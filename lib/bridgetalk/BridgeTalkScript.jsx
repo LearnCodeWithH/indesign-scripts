@@ -88,8 +88,8 @@ function createBridgeTalkScript() {
          */
         bt.buildScript = function() {
             var script = bt.scriptParts.join('\r');
-            // Replace escaped quotes with string concatenation
-            return script.replace(/\\"/g, '" + \'"\' + "');
+            // Replace escaped quotes with hex code version to avoid bridgetalk encoding issues
+            return script.replace(/\x5c\x22/g, "\x5cx22");
         };
         
         /**

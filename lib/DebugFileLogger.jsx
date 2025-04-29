@@ -276,4 +276,4 @@ function createDebugLogger(filename, baseFolderPath) {
  * Singleton instance for quick access
  * Use this for simple debug logging without managing the logger instance
  */
-var DebugLogger = createDebugLogger();
+var DebugLogger = createDebugLogger("debug_output_ps.log", "/e/Projects/Scripts/ID/indesign-scripts/Ignored/Kusuri 7/");
