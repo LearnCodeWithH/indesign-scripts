@@ -4,6 +4,7 @@
 
 #target indesign
 #include './lib/bridgetalk/BridgeTalkScript.jsx'
+#include './lib/jam/jamJSON.jsxinc'
 #include './lib/Validations.jsx'
 #include './lib/Functional.jsx'
 #include './lib/Graphics.jsx'
@@ -107,16 +108,6 @@ function splitTextAndContentLayersOrdered(doc, layers, pages) {
     });
     
     return [order_by_index(textLayers, true), order_by_index(contentLayers, true)];
-}
-
-function hasTextFramesForPage(layer, page) {
-    if (!layer.visible || layer.locked) {
-        return false;
-    }
-    
-    return any(page.textFrames, function(frame) {
-        return frame.itemLayer === layer;
-    });
 }
 
 function hasContentForPage(layer, page) {
@@ -223,6 +214,12 @@ function exportContentLayerInfoToPdf(doc, pdfExportPreset, contentLayerInfoByPag
 }
 
 function exportTextLayersToInfo(doc, textLayersOrdered, pages, pageInfoByPageNum) {
+    // Get InDesign file name without extension for JSON naming
+    var docName = doc.name;
+    if (docName.lastIndexOf(".") != -1) {
+        docName = docName.substring(0, docName.lastIndexOf("."));
+    }
+
     var textLayerInfoByPageNum = {};
     for (var i = 0; i < pages.length; i++) {
         var page = pages[i];
@@ -238,18 +235,30 @@ function exportTextLayersToInfo(doc, textLayersOrdered, pages, pageInfoByPageNum
         var layerInfo = [];
         for (var j = 0; j < textLayersOrdered.length; j++) {
             var layer = textLayersOrdered[j];
+            var layerOrderNumber = zeroPadNumber((layer.index).toString(), 4);
             
             var textFramesByPage = getTextFramesFromLayerByPages(layer, [page]);
 
             var textFrames = textFramesByPage[page.name];
+            if (textFrames.length === 0) {
+                continue; // Skip if no text on this page for layer
+            }
             var textData = parseTextDataFromTextFrames(doc, textFrames);
+
+            var jsonFileName = docName + "_text-layer-" + layerOrderNumber;
+            var jsonSaveFile = new File(pageInfo.pageFolderPath + "/" + jsonFileName + ".json");
+
+            usingFile(jsonSaveFile, "w", function(jsonFile) {
+                jsonFile.write(JSON.stringify(textData, null, 4)); 
+            });
         
             // Store content layer info for Photoshop processing
             layerInfo.push({
                 name: layer.name,
                 layerType: "text",
                 index: layer.index,
-                textData: textData
+                jsonFileName: jsonSaveFile.name,
+                jsonFullFilePath: jsonSaveFile.fullName
             });
         }
 
@@ -273,12 +282,15 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
         .addFile(script_path + "/lib/Datetime.jsx")
         .addFile(script_path + "/lib/File.jsx")
         .addFile(script_path + "/lib/Functional.jsx")
+        // TODO: REMOVE when ready for production
+        .addFile(script_path + "/lib/DebugFileLogger.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSPdfImport.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSConversions.jsx")
         .addFile(script_path + "/lib/jam/jamEngine.jsxinc")
         .addFile(script_path + "/lib/jam/jamUtils.jsxinc")
         .addFile(script_path + "/lib/jam/jamHelpers.jsxinc")
         .addFile(script_path + "/lib/jam/jamText.jsxinc")
+        .addFile(script_path + "/lib/jam/jamJSON.jsxinc")
         .addFile(script_path + "/lib/bridgetalk/BuildPsdFromPdfPSEntrypoint.jsx")
         .addFunctionCall("createTextLayersFromData", function(symbolBuilder) {
             var import_pdf_options_symbol = {};
@@ -299,6 +311,7 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
         bt_script.outputToFile(doc.filePath + "/stitched_script.jsx");
     }
 
+    // TODO: Bridgetalk has a different output than the written script, layer names have 're put everywhere.
     // TODO: Remove when ready for production
     // bt_script.sendToPhotoshop();
 }

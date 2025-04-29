@@ -84,9 +84,12 @@ function createBridgeTalkScript() {
         
         /**
          * Gets the complete script
+         * Replaces escaped quotes (\") with concatenated expressions (" + '"' + ") to avoid BridgeTalk escaping issues
          */
         bt.buildScript = function() {
-            return bt.scriptParts.join('\r');
+            var script = bt.scriptParts.join('\r');
+            // Replace escaped quotes with string concatenation
+            return script.replace(/\\"/g, '" + \'"\' + "');
         };
         
         /**
@@ -95,6 +98,7 @@ function createBridgeTalkScript() {
         bt.sendToPhotoshop = function(onResult, onError, timeout) {
             var bridgetalk = new BridgeTalk();
             bridgetalk.target = "photoshop";
+            // Bridgetalk handles script as json, which escapes '\"' into '\\"'
             bridgetalk.body = bt.buildScript();
             
             bridgetalk.onResult = function(result) {

@@ -10,6 +10,7 @@
 // Requires stitching "lib/jam/jamUtils.jsxinc" when running through Bridgetalk
 // Requires stitching "lib/jam/jamHelpers.jsxinc" when running through Bridgetalk
 // Requires stitching "lib/jam/jamText.jsxinc" when running through Bridgetalk
+// Requires stitching "lib/jam/jamJSON.jsxinc" when running through Bridgetalk
 
 // Utf-8 test: 漢字
 
@@ -38,7 +39,8 @@ function createTextLayersFromData(import_pdf_options, color_profile, page_info_b
             // Save the PSD document
             var pageNumPadded = zeroPad(pageNum, 4);
             var psdFile = new File(folder + "/" + "Page-" + pageNumPadded + ".psd");
-            savePSD(psdDocument, psdFile);
+            // TODO: Uncomment when done testing
+            // savePSD(psdDocument, psdFile);
         }
     });
 }
@@ -113,7 +115,13 @@ function createContentLayerFromInfo(psdDocument, pdfOpenOptions, contentLayerInf
 }
 
 function createTextLayerGroupFromInfo(psdDocument, textLayerInfo) {
-    var textData = textLayerInfo.textData;
+    var jsonFile = new File(textLayerInfo.jsonFullFilePath);
+    var textData = null;
+    usingFile(jsonFile, "r", function(jsonFile) {
+        // Read the JSON file and parse it into an object
+        var jsonText = jsonFile.read();
+        textData = JSON.parse(jsonText);
+    });
     
     // Make a layer group for the text layers
     var textGroup = psdDocument.layerSets.add();
@@ -142,19 +150,13 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     // Handle bounds and positioning
     var bounds = textDataEntry.bounds;
     if (bounds) {
-        // Create a bounding box for the text
-        var left = bounds.x;
-        var top = bounds.y;
-        var right = left + bounds.width;
-        var bottom = top + bounds.height;
-        
         // Create text item with the bounds
         var textItem = textLayer.textItem;
         textItem.kind = TextType.PARAGRAPHTEXT;
-        
-        // Make sure we set the bounds using the proper rectangle coordinates
-        // Note: Photoshop expects [left, top, right, bottom]
-        textItem.bounds = [left, top, right, bottom];
+
+        textItem.width = bounds.width;
+        textItem.height = bounds.height;
+        textItem.position = [bounds.x, bounds.y];
     }
     
     // Handle rotation
@@ -170,17 +172,16 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     
     // Handle stroke properties
     // NO WORK, NEED SMART FX
-    if (textDataEntry.strokeWeight && textDataEntry.strokeWeight > 0) {
+    if (textDataEntry.strokeColor && textDataEntry.strokeWeight && textDataEntry.strokeWeight > 0) {
         var textItem = textLayer.textItem;
-        textItem.strokeColor = parseColor(textDataEntry.strokeColor);
+        textItem.strokeColor = portableColorToPSColor(textDataEntry.strokeColor);
         textItem.strokeWidth = textDataEntry.strokeWeight;
     }
     
     // Handle fill color of the text layer (if specified at layer level)
-    // NO WORK, TRANSLATE PALETTE TO HEX BEFORE SENDING TO PHOTOSHOP
-    if (textDataEntry.fillColor && textDataEntry.fillColor !== "None") {
+    if (textDataEntry.fillColor) {
         var textItem = textLayer.textItem;
-        textItem.color = parseColor(textDataEntry.fillColor);
+        textItem.color = portableColorToPSColor(textDataEntry.fillColor);
     }
     
     // Combine all style runs to create the full text
@@ -192,7 +193,7 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     }
     
     // Set the text content
-    textLayer.textItem.contents = fullText;
+    textLayer.textItem.contents = sanitizeUnicodeText(fullText);
     
     // TODO: Handle justification and alignment
     // NOTE: Style runs need to handle:
@@ -253,15 +254,16 @@ function applyStyleRuns(textLayer, styleRuns) {
 function getFullTextFromStyleRuns(styleRuns) {
     var fullText = "";
     for (var i = 0; i < styleRuns.length; i++) {
-        fullText += sanitizeUnicodeText(styleRuns[i].text);
+        fullText += styleRuns[i].text;
     }
-    return fullText;
+    return sanitizeUnicodeText(fullText);
 }
 
 // Sanitize Unicode text to handle special characters properly
 function sanitizeUnicodeText(text) {
     if (!text) return "";
     
+    DebugLogger.write("Pre: " + text);
     // Replace problematic Unicode characters with their proper equivalents
     // Smart single quotes
     text = text.replace(/[\u2018\u2019]/g, "'");
@@ -273,6 +275,8 @@ function sanitizeUnicodeText(text) {
     text = text.replace(/\u2013/g, "-");
     // Ellipsis
     text = text.replace(/\u2026/g, "...");
+
+    DebugLogger.write("Post: " + text);
     
     return text;
 }
@@ -438,26 +442,5 @@ function buildTextLayerName(textDataEntry) {
     var textChunks = map(textDataEntry.styleRuns, function(styleRun) {
         return styleRun.text;
     });
-    return textChunks.join("");
-}
-
-// Helper function to parse color strings
-function parseColor(colorString) {
-    // Default to black if parsing fails
-    var result = {rgb: {red: 0, green: 0, blue: 0}};
-    
-    if (colorString === "Black") {
-        // Already set to black
-    } else if (colorString === "White") {
-        result.rgb = {red: 255, green: 255, blue: 255};
-    } else if (colorString === "Red") {
-        result.rgb = {red: 255, green: 0, blue: 0};
-    } else if (colorString === "Green") {
-        result.rgb = {red: 0, green: 255, blue: 0};
-    } else if (colorString === "Blue") {
-        result.rgb = {red: 0, green: 0, blue: 255};
-    }
-    // Add more named colors as needed
-    
-    return result;
+    return sanitizeUnicodeText(textChunks.join(""));
 }

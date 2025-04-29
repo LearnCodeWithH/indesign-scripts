@@ -6,8 +6,9 @@
  */
 
 // Include date/time helper functions for timestamps
-#include './Datetime.jsx';
-#include './Functional.jsx';
+// TODO: Uncomment after testing
+// #include './Datetime.jsx';
+// #include './Functional.jsx';
 
 /**
  * Creates a new debug file logger
