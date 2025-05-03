@@ -144,6 +144,8 @@ function convertInDesignColorToPortable(doc, color) {
         return null;
     }
     
+    // TODO: This isn't working, colors are null.
+
     // The ink values that create the color, specified as a percentage for each ink. 
     // Note: The number of values required and the range depends on the color space. 
     // For RGB, specify three values, with each value in the range 0 to 255; 

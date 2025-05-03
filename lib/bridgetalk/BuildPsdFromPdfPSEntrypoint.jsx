@@ -173,9 +173,9 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     // Handle stroke properties
     // NO WORK, NEED SMART FX
     if (textDataEntry.strokeColor && textDataEntry.strokeWeight && textDataEntry.strokeWeight > 0) {
-        var textItem = textLayer.textItem;
-        textItem.strokeColor = portableColorToPSColor(textDataEntry.strokeColor);
-        textItem.strokeWidth = textDataEntry.strokeWeight;
+        // var textItem = textLayer.textItem;
+        // textItem.strokeColor = portableColorToPSColor(textDataEntry.strokeColor);
+        // textItem.strokeWidth = textDataEntry.strokeWeight;
     }
     
     // Handle fill color of the text layer (if specified at layer level)
@@ -236,7 +236,8 @@ function applyStyleRuns(textLayer, styleRuns) {
             });
             
             // Add paragraph style for alignment
-            addParagraphStyleForRun(layerTextObj, run, from, to);
+            // TODO: Restore one text styles are working
+            // addParagraphStyleForRun(layerTextObj, run, from, to);
             
             // Update position for next range
             position = to;
@@ -246,7 +247,6 @@ function applyStyleRuns(textLayer, styleRuns) {
         applyLayerTextObjectToLayer(textLayer, layerTextObj);
         
     } catch (e) {
-        // Fallback to basic styling method if JAM fails
         alert("Error applying text styles: " + e.message);
     }
 }
@@ -286,6 +286,7 @@ function createBaseLayerTextObject(fullText) {
     return {
         layerText: {
             textKey: fullText,
+            antiAlias: "antiAliasCrisp",
             textShape: [
                 {
                     textType: "point",
@@ -302,7 +303,7 @@ function createBaseLayerTextObject(fullText) {
 function createTextStyleForRun(run) {
     var textStyle = {
         // Font properties
-        fontPostScriptName: run.fontPostScriptName || run.fontFamily,
+        fontPostScriptName: run.fontFamily,
         fontName: run.fontFamily,
         size: run.pointSize
     };
@@ -312,7 +313,7 @@ function createTextStyleForRun(run) {
     applyLeading(textStyle, run);
     applyScaling(textStyle, run);
     applyBaselineProperties(textStyle, run);
-    applyKerningMethod(textStyle, run);
+    applyKerningProperties(textStyle, run);
     applyFontStyle(textStyle, run);
     
     return textStyle;
@@ -326,7 +327,6 @@ function applyTracking(textStyle, run) {
 
 function applyFontColor(textStyle, run) {
     if (run.fillColor) {
-        // Direct RGB values
         textStyle.color = portableColorToPSColor(run.fillColor);
     }
 }
@@ -360,7 +360,7 @@ function applyBaselineProperties(textStyle, run) {
     }
 }
 
-function applyKerningMethod(textStyle, run) {
+function applyKerningProperties(textStyle, run) {
     if (run.kerningMethod) {
         switch (run.kerningMethod) {
             case "Metrics":
@@ -370,6 +370,10 @@ function applyKerningMethod(textStyle, run) {
                 textStyle.autoKern = "opticalKern";
                 break;
         }
+    }
+
+    if (run.kerning) {
+        textStyle.kerning = run.kerning;
     }
 }
 

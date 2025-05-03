@@ -79,6 +79,8 @@ function parseTextDataFromTextFrames(doc, textFrames) {
                 height: bounds[2] - bounds[0]
             },
             styleRuns: styleRuns,
+            // TODO: Use appliedParagraphStyle on TextStyleRuns to build an array of paragraphStyles
+            // check if appliedParagraphStyle can differ from text style justification
             frameRotation: frame.rotationAngle,
             skew: frame.shearAngle,
             strokeWeight: frame.strokeWeight,
