@@ -99,10 +99,16 @@ function createContentLayerFromInfo(psdDocument, pdfOpenOptions, contentLayerInf
         newLayer.name = contentLayerInfo.name;
 
         // Position the layer if coordinates are provided
-        // TODO: Check if positioning is handled by pdf?
-        // if (contentLayerInfo.bounds) {
-        //     newLayer.translate(contentLayerInfo.bounds.x || 0, contentLayerInfo.bounds.y || 0);
-        // }
+        if (contentLayerInfo.bounds) {
+            var layerBounds = contentLayerInfo.bounds;
+            // These are all pixel units as we put in place earlier.
+             var translate = [
+                layerBounds.x - newLayer.bounds[0].value,
+                layerBounds.y - newLayer.bounds[1].value
+            ]
+
+            newLayer.translate(new UnitValue(translate[0], "px"), new UnitValue(translate[1], "px"));
+        }
 
         // Send to back in layer ordering
         newLayer.move(psdDocument.layers[psdDocument.layers.length - 1], ElementPlacement.PLACEAFTER);

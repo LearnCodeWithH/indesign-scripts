@@ -187,7 +187,7 @@ function exportContentLayersToInfo(doc, contentLayersOrdered, pages, pageInfoByP
             layerInfo.push({
                 name: layer.name,
                 layerType: "content",
-                contentBounds: contentBounds,
+                bounds: contentBounds,
                 index: layer.index,
                 pdfFileName: pdfSaveFile.name,
                 pdfFullFilePath: pdfSaveFile.fullName
