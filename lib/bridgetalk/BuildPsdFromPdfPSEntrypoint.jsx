@@ -234,10 +234,26 @@ function applyStyleRuns(textLayer, styleRuns) {
                 to: to,
                 textStyle: textStyle
             });
-            
+
             // Add paragraph style for alignment
-            // TODO: Restore one text styles are working
-            // addParagraphStyleForRun(layerTextObj, run, from, to);
+            var paragraphStyle = createParagraphStyleForRun(run);
+            
+            layerTextObj.layerText.paragraphStyleRange.push({
+                from: from,
+                to: to,
+                paragraphStyle: paragraphStyle
+            });
+
+            var kerning = createKerningForRun(run);
+
+            if (kerning !== null) {
+                layerTextObj.layerText.kerningRange.push({
+                    from: from,
+                    to: to,
+                    kerning: kerning
+                });
+            }
+            
             
             // Update position for next range
             position = to;
@@ -294,7 +310,8 @@ function createBaseLayerTextObject(fullText) {
                 }
             ],
             textStyleRange: [],
-            paragraphStyleRange: []
+            paragraphStyleRange: [],
+            kerningRange: []
         },
         typeUnit: "pixelsUnit"
     };
@@ -308,12 +325,13 @@ function createTextStyleForRun(run) {
         size: run.pointSize
     };
     
+    // TODO: Strikethrough, Underline, Small Caps, All Caps
     applyTracking(textStyle, run);
     applyFontColor(textStyle, run);
     applyLeading(textStyle, run);
     applyScaling(textStyle, run);
     applyBaselineProperties(textStyle, run);
-    applyKerningProperties(textStyle, run);
+    applyAutoKerning(textStyle, run);
     applyFontStyle(textStyle, run);
     
     return textStyle;
@@ -363,7 +381,7 @@ function applyBaselineProperties(textStyle, run) {
     }
 }
 
-function applyKerningProperties(textStyle, run) {
+function applyAutoKerning(textStyle, run) {
     if (run.kerningMethod) {
         switch (run.kerningMethod) {
             case "Metrics":
@@ -372,34 +390,35 @@ function applyKerningProperties(textStyle, run) {
             case "Optical":
                 textStyle.autoKern = "opticalKern";
                 break;
+            case "None":
+                textStyle.autoKern = "manual";
+                break;
         }
-    }
-
-    if (run.kerning) {
-        textStyle.kerning = run.kerning;
     }
 }
 
 function applyFontStyle(textStyle, run) {
-    if (run.fontStyle) {
-        textStyle.syntheticBold = run.fontStyle.indexOf("Bold") !== -1;
-        textStyle.syntheticItalic = run.fontStyle.indexOf("Italic") !== -1;
+    if (run.fontStyle) { 
+        textStyle.fontStyle = run.fontStyle;
     }
 }
 
-function addParagraphStyleForRun(layerTextObj, run, from, to) {
+function createParagraphStyleForRun(run) {
+    var paragraphStyle = {
+        // Font properties
+        fontPostScriptName: run.fontFamily,
+        fontName: run.fontFamily,
+        size: run.pointSize
+    };
+    
+    applyJustification(paragraphStyle, run);
+}
+
+function applyJustification(paragraphStyle, run) {
     if (run.justification) {
-        var alignment = getAlignmentForJustification(run.justification);
-        
-        // Check if we already have a paragraph style for this range
-        if (!paragraphStyleExistsForRange(layerTextObj, from, to)) {
-            layerTextObj.layerText.paragraphStyleRange.push({
-                from: from,
-                to: to,
-                paragraphStyle: {
-                    alignment: alignment
-                }
-            });
+        var justification = getAlignmentForJustification(run.justification);
+        if (justification !== null) {
+            paragraphStyle.alignment = justification;
         }
     }
 }
@@ -415,18 +434,16 @@ function getAlignmentForJustification(justification) {
         case "JUSTIFIED":
             return "justifyAll";
         default:
-            return "left";
+            return null;
     }
 }
 
-function paragraphStyleExistsForRange(layerTextObj, from, to) {
-    for (var j = 0; j < layerTextObj.layerText.paragraphStyleRange.length; j++) {
-        var paraRange = layerTextObj.layerText.paragraphStyleRange[j];
-        if (paraRange.from <= from && paraRange.to >= to) {
-            return true;
-        }
+function createKerningForRun(run) {
+    var kerning = null;
+    if (run.kerningMethod === "None") {
+        kerning = run.kerning;
     }
-    return false;
+    return kerning;
 }
 
 function applyLayerTextObjectToLayer(textLayer, layerTextObj) {
