@@ -3,7 +3,7 @@
 // Make sure we include the Graphics library for color conversion
 #include "Graphics.jsx"
 
-function parseTextDataFromTextFrames(doc, textFrames) {
+function parseTextDataFromTextFrames(doc, textFrames, targetColorSpace) {
     if (!textFrames || textFrames.length === 0) {
         return []; // No text frames to process
     }
@@ -33,7 +33,7 @@ function parseTextDataFromTextFrames(doc, textFrames) {
             // Convert fill color to portable format
             var portableColor = null;
             if (range.fillColor) {
-                portableColor = convertInDesignColorToPortable(doc, range.fillColor);
+                portableColor = convertInDesignColorToPortable(doc, range.fillColor, targetColorSpace);
             }
 
             var kerningValue = "";
@@ -62,13 +62,13 @@ function parseTextDataFromTextFrames(doc, textFrames) {
         // Convert frame fill color to portable format
         var framePortableColor = null;
         if (frame.fillColor) {
-            framePortableColor = convertInDesignColorToPortable(doc, frame.fillColor);
+            framePortableColor = convertInDesignColorToPortable(doc, frame.fillColor, targetColorSpace);
         }
         
         // Convert frame stroke color to portable format
         var frameStrokePortableColor = null;
         if (frame.strokeColor) {
-            frameStrokePortableColor = convertInDesignColorToPortable(doc, frame.strokeColor);
+            frameStrokePortableColor = convertInDesignColorToPortable(doc, frame.strokeColor, targetColorSpace);
         }
 
         textData.push({

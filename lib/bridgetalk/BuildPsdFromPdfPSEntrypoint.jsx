@@ -161,7 +161,7 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     
     // Handle rotation
     if (textDataEntry.frameRotation && textDataEntry.frameRotation !== 0) {
-        textLayer.rotate(textDataEntry.frameRotation);
+        textLayer.rotate(-textDataEntry.frameRotation);
     }
     
     // Handle skew
@@ -246,8 +246,8 @@ function applyStyleRuns(textLayer, styleRuns) {
         // Apply the layer text object to the text layer
         applyLayerTextObjectToLayer(textLayer, layerTextObj);
         
-    } catch (e) {
-        alert("Error applying text styles: " + e.message);
+    } catch (error) {
+        alert("Error applying text styles: " + error.fileName + "@" + error.line + "\n" + error.message);
     }
 }
 

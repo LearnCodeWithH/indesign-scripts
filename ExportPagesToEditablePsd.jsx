@@ -247,7 +247,7 @@ function exportTextLayersToInfo(doc, textLayersOrdered, pages, pageInfoByPageNum
             if (textFrames.length === 0) {
                 continue; // Skip if no text on this page for layer
             }
-            var textData = parseTextDataFromTextFrames(doc, textFrames);
+            var textData = parseTextDataFromTextFrames(doc, textFrames, ColorSpace.RGB);
 
             var jsonFileName = docName + "_text-layer-" + layerOrderNumber;
             var jsonSaveFile = new File(pageInfo.pageFolderPath + "/" + jsonFileName + ".json");
@@ -316,5 +316,5 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
     }
 
     // TODO: Remove when ready for production
-    bt_script.sendToPhotoshop();
+    // bt_script.sendToPhotoshop();
 }

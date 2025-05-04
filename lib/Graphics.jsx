@@ -1,5 +1,7 @@
 //Most up to date versions can always be found at: https://github.com/LearnCodeWithH/indesign-scripts/
 
+#include "Functional.jsx"
+
 /**
 * Resizes item to absolute width and height specified in page coordinates. Units are determined by View Preferences. Use 'usingViewPreferences' to change.
 */
@@ -139,12 +141,10 @@ function setLosslessPdfPreset(preset) {
  * @param {Color|String} color - InDesign color object or color name
  * @returns {Object} RGB color object in format {r: 0-255, g: 0-255, b: 0-255} or null if color is "None"
  */
-function convertInDesignColorToPortable(doc, color) {
+function convertInDesignColorToPortable(doc, color, targetColorSpace) {
     if (!color || color === "None") {
         return null;
     }
-    
-    // TODO: This isn't working, colors are null.
 
     // The ink values that create the color, specified as a percentage for each ink. 
     // Note: The number of values required and the range depends on the color space. 
@@ -162,29 +162,55 @@ function convertInDesignColorToPortable(doc, color) {
     }
     
     if (typeof typedColor === "object" && typedColor.constructor.name === "Color") {
+
         if (!isSupportedPortableColorSpace(typedColor.space)) {
             return null;
         }
-        return {
-            space: typedColor.space,
-            colorValue: typedColor.colorValue,
+
+        var colorValue = typedColor.colorValue;
+        var colorSpace = typedColor.space;
+        if (targetColorSpace && targetColorSpace !== colorSpace) {
+            colorValue = doc.colorTransform(colorValue, colorSpace, targetColorSpace);
+            if (targetColorSpace === ColorSpace.RGB) {
+                colorValue = normalizeRGBColor(colorValue);
+            }
+            colorSpace = targetColorSpace;
+            DebugLogger.write("Converted " + convertInDesignColorSpaceToString(typedColor.space) + " color to " + convertInDesignColorSpaceToString(targetColorSpace) + " color space. " + 
+                typedColor.colorValue + " to " + colorValue);
         }
-    } else if (typeof typedColor === "object" && typedColor.constructor.name === "Tine") {
-        if (!isSupportedPortableColorSpace(typedColor.space)) {
-            return null;
-        }
+
         return {
-            space: typedColor.space,
-            colorValue: typedColor.colorValue,
+            space: convertInDesignColorSpaceToString(colorSpace),
+            colorValue: colorValue,
         }
     }
     
-    // We don't support MixedInks or Gradients, so treat as no color.
+    // We don't support MixedInks, Tints, or Gradients, so treat as no color.
     return null;
 }
 
+function normalizeRGBColor(colorValue) {
+    // Normalize RGB values to be in the range 0-255
+    return map(colorValue, function(value) {
+        return Math.round(value * 255);
+    });
+}
+
+function convertInDesignColorSpaceToString(idColorSpace) {
+    switch (idColorSpace) {
+        case ColorSpace.RGB:
+            return "RGB";
+        case ColorSpace.CMYK:
+            return "CMYK";
+        case ColorSpace.LAB:
+            return "LAB";
+        default:
+            return undefined;
+    }
+}
+
 function isSupportedPortableColorSpace(colorSpace) {
-    return any(["RGB", "CMYK", "HSB", "LAB"], function(supportedColorSpace) {
+    return any([ColorSpace.RGB, ColorSpace.CMYK, ColorSpace.LAB], function(supportedColorSpace) {
         return colorSpace === supportedColorSpace;
     });
 }

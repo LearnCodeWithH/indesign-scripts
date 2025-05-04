@@ -15,34 +15,43 @@ function colorModeToOpenDocumentMode(color_mode) {
     }
 }
 
+function colorSpaceStringToPSColorModel(colorSpace) {
+    switch (colorSpace) {
+        case "RGB":
+            return ColorModel.RGB;
+        case "CMYK":
+            return ColorModel.CMYK;
+        case "LAB":
+            return ColorModel.LAB;
+        case "GRAYSCALE":
+            return ColorModel.GRAYSCALE;
+        default:
+            return undefined;
+    }
+}
+
 function portableColorToPSColor(portableColor) {
-    var solidColor = new SolidColor();
+    var color = null;
     switch (portableColor.space) {
         case "RGB":
-            solidColor.space = portableColor.space;
-            solidColor.rgb.red = portableColor.colorValue[0];
-            solidColor.rgb.green = portableColor.colorValue[1];
-            solidColor.rgb.blue = portableColor.colorValue[2];
-            return solidColor;
+            color = new RGBColor();
+            color.red = portableColor.colorValue[0];
+            color.green = portableColor.colorValue[1];
+            color.blue = portableColor.colorValue[2];
+            return color;
         case "CMYK":
-            solidColor.space = portableColor.space;
-            solidColor.cmyk.cyan = portableColor.colorValue[0];
-            solidColor.cmyk.magenta = portableColor.colorValue[1];
-            solidColor.cmyk.yellow = portableColor.colorValue[2];
-            solidColor.cmyk.black = portableColor.colorValue[3];
-            return solidColor;
+            color = new CMYKColor();
+            color.cyan = portableColor.colorValue[0];
+            color.magenta = portableColor.colorValue[1];
+            color.yellow = portableColor.colorValue[2];
+            color.black = portableColor.colorValue[3];
+            return color;
         case "LAB":
-            solidColor.space = portableColor.space;
-            solidColor.lab.l = portableColor.colorValue[0];
-            solidColor.lab.a = portableColor.colorValue[1];
-            solidColor.lab.b = portableColor.colorValue[2];
-            return solidColor;
-        case "HSB":
-            solidColor.space = portableColor.space;
-            solidColor.hsb.hue = portableColor.colorValue[0];
-            solidColor.hsb.saturation = portableColor.colorValue[1];
-            solidColor.hsb.brightness = portableColor.colorValue[2];
-            return solidColor;
+            color = new LabColor();
+            color.L = portableColor.colorValue[0];
+            color.A = portableColor.colorValue[1];
+            color.B = portableColor.colorValue[2];
+            return color;
         default:
             return null;
     };
