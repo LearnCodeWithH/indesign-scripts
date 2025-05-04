@@ -252,6 +252,7 @@ function exportTextLayersToInfo(doc, textLayersOrdered, pages, pageInfoByPageNum
             var jsonFileName = docName + "_text-layer-" + layerOrderNumber;
             var jsonSaveFile = new File(pageInfo.pageFolderPath + "/" + jsonFileName + ".json");
 
+            jsonSaveFile.encoding = "UTF-8";
             usingFile(jsonSaveFile, "w", function(jsonFile) {
                 jsonFile.write(jamJSON.stringify(textData, null, 4)); 
             });

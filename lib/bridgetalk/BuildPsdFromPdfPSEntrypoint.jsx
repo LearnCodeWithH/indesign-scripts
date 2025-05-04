@@ -142,15 +142,6 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     // Create a new text layer in the text group
     var textLayer = psdDocument.artLayers.add();
     textLayer.kind = LayerKind.TEXT;
-    textLayer.name = buildTextLayerName(textDataEntry);
-    
-    // Move the text layer into the group
-    textLayer.move(textGroup, ElementPlacement.PLACEATEND);
-    
-    // Handle rotation
-    if (textDataEntry.frameRotation && textDataEntry.frameRotation !== 0) {
-        textLayer.rotate(-textDataEntry.frameRotation);
-    }
     
     var styleRuns = textDataEntry.styleRuns || [];
     
@@ -163,6 +154,15 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
 
     // Apply different styles to different parts of the text
     applyStyleRuns(textLayer, styleRuns, textDataEntry);
+
+    // Do direct Text Layer modifications after the jam text modifications
+    // Move the text layer into the group
+    textLayer.move(textGroup, ElementPlacement.PLACEATEND);
+    
+    // Handle rotation
+    if (textDataEntry.frameRotation && textDataEntry.frameRotation !== 0) {
+        textLayer.rotate(-textDataEntry.frameRotation);
+    }
     
     return textLayer;
 }
@@ -225,6 +225,9 @@ function applyStyleRuns(textLayer, styleRuns, textDataEntry) {
         
         // Apply the layer text object to the text layer
         applyLayerTextObjectToLayer(textLayer, layerTextObj);
+
+        // Absolute move the text layer to the correct position
+        // applyMoveLayer(textLayer, textDataEntry.bounds);
         
     } catch (error) {
         alert("Error applying text styles: " + error.fileName + "@" + error.line + "\n" + error.message);
@@ -285,10 +288,14 @@ function createTextShapeForFrame(textDataEntry) {
             textType: "box",
             orientation: "horizontal",
             bounds: {
-                top: bounds.y,
-                left: bounds.x,
-                bottom: bounds.y + bounds.height,
-                right: bounds.x + bounds.width
+                top: 0,
+                left: 0,
+                bottom: bounds.height,
+                right: bounds.width
+                // top: bounds.y,
+                // left: bounds.x,
+                // bottom: bounds.y + bounds.height,
+                // right: bounds.x + bounds.width
             }
         };
     }
@@ -440,6 +447,27 @@ function applyLayerTextObjectToLayer(textLayer, layerTextObj) {
         {
             "target": ["<reference>", [["layer", ["<identifier>", textLayer.id]]]],
             "to": textLayerDesc
+        }
+    );
+}
+
+function applyMoveLayer(textLayer, layerBounds) {
+    // We need to create a reference to our text layer to modify it
+    var idTxLr = charIDToTypeID("TxLr");
+    var ref = new ActionReference();
+    ref.putIdentifier(idTxLr, textLayer.id);
+
+    // These are all pixel units as we put in place earlier.
+    var translate = [
+        layerBounds.x - textLayer.bounds[0].value,
+        layerBounds.y - textLayer.bounds[1].value
+    ]
+    
+    jamEngine.jsonPlay(
+        "move",
+        {
+            "target": ["<reference>", [["layer", ["<identifier>", textLayer.id]]]],
+            "to": jamHelpers.toOffsetObject ([ [ translate[0], translate[1] ], "pixelsUnit" ])
         }
     );
 }
