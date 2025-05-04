@@ -227,8 +227,10 @@ function applyStyleRuns(textLayer, styleRuns, textDataEntry) {
         // Apply the layer text object to the text layer
         applyLayerTextObjectToLayer(textLayer, layerTextObj);
 
+        // TODO: Layers are ever so slightly offset.
+        // TODO: Try creating layer with jam
         // Absolute move the text layer to the correct position
-        // applyMoveLayer(textLayer, textDataEntry.bounds);
+        applyMoveLayer(textLayer, textDataEntry.bounds);
         
     } catch (error) {
         alert("Error applying text styles: " + error.fileName + "@" + error.line + "\n" + error.message);
@@ -463,6 +465,13 @@ function applyMoveLayer(textLayer, layerBounds) {
         layerBounds.x - textLayer.bounds[0].value,
         layerBounds.y - textLayer.bounds[1].value
     ]
+
+    // var translateUnitValues = [
+    //     new UnitValue(translate[0], "px"),
+    //     new UnitValue(translate[1], "px")
+    // ]
+
+    // textLayer.translate(translateUnitValues[0], translateUnitValues[1]);
     
     jamEngine.jsonPlay(
         "move",
