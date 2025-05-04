@@ -116,6 +116,7 @@ function createContentLayerFromInfo(psdDocument, pdfOpenOptions, contentLayerInf
 function createTextLayerGroupFromInfo(psdDocument, textLayerInfo) {
     var jsonFile = new File(textLayerInfo.jsonFullFilePath);
     var textData = null;
+    jsonFile.encoding = "UTF-8";
     usingFile(jsonFile, "r", function(jsonFile) {
         // Read the JSON file and parse it into an object
         var jsonText = jsonFile.read();
