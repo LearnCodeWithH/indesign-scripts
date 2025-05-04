@@ -147,53 +147,12 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     // Move the text layer into the group
     textLayer.move(textGroup, ElementPlacement.PLACEATEND);
     
-    // Handle bounds and positioning
-    var bounds = textDataEntry.bounds;
-    if (bounds) {
-        // Create text item with the bounds
-        var textItem = textLayer.textItem;
-        textItem.kind = TextType.PARAGRAPHTEXT;
-
-        textItem.width = bounds.width;
-        textItem.height = bounds.height;
-        textItem.position = [bounds.x, bounds.y];
-    }
-    
     // Handle rotation
     if (textDataEntry.frameRotation && textDataEntry.frameRotation !== 0) {
         textLayer.rotate(-textDataEntry.frameRotation);
     }
     
-    // Handle skew
-    if (textDataEntry.skew && textDataEntry.skew !== 0) {
-        // NOTE: Photoshop doesn't have direct skew control via scripting
-        // May need to create a transform and apply skew through a matrix
-    }
-    
-    // Handle stroke properties
-    // NO WORK, NEED SMART FX
-    if (textDataEntry.strokeColor && textDataEntry.strokeWeight && textDataEntry.strokeWeight > 0) {
-        // var textItem = textLayer.textItem;
-        // textItem.strokeColor = portableColorToPSColor(textDataEntry.strokeColor);
-        // textItem.strokeWidth = textDataEntry.strokeWeight;
-    }
-    
-    // Handle fill color of the text layer (if specified at layer level)
-    if (textDataEntry.fillColor) {
-        var textItem = textLayer.textItem;
-        textItem.color = portableColorToPSColor(textDataEntry.fillColor);
-    }
-    
-    // Combine all style runs to create the full text
-    var fullText = "";
     var styleRuns = textDataEntry.styleRuns || [];
-    
-    for (var i = 0; i < styleRuns.length; i++) {
-        fullText += styleRuns[i].text;
-    }
-    
-    // Set the text content
-    textLayer.textItem.contents = sanitizeUnicodeText(fullText);
     
     // TODO: Handle justification and alignment
     // NOTE: Style runs need to handle:
@@ -203,12 +162,12 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     // font style (bold, italic), text justification
 
     // Apply different styles to different parts of the text
-    applyStyleRuns(textLayer, styleRuns);
+    applyStyleRuns(textLayer, styleRuns, textDataEntry);
     
     return textLayer;
 }
 
-function applyStyleRuns(textLayer, styleRuns) {
+function applyStyleRuns(textLayer, styleRuns, textDataEntry) {
     if (!styleRuns || styleRuns.length === 0) return;
     
     // Get the text content from styleRuns
@@ -217,6 +176,11 @@ function applyStyleRuns(textLayer, styleRuns) {
     try {
         // Create a structured layer text object using the JAM format
         var layerTextObj = createBaseLayerTextObject(fullText);
+
+        var textShape = createTextShapeForFrame(textDataEntry);
+        if (textShape !== null) {
+            layerTextObj.layerText.textShape.push(textShape);
+        }
         
         // Process each style run and add to textStyleRange
         var position = 0;
@@ -303,18 +267,33 @@ function createBaseLayerTextObject(fullText) {
         layerText: {
             textKey: fullText,
             antiAlias: "antiAliasCrisp",
-            textShape: [
-                {
-                    textType: "point",
-                    orientation: "horizontal"
-                }
-            ],
+            textShape: [],
             textStyleRange: [],
             paragraphStyleRange: [],
             kerningRange: []
         },
         typeUnit: "pixelsUnit"
     };
+}
+
+function createTextShapeForFrame(textDataEntry) {
+    var textShape = null;
+
+    if (textDataEntry.bounds) {
+        var bounds = textDataEntry.bounds;
+        textShape = {
+            textType: "box",
+            orientation: "horizontal",
+            bounds: {
+                top: bounds.y,
+                left: bounds.x,
+                bottom: bounds.y + bounds.height,
+                right: bounds.x + bounds.width
+            }
+        };
+    }
+
+    return textShape;
 }
 
 function createTextStyleForRun(run) {
@@ -412,6 +391,8 @@ function createParagraphStyleForRun(run) {
     };
     
     applyJustification(paragraphStyle, run);
+
+    return paragraphStyle;
 }
 
 function applyJustification(paragraphStyle, run) {
