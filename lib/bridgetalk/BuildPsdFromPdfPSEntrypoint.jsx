@@ -333,7 +333,10 @@ function applyFontColor(textStyle, run) {
 
 function applyLeading(textStyle, run) {
     if (run.leading) {
+        textStyle.autoLeading = false;
         textStyle.leading = run.leading;
+    } else {
+        textStyle.autoLeading = true; // Default to auto leading if not specified
     }
 }
 
