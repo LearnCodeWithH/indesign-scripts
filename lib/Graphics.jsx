@@ -215,3 +215,47 @@ function isSupportedPortableColorSpace(colorSpace) {
     });
 }
 
+function getPageItemsBounds(pageItems) {
+    // Initialize with extreme values to ensure they get properly set
+    var minX = Number.MAX_VALUE;
+    var minY = Number.MAX_VALUE;
+    var maxX = Number.MIN_VALUE;
+    var maxY = Number.MIN_VALUE;
+    
+    var hasValidItems = false;
+    
+    for (var i = 0; i < pageItems.length; i++) {
+        var item = pageItems[i];
+        
+        try {
+            // Get geometric bounds [y1, x1, y2, x2] - top, left, bottom, right
+            var bounds = item.geometricBounds;
+            
+            if (bounds && bounds.length === 4) {
+                hasValidItems = true;
+                
+                // Update min/max values
+                minX = Math.min(minX, bounds[1]); // left
+                minY = Math.min(minY, bounds[0]); // top
+                maxX = Math.max(maxX, bounds[3]); // right
+                maxY = Math.max(maxY, bounds[2]); // bottom
+            }
+        } catch (e) {
+            // Skip items that don't have valid bounds
+            continue;
+        }
+    }
+    
+    if (!hasValidItems) {
+        return null;
+    }
+    
+    // Return bounds as an object with x, y, width, height
+    return {
+        x: minX,
+        y: minY,
+        width: maxX - minX,
+        height: maxY - minY
+    };
+}
+

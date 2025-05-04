@@ -136,6 +136,15 @@ function getPdfExportPresetFromApp() {
     return modified_preset;
 }
 
+function getLayerContentBounds(layer, page) {
+    // Filter page items to only those on this layer
+    var layerItems = filter(page.pageItems, function(item) {
+        return item.itemLayer === layer && !(item instanceof TextFrame);
+    });
+    
+    return getPageItemsBounds(layerItems);
+}
+
 function exportContentLayersToInfo(doc, contentLayersOrdered, pages, pageInfoByPageNum) {
     // Get InDesign file name without extension for PDF naming
     var docName = doc.name;
@@ -170,11 +179,15 @@ function exportContentLayersToInfo(doc, contentLayersOrdered, pages, pageInfoByP
             
             var pdfFileName = docName + "_layer-" + layerOrderNumber;
             var pdfSaveFile = new File(pageInfo.pageFolderPath + "/" + pdfFileName + ".pdf");
+            
+            // Get bounds of content items on this layer
+            var contentBounds = getLayerContentBounds(layer, page);
         
             // Store content layer info for Photoshop processing
             layerInfo.push({
                 name: layer.name,
                 layerType: "content",
+                contentBounds: contentBounds,
                 index: layer.index,
                 pdfFileName: pdfSaveFile.name,
                 pdfFullFilePath: pdfSaveFile.fullName
@@ -185,7 +198,6 @@ function exportContentLayersToInfo(doc, contentLayersOrdered, pages, pageInfoByP
     }
 
     return contentLayerInfoByPageNum;
-    
 }
 
 function exportContentLayerInfoToPdf(doc, pdfExportPreset, contentLayerInfoByPageNum) {
