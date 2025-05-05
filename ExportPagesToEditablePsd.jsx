@@ -303,6 +303,7 @@ function processPhotoshopScript(doc, pageInfoByPageNum, user_export_folder) {
         .addFile(script_path + "/lib/DebugFileLogger.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSPdfImport.jsx")
         .addFile(script_path + "/lib/bridgetalk/PSConversions.jsx")
+        // TODO: Use minified
         .addFile(script_path + "/lib/jam/jamEngine.jsxinc")
         .addFile(script_path + "/lib/jam/jamUtils.jsxinc")
         .addFile(script_path + "/lib/jam/jamHelpers.jsxinc")

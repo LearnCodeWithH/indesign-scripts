@@ -139,17 +139,34 @@ function createTextLayerGroupFromInfo(psdDocument, textLayerInfo) {
     
     // Iterate through the text data and invoke createTextLayerWithStyleRuns for each entry
     for (var i = 0; i < textData.length; i++) {
-        createTextLayerWithStyleRuns(psdDocument, textGroup, textData[i]);
+        var textLayer = createTextLayerWithStyleRuns(psdDocument, textData[i]);
+        
+        // Move the text layer into the group
+        textLayer.move(textGroup, ElementPlacement.PLACEATEND);
     }
     
     return textGroup;
 }
 
-function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
+function createTextLayerWithStyleRuns(psdDocument, textDataEntry) {
     // Create a new text layer in the text group
     var textLayer = psdDocument.artLayers.add();
     textLayer.kind = LayerKind.TEXT;
-    
+    // Placeholder to allow translate before running jam modification.
+    textLayer.textItem.contents = "A";
+    var layerBounds = textDataEntry.bounds;
+    // These are all pixel units as we put in place earlier.
+    var translate = [
+        layerBounds.x - textLayer.bounds[0].value,
+        layerBounds.y - textLayer.bounds[1].value
+    ]
+
+    textLayer.translate(new UnitValue(translate[0], "px"), new UnitValue(translate[1], "px"));
+
+    // TODO: Need to find way to center text in box
+    // Y Diff 68.44 - 147 = -78.56
+    // H 227.06
+
     var styleRuns = textDataEntry.styleRuns || [];
     
     // TODO: Handle justification and alignment
@@ -162,10 +179,7 @@ function createTextLayerWithStyleRuns(psdDocument, textGroup, textDataEntry) {
     // Apply different styles to different parts of the text
     applyStyleRuns(textLayer, styleRuns, textDataEntry);
 
-    // Do direct Text Layer modifications after the jam text modifications
-    // Move the text layer into the group
-    textLayer.move(textGroup, ElementPlacement.PLACEATEND);
-    
+    // TODO: Rotation before and after apply is slightly different
     // Handle rotation
     if (textDataEntry.frameRotation && textDataEntry.frameRotation !== 0) {
         textLayer.rotate(-textDataEntry.frameRotation);
@@ -232,11 +246,6 @@ function applyStyleRuns(textLayer, styleRuns, textDataEntry) {
         
         // Apply the layer text object to the text layer
         applyLayerTextObjectToLayer(textLayer, layerTextObj);
-
-        // TODO: Layers are ever so slightly offset.
-        // TODO: Try creating layer with jam
-        // Absolute move the text layer to the correct position
-        applyMoveLayer(textLayer, textDataEntry.bounds);
         
     } catch (error) {
         alert("Error applying text styles: " + error.fileName + "@" + error.line + "\n" + error.message);
@@ -456,34 +465,6 @@ function applyLayerTextObjectToLayer(textLayer, layerTextObj) {
         {
             "target": ["<reference>", [["layer", ["<identifier>", textLayer.id]]]],
             "to": textLayerDesc
-        }
-    );
-}
-
-function applyMoveLayer(textLayer, layerBounds) {
-    // We need to create a reference to our text layer to modify it
-    var idTxLr = charIDToTypeID("TxLr");
-    var ref = new ActionReference();
-    ref.putIdentifier(idTxLr, textLayer.id);
-
-    // These are all pixel units as we put in place earlier.
-    var translate = [
-        layerBounds.x - textLayer.bounds[0].value,
-        layerBounds.y - textLayer.bounds[1].value
-    ]
-
-    // var translateUnitValues = [
-    //     new UnitValue(translate[0], "px"),
-    //     new UnitValue(translate[1], "px")
-    // ]
-
-    // textLayer.translate(translateUnitValues[0], translateUnitValues[1]);
-    
-    jamEngine.jsonPlay(
-        "move",
-        {
-            "target": ["<reference>", [["layer", ["<identifier>", textLayer.id]]]],
-            "to": jamHelpers.toOffsetObject ([ [ translate[0], translate[1] ], "pixelsUnit" ])
         }
     );
 }
