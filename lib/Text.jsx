@@ -71,6 +71,8 @@ function parseTextDataFromTextFrames(doc, textFrames, targetColorSpace) {
             frameStrokePortableColor = convertInDesignColorToPortable(doc, frame.strokeColor, targetColorSpace);
         }
 
+        var textLineBounds = getTextBaselines(frame);
+
         textData.push({
             bounds: {
                 x: bounds[1],
@@ -79,6 +81,7 @@ function parseTextDataFromTextFrames(doc, textFrames, targetColorSpace) {
                 height: bounds[2] - bounds[0]
             },
             styleRuns: styleRuns,
+            textLineBounds: textLineBounds,
             // TODO: Use appliedParagraphStyle on TextStyleRuns to build an array of paragraphStyles
             // check if appliedParagraphStyle can differ from text style justification
             frameRotation: frame.rotationAngle,
@@ -164,4 +167,51 @@ function moveTextToOwnLayer(doc, sourceLayer, pages) {
     }
     
     return textLayer;
+}
+
+function getTextBaselines(textFrame) {
+    if (!textFrame || !textFrame.isValid || textFrame.constructor.name !== "TextFrame") {
+        throw new Error("getTextBaselines requires a valid TextFrame");
+    }
+    
+    var allLines = textFrame.lines;
+    if (allLines.length === 0) {
+        return { top: null, bottom: null }; // No text in the frame
+    }
+    
+    var topMostBaseline = Infinity;
+    var bottomMostBaseline = -Infinity;
+    
+    // Loop through all text lines to find the top-most and bottom-most baselines
+    for (var i = 0; i < allLines.length; i++) {
+        var line = allLines[i];
+        var bounds = line.geometricBounds; // [y1, x1, y2, x2]
+        
+        var baselinePosition = bounds[2]; // y2 coordinate
+        var toplinePosition = bounds[0]; // y1 coordinate
+        
+        if (toplinePosition < topMostBaseline) {
+            topMostBaseline = toplinePosition;
+        }
+        
+        if (baselinePosition > bottomMostBaseline) {
+            bottomMostBaseline = baselinePosition;
+        }
+    }
+    
+    // If no baseline was found, return null for both values
+    return {
+        top: topMostBaseline === Infinity ? null : topMostBaseline,
+        bottom: bottomMostBaseline === -Infinity ? null : bottomMostBaseline
+    };
+}
+
+// Keep getBottommostBaseline for backward compatibility, but have it use the new function
+function getBottommostBaseline(textFrame) {
+    if (!textFrame || !textFrame.isValid || textFrame.constructor.name !== "TextFrame") {
+        throw new Error("getBottommostBaseline requires a valid TextFrame");
+    }
+    
+    var baselines = getTextBaselines(textFrame);
+    return baselines.bottom;
 }
