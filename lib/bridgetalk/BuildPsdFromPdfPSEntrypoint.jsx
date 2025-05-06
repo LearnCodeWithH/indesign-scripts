@@ -161,11 +161,14 @@ function createTextLayerWithStyleRuns(psdDocument, textDataEntry) {
         layerBounds.y - textLayer.bounds[1].value
     ]
 
-    textLayer.translate(new UnitValue(translate[0], "px"), new UnitValue(translate[1], "px"));
+    if (textDataEntry.textLineBounds) {
+        var textLineHeight = textDataEntry.textLineBounds.top - textDataEntry.textLineBounds.bottom;
+        // Adjust the translation based on the line height and rotation
+        translate[0] = translate[0] + (Math.cos(textDataEntry.frameRotation * Math.PI / 180) * textLineHeight);
+        translate[1] = translate[1] + (Math.sin(textDataEntry.frameRotation * Math.PI / 180) * textLineHeight);
+    }
 
-    // TODO: Need to find way to center text in box
-    // Y Diff 68.44 - 147 = -78.56
-    // H 227.06
+    textLayer.translate(new UnitValue(translate[0], "px"), new UnitValue(translate[1], "px"));
 
     var styleRuns = textDataEntry.styleRuns || [];
     

@@ -185,6 +185,7 @@ function getTextBaselines(textFrame) {
     // Loop through all text lines to find the top-most and bottom-most baselines
     for (var i = 0; i < allLines.length; i++) {
         var line = allLines[i];
+        // TODO: Line does not have geometricBounds
         var bounds = line.geometricBounds; // [y1, x1, y2, x2]
         
         var baselinePosition = bounds[2]; // y2 coordinate
