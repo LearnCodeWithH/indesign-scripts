@@ -185,11 +185,14 @@ function getTextBaselines(textFrame) {
     // Loop through all text lines to find the top-most and bottom-most baselines
     for (var i = 0; i < allLines.length; i++) {
         var line = allLines[i];
-        // TODO: Line does not have geometricBounds
-        var bounds = line.geometricBounds; // [y1, x1, y2, x2]
-        
-        var baselinePosition = bounds[2]; // y2 coordinate
-        var toplinePosition = bounds[0]; // y1 coordinate
+        // TODO: Check spaceBefore and spaceAfter for the line
+        // TODO: Can also check with ascent and descent (though won't be exact for accent marks)
+        // TODO: (CHECK THIS FIRST) Can also try to rasterize on PS side and use geometric vertical center to calculate offset 
+        // TODO: Convert text to outline in ID and check top/bottom
+        // Line.baseline gives the y-coordinate of the text baseline
+        var baselinePosition = line.baseline;
+        // To find the top of the line, subtract the ascent from the baseline
+        var toplinePosition = baselinePosition - line.ascent;
         
         if (toplinePosition < topMostBaseline) {
             topMostBaseline = toplinePosition;
