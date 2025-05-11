@@ -18,6 +18,9 @@ function parseTextDataFromTextFrames(doc, textFrames, targetColorSpace) {
         var styleRuns = [];
         var story = frame.parentStory;
         
+        
+        DebugLogger.writeObject("TextFrame => ", frame, 3, [ "parentStory", "parent", "properties", "events", "eventListeners" ]);
+        DebugLogger.writeObject("Story => ", story, 3, [ "parentStory", "parent", "properties", "events", "eventListeners" ]);
         for (var j = 0; j < story.textStyleRanges.length; j++) {
             var range = story.textStyleRanges[j];
 
@@ -41,6 +44,8 @@ function parseTextDataFromTextFrames(doc, textFrames, targetColorSpace) {
                 // KerningValue can't be accessed for Optical or Metrics
                 kerningValue = range.kerningValue;
             }
+
+            DebugLogger.writeObject("TextStyleRange => ", range, 3, [ "parent", "properties", "events", "eventListeners" ]);
             
             styleRuns.push({
                 text: range.contents,
@@ -71,7 +76,7 @@ function parseTextDataFromTextFrames(doc, textFrames, targetColorSpace) {
             frameStrokePortableColor = convertInDesignColorToPortable(doc, frame.strokeColor, targetColorSpace);
         }
 
-        var textLineBounds = getTextBaselines(frame);
+        var verticalJustification = frame.textFramePreferences.verticalJustification;
 
         textData.push({
             bounds: {
@@ -80,8 +85,8 @@ function parseTextDataFromTextFrames(doc, textFrames, targetColorSpace) {
                 width: bounds[3] - bounds[1],
                 height: bounds[2] - bounds[0]
             },
+            verticalJustification: verticalJustification,
             styleRuns: styleRuns,
-            textLineBounds: textLineBounds,
             // TODO: Use appliedParagraphStyle on TextStyleRuns to build an array of paragraphStyles
             // check if appliedParagraphStyle can differ from text style justification
             frameRotation: frame.rotationAngle,
@@ -167,55 +172,4 @@ function moveTextToOwnLayer(doc, sourceLayer, pages) {
     }
     
     return textLayer;
-}
-
-function getTextBaselines(textFrame) {
-    if (!textFrame || !textFrame.isValid || textFrame.constructor.name !== "TextFrame") {
-        throw new Error("getTextBaselines requires a valid TextFrame");
-    }
-    
-    var allLines = textFrame.lines;
-    if (allLines.length === 0) {
-        return { top: null, bottom: null }; // No text in the frame
-    }
-    
-    var topMostBaseline = Infinity;
-    var bottomMostBaseline = -Infinity;
-    
-    // Loop through all text lines to find the top-most and bottom-most baselines
-    for (var i = 0; i < allLines.length; i++) {
-        var line = allLines[i];
-        // TODO: Check spaceBefore and spaceAfter for the line
-        // TODO: Can also check with ascent and descent (though won't be exact for accent marks)
-        // TODO: (CHECK THIS FIRST) Can also try to rasterize on PS side and use geometric vertical center to calculate offset 
-        // TODO: Convert text to outline in ID and check top/bottom
-        // Line.baseline gives the y-coordinate of the text baseline
-        var baselinePosition = line.baseline;
-        // To find the top of the line, subtract the ascent from the baseline
-        var toplinePosition = baselinePosition - line.ascent;
-        
-        if (toplinePosition < topMostBaseline) {
-            topMostBaseline = toplinePosition;
-        }
-        
-        if (baselinePosition > bottomMostBaseline) {
-            bottomMostBaseline = baselinePosition;
-        }
-    }
-    
-    // If no baseline was found, return null for both values
-    return {
-        top: topMostBaseline === Infinity ? null : topMostBaseline,
-        bottom: bottomMostBaseline === -Infinity ? null : bottomMostBaseline
-    };
-}
-
-// Keep getBottommostBaseline for backward compatibility, but have it use the new function
-function getBottommostBaseline(textFrame) {
-    if (!textFrame || !textFrame.isValid || textFrame.constructor.name !== "TextFrame") {
-        throw new Error("getBottommostBaseline requires a valid TextFrame");
-    }
-    
-    var baselines = getTextBaselines(textFrame);
-    return baselines.bottom;
 }

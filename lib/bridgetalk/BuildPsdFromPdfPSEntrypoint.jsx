@@ -153,22 +153,16 @@ function createTextLayerWithStyleRuns(psdDocument, textDataEntry) {
     var textLayer = psdDocument.artLayers.add();
     textLayer.kind = LayerKind.TEXT;
     // Placeholder to allow translate before running jam modification.
-    textLayer.textItem.contents = "A";
-    var layerBounds = textDataEntry.bounds;
+    textLayer.textItem.contents = getFullTextFromStyleRuns(styleRuns);
     // These are all pixel units as we put in place earlier.
     var translate = [
-        layerBounds.x - textLayer.bounds[0].value,
-        layerBounds.y - textLayer.bounds[1].value
+        textDataEntry.bounds.x - textLayer.bounds[0].value,
+        textDataEntry.bounds.y - textLayer.bounds[1].value
     ]
 
-    if (textDataEntry.textLineBounds) {
-        var textLineHeight = textDataEntry.textLineBounds.top - textDataEntry.textLineBounds.bottom;
-        // Adjust the translation based on the line height and rotation
-        translate[0] = translate[0] + (Math.cos(textDataEntry.frameRotation * Math.PI / 180) * textLineHeight);
-        translate[1] = translate[1] + (Math.sin(textDataEntry.frameRotation * Math.PI / 180) * textLineHeight);
-    }
-
     textLayer.translate(new UnitValue(translate[0], "px"), new UnitValue(translate[1], "px"));
+
+    DebugLogger.write("Text Layer Translate Orig:  (" + translate[0] + ", " + translate[1] + ")");
 
     var styleRuns = textDataEntry.styleRuns || [];
     
@@ -180,18 +174,40 @@ function createTextLayerWithStyleRuns(psdDocument, textDataEntry) {
     // font style (bold, italic), text justification
 
     // Apply different styles to different parts of the text
-    applyStyleRuns(textLayer, styleRuns, textDataEntry);
+    var layerDef = applyStyleRunsToLayerDefinition(textLayer, styleRuns, textDataEntry);
 
+    // Apply the layer text object to the text layer
+    applyLayerTextObjectToLayer(textLayer, layerDef);
+
+    if (textDataEntry.verticalJustification == "TOP_ALIGN") {
+
+    }
+    else {
+        textLayer.rasterize(RasterizeType.ENTIRELAYER);
+
+        var textLineHeight = textLayer.bounds[3].value - textLayer.bounds[1].value;
+        var boxToLinesCenter = (textDataEntry.bounds.height - textLineHeight) / 2;
+        // Adjust the translation based on the line height and rotation
+        // Vector components swapped due to using height
+        var translateY = (Math.cos(textDataEntry.frameRotation * (Math.PI / 180)) * boxToLinesCenter);
+        var translateX = (Math.sin(textDataEntry.frameRotation * (Math.PI / 180)) * boxToLinesCenter);
+
+        DebugLogger.write("Text Layer Translate: " + textLineHeight + " (" + translateX + ", " + translateY + ")");
+
+        textLayer.duplicate(textLayer,ElementPlacement.PLACEAFTER)
+            .translate(new UnitValue(translateX, "px"), new UnitValue(translateY, "px"));
+
+    }
     // TODO: Rotation before and after apply is slightly different
     // Handle rotation
     if (textDataEntry.frameRotation && textDataEntry.frameRotation !== 0) {
-        textLayer.rotate(-textDataEntry.frameRotation);
+        textLayer.rotate(-textDataEntry.frameRotation, AnchorPosition.MIDDLECENTER);
     }
     
     return textLayer;
 }
 
-function applyStyleRuns(textLayer, styleRuns, textDataEntry) {
+function applyStyleRunsToLayerDefinition(textLayer, styleRuns, textDataEntry) {
     if (!styleRuns || styleRuns.length === 0) return;
     
     // Get the text content from styleRuns
@@ -246,10 +262,8 @@ function applyStyleRuns(textLayer, styleRuns, textDataEntry) {
             // Update position for next range
             position = to;
         }
-        
-        // Apply the layer text object to the text layer
-        applyLayerTextObjectToLayer(textLayer, layerTextObj);
-        
+
+        return layerTextObj;
     } catch (error) {
         alert("Error applying text styles: " + error.fileName + "@" + error.line + "\n" + error.message);
     }
@@ -406,7 +420,7 @@ function applyAutoKerning(textStyle, run) {
 
 function applyFontStyle(textStyle, run) {
     if (run.fontStyle) { 
-        textStyle.fontStyle = run.fontStyle;
+        textStyle.fontStyleName = run.fontStyle;
     }
 }
 
